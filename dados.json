@@ -1,125 +1,202 @@
 {
-  "versao": 2,
+  "versao": 3,
   "personagens": [
     {
-      "id": "luna",
-      "nome": "Luna",
-      "tipo": "gatinha",
-      "emoji": "🐱",
-      "descricao": "Curiosa e carinhosa. Adora cores e palavras novas.",
-      "cor": "#FFB4C8",
+      "id": "rumi",
+      "nome": "Rumi",
+      "tipo": "amiga",
+      "emoji": "👧",
+      "descricao": "Cabelo roxo e ideias brilhantes. Adora ciência e estrelas.",
+      "cor": "#9B7EDE",
+      "cabelo": "#7B5BBF",
       "saudacoes": [
-        "Miau! Eu sou a Luna. Vamos brincar?",
-        "Oi! Que bom te ver! Estava pensando em você.",
-        "Purr… você chegou! O que vamos aprender hoje?"
+        "Oi! Eu sou a Rumi! Vamos explorar o espaço?",
+        "Meu cabelo roxo brilha quando você chega!",
+        "Pronto pra uma missão científica?"
       ],
       "pedidos": {
-        "fome": [
-          "Estou com fominha… Tem um peixinho?",
-          "Miau… minha barriguinha roncou!"
-        ],
         "humor": [
-          "Quero brincar um pouquinho!",
-          "Estou entediada… vamos pular?"
+          "Quero brincar de cientista!",
+          "Vamos inventar uma experiência?"
         ],
         "energia": [
-          "Ufa… preciso de um soninho.",
-          "Meus olhinhos estão pesados…"
+          "Preciso de uma soneca espacial…",
+          "Minha bateria está baixa…"
         ],
         "carinho": [
-          "Posso um carinho na cabecinha?",
-          "Miau… um abraço me deixaria feliz!"
+          "Um high-five espacial?",
+          "Abraço de amiga?"
+        ],
+        "diversao": [
+          "Estou entediada… tem um jogo?",
+          "Vamos programar um robôzinho?"
         ]
       },
       "elogios": [
-        "Você é demais! Que orgulho!",
-        "Uau! Você é uma estrela!",
-        "Purr… isso foi lindo! Obrigada!"
+        "Você é uma estrela da ciência!",
+        "Uau! Que descoberta!",
+        "Rumi aprova com 100 estrelas!"
       ]
     },
     {
-      "id": "pipoca",
-      "nome": "Pipoca",
-      "tipo": "cachorrinho",
-      "emoji": "🐶",
-      "descricao": "Brincalhão e leal. Adora números e correr.",
-      "cor": "#FFD07A",
+      "id": "zoe",
+      "nome": "Zoe",
+      "tipo": "amiga",
+      "emoji": "🧒",
+      "descricao": "Cabelo curto e muita energia. Rainha dos desafios rápidos.",
+      "cor": "#5B8DEF",
+      "cabelo": "#2C3E50",
       "saudacoes": [
-        "Au au! Eu sou o Pipoca! Vamos brincar?",
-        "Oi, amiga! Abanei o rabo só de te ver!",
-        "Au! Chegou a melhor parte do meu dia: você!"
+        "Ei! Zoe na área! Vamos nessa?",
+        "Cabelo curto, ideias longas. Bora!",
+        "Desafio aceito — e você?"
       ],
       "pedidos": {
-        "fome": [
-          "Au… estou com fome! Tem um biscoitinho?",
-          "Meu estômago fez um barulhinho!"
-        ],
         "humor": [
-          "Quero correr e pular! Vamos?",
-          "Me joga a bolinha! Por favorzinho!"
+          "Quero um desafio AGORA!",
+          "Corrida de padrões?"
         ],
         "energia": [
-          "Hora da soneca… cansei um pouquinho.",
-          "Vou deitar aqui do seu ladinho…"
+          "Recarregando… zzz",
+          "Pausa rápida, capitã?"
         ],
         "carinho": [
-          "Posso um cafuné nas orelhas?",
-          "Au! Um abraço me deixa super feliz!"
+          "Toque aí! High-five!",
+          "Zoe precisa de um incentivezinho"
+        ],
+        "diversao": [
+          "Tô sem ação… joga comigo!",
+          "Memória ou robô?"
         ]
       },
       "elogios": [
-        "Você é a melhor professora do mundo!",
-        "Au au! Eu sabia que você ia acertar!",
-        "Meu coração abanou de orgulho!"
+        "Mandou bem demais!",
+        "Zoe tá orgulhosa!",
+        "Isso que é velocidade e carinho!"
       ]
     },
     {
-      "id": "fogo",
-      "nome": "Fogo",
-      "tipo": "dragãozinho",
-      "emoji": "🐉",
-      "descricao": "Gentil e corajoso. Ensina bondade e espalha alegria.",
-      "cor": "#A8E6CF",
+      "id": "mira",
+      "nome": "Mira",
+      "tipo": "amiga",
+      "emoji": "👧",
+      "descricao": "Cabelo vermelho e coração corajoso. Ama matemática e padrões.",
+      "cor": "#E85D4C",
+      "cabelo": "#C0392B",
       "saudacoes": [
-        "Olá! Eu sou o Fogo. Não mordo — só abraço!",
-        "Oi! Minhas asas bateram de alegria!",
-        "Chegou! Vamos espalhar bondade juntos?"
+        "Olá! Sou a Mira! Contar é minha magia.",
+        "Cabelo vermelho = sinal de aventura!",
+        "Vamos achar o padrão escondido?"
       ],
       "pedidos": {
-        "fome": [
-          "Hmm… um petisco de dragão cairia bem!",
-          "Minha barriguinha de fogo está vazia…"
-        ],
         "humor": [
-          "Quero voar um pouquinho! Brinca comigo?",
-          "Vamos fazer uma missão divertida?"
+          "Me mostra um padrão legal!",
+          "Conta comigo até 20?"
         ],
         "energia": [
-          "Preciso guardar energia pra voar depois…",
-          "Uma soneca mágica, por favor?"
+          "Soninho de foguete…",
+          "Mira precisa pousar um pouco"
         ],
         "carinho": [
-          "Um abraço de dragão? Eu prometo ser gentil.",
-          "Pode fazer cafuné nas minhas escamas?"
+          "Aperto de mão espacial?",
+          "Me conta um elogio?"
+        ],
+        "diversao": [
+          "Números estão chamando!",
+          "Jogo de formas, por favor!"
         ]
       },
       "elogios": [
-        "Você tem um coração de ouro!",
-        "Isso! Bondade é a magia mais forte!",
-        "Uau! Você me ensinou algo lindo hoje!"
+        "Cálculo perfeito!",
+        "Você pensa como uma estrela!",
+        "Mira bate palmas pra você!"
+      ]
+    },
+    {
+      "id": "emily",
+      "nome": "Emily",
+      "tipo": "amiga",
+      "emoji": "👧",
+      "descricao": "Cabelo rosa e voz doce. Adora inglês e conversas.",
+      "cor": "#FF8FB8",
+      "cabelo": "#F06292",
+      "saudacoes": [
+        "Hello! Eu sou a Emily!",
+        "Pink hair, happy heart!",
+        "Shall we speak English juntos?"
+      ],
+      "pedidos": {
+        "humor": [
+          "Let's play a word game!",
+          "Vamos dizer Hello bem alto?"
+        ],
+        "energia": [
+          "Nap time… sweet dreams",
+          "Emily precisa de um descanso"
+        ],
+        "carinho": [
+          "Hug, please!",
+          "Um carinho faz meu cabelo brilhar"
+        ],
+        "diversao": [
+          "I'm bored… English jogo?",
+          "Diálogo rapidinho?"
+        ]
+      },
+      "elogios": [
+        "Amazing! You did it!",
+        "Emily claps for you!",
+        "Thank you, superstar!"
+      ]
+    },
+    {
+      "id": "leozinho",
+      "nome": "Léozinho",
+      "tipo": "amigo",
+      "emoji": "👦",
+      "descricao": "Cabelo azul e mente de inventor. Ama programar e robôs.",
+      "cor": "#4FC3F7",
+      "cabelo": "#0288D1",
+      "saudacoes": [
+        "Fala! Léozinho online!",
+        "Cabelo azul = modo inventor ligado!",
+        "Vamos montar uma sequência?"
+      ],
+      "pedidos": {
+        "humor": [
+          "Cadê o robô pra programar?",
+          "Desafio de setas, topa?"
+        ],
+        "energia": [
+          "Sistema em modo sono…",
+          "Reiniciando em 3… 2…"
+        ],
+        "carinho": [
+          "Ping de amizade?",
+          "High-five de engenheiro!"
+        ],
+        "diversao": [
+          "Sem bugs, sem diversão… joga!",
+          "Arruma a sequência comigo!"
+        ]
+      },
+      "elogios": [
+        "Código limpo! Mandou bem!",
+        "Léozinho deu deploy de orgulho!",
+        "Bug zero — você arrasou!"
       ]
     }
   ],
   "acessorios": [
     {
-      "id": "chapeu",
-      "nome": "Chapéu",
-      "emoji": "🎩"
+      "id": "capacete",
+      "nome": "Capacete",
+      "emoji": "👨‍🚀"
     },
     {
       "id": "oculos",
       "nome": "Óculos",
-      "emoji": "👓"
+      "emoji": "🕶️"
     },
     {
       "id": "laco",
@@ -132,57 +209,57 @@
       "emoji": "👑"
     },
     {
-      "id": "flor",
-      "nome": "Flor",
-      "emoji": "🌸"
+      "id": "estrela",
+      "nome": "Estrela",
+      "emoji": "⭐"
     },
     {
-      "id": "cachecol",
-      "nome": "Cachecol",
-      "emoji": "🧣"
+      "id": "foguete",
+      "nome": "Foguete",
+      "emoji": "🚀"
     }
   ],
   "jogos": [
     {
       "id": "alimentar",
-      "titulo": "Hora do lanche",
+      "titulo": "Lanche espacial",
       "icone": "🍎",
-      "desc": "Leve a comidinha até a boquinha",
+      "desc": "Escolha o lanche certo",
       "cor": "bg-rosa"
     },
     {
       "id": "bolhas",
-      "titulo": "Estoura bolhas",
-      "icone": "🫧",
-      "desc": "Toque nas bolhas e nas estrelas",
-      "cor": "bg-ceu"
+      "titulo": "Estrelas e bolhas",
+      "icone": "🌌",
+      "desc": "Toque nas bolhas e estrelas",
+      "cor": "bg-espaco"
     },
     {
       "id": "esconde",
-      "titulo": "Cadê eu?",
+      "titulo": "Cadê o amiguinho?",
       "icone": "🚪",
-      "desc": "Ache o amiguito atrás das portas",
+      "desc": "Ache atrás das portas",
       "cor": "bg-lavanda"
     },
     {
       "id": "memoria",
-      "titulo": "Memória mágica",
+      "titulo": "Memória galáctica",
       "icone": "🃏",
-      "desc": "Encontre os pares iguais",
+      "desc": "Encontre os pares",
       "cor": "bg-menta"
     },
     {
       "id": "danca",
-      "titulo": "Dança do tap",
+      "titulo": "Batida do foguete",
       "icone": "🥁",
-      "desc": "Toque na ordem das luzes",
+      "desc": "Repita a sequência",
       "cor": "bg-sol"
     },
     {
       "id": "fantasia",
-      "titulo": "Fantasia",
-      "icone": "👗",
-      "desc": "Vista o amiguito com acessórios",
+      "titulo": "Traje espacial",
+      "icone": "🧑‍🚀",
+      "desc": "Vista o amiguinho",
       "cor": "bg-peach"
     }
   ],
@@ -192,101 +269,101 @@
       "titulo": "Cores",
       "icone": "🎨",
       "tipo": "cores",
-      "descricao": "Ensine as cores pro amiguito",
+      "descricao": "Cores do espaço e da Terra",
       "perguntas": [
         {
-          "pergunta": "Qual é a cor do céu num dia de sol?",
-          "perguntaEn": "What color is the sky?",
+          "pergunta": "Qual cor é do céu de dia?",
+          "perguntaEn": "What color is the daytime sky?",
           "opcoes": [
             {
               "texto": "Azul",
               "textoEn": "Blue",
-              "cor": "#4BA3C7",
-              "certa": true
+              "certa": true,
+              "cor": "#4BA3C7"
             },
             {
               "texto": "Verde",
               "textoEn": "Green",
-              "cor": "#55A868",
-              "certa": false
+              "certa": false,
+              "cor": "#55A868"
             },
             {
               "texto": "Rosa",
               "textoEn": "Pink",
-              "cor": "#F28BA6",
-              "certa": false
+              "certa": false,
+              "cor": "#F28BA6"
             }
           ]
         },
         {
-          "pergunta": "Qual cor parece um tomate?",
-          "perguntaEn": "Which color looks like a tomato?",
+          "pergunta": "Qual cor lembra um tomate?",
+          "perguntaEn": "Which looks like a tomato?",
           "opcoes": [
-            {
-              "texto": "Amarelo",
-              "textoEn": "Yellow",
-              "cor": "#F0C93A",
-              "certa": false
-            },
             {
               "texto": "Vermelho",
               "textoEn": "Red",
-              "cor": "#E74C3C",
-              "certa": true
+              "certa": true,
+              "cor": "#E74C3C"
+            },
+            {
+              "texto": "Amarelo",
+              "textoEn": "Yellow",
+              "certa": false,
+              "cor": "#F0C93A"
             },
             {
               "texto": "Roxo",
               "textoEn": "Purple",
-              "cor": "#9B84C7",
-              "certa": false
+              "certa": false,
+              "cor": "#9B84C7"
             }
           ]
         },
         {
-          "pergunta": "Qual cor lembra a grama?",
-          "perguntaEn": "Which color looks like grass?",
+          "pergunta": "A bandeira do Brasil tem…",
+          "perguntaEn": "Brazil's flag has…",
           "opcoes": [
             {
-              "texto": "Verde",
-              "textoEn": "Green",
-              "cor": "#55A868",
-              "certa": true
+              "texto": "Verde e amarelo",
+              "textoEn": "Green and yellow",
+              "certa": true,
+              "cor": "#009C3B"
             },
             {
-              "texto": "Laranja",
-              "textoEn": "Orange",
-              "cor": "#E67E22",
-              "certa": false
+              "texto": "Só preto",
+              "textoEn": "Only black",
+              "certa": false,
+              "cor": "#222"
             },
             {
-              "texto": "Azul",
-              "textoEn": "Blue",
-              "cor": "#4BA3C7",
-              "certa": false
+              "texto": "Só rosa",
+              "textoEn": "Only pink",
+              "certa": false,
+              "cor": "#F28BA6"
             }
           ]
         },
         {
-          "pergunta": "Qual cor é da banana?",
-          "perguntaEn": "What color is a banana?",
+          "pergunta": "Estrela no espaço parece…",
+          "perguntaEn": "A star in space looks…",
           "opcoes": [
             {
-              "texto": "Rosa",
-              "textoEn": "Pink",
-              "cor": "#F28BA6",
-              "certa": false
-            },
-            {
-              "texto": "Amarelo",
-              "textoEn": "Yellow",
-              "cor": "#F0C93A",
-              "certa": true
+              "texto": "Amarela / branca",
+              "textoEn": "Yellow / white",
+              "certa": true,
+              "cor": "#FFE66D"
             },
             {
               "texto": "Marrom",
               "textoEn": "Brown",
-              "cor": "#8B6914",
-              "certa": false
+              "certa": false,
+              "cor": "#8B6914"
+            },
+            {
+              "texto": "Cinza escuro",
+              "textoEn": "Dark gray",
+              "certa": false,
+              "cor": "#666"
             }
           ]
         }
@@ -294,57 +371,20 @@
     },
     {
       "id": "numeros",
-      "titulo": "Números",
+      "titulo": "Números 1–10",
       "icone": "🔢",
       "tipo": "numeros",
-      "descricao": "Conte de 1 a 10 com o amiguito",
+      "descricao": "Contar e somar",
       "perguntas": [
         {
-          "pergunta": "Quanto é 1 + 1?",
-          "perguntaEn": "What is 1 + 1?",
+          "pergunta": "Quanto é 2 + 2?",
+          "perguntaEn": "What is 2 + 2?",
           "opcoes": [
-            {
-              "texto": "2",
-              "textoEn": "2",
-              "certa": true
-            },
-            {
-              "texto": "3",
-              "textoEn": "3",
-              "certa": false
-            },
-            {
-              "texto": "1",
-              "textoEn": "1",
-              "certa": false
-            }
-          ]
-        },
-        {
-          "pergunta": "Quantas patas tem um cachorro?",
-          "perguntaEn": "How many legs does a dog have?",
-          "opcoes": [
-            {
-              "texto": "2",
-              "textoEn": "2",
-              "certa": false
-            },
             {
               "texto": "4",
               "textoEn": "4",
               "certa": true
             },
-            {
-              "texto": "6",
-              "textoEn": "6",
-              "certa": false
-            }
-          ]
-        },
-        {
-          "pergunta": "Qual número vem depois do 4?",
-          "perguntaEn": "What number comes after 4?",
-          "opcoes": [
             {
               "texto": "3",
               "textoEn": "3",
@@ -353,18 +393,34 @@
             {
               "texto": "5",
               "textoEn": "5",
+              "certa": false
+            }
+          ]
+        },
+        {
+          "pergunta": "Qual vem depois do 7?",
+          "perguntaEn": "What comes after 7?",
+          "opcoes": [
+            {
+              "texto": "8",
+              "textoEn": "8",
               "certa": true
             },
             {
               "texto": "6",
               "textoEn": "6",
               "certa": false
+            },
+            {
+              "texto": "9",
+              "textoEn": "9",
+              "certa": false
             }
           ]
         },
         {
-          "pergunta": "Se você tem 3 balas e ganha 1, fica com…",
-          "perguntaEn": "3 candies + 1 = ?",
+          "pergunta": "3 foguetes + 1 foguete =",
+          "perguntaEn": "3 rockets + 1 =",
           "opcoes": [
             {
               "texto": "4",
@@ -382,96 +438,24 @@
               "certa": false
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "palavras",
-      "titulo": "Palavras",
-      "icone": "📝",
-      "tipo": "palavras",
-      "descricao": "Palavrinhas em português",
-      "perguntas": [
-        {
-          "pergunta": "Como se diz 'obrigado' com carinho?",
-          "perguntaEn": "A sweet way to say thank you?",
-          "opcoes": [
-            {
-              "texto": "Oi",
-              "textoEn": "Hi",
-              "certa": false
-            },
-            {
-              "texto": "Obrigadinho",
-              "textoEn": "Thanks!",
-              "certa": true
-            },
-            {
-              "texto": "Tchau",
-              "textoEn": "Bye",
-              "certa": false
-            }
-          ]
         },
         {
-          "pergunta": "Qual palavra usamos quando encontramos alguém?",
-          "perguntaEn": "What do we say when we meet someone?",
+          "pergunta": "Qual é maior: 9 ou 4?",
+          "perguntaEn": "Which is bigger: 9 or 4?",
           "opcoes": [
             {
-              "texto": "Olá",
-              "textoEn": "Hello",
+              "texto": "9",
+              "textoEn": "9",
               "certa": true
             },
             {
-              "texto": "Adeus",
-              "textoEn": "Goodbye",
+              "texto": "4",
+              "textoEn": "4",
               "certa": false
             },
             {
-              "texto": "Dormir",
-              "textoEn": "Sleep",
-              "certa": false
-            }
-          ]
-        },
-        {
-          "pergunta": "O oposto de 'grande' é…",
-          "perguntaEn": "The opposite of big is…",
-          "opcoes": [
-            {
-              "texto": "Alto",
-              "textoEn": "Tall",
-              "certa": false
-            },
-            {
-              "texto": "Pequeno",
-              "textoEn": "Small",
-              "certa": true
-            },
-            {
-              "texto": "Forte",
-              "textoEn": "Strong",
-              "certa": false
-            }
-          ]
-        },
-        {
-          "pergunta": "Qual palavra mostra carinho?",
-          "perguntaEn": "Which word shows love?",
-          "opcoes": [
-            {
-              "texto": "Amigo",
-              "textoEn": "Friend",
-              "certa": true
-            },
-            {
-              "texto": "Pedra",
-              "textoEn": "Stone",
-              "certa": false
-            },
-            {
-              "texto": "Nuvem",
-              "textoEn": "Cloud",
+              "texto": "São iguais",
+              "textoEn": "Same",
               "certa": false
             }
           ]
@@ -479,92 +463,341 @@
       ]
     },
     {
-      "id": "gentileza",
-      "titulo": "Gentileza",
-      "icone": "💛",
-      "tipo": "gentileza",
-      "descricao": "Aprenda a ser gentil",
+      "id": "math-avancada",
+      "titulo": "Matemática Pro",
+      "icone": "🧮",
+      "tipo": "matematica",
+      "descricao": "Até 20, formas e padrões",
       "perguntas": [
         {
-          "pergunta": "Seu amigo caiu. O que você faz?",
-          "perguntaEn": "Your friend fell. What do you do?",
+          "pergunta": "Conte: 10 + 5 = ?",
+          "perguntaEn": "10 + 5 = ?",
           "opcoes": [
             {
-              "texto": "Ajudo ele a levantar",
-              "textoEn": "Help him up",
+              "texto": "15",
+              "textoEn": "15",
               "certa": true
             },
             {
-              "texto": "Rio dele",
-              "textoEn": "Laugh at him",
+              "texto": "14",
+              "textoEn": "14",
               "certa": false
             },
             {
-              "texto": "Ignoro",
-              "textoEn": "Ignore him",
+              "texto": "16",
+              "textoEn": "16",
               "certa": false
             }
           ]
         },
         {
-          "pergunta": "Alguém te emprestou um brinquedo. Você…",
-          "perguntaEn": "Someone lent you a toy. You…",
+          "pergunta": "Quanto é 8 − 3?",
+          "perguntaEn": "What is 8 − 3?",
           "opcoes": [
             {
-              "texto": "Agradece e cuida bem",
-              "textoEn": "Say thanks and care for it",
+              "texto": "5",
+              "textoEn": "5",
               "certa": true
             },
             {
-              "texto": "Esconde o brinquedo",
-              "textoEn": "Hide it",
+              "texto": "6",
+              "textoEn": "6",
               "certa": false
             },
             {
-              "texto": "Joga longe",
-              "textoEn": "Throw it away",
+              "texto": "4",
+              "textoEn": "4",
               "certa": false
             }
           ]
         },
         {
-          "pergunta": "Na fila, o certo é…",
-          "perguntaEn": "In a line, you should…",
+          "pergunta": "Qual forma tem 3 lados?",
+          "perguntaEn": "Which shape has 3 sides?",
           "opcoes": [
             {
-              "texto": "Furá a fila",
-              "textoEn": "Cut the line",
-              "certa": false
-            },
-            {
-              "texto": "Esperar a sua vez",
-              "textoEn": "Wait your turn",
+              "texto": "Triângulo △",
+              "textoEn": "Triangle",
               "certa": true
             },
             {
-              "texto": "Empurrar",
-              "textoEn": "Push",
+              "texto": "Círculo ○",
+              "textoEn": "Circle",
+              "certa": false
+            },
+            {
+              "texto": "Quadrado □",
+              "textoEn": "Square",
               "certa": false
             }
           ]
         },
         {
-          "pergunta": "Quando alguém erra, você…",
-          "perguntaEn": "When someone makes a mistake, you…",
+          "pergunta": "Padrão: ⭐🌙⭐🌙… o próximo é?",
+          "perguntaEn": "Pattern: ⭐🌙⭐🌙… next?",
           "opcoes": [
             {
-              "texto": "Incentiva a tentar de novo",
-              "textoEn": "Encourage trying again",
+              "texto": "⭐",
+              "textoEn": "⭐",
               "certa": true
             },
             {
-              "texto": "Zomba",
-              "textoEn": "Tease",
+              "texto": "🌙",
+              "textoEn": "🌙",
               "certa": false
             },
             {
-              "texto": "Fica bravo",
-              "textoEn": "Get angry",
+              "texto": "🚀",
+              "textoEn": "🚀",
+              "certa": false
+            }
+          ]
+        },
+        {
+          "pergunta": "Qual é MENOR: 12 ou 18?",
+          "perguntaEn": "Which is LESS: 12 or 18?",
+          "opcoes": [
+            {
+              "texto": "12",
+              "textoEn": "12",
+              "certa": true
+            },
+            {
+              "texto": "18",
+              "textoEn": "18",
+              "certa": false
+            },
+            {
+              "texto": "Iguais",
+              "textoEn": "Same",
+              "certa": false
+            }
+          ]
+        },
+        {
+          "pergunta": "Quantos lados tem um quadrado?",
+          "perguntaEn": "How many sides does a square have?",
+          "opcoes": [
+            {
+              "texto": "4",
+              "textoEn": "4",
+              "certa": true
+            },
+            {
+              "texto": "3",
+              "textoEn": "3",
+              "certa": false
+            },
+            {
+              "texto": "5",
+              "textoEn": "5",
+              "certa": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ciencia-natureza",
+      "titulo": "Ciência da Natureza",
+      "icone": "🌿",
+      "tipo": "ciencia",
+      "descricao": "Animais, clima e cores",
+      "perguntas": [
+        {
+          "pergunta": "O que as plantas precisam pra crescer?",
+          "perguntaEn": "What do plants need to grow?",
+          "opcoes": [
+            {
+              "texto": "Água e sol",
+              "textoEn": "Water and sun",
+              "certa": true
+            },
+            {
+              "texto": "Só chocolate",
+              "textoEn": "Only chocolate",
+              "certa": false
+            },
+            {
+              "texto": "Só brinquedo",
+              "textoEn": "Only toys",
+              "certa": false
+            }
+          ]
+        },
+        {
+          "pergunta": "Quando chove, o céu fica…",
+          "perguntaEn": "When it rains, the sky is…",
+          "opcoes": [
+            {
+              "texto": "Nublado / cinza",
+              "textoEn": "Cloudy / gray",
+              "certa": true
+            },
+            {
+              "texto": "Sempre rosa",
+              "textoEn": "Always pink",
+              "certa": false
+            },
+            {
+              "texto": "Verde limão",
+              "textoEn": "Lime green",
+              "certa": false
+            }
+          ]
+        },
+        {
+          "pergunta": "Qual animal voa?",
+          "perguntaEn": "Which animal flies?",
+          "opcoes": [
+            {
+              "texto": "Pássaro",
+              "textoEn": "Bird",
+              "certa": true
+            },
+            {
+              "texto": "Peixe",
+              "textoEn": "Fish",
+              "certa": false
+            },
+            {
+              "texto": "Cachorro",
+              "textoEn": "Dog",
+              "certa": false
+            }
+          ]
+        },
+        {
+          "pergunta": "Gelo é água…",
+          "perguntaEn": "Ice is water that is…",
+          "opcoes": [
+            {
+              "texto": "Congelada",
+              "textoEn": "Frozen",
+              "certa": true
+            },
+            {
+              "texto": "Queimando",
+              "textoEn": "Burning",
+              "certa": false
+            },
+            {
+              "texto": "Voando",
+              "textoEn": "Flying",
+              "certa": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ciencia-espaco",
+      "titulo": "Ciência Espacial",
+      "icone": "🚀",
+      "tipo": "ciencia",
+      "descricao": "Estrelas, planeta e astronautas",
+      "perguntas": [
+        {
+          "pergunta": "Quem viaja ao espaço de traje?",
+          "perguntaEn": "Who wears a suit in space?",
+          "opcoes": [
+            {
+              "texto": "Astronauta",
+              "textoEn": "Astronaut",
+              "certa": true
+            },
+            {
+              "texto": "Padeiro",
+              "textoEn": "Baker",
+              "certa": false
+            },
+            {
+              "texto": "Só quem nada",
+              "textoEn": "Only swimmers",
+              "certa": false
+            }
+          ]
+        },
+        {
+          "pergunta": "A Terra é um…",
+          "perguntaEn": "Earth is a…",
+          "opcoes": [
+            {
+              "texto": "Planeta",
+              "textoEn": "Planet",
+              "certa": true
+            },
+            {
+              "texto": "Sanduíche",
+              "textoEn": "Sandwich",
+              "certa": false
+            },
+            {
+              "texto": "Lápis",
+              "textoEn": "Pencil",
+              "certa": false
+            }
+          ]
+        },
+        {
+          "pergunta": "De dia vemos o…",
+          "perguntaEn": "In the day we see the…",
+          "opcoes": [
+            {
+              "texto": "Sol",
+              "textoEn": "Sun",
+              "certa": true
+            },
+            {
+              "texto": "Só a Lua sempre",
+              "textoEn": "Only the moon",
+              "certa": false
+            },
+            {
+              "texto": "Nada",
+              "textoEn": "Nothing",
+              "certa": false
+            }
+          ]
+        },
+        {
+          "pergunta": "Estrelas ficam…",
+          "perguntaEn": "Stars are…",
+          "opcoes": [
+            {
+              "texto": "Bem longe no espaço",
+              "textoEn": "Far away in space",
+              "certa": true
+            },
+            {
+              "texto": "Na geladeira",
+              "textoEn": "In the fridge",
+              "certa": false
+            },
+            {
+              "texto": "No chinelo",
+              "textoEn": "In the slipper",
+              "certa": false
+            }
+          ]
+        },
+        {
+          "pergunta": "O traje espacial…",
+          "perguntaEn": "The spacesuit…",
+          "opcoes": [
+            {
+              "texto": "Protege o astronauta",
+              "textoEn": "Protects the astronaut",
+              "certa": true
+            },
+            {
+              "texto": "É só enfeite",
+              "textoEn": "Is only decoration",
+              "certa": false
+            },
+            {
+              "texto": "Serve só pra nadar",
+              "textoEn": "Is only for swimming",
               "certa": false
             }
           ]
@@ -576,11 +809,11 @@
       "titulo": "Inglês: Hello!",
       "icone": "🌍",
       "tipo": "ingles",
-      "descricao": "Hello, please e thank you",
+      "descricao": "Hello, please, thank you",
       "perguntas": [
         {
-          "pergunta": "Como se diz OLÁ em inglês?",
-          "perguntaEn": "How do you say OLÁ in English?",
+          "pergunta": "OLÁ em inglês?",
+          "perguntaEn": "How do you say OLÁ?",
           "opcoes": [
             {
               "texto": "Hello",
@@ -600,18 +833,18 @@
           ]
         },
         {
-          "pergunta": "Como se diz POR FAVOR em inglês?",
+          "pergunta": "POR FAVOR em inglês?",
           "perguntaEn": "How do you say POR FAVOR?",
           "opcoes": [
-            {
-              "texto": "Thank you",
-              "textoEn": "Thank you",
-              "certa": false
-            },
             {
               "texto": "Please",
               "textoEn": "Please",
               "certa": true
+            },
+            {
+              "texto": "Thank you",
+              "textoEn": "Thank you",
+              "certa": false
             },
             {
               "texto": "Sorry",
@@ -621,18 +854,18 @@
           ]
         },
         {
-          "pergunta": "Como se diz OBRIGADO em inglês?",
+          "pergunta": "OBRIGADO em inglês?",
           "perguntaEn": "How do you say OBRIGADO?",
           "opcoes": [
-            {
-              "texto": "Hello",
-              "textoEn": "Hello",
-              "certa": false
-            },
             {
               "texto": "Thank you",
               "textoEn": "Thank you",
               "certa": true
+            },
+            {
+              "texto": "Hello",
+              "textoEn": "Hello",
+              "certa": false
             },
             {
               "texto": "Water",
@@ -642,7 +875,7 @@
           ]
         },
         {
-          "pergunta": "Como se diz TCHAU em inglês?",
+          "pergunta": "TCHAU em inglês?",
           "perguntaEn": "How do you say TCHAU?",
           "opcoes": [
             {
@@ -665,92 +898,113 @@
       ]
     },
     {
-      "id": "ingles-animais",
-      "titulo": "Inglês: Animals",
-      "icone": "🐾",
+      "id": "ingles-espaco",
+      "titulo": "Inglês: Space",
+      "icone": "🛸",
       "tipo": "ingles",
-      "descricao": "Cat, dog, bird e mais",
+      "descricao": "Star, moon, rocket, friend",
       "perguntas": [
         {
-          "pergunta": "Gato em inglês é…",
-          "perguntaEn": "Gato in English is…",
+          "pergunta": "Estrela em inglês?",
+          "perguntaEn": "Estrela in English?",
           "opcoes": [
             {
-              "texto": "Cat",
-              "textoEn": "Cat",
+              "texto": "Star",
+              "textoEn": "Star",
               "certa": true
             },
             {
-              "texto": "Dog",
-              "textoEn": "Dog",
+              "texto": "Car",
+              "textoEn": "Car",
               "certa": false
             },
             {
-              "texto": "Fish",
-              "textoEn": "Fish",
+              "texto": "Jar",
+              "textoEn": "Jar",
               "certa": false
             }
           ]
         },
         {
-          "pergunta": "Cachorro em inglês é…",
-          "perguntaEn": "Cachorro in English is…",
+          "pergunta": "Lua em inglês?",
+          "perguntaEn": "Lua in English?",
           "opcoes": [
             {
-              "texto": "Bird",
-              "textoEn": "Bird",
-              "certa": false
-            },
-            {
-              "texto": "Dog",
-              "textoEn": "Dog",
+              "texto": "Moon",
+              "textoEn": "Moon",
               "certa": true
             },
             {
-              "texto": "Cat",
-              "textoEn": "Cat",
+              "texto": "Spoon",
+              "textoEn": "Spoon",
+              "certa": false
+            },
+            {
+              "texto": "Book",
+              "textoEn": "Book",
               "certa": false
             }
           ]
         },
         {
-          "pergunta": "Pássaro em inglês é…",
-          "perguntaEn": "Pássaro in English is…",
+          "pergunta": "Foguete em inglês?",
+          "perguntaEn": "Foguete in English?",
           "opcoes": [
             {
-              "texto": "Bird",
-              "textoEn": "Bird",
+              "texto": "Rocket",
+              "textoEn": "Rocket",
               "certa": true
             },
             {
-              "texto": "Bee",
-              "textoEn": "Bee",
+              "texto": "Pocket",
+              "textoEn": "Pocket",
               "certa": false
             },
             {
-              "texto": "Bear",
-              "textoEn": "Bear",
+              "texto": "Ticket",
+              "textoEn": "Ticket",
               "certa": false
             }
           ]
         },
         {
-          "pergunta": "Peixe em inglês é…",
-          "perguntaEn": "Peixe in English is…",
+          "pergunta": "Amigo em inglês?",
+          "perguntaEn": "Amigo in English?",
           "opcoes": [
             {
-              "texto": "Frog",
-              "textoEn": "Frog",
-              "certa": false
-            },
-            {
-              "texto": "Fish",
-              "textoEn": "Fish",
+              "texto": "Friend",
+              "textoEn": "Friend",
               "certa": true
             },
             {
-              "texto": "Fox",
-              "textoEn": "Fox",
+              "texto": "Bread",
+              "textoEn": "Bread",
+              "certa": false
+            },
+            {
+              "texto": "End",
+              "textoEn": "End",
+              "certa": false
+            }
+          ]
+        },
+        {
+          "pergunta": "Como dizer 'eu gosto de você'?",
+          "perguntaEn": "How to say 'eu gosto de você'?",
+          "opcoes": [
+            {
+              "texto": "I like you",
+              "textoEn": "I like you",
+              "certa": true
+            },
+            {
+              "texto": "I am blue",
+              "textoEn": "I am blue",
+              "certa": false
+            },
+            {
+              "texto": "Go away",
+              "textoEn": "Go away",
               "certa": false
             }
           ]
@@ -758,92 +1012,92 @@
       ]
     },
     {
-      "id": "ingles-corpo",
-      "titulo": "Inglês: Body",
-      "icone": "🧍",
-      "tipo": "ingles",
-      "descricao": "Head, hands, feet…",
+      "id": "tech-basico",
+      "titulo": "Tecnologia: Sequências",
+      "icone": "🤖",
+      "tipo": "tech",
+      "descricao": "Ordem, robôs e passos",
       "perguntas": [
         {
-          "pergunta": "Cabeça em inglês é…",
-          "perguntaEn": "Cabeça in English is…",
+          "pergunta": "Um robô segue…",
+          "perguntaEn": "A robot follows…",
           "opcoes": [
             {
-              "texto": "Head",
-              "textoEn": "Head",
+              "texto": "Passos em ordem",
+              "textoEn": "Steps in order",
               "certa": true
             },
             {
-              "texto": "Hand",
-              "textoEn": "Hand",
+              "texto": "Nada nunca",
+              "textoEn": "Nothing ever",
               "certa": false
             },
             {
-              "texto": "Foot",
-              "textoEn": "Foot",
+              "texto": "Só bagunça",
+              "textoEn": "Only mess",
               "certa": false
             }
           ]
         },
         {
-          "pergunta": "Mão em inglês é…",
-          "perguntaEn": "Mão in English is…",
+          "pergunta": "Se o passo está errado, a gente…",
+          "perguntaEn": "If a step is wrong, we…",
           "opcoes": [
             {
-              "texto": "Nose",
-              "textoEn": "Nose",
-              "certa": false
-            },
-            {
-              "texto": "Hand",
-              "textoEn": "Hand",
+              "texto": "Corrige com carinho",
+              "textoEn": "Fix it kindly",
               "certa": true
             },
             {
-              "texto": "Eye",
-              "textoEn": "Eye",
+              "texto": "Desiste pra sempre",
+              "textoEn": "Give up forever",
+              "certa": false
+            },
+            {
+              "texto": "Grita com o robô",
+              "textoEn": "Yell at the robot",
               "certa": false
             }
           ]
         },
         {
-          "pergunta": "Pé em inglês é…",
-          "perguntaEn": "Pé in English is…",
+          "pergunta": "Programar aqui é…",
+          "perguntaEn": "Programming here is…",
           "opcoes": [
             {
-              "texto": "Foot",
-              "textoEn": "Foot",
+              "texto": "Dar uma sequência de ações",
+              "textoEn": "Giving a sequence of actions",
               "certa": true
             },
             {
-              "texto": "Face",
-              "textoEn": "Face",
+              "texto": "Comer pizza só",
+              "textoEn": "Only eating pizza",
               "certa": false
             },
             {
-              "texto": "Hair",
-              "textoEn": "Hair",
+              "texto": "Dormir o dia todo",
+              "textoEn": "Sleeping all day",
               "certa": false
             }
           ]
         },
         {
-          "pergunta": "Olho em inglês é…",
-          "perguntaEn": "Olho in English is…",
+          "pergunta": "Seta → geralmente significa…",
+          "perguntaEn": "Arrow → usually means…",
           "opcoes": [
             {
-              "texto": "Ear",
-              "textoEn": "Ear",
-              "certa": false
-            },
-            {
-              "texto": "Eye",
-              "textoEn": "Eye",
+              "texto": "Ir pra frente / próximo",
+              "textoEn": "Go forward / next",
               "certa": true
             },
             {
-              "texto": "Arm",
-              "textoEn": "Arm",
+              "texto": "Apagar o Sol",
+              "textoEn": "Delete the Sun",
+              "certa": false
+            },
+            {
+              "texto": "Fechar os olhos",
+              "textoEn": "Close your eyes",
               "certa": false
             }
           ]
@@ -851,92 +1105,92 @@
       ]
     },
     {
-      "id": "ingles-numeros",
-      "titulo": "Inglês: Numbers",
-      "icone": "🔟",
-      "tipo": "ingles",
-      "descricao": "One to ten",
+      "id": "gentileza",
+      "titulo": "Gentileza",
+      "icone": "💛",
+      "tipo": "gentileza",
+      "descricao": "Cuidar das pessoas",
       "perguntas": [
         {
-          "pergunta": "Como se diz 1 em inglês?",
-          "perguntaEn": "How do you say 1?",
+          "pergunta": "Amigo caiu. Você…",
+          "perguntaEn": "Friend fell. You…",
           "opcoes": [
             {
-              "texto": "One",
-              "textoEn": "One",
+              "texto": "Ajuda a levantar",
+              "textoEn": "Help them up",
               "certa": true
             },
             {
-              "texto": "Two",
-              "textoEn": "Two",
+              "texto": "Ri",
+              "textoEn": "Laugh",
               "certa": false
             },
             {
-              "texto": "Ten",
-              "textoEn": "Ten",
+              "texto": "Ignora",
+              "textoEn": "Ignore",
               "certa": false
             }
           ]
         },
         {
-          "pergunta": "Como se diz 3 em inglês?",
-          "perguntaEn": "How do you say 3?",
+          "pergunta": "Na fila, o certo é…",
+          "perguntaEn": "In a line you should…",
           "opcoes": [
             {
-              "texto": "Five",
-              "textoEn": "Five",
-              "certa": false
-            },
-            {
-              "texto": "Three",
-              "textoEn": "Three",
+              "texto": "Esperar a vez",
+              "textoEn": "Wait your turn",
               "certa": true
             },
             {
-              "texto": "Tree",
-              "textoEn": "Tree",
+              "texto": "Furá a fila",
+              "textoEn": "Cut the line",
+              "certa": false
+            },
+            {
+              "texto": "Empurrar",
+              "textoEn": "Push",
               "certa": false
             }
           ]
         },
         {
-          "pergunta": "Como se diz 5 em inglês?",
-          "perguntaEn": "How do you say 5?",
+          "pergunta": "Quando erra, você…",
+          "perguntaEn": "When you err, you…",
           "opcoes": [
             {
-              "texto": "Four",
-              "textoEn": "Four",
-              "certa": false
-            },
-            {
-              "texto": "Five",
-              "textoEn": "Five",
+              "texto": "Tenta de novo",
+              "textoEn": "Try again",
               "certa": true
             },
             {
-              "texto": "Nine",
-              "textoEn": "Nine",
+              "texto": "Desiste pra sempre",
+              "textoEn": "Quit forever",
+              "certa": false
+            },
+            {
+              "texto": "Zomba de si",
+              "textoEn": "Mock yourself",
               "certa": false
             }
           ]
         },
         {
-          "pergunta": "Como se diz 10 em inglês?",
-          "perguntaEn": "How do you say 10?",
+          "pergunta": "Emprestar um brinquedo…",
+          "perguntaEn": "Lending a toy…",
           "opcoes": [
             {
-              "texto": "Ten",
-              "textoEn": "Ten",
+              "texto": "É um ato gentil",
+              "textoEn": "Is kind",
               "certa": true
             },
             {
-              "texto": "Two",
-              "textoEn": "Two",
+              "texto": "É errado sempre",
+              "textoEn": "Is always wrong",
               "certa": false
             },
             {
-              "texto": "Seven",
-              "textoEn": "Seven",
+              "texto": "Só serve pra esconder",
+              "textoEn": "Only for hiding",
               "certa": false
             }
           ]
@@ -944,11 +1198,69 @@
       ]
     }
   ],
+  "stemAtividades": [
+    {
+      "id": "contar-objetos",
+      "titulo": "Contar estrelas",
+      "trilha": "matematica",
+      "icone": "⭐",
+      "desc": "Conte e toque no número"
+    },
+    {
+      "id": "mais-menos",
+      "titulo": "Mais ou menos",
+      "trilha": "matematica",
+      "icone": "⚖️",
+      "desc": "Compare quem tem mais"
+    },
+    {
+      "id": "padrao",
+      "titulo": "Complete o padrão",
+      "trilha": "matematica",
+      "icone": "🔁",
+      "desc": "O que vem depois?"
+    },
+    {
+      "id": "experimento",
+      "titulo": "Experimento seguro",
+      "trilha": "ciencia",
+      "icone": "🧪",
+      "desc": "Escolha o passo certo"
+    },
+    {
+      "id": "clima",
+      "titulo": "Clima do dia",
+      "trilha": "ciencia",
+      "icone": "⛅",
+      "desc": "Combine clima e ação"
+    },
+    {
+      "id": "dialogo-en",
+      "titulo": "Diálogo Hello",
+      "trilha": "ingles",
+      "icone": "💬",
+      "desc": "Responda em inglês"
+    },
+    {
+      "id": "programar",
+      "titulo": "Programar o robô",
+      "trilha": "tech",
+      "icone": "🤖",
+      "desc": "Monte a sequência de setas"
+    },
+    {
+      "id": "consertar",
+      "titulo": "Consertar os passos",
+      "trilha": "tech",
+      "icone": "🔧",
+      "desc": "Ache e corrija o erro"
+    }
+  ],
   "callResponse": [
     {
       "pt": "Hello!",
       "en": "Hello!",
-      "dica": "Repita com o amiguito: Hello!"
+      "dica": "Repita: Hello!"
     },
     {
       "pt": "Please!",
@@ -961,9 +1273,19 @@
       "dica": "Agora: Thank you!"
     },
     {
+      "pt": "I like you!",
+      "en": "I like you!",
+      "dica": "Com carinho: I like you!"
+    },
+    {
       "pt": "Bye bye!",
       "en": "Bye bye!",
-      "dica": "Wave and say: Bye bye!"
+      "dica": "Acene: Bye bye!"
+    },
+    {
+      "pt": "Star!",
+      "en": "Star!",
+      "dica": "Aponte pra cima: Star!"
     }
   ],
   "yoga": [
@@ -972,196 +1294,297 @@
       "nome": "Pose do Gato",
       "emoji": "🐱",
       "segundos": 12,
-      "instrucao": "Fique de quatro. Arredonde as costas pra cima, como um gatinho alongando. Respira bem devagar.",
-      "aviso": "Brincadeira suave — pare se sentir desconforto. Não é orientação médica."
+      "instrucao": "De quatro, arredonde as costas como um gatinho. Respira devagar."
     },
     {
       "id": "cachorro",
-      "nome": "Cachorrinho olhando pra baixo",
+      "nome": "Cachorrinho",
       "emoji": "🐶",
       "segundos": 14,
-      "instrucao": "Mãos e pés no chão, bumbum pra cima, formando um V invertido. Olhe pras perninhas."
+      "instrucao": "Mãos e pés no chão, bumbum pra cima (V invertido)."
     },
     {
       "id": "arvore",
-      "nome": "Pose da Árvore",
+      "nome": "Árvore",
       "emoji": "🌳",
       "segundos": 12,
-      "instrucao": "Em pé, apoie um pé na panturrilha (não no joelho). Braços pra cima como galhos. Equilibre com carinho."
+      "instrucao": "Em pé, um pé na panturrilha (não no joelho). Braços pra cima."
     },
     {
       "id": "borboleta",
-      "nome": "Pose da Borboleta",
+      "nome": "Borboleta",
       "emoji": "🦋",
       "segundos": 15,
-      "instrucao": "Sentadinha, juntas as solinhas dos pés. Mexa os joelhos pra cima e pra baixo, batendo as asinhas."
+      "instrucao": "Sentada, solinhas juntas. Bata os joelhos como asinhas."
     },
     {
       "id": "estrela",
-      "nome": "Pose da Estrela",
+      "nome": "Estrela",
       "emoji": "⭐",
       "segundos": 12,
-      "instrucao": "Em pé, abra pernas e braços bem largos. Você é uma estrela brilhante!"
+      "instrucao": "Pernas e braços bem abertos. Você é uma estrela!"
     },
     {
       "id": "crianca",
-      "nome": "Pose da Criancinha",
+      "nome": "Criancinha",
       "emoji": "🛌",
       "segundos": 16,
-      "instrucao": "Ajoelhe, sente nos calcanhares, braços pra frente e testa no chão. Descanse como um filhotinho."
+      "instrucao": "Ajoelhe, braços pra frente, testa no chão. Descanse."
     },
     {
       "id": "cobra",
-      "nome": "Pose da Cobrinha",
+      "nome": "Cobrinha",
       "emoji": "🐍",
       "segundos": 12,
-      "instrucao": "De barriga no chão, mãos perto dos ombros. Empurre suavemente o peito pra cima. Ssssuave!"
+      "instrucao": "Barriga no chão, empurre o peito suavemente pra cima."
     },
     {
       "id": "montanha",
-      "nome": "Pose da Montanha",
+      "nome": "Montanha",
       "emoji": "⛰️",
       "segundos": 10,
-      "instrucao": "Em pé, pés juntos, braços ao lado. Cresça bem altinha e respire como uma montanha calma."
+      "instrucao": "Em pé, bem altinha. Respire como uma montanha calma."
     }
   ],
   "roteiros": [
     {
-      "id": "cores-exploradora",
-      "titulo": "Exploradora das Cores",
-      "icone": "🌈",
-      "cor": "bg-rosa",
-      "desc": "5 passos coloridos pra olhos curiosos",
+      "id": "math-missao",
+      "titulo": "Missão Matemática",
+      "icone": "🧮",
+      "cor": "bg-ceu",
+      "desc": "Contar, comparar e padrões",
       "passos": [
         {
-          "id": "c1",
-          "titulo": "Toque no azul",
-          "tipo": "licao",
-          "ref": "cores",
+          "id": "m1",
+          "titulo": "Contar estrelas",
+          "tipo": "stem",
+          "ref": "contar-objetos",
           "estrelas": 1
         },
         {
-          "id": "c2",
-          "titulo": "Estoure bolhas",
+          "id": "m2",
+          "titulo": "Números 1–10",
+          "tipo": "licao",
+          "ref": "numeros",
+          "estrelas": 2
+        },
+        {
+          "id": "m3",
+          "titulo": "Mais ou menos",
+          "tipo": "stem",
+          "ref": "mais-menos",
+          "estrelas": 1
+        },
+        {
+          "id": "m4",
+          "titulo": "Matemática Pro",
+          "tipo": "licao",
+          "ref": "math-avancada",
+          "estrelas": 2
+        },
+        {
+          "id": "m5",
+          "titulo": "Padrão secreto",
+          "tipo": "stem",
+          "ref": "padrao",
+          "estrelas": 2
+        },
+        {
+          "id": "m6",
+          "titulo": "Desafio math",
+          "tipo": "desafio",
+          "ref": "math-avancada",
+          "estrelas": 2
+        }
+      ]
+    },
+    {
+      "id": "ciencia-missao",
+      "titulo": "Missão Ciência",
+      "icone": "🔬",
+      "cor": "bg-menta",
+      "desc": "Natureza, clima e espaço",
+      "passos": [
+        {
+          "id": "s1",
+          "titulo": "Natureza",
+          "tipo": "licao",
+          "ref": "ciencia-natureza",
+          "estrelas": 2
+        },
+        {
+          "id": "s2",
+          "titulo": "Clima do dia",
+          "tipo": "stem",
+          "ref": "clima",
+          "estrelas": 1
+        },
+        {
+          "id": "s3",
+          "titulo": "Experimento",
+          "tipo": "stem",
+          "ref": "experimento",
+          "estrelas": 2
+        },
+        {
+          "id": "s4",
+          "titulo": "Ciência espacial",
+          "tipo": "licao",
+          "ref": "ciencia-espaco",
+          "estrelas": 2
+        },
+        {
+          "id": "s5",
+          "titulo": "Estrelas e bolhas",
           "tipo": "jogo",
           "ref": "bolhas",
           "estrelas": 1
         },
         {
-          "id": "c3",
-          "titulo": "Lição de cores",
-          "tipo": "licao",
-          "ref": "cores",
-          "estrelas": 2
-        },
-        {
-          "id": "c4",
-          "titulo": "Vista uma flor",
-          "tipo": "jogo",
-          "ref": "fantasia",
-          "estrelas": 1
-        },
-        {
-          "id": "c5",
-          "titulo": "Desafio rápido",
+          "id": "s6",
+          "titulo": "Desafio ciência",
           "tipo": "desafio",
-          "ref": "cores",
+          "ref": "ciencia-espaco",
           "estrelas": 2
         }
       ]
     },
     {
-      "id": "numeros-ninjas",
-      "titulo": "Números Ninjas",
-      "icone": "🥷",
-      "cor": "bg-ceu",
-      "desc": "Contar, lembrar e se divertir",
-      "passos": [
-        {
-          "id": "n1",
-          "titulo": "Conte até 5",
-          "tipo": "missao",
-          "ref": "missao-contar",
-          "estrelas": 1
-        },
-        {
-          "id": "n2",
-          "titulo": "Lição de números",
-          "tipo": "licao",
-          "ref": "numeros",
-          "estrelas": 2
-        },
-        {
-          "id": "n3",
-          "titulo": "Memória mágica",
-          "tipo": "jogo",
-          "ref": "memoria",
-          "estrelas": 1
-        },
-        {
-          "id": "n4",
-          "titulo": "Inglês: Numbers",
-          "tipo": "licao",
-          "ref": "ingles-numeros",
-          "estrelas": 2
-        },
-        {
-          "id": "n5",
-          "titulo": "Desafio ninja",
-          "tipo": "desafio",
-          "ref": "numeros",
-          "estrelas": 2
-        }
-      ]
-    },
-    {
-      "id": "ingles-amiguito",
-      "titulo": "Inglês com Amiguito",
+      "id": "ingles-missao",
+      "titulo": "Missão Inglês",
       "icone": "🌍",
       "cor": "bg-lavanda",
-      "desc": "Hello, animals e um cantinho de resposta",
+      "desc": "Hello, space words e diálogo",
       "passos": [
         {
           "id": "i1",
-          "titulo": "Hello & thank you",
+          "titulo": "Hello!",
           "tipo": "licao",
           "ref": "ingles-basico",
           "estrelas": 2
         },
         {
           "id": "i2",
-          "titulo": "Cantinho Hello!",
+          "titulo": "Cantinho Hello",
           "tipo": "canto",
           "ref": "callResponse",
           "estrelas": 1
         },
         {
           "id": "i3",
-          "titulo": "Animals",
+          "titulo": "Space words",
           "tipo": "licao",
-          "ref": "ingles-animais",
+          "ref": "ingles-espaco",
           "estrelas": 2
         },
         {
           "id": "i4",
-          "titulo": "Body parts",
-          "tipo": "licao",
-          "ref": "ingles-corpo",
+          "titulo": "Diálogo",
+          "tipo": "stem",
+          "ref": "dialogo-en",
           "estrelas": 2
         },
         {
           "id": "i5",
-          "titulo": "Numbers in English",
+          "titulo": "Desafio bilingual",
+          "tipo": "desafio",
+          "ref": "ingles-espaco",
+          "estrelas": 2
+        }
+      ]
+    },
+    {
+      "id": "tech-missao",
+      "titulo": "Missão Tecnologia",
+      "icone": "🤖",
+      "cor": "bg-espaco",
+      "desc": "Programar e consertar",
+      "passos": [
+        {
+          "id": "t1",
+          "titulo": "O que é sequência?",
           "tipo": "licao",
-          "ref": "ingles-numeros",
+          "ref": "tech-basico",
           "estrelas": 2
         },
         {
-          "id": "i6",
-          "titulo": "Desafio bilingual",
-          "tipo": "desafio",
-          "ref": "ingles-basico",
+          "id": "t2",
+          "titulo": "Programar o robô",
+          "tipo": "stem",
+          "ref": "programar",
           "estrelas": 2
+        },
+        {
+          "id": "t3",
+          "titulo": "Batida do foguete",
+          "tipo": "jogo",
+          "ref": "danca",
+          "estrelas": 1
+        },
+        {
+          "id": "t4",
+          "titulo": "Consertar passos",
+          "tipo": "stem",
+          "ref": "consertar",
+          "estrelas": 2
+        },
+        {
+          "id": "t5",
+          "titulo": "Desafio tech",
+          "tipo": "desafio",
+          "ref": "tech-basico",
+          "estrelas": 2
+        }
+      ]
+    },
+    {
+      "id": "astronauta-dia",
+      "titulo": "Dia da Astronauta",
+      "icone": "👩‍🚀",
+      "cor": "bg-sol",
+      "desc": "Mix especial com a guia",
+      "passos": [
+        {
+          "id": "a1",
+          "titulo": "Carinho na base",
+          "tipo": "cuidado",
+          "ref": "carinho",
+          "estrelas": 1
+        },
+        {
+          "id": "a2",
+          "titulo": "Ciência espacial",
+          "tipo": "licao",
+          "ref": "ciencia-espaco",
+          "estrelas": 2
+        },
+        {
+          "id": "a3",
+          "titulo": "Contar estrelas",
+          "tipo": "stem",
+          "ref": "contar-objetos",
+          "estrelas": 1
+        },
+        {
+          "id": "a4",
+          "titulo": "Pose estrela",
+          "tipo": "yoga",
+          "ref": "estrela",
+          "estrelas": 1
+        },
+        {
+          "id": "a5",
+          "titulo": "Programar",
+          "tipo": "stem",
+          "ref": "programar",
+          "estrelas": 2
+        },
+        {
+          "id": "a6",
+          "titulo": "Traje espacial",
+          "tipo": "jogo",
+          "ref": "fantasia",
+          "estrelas": 1
         }
       ]
     },
@@ -1170,7 +1593,7 @@
       "titulo": "Yoga Suave",
       "icone": "🧘",
       "cor": "bg-menta",
-      "desc": "Alongar, respirar e se acalmar",
+      "desc": "Alongar e respirar",
       "passos": [
         {
           "id": "y1",
@@ -1215,131 +1638,80 @@
           "estrelas": 1
         }
       ]
-    },
-    {
-      "id": "desafio-dia",
-      "titulo": "Desafio do Dia",
-      "icone": "⭐",
-      "cor": "bg-sol",
-      "desc": "Um mix curtinho pra mentes afiadas",
-      "passos": [
-        {
-          "id": "d1",
-          "titulo": "Cuidar do amiguito",
-          "tipo": "cuidado",
-          "ref": "carinho",
-          "estrelas": 1
-        },
-        {
-          "id": "d2",
-          "titulo": "Estoura bolhas",
-          "tipo": "jogo",
-          "ref": "bolhas",
-          "estrelas": 1
-        },
-        {
-          "id": "d3",
-          "titulo": "Uma lição",
-          "tipo": "licao",
-          "ref": "gentileza",
-          "estrelas": 2
-        },
-        {
-          "id": "d4",
-          "titulo": "Uma pose de yoga",
-          "tipo": "yoga",
-          "ref": "estrela",
-          "estrelas": 1
-        },
-        {
-          "id": "d5",
-          "titulo": "Missão surpresa",
-          "tipo": "missao",
-          "ref": "missao-sorriso",
-          "estrelas": 1
-        },
-        {
-          "id": "d6",
-          "titulo": "Desafio final",
-          "tipo": "desafio",
-          "ref": "cores",
-          "estrelas": 2
-        }
-      ]
     }
   ],
   "missoes": [
     {
       "id": "missao-cor",
       "titulo": "Caça à cor",
-      "texto": "Ache algo AZUL na sua casa e me conte!",
+      "texto": "Ache algo AZUL na sua casa!",
       "emoji": "🔵",
-      "tipo": "observar",
-      "recompensa": "adesivo-azul"
+      "tipo": "observar"
+    },
+    {
+      "id": "missao-estrela",
+      "titulo": "Desenhe uma estrela",
+      "texto": "No ar com o dedo, desenhe uma estrela ⭐",
+      "emoji": "⭐",
+      "tipo": "espaco"
     },
     {
       "id": "missao-abreco",
       "titulo": "Abraço surpresa",
-      "texto": "Dê um abraço em alguém da família e diga: Eu gosto de você!",
+      "texto": "Dê um abraço e diga: Eu gosto de você!",
       "emoji": "🤗",
-      "tipo": "gentileza",
-      "recompensa": "adesivo-coracao"
+      "tipo": "gentileza"
     },
     {
       "id": "missao-contar",
-      "titulo": "Conte até 5",
-      "texto": "Conte em voz alta até 5, batendo palminhas.",
+      "titulo": "Conte até 10",
+      "texto": "Conte até 10 batendo palminhas.",
       "emoji": "👏",
-      "tipo": "numeros",
-      "recompensa": "adesivo-estrela"
+      "tipo": "numeros"
     },
     {
       "id": "missao-agua",
       "titulo": "Beber água",
-      "texto": "Beba um gole d'água agora. Cuidar do corpo também é carinho!",
+      "texto": "Um gole d'água agora!",
       "emoji": "💧",
-      "tipo": "cuidado",
-      "recompensa": "adesivo-gota"
+      "tipo": "cuidado"
     },
     {
-      "id": "missao-sorriso",
-      "titulo": "Sorriso poderoso",
-      "texto": "Faça a maior cara feliz no espelho!",
-      "emoji": "😄",
-      "tipo": "humor",
-      "recompensa": "adesivo-sol"
-    },
-    {
-      "id": "missao-organizar",
-      "titulo": "Um brinquedo no lugar",
-      "texto": "Guarde um brinquedo que estiver fora do lugar.",
-      "emoji": "🧸",
-      "tipo": "responsabilidade",
-      "recompensa": "adesivo-casa"
+      "id": "missao-hello",
+      "titulo": "Say Hello",
+      "texto": "Diga Hello! bem alto pra alguém.",
+      "emoji": "👋",
+      "tipo": "ingles"
     }
   ],
   "dicas": [
-    "Beber água deixa o cérebro mais esperto!",
-    "Errar faz parte de aprender — tente de novo com carinho.",
-    "Um 'por favor' e um 'obrigado' abrem muitos sorrisos.",
-    "Dormir bem ajuda a crescer e a sonhar!",
-    "Compartilhar um brinquedo é um superpoder.",
-    "Quando estiver triste, respire fundo três vezes.",
-    "Mover o corpinho — pular, dançar, caminhar — dá energia!",
-    "Hello! Please! Thank you! — três palavrinhas mágicas.",
+    "Astronautas também bebem água e descansam!",
+    "Errar faz parte de aprender — tente de novo.",
+    "Hello! Please! Thank you! — palavrinhas mágicas.",
+    "Um padrão é quando algo se repete com ordem.",
+    "Programar é dar passos claros, um depois do outro.",
+    "No espaço imaginário a gente viaja com a mente!",
+    "Contar com os dedos é uma ferramenta poderosa.",
     "Cuidar de um amigo ensina responsabilidade.",
-    "Sorrir pra alguém pode alegrar o dia inteiro dela."
+    "Respire fundo três vezes quando precisar de calma.",
+    "Você é inteligente E carinhosa — os dois juntos!"
   ],
   "trofeus": [
     {
       "id": "primeiro-amigo",
-      "nome": "Primeiro amigo",
-      "desc": "Escolheu seu amiguito",
-      "icone": "🐾"
+      "nome": "Primeira tripulação",
+      "desc": "Escolheu um amiguinho",
+      "icone": "🚀"
+    },
+    {
+      "id": "nomeada",
+      "nome": "Batismo espacial",
+      "desc": "Deu um nome",
+      "icone": "✍️"
     },
     {
       "id": "cuidador",
-      "nome": "Cuidadora",
+      "nome": "Cuidadora da base",
       "desc": "Cuidou 10 vezes",
       "icone": "💝"
     },
@@ -1352,68 +1724,86 @@
     {
       "id": "sabia",
       "nome": "Sabichona",
-      "desc": "Completou 4 lições",
+      "desc": "4 lições",
       "icone": "🧠"
     },
     {
       "id": "bilingue",
       "nome": "Bilingue",
-      "desc": "Fez uma lição de inglês",
+      "desc": "Lição de inglês",
       "icone": "🌍"
     },
     {
-      "id": "missao-feita",
-      "nome": "Aventureira",
-      "desc": "Fez uma missão",
-      "icone": "⭐"
+      "id": "cientista",
+      "nome": "Cientista mirim",
+      "desc": "Lição de ciência",
+      "icone": "🔬"
     },
     {
-      "id": "missao-mestre",
-      "nome": "Mestre das missões",
-      "desc": "Fez 5 missões",
-      "icone": "🏅"
+      "id": "matematica",
+      "nome": "Mente math",
+      "desc": "Matemática Pro",
+      "icone": "🧮"
     },
     {
-      "id": "coracao-cheio",
-      "nome": "Coração cheio",
-      "desc": "Carinho no máximo",
-      "icone": "💗"
-    },
-    {
-      "id": "nivel-5",
-      "nome": "Nível 5",
-      "desc": "Chegou ao nível 5",
-      "icone": "🌈"
+      "id": "programadora",
+      "nome": "Programadora",
+      "desc": "Atividade de tech",
+      "icone": "🤖"
     },
     {
       "id": "jogadora",
       "nome": "Jogadora Pro",
-      "desc": "Jogou 3 minigames",
+      "desc": "3 minigames",
       "icone": "🎮"
     },
     {
       "id": "yogi",
       "nome": "Yogi mirim",
-      "desc": "Fez 3 poses de yoga",
+      "desc": "3 poses",
       "icone": "🧘"
     },
     {
       "id": "roteiro",
-      "nome": "Exploradora",
-      "desc": "Completou um roteiro",
+      "nome": "Comandante",
+      "desc": "Roteiro completo",
       "icone": "🗺️"
     },
     {
+      "id": "missao-feita",
+      "nome": "Aventureira",
+      "desc": "Uma missão",
+      "icone": "⭐"
+    },
+    {
+      "id": "missao-mestre",
+      "nome": "Mestre",
+      "desc": "5 missões",
+      "icone": "🏅"
+    },
+    {
+      "id": "coracao-cheio",
+      "nome": "Coração cheio",
+      "desc": "Carinho no máx.",
+      "icone": "💗"
+    },
+    {
+      "id": "nivel-5",
+      "nome": "Nível 5",
+      "desc": "Chegou ao 5",
+      "icone": "🌈"
+    },
+    {
       "id": "streak-3",
-      "nome": "3 dias seguidos",
-      "desc": "Veio brincar 3 dias",
+      "nome": "3 dias",
+      "desc": "Veio 3 dias",
       "icone": "🔥"
     },
     {
-      "id": "nomeada",
-      "nome": "Batismo",
-      "desc": "Deu um nome ao amiguito",
-      "icone": "✍️"
+      "id": "astronauta",
+      "nome": "Joinha espacial",
+      "desc": "Missão com a astronauta",
+      "icone": "👩‍🚀"
     }
   ],
   "respostasCerto": [
@@ -1421,34 +1811,34 @@
     "Mandou bem demais!",
     "Uau! Que orgulho!",
     "Perfeito! Continua assim!",
-    "Você é uma estrela!"
+    "Você é uma estrela!",
+    "3… 2… 1… Sucesso!"
   ],
   "respostasErrado": [
-    "Quase! Tenta de novo, você consegue!",
-    "Hmm, não foi essa… mas errar é aprender!",
-    "Ops! Olha com carinho e tenta outra vez.",
-    "Não desiste! Eu acredito em você!"
+    "Quase! Tenta de novo!",
+    "Errar é aprender — vamos lá!",
+    "Ops! Olha com carinho outra vez.",
+    "Eu acredito em você!"
   ],
   "falasCuidado": {
-    "alimentar": [
-      "Nhoc nhoc! Que delícia!",
-      "Obrigada! Barriguinha feliz!",
-      "Isso era exatamente o que eu queria!"
-    ],
     "brincar": [
       "Hihi! Que diversão!",
       "De novo! De novo!",
-      "Você é a melhor parceira de brincadeira!"
+      "Melhor parceira de missão!"
     ],
     "dormir": [
-      "Zzz… sonhando com você…",
+      "Zzz… sonhando com estrelas…",
       "Que soninho gostoso…",
-      "Acordei renovada! Obrigada!"
+      "Recarregada! Obrigada!"
     ],
     "carinho": [
       "Meu coração ficou quentinho!",
-      "Mais um pouquinho? Obrigada!",
+      "High-five espacial!",
       "Que abraço bom!"
+    ],
+    "diversao": [
+      "Isso anima a base inteira!",
+      "Missão diversão: sucesso!"
     ]
   }
 }

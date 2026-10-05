@@ -1,105 +1,107 @@
-/* SVG expressivos + quarto + partículas */
+/* Amiguinhos SVG (crianças) · Rumi Zoe Mira Emily Léozinho */
 (function (global) {
   function olhos(humor, cx1, cx2, cy) {
     if (humor === "dormindo") {
-      return `<path class="olho" d="M${cx1-6} ${cy} Q${cx1} ${cy-4} ${cx1+6} ${cy}" stroke="#2A2F33" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-        <path d="M${cx2-6} ${cy} Q${cx2} ${cy-4} ${cx2+6} ${cy}" stroke="#2A2F33" stroke-width="2.8" fill="none" stroke-linecap="round"/>`;
+      return `<path d="M${cx1-7} ${cy} Q${cx1} ${cy-5} ${cx1+7} ${cy}" stroke="#2A2F33" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <path d="M${cx2-7} ${cy} Q${cx2} ${cy-5} ${cx2+7} ${cy}" stroke="#2A2F33" stroke-width="2.6" fill="none" stroke-linecap="round"/>`;
     }
     if (humor === "triste") {
-      return `<g class="olho-pisca"><ellipse cx="${cx1}" cy="${cy+2}" rx="6.5" ry="7.5" fill="#2A2F33"/><circle cx="${cx1+2}" cy="${cy}" r="2.2" fill="#fff"/></g>
-        <g class="olho-pisca"><ellipse cx="${cx2}" cy="${cy+2}" rx="6.5" ry="7.5" fill="#2A2F33"/><circle cx="${cx2+2}" cy="${cy}" r="2.2" fill="#fff"/></g>
-        <path d="M${cx1+4} ${cy+22} Q${(cx1+cx2)/2} ${cy+16} ${cx2-4} ${cy+22}" stroke="#2A2F33" stroke-width="2.6" fill="none" stroke-linecap="round"/>`;
+      return `<g class="olho-pisca"><ellipse cx="${cx1}" cy="${cy+1}" rx="6" ry="7" fill="#2A2F33"/><circle cx="${cx1+2}" cy="${cy-1}" r="2" fill="#fff"/></g>
+        <g class="olho-pisca"><ellipse cx="${cx2}" cy="${cy+1}" rx="6" ry="7" fill="#2A2F33"/><circle cx="${cx2+2}" cy="${cy-1}" r="2" fill="#fff"/></g>
+        <path d="M${cx1+3} ${cy+20} Q${(cx1+cx2)/2} ${cy+14} ${cx2-3} ${cy+20}" stroke="#2A2F33" stroke-width="2.4" fill="none" stroke-linecap="round"/>`;
     }
-    if (humor === "empolgado") {
-      return `<g class="olho-pisca"><ellipse cx="${cx1}" cy="${cy}" rx="7.5" ry="9" fill="#2A2F33"/><circle cx="${cx1+2.5}" cy="${cy-2}" r="2.8" fill="#fff"/><circle cx="${cx1-2}" cy="${cy+2}" r="1.2" fill="#fff"/></g>
-        <g class="olho-pisca"><ellipse cx="${cx2}" cy="${cy}" rx="7.5" ry="9" fill="#2A2F33"/><circle cx="${cx2+2.5}" cy="${cy-2}" r="2.8" fill="#fff"/><circle cx="${cx2-2}" cy="${cy+2}" r="1.2" fill="#fff"/></g>
-        <path d="M${cx1+2} ${cy+20} Q${(cx1+cx2)/2} ${cy+32} ${cx2-2} ${cy+20}" stroke="#2A2F33" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-        <path d="M${cx1-10} ${cy-14} Q${cx1-4} ${cy-20} ${cx1+2} ${cy-14}" stroke="#2A2F33" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-        <path d="M${cx2-2} ${cy-14} Q${cx2+4} ${cy-20} ${cx2+10} ${cy-14}" stroke="#2A2F33" stroke-width="2.2" fill="none" stroke-linecap="round"/>`;
-    }
-    // feliz / neutro — olhos grandes
-    const boca = humor === "feliz"
-      ? `<path d="M${cx1+2} ${cy+18} Q${(cx1+cx2)/2} ${cy+30} ${cx2-2} ${cy+18}" stroke="#2A2F33" stroke-width="2.8" fill="none" stroke-linecap="round"/>`
-      : `<path d="M${cx1+6} ${cy+20} Q${(cx1+cx2)/2} ${cy+24} ${cx2-6} ${cy+20}" stroke="#2A2F33" stroke-width="2.5" fill="none" stroke-linecap="round"/>`;
-    return `<g class="olho-pisca"><ellipse cx="${cx1}" cy="${cy}" rx="7" ry="8.5" fill="#2A2F33"/><circle cx="${cx1+2.2}" cy="${cy-2}" r="2.6" fill="#fff"/><circle cx="${cx1-1.5}" cy="${cy+2}" r="1.1" fill="#fff"/></g>
-      <g class="olho-pisca"><ellipse cx="${cx2}" cy="${cy}" rx="7" ry="8.5" fill="#2A2F33"/><circle cx="${cx2+2.2}" cy="${cy-2}" r="2.6" fill="#fff"/><circle cx="${cx2-1.5}" cy="${cy+2}" r="1.1" fill="#fff"/></g>
+    const boca = (humor === "feliz" || humor === "empolgado")
+      ? `<path d="M${cx1+2} ${cy+16} Q${(cx1+cx2)/2} ${cy+28} ${cx2-2} ${cy+16}" stroke="#2A2F33" stroke-width="2.6" fill="none" stroke-linecap="round"/>`
+      : `<path d="M${cx1+5} ${cy+18} Q${(cx1+cx2)/2} ${cy+22} ${cx2-5} ${cy+18}" stroke="#2A2F33" stroke-width="2.4" fill="none" stroke-linecap="round"/>`;
+    const brow = humor === "empolgado"
+      ? `<path d="M${cx1-8} ${cy-12} Q${cx1} ${cy-18} ${cx1+8} ${cy-12}" stroke="#2A2F33" stroke-width="2" fill="none"/>
+         <path d="M${cx2-8} ${cy-12} Q${cx2} ${cy-18} ${cx2+8} ${cy-12}" stroke="#2A2F33" stroke-width="2" fill="none"/>` : "";
+    return `${brow}
+      <g class="olho-pisca"><ellipse cx="${cx1}" cy="${cy}" rx="6.5" ry="8" fill="#2A2F33"/><circle cx="${cx1+2}" cy="${cy-2}" r="2.4" fill="#fff"/><circle cx="${cx1-1.5}" cy="${cy+2}" r="1" fill="#fff"/></g>
+      <g class="olho-pisca"><ellipse cx="${cx2}" cy="${cy}" rx="6.5" ry="8" fill="#2A2F33"/><circle cx="${cx2+2}" cy="${cy-2}" r="2.4" fill="#fff"/><circle cx="${cx2-1.5}" cy="${cy+2}" r="1" fill="#fff"/></g>
       ${boca}`;
   }
 
-  function acessoriosSvg(ids) {
+  function accSvg(ids) {
     if (!ids || !ids.length) return "";
     let s = "";
-    if (ids.includes("coroa")) s += `<g transform="translate(32,2)"><text font-size="28">👑</text></g>`;
-    if (ids.includes("chapeu")) s += `<g transform="translate(30,0)"><text font-size="26">🎩</text></g>`;
-    if (ids.includes("oculos")) s += `<g transform="translate(26,34)"><text font-size="28">👓</text></g>`;
-    if (ids.includes("laco")) s += `<g transform="translate(58,8)"><text font-size="22">🎀</text></g>`;
-    if (ids.includes("flor")) s += `<g transform="translate(12,18)"><text font-size="20">🌸</text></g>`;
-    if (ids.includes("cachecol")) s += `<g transform="translate(34,68)"><text font-size="22">🧣</text></g>`;
+    if (ids.includes("coroa")) s += `<text x="36" y="14" font-size="22">👑</text>`;
+    if (ids.includes("capacete")) s += `<text x="32" y="18" font-size="24">👨‍🚀</text>`;
+    if (ids.includes("oculos")) s += `<text x="28" y="42" font-size="26">🕶️</text>`;
+    if (ids.includes("laco")) s += `<text x="62" y="20" font-size="18">🎀</text>`;
+    if (ids.includes("estrela")) s += `<text x="10" y="28" font-size="18">⭐</text>`;
+    if (ids.includes("foguete")) s += `<text x="68" y="78" font-size="18">🚀</text>`;
     return s;
   }
 
-  function svgLuna(humor, acc) {
-    const zz = humor === "dormindo" ? `<text x="74" y="26" font-size="14" fill="#9B84C7" font-weight="700">z</text><text x="84" y="16" font-size="10" fill="#9B84C7">z</text>` : "";
-    return `<svg class="pet-svg" viewBox="0 0 100 100" role="img" aria-label="Luna, a gatinha">
-      <ellipse cx="50" cy="93" rx="30" ry="5" fill="rgba(0,0,0,0.08)"/>
-      <ellipse cx="50" cy="60" rx="34" ry="30" fill="#FFB4C8"/>
-      <circle cx="50" cy="40" r="28" fill="#FFC8D8"/>
-      <path d="M26 26 L18 4 L40 20 Z" fill="#FFB4C8"/><path d="M74 26 L82 4 L60 20 Z" fill="#FFB4C8"/>
-      <path d="M28 24 L24 10 L38 20 Z" fill="#FFE0EC"/><path d="M72 24 L76 10 L62 20 Z" fill="#FFE0EC"/>
-      ${olhos(humor, 36, 64, 40)}
-      ${humor !== "triste" && humor !== "dormindo" ? "" : ""}
-      <ellipse cx="50" cy="52" rx="4.5" ry="3.2" fill="#E8799A"/>
-      <line x1="50" y1="55" x2="50" y2="59" stroke="#E8799A" stroke-width="1.6"/>
-      <line x1="50" y1="57" x2="38" y2="62" stroke="#2A2F33" stroke-width="1.3" stroke-linecap="round"/>
-      <line x1="50" y1="57" x2="62" y2="62" stroke="#2A2F33" stroke-width="1.3" stroke-linecap="round"/>
-      <ellipse cx="20" cy="48" rx="6" ry="4.5" fill="#FF9EBA" opacity="0.55"/>
-      <ellipse cx="80" cy="48" rx="6" ry="4.5" fill="#FF9EBA" opacity="0.55"/>
-      ${zz}${acessoriosSvg(acc)}
+  function kidBase(opts) {
+    const { humor, cabelo, pele, camiseta, cabeloPath, shortHair, zz, acc } = opts;
+    return `<svg class="pet-svg" viewBox="0 0 100 100" role="img" aria-label="${opts.label}">
+      <ellipse cx="50" cy="94" rx="28" ry="4" fill="rgba(0,0,0,0.08)"/>
+      <ellipse cx="50" cy="72" rx="24" ry="20" fill="${camiseta}"/>
+      <circle cx="50" cy="42" r="24" fill="${pele}"/>
+      ${cabeloPath}
+      ${olhos(humor, 40, 60, 42)}
+      <ellipse cx="32" cy="48" rx="4" ry="3" fill="#F5A9A9" opacity="0.45"/>
+      <ellipse cx="68" cy="48" rx="4" ry="3" fill="#F5A9A9" opacity="0.45"/>
+      ${zz || ""}${accSvg(acc)}
     </svg>`;
   }
 
-  function svgPipoca(humor, acc) {
-    const zz = humor === "dormindo" ? `<text x="74" y="26" font-size="14" fill="#9B84C7" font-weight="700">z</text>` : "";
-    return `<svg class="pet-svg" viewBox="0 0 100 100" role="img" aria-label="Pipoca, o cachorrinho">
-      <ellipse cx="50" cy="93" rx="30" ry="5" fill="rgba(0,0,0,0.08)"/>
-      <ellipse cx="50" cy="62" rx="32" ry="28" fill="#FFD07A"/>
-      <circle cx="50" cy="40" r="27" fill="#FFE0A0"/>
-      <ellipse cx="20" cy="36" rx="11" ry="16" fill="#E8A84A"/><ellipse cx="80" cy="36" rx="11" ry="16" fill="#E8A84A"/>
-      <ellipse cx="20" cy="38" rx="6.5" ry="10" fill="#FFE0A0"/><ellipse cx="80" cy="38" rx="6.5" ry="10" fill="#FFE0A0"/>
-      ${olhos(humor, 37, 63, 40)}
-      <ellipse cx="50" cy="52" rx="8" ry="5.5" fill="#3D2914"/>
-      <circle cx="47" cy="50.5" r="1.6" fill="#fff" opacity="0.55"/>
-      <path d="M78 70 Q92 55 90 80 Q80 88 70 76" fill="#E8A84A"/>
-      ${humor === "feliz" || humor === "empolgado" ? `<ellipse cx="26" cy="54" rx="5" ry="3.5" fill="#F5A623" opacity="0.45"/><ellipse cx="74" cy="54" rx="5" ry="3.5" fill="#F5A623" opacity="0.45"/>` : ""}
-      ${zz}${acessoriosSvg(acc)}
-    </svg>`;
+  function svgRumi(humor, acc) {
+    const zz = humor === "dormindo" ? `<text x="74" y="24" font-size="12" fill="#9B84C7" font-weight="700">z</text>` : "";
+    const cabelo = `
+      <path d="M26 40 Q20 12 50 8 Q80 12 74 40 Q78 22 50 16 Q22 22 26 40" fill="#7B5BBF"/>
+      <path d="M28 38 Q30 55 24 70 Q20 58 26 42" fill="#7B5BBF"/>
+      <path d="M72 38 Q70 55 76 70 Q80 58 74 42" fill="#7B5BBF"/>
+      <circle cx="22" cy="48" r="6" fill="#9B7EDE"/><circle cx="78" cy="48" r="6" fill="#9B7EDE"/>`;
+    return kidBase({ humor, pele:"#F5D0B0", camiseta:"#E8D9FF", cabeloPath:cabelo, label:"Rumi, cabelo roxo", zz, acc });
   }
-
-  function svgFogo(humor, acc) {
-    const zz = humor === "dormindo" ? `<text x="74" y="24" font-size="14" fill="#9B84C7" font-weight="700">z</text>` : "";
-    return `<svg class="pet-svg" viewBox="0 0 100 100" role="img" aria-label="Fogo, o dragãozinho">
-      <ellipse cx="50" cy="93" rx="30" ry="5" fill="rgba(0,0,0,0.08)"/>
-      <path d="M16 50 Q6 38 14 26 Q24 36 22 48 Z" fill="#5BB894"/><path d="M84 50 Q94 38 86 26 Q76 36 78 48 Z" fill="#5BB894"/>
-      <ellipse cx="50" cy="60" rx="32" ry="28" fill="#A8E6CF"/>
-      <circle cx="50" cy="40" r="26" fill="#C5F5E0"/>
-      <path d="M40 16 L50 2 L60 16" fill="#5BB894"/><path d="M45 16 L50 8 L55 16" fill="#FFE66D"/>
-      ${olhos(humor, 38, 62, 40)}
-      <ellipse cx="50" cy="52" rx="4.5" ry="3.2" fill="#2A2F33"/>
-      <circle cx="30" cy="72" r="3.2" fill="#5BB894"/><circle cx="50" cy="78" r="3.2" fill="#5BB894"/><circle cx="70" cy="72" r="3.2" fill="#5BB894"/>
-      <path d="M72 70 Q88 58 84 84 Q70 90 66 76" fill="#5BB894"/>
-      ${humor === "feliz" || humor === "empolgado" ? `<path d="M54 50 Q64 46 62 54" fill="#FF8A65" opacity="0.75"/>` : ""}
-      ${zz}${acessoriosSvg(acc)}
-    </svg>`;
+  function svgZoe(humor, acc) {
+    const zz = humor === "dormindo" ? `<text x="74" y="24" font-size="12" fill="#9B84C7" font-weight="700">z</text>` : "";
+    const cabelo = `
+      <path d="M28 38 Q22 14 50 12 Q78 14 72 38 Q70 22 50 20 Q30 22 28 38" fill="#2C3E50"/>
+      <path d="M30 36 Q32 48 34 52 Q28 48 30 36" fill="#2C3E50"/>
+      <path d="M70 36 Q68 48 66 52 Q72 48 70 36" fill="#2C3E50"/>`;
+    return kidBase({ humor, pele:"#E8B895", camiseta:"#B8D4FF", cabeloPath:cabelo, label:"Zoe, cabelo curto", zz, acc });
+  }
+  function svgMira(humor, acc) {
+    const zz = humor === "dormindo" ? `<text x="74" y="24" font-size="12" fill="#9B84C7" font-weight="700">z</text>` : "";
+    const cabelo = `
+      <path d="M26 38 Q18 10 50 6 Q82 10 74 38 Q80 18 50 14 Q20 18 26 38" fill="#C0392B"/>
+      <path d="M24 42 Q18 60 22 78 Q28 62 28 44" fill="#C0392B"/>
+      <path d="M76 42 Q82 60 78 78 Q72 62 72 44" fill="#C0392B"/>
+      <path d="M40 12 Q50 2 60 12" fill="#E85D4C"/>`;
+    return kidBase({ humor, pele:"#F0C8A0", camiseta:"#FFD4C8", cabeloPath:cabelo, label:"Mira, cabelo vermelho", zz, acc });
+  }
+  function svgEmily(humor, acc) {
+    const zz = humor === "dormindo" ? `<text x="74" y="24" font-size="12" fill="#9B84C7" font-weight="700">z</text>` : "";
+    const cabelo = `
+      <path d="M26 40 Q20 10 50 8 Q80 10 74 40 Q78 20 50 16 Q22 20 26 40" fill="#F06292"/>
+      <path d="M25 44 Q16 65 20 80 Q30 66 30 46" fill="#F06292"/>
+      <path d="M75 44 Q84 65 80 80 Q70 66 70 46" fill="#F06292"/>
+      <circle cx="18" cy="52" r="7" fill="#FF8FB8"/><circle cx="82" cy="52" r="7" fill="#FF8FB8"/>
+      <text x="58" y="18" font-size="10">🎀</text>`;
+    return kidBase({ humor, pele:"#F5D0B0", camiseta:"#FFE0EC", cabeloPath:cabelo, label:"Emily, cabelo rosa", zz, acc });
+  }
+  function svgLeozinho(humor, acc) {
+    const zz = humor === "dormindo" ? `<text x="74" y="24" font-size="12" fill="#9B84C7" font-weight="700">z</text>` : "";
+    const cabelo = `
+      <path d="M28 36 Q24 12 50 10 Q76 12 72 36 Q74 20 50 18 Q26 20 28 36" fill="#0288D1"/>
+      <path d="M32 20 L36 8 L40 20" fill="#4FC3F7"/>
+      <path d="M48 16 L50 5 L52 16" fill="#4FC3F7"/>
+      <path d="M60 20 L64 8 L68 20" fill="#4FC3F7"/>`;
+    return kidBase({ humor, pele:"#E8B895", camiseta:"#B3E5FC", cabeloPath:cabelo, label:"Léozinho, cabelo azul", zz, acc });
   }
 
   function renderSvg(id, humor, acessorios) {
-    if (id === "luna") return svgLuna(humor, acessorios);
-    if (id === "pipoca") return svgPipoca(humor, acessorios);
-    return svgFogo(humor, acessorios);
+    const map = { rumi: svgRumi, zoe: svgZoe, mira: svgMira, emily: svgEmily, leozinho: svgLeozinho };
+    const fn = map[id] || svgRumi;
+    return fn(humor, acessorios || []);
   }
 
   function humorDe(n) {
-    const media = (n.fome + n.humor + n.energia + n.carinho) / 4;
+    const media = (n.humor + n.energia + n.carinho + n.diversao) / 4;
     if (n.energia < 22) return "dormindo";
     if (media < 32) return "triste";
     if (media > 88 && n.humor > 80) return "empolgado";
@@ -108,7 +110,7 @@
   }
 
   function necessidadeMaisBaixa(n) {
-    return [["fome", n.fome], ["humor", n.humor], ["energia", n.energia], ["carinho", n.carinho]]
+    return [["humor", n.humor], ["energia", n.energia], ["carinho", n.carinho], ["diversao", n.diversao]]
       .sort((a, b) => a[1] - b[1])[0][0];
   }
 
@@ -118,7 +120,7 @@
     return "is-baixo";
   }
 
-  const LABELS = { fome: "Fome", humor: "Humor", energia: "Energia", carinho: "Carinho" };
+  const LABELS = { humor: "Humor", energia: "Energia", carinho: "Carinho", diversao: "Diversão" };
 
   function renderBarras(n) {
     return Object.keys(LABELS).map((k) => `
@@ -129,14 +131,17 @@
       </div>`).join("");
   }
 
-  function renderQuarto(petHtml, classeArte, cor) {
-    return `<div class="quarto" aria-hidden="false">
-      <div class="quarto__janela"></div>
-      <div class="quarto__movel"></div>
-      <div class="quarto__planta" aria-hidden="true">🪴</div>
+  function renderQuarto(petHtml, classeArte) {
+    const stars = Array.from({ length: 8 }, (_, i) =>
+      `<span class="estrela-fundo" style="left:${10 + i * 11}%;top:${8 + (i % 3) * 12}%;animation-delay:${i * 0.2}s">✦</span>`
+    ).join("");
+    return `<div class="quarto">
+      <div class="quarto__estrelas">${stars}</div>
+      <div class="quarto__janela" aria-hidden="true"></div>
+      <div class="quarto__painel" aria-hidden="true"></div>
       <div class="quarto__tapete"></div>
       <div class="pet-cena">
-        <div class="pet-cena__arte pet-bob ${classeArte}" style="background:linear-gradient(145deg, ${cor}66, ${cor})" id="pet-arte">
+        <div class="pet-cena__arte pet-bob ${classeArte}" id="pet-arte">
           <div class="particulas" id="particulas"></div>
           ${petHtml}
         </div>
