@@ -216,7 +216,39 @@
     });
   }
 
+  function renderRetrato(id, opts) {
+    opts = opts || {};
+    const webp = "img/personagens/" + id + ".webp";
+    const png = "img/personagens/" + id + ".png";
+    const alt = opts.alt || ("Retrato de " + id);
+    const cls = opts.className || "pet-retrato";
+    const svg = renderSvg(id, opts.humor || "feliz", opts.acessorios || []);
+    return `<div class="${cls}" data-id="${id}">
+      <img class="pet-retrato__img" src="${webp}" data-png="${png}" alt="${alt}" width="${opts.w||220}" height="${opts.h||220}" loading="lazy" decoding="async">
+      <div class="pet-retrato__svg" hidden>${svg}</div>
+    </div>`;
+  }
+
+  function amarrarFallbackRetratos(root) {
+    (root || document).querySelectorAll(".pet-retrato__img").forEach((img) => {
+      if (img._fb) return;
+      img._fb = true;
+      img.addEventListener("error", () => {
+        const png = img.getAttribute("data-png");
+        if (png && !img.dataset.triedPng) {
+          img.dataset.triedPng = "1";
+          img.src = png;
+          return;
+        }
+        img.hidden = true;
+        const wrap = img.closest(".pet-retrato");
+        const fb = wrap && wrap.querySelector(".pet-retrato__svg");
+        if (fb) fb.hidden = false;
+      });
+    });
+  }
+
   global.AmiguitoPet = {
-    renderSvg, humorDe, necessidadeMaisBaixa, renderBarras, renderQuarto, soltarParticulas, LABELS
+    renderSvg, renderRetrato, amarrarFallbackRetratos, humorDe, necessidadeMaisBaixa, renderBarras, renderQuarto, soltarParticulas, LABELS
   };
 })(window);

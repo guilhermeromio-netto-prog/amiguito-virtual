@@ -700,3 +700,54 @@ body.modo-figuras .drag-alvo small { position: absolute; width:1px;height:1px;ov
 }
 .cena-ilustrada__sol { position: absolute; top: 10px; right: 16px; font-size: 1.8rem; }
 .cena-ilustrada__nuvem { position: absolute; top: 18px; left: 20px; font-size: 1.4rem; opacity: 0.85; }
+
+
+/* Retratos reais + bio card */
+.pet-retrato { position: relative; display: grid; place-items: center; width: 100%; height: 100%; }
+.pet-retrato__img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+  display: block; background: #efeaf8;
+}
+.pet-retrato--pick { width: 88px; height: 88px; }
+.pet-retrato--bio { width: 120px; height: 120px; flex-shrink: 0; }
+.pet-retrato--casa {
+  width: min(240px, 70vw); height: min(240px, 70vw);
+  margin: 0 auto;
+}
+.pet-retrato--casa .pet-retrato__img {
+  border-radius: 28px;
+  box-shadow: 0 12px 28px rgba(27,20,64,0.18);
+  border: 3px solid #fff;
+}
+.pet-retrato__svg .pet-svg { width: 100%; height: 100%; }
+
+.bio-slot { margin-top: 1rem; }
+.bio-card {
+  background: #fff;
+  border: 3px solid color-mix(in srgb, var(--c, #9B7EDE) 55%, #fff);
+  border-radius: var(--raio);
+  padding: 1rem;
+  box-shadow: var(--sombra);
+  text-align: left;
+}
+.bio-card__topo { display: flex; gap: 0.85rem; align-items: center; margin-bottom: 0.75rem; }
+.bio-card__nome { margin: 0; font-size: 1.25rem; font-weight: 900; color: var(--cor-texto); }
+.bio-card__idade { font-size: 0.85rem; font-weight: 700; color: var(--cor-texto-suave); }
+.bio-card__assinatura {
+  margin: 0.25rem 0 0.35rem; font-weight: 700; color: var(--c, #5B4B8A); font-size: 0.95rem;
+}
+.bio-card__tags { display: flex; gap: 0.3rem; font-size: 1.15rem; }
+.bio-card__fala {
+  font-size: 0.95rem; line-height: 1.45; color: var(--cor-texto);
+  background: #F7F4FF; border-radius: 12px; padding: 0.75rem; margin: 0 0 0.75rem;
+}
+.bio-card__label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: var(--cor-texto-suave); margin: 0.4rem 0 0.25rem; }
+.bio-card__lista { margin: 0 0 0.5rem 1.1rem; padding: 0; font-size: 0.9rem; line-height: 1.4; }
+.bio-card__chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.85rem; }
+.bio-chip {
+  background: color-mix(in srgb, var(--c, #9B7EDE) 18%, #fff);
+  border: 2px solid color-mix(in srgb, var(--c, #9B7EDE) 35%, #fff);
+  border-radius: 999px; padding: 0.2rem 0.65rem; font-size: 0.8rem; font-weight: 700;
+}
+body.modo-figuras .bio-card__fala { font-size: 0.85rem; }
+body.modo-figuras .bio-card__lista { display: none; }

@@ -37,7 +37,8 @@
         AmiguitoStorage.salvar(estado);
         atualizarChrome();
       }
-      AmiguitoFala.falar(ultimaFala || "Amiguito Pro", { force: true });
+      const u = ultimaFala || "Amiguito Pro";
+      AmiguitoFala.falar(u, { force: true, completo: u.split(/\s+/).length > 14 });
     });
     window.addEventListener("hashchange", rotear);
     // desbloquear vozes
@@ -178,6 +179,33 @@
     AmiguitoStorage.salvar(estado);
     const ja = !!estado.personagemId;
     const stars = Array.from({length:12},(_,i)=>`<span class="estrela-fundo" style="left:${5+i*8}%;top:${8+(i%4)*18}%;animation-delay:${i*.15}s">✦</span>`).join("");
+
+    function bioCardHtml(p) {
+      if (!p) return "";
+      const tags = (p.tags || []).map((e) => `<span class="bio-card__tag" aria-hidden="true">${e}</span>`).join("");
+      const traits = (p.personalidade || []).map((f) => `<li>${escapar(f)}</li>`).join("");
+      const gosta = (p.gosta_de || []).map((g) => `<span class="bio-chip">${escapar(g)}</span>`).join("");
+      return `
+        <article class="bio-card" id="bio-card" style="--c:${p.cor}">
+          <div class="bio-card__topo">
+            ${AmiguitoPet.renderRetrato(p.id, { alt: "Retrato de " + p.nome, w: 120, h: 120, className: "pet-retrato pet-retrato--bio" })}
+            <div>
+              <h3 class="bio-card__nome">${escapar(p.nome)} <span class="bio-card__idade">${escapar(p.idade_aparente || "")}</span></h3>
+              <p class="bio-card__assinatura">“${escapar(p.frase_assinatura || "")}”</p>
+              <div class="bio-card__tags">${tags}</div>
+            </div>
+          </div>
+          <p class="bio-card__fala">${escapar(p.descricao_falada || p.descricao || "")}</p>
+          <p class="bio-card__label">Personalidade</p>
+          <ul class="bio-card__lista">${traits}</ul>
+          <p class="bio-card__label">Gosta de</p>
+          <div class="bio-card__chips">${gosta}</div>
+          <button type="button" class="btn btn--secundario btn--bloco" id="btn-ouvir-bio" data-fala-bio="1" aria-label="Ouvir a história completa">
+            <span aria-hidden="true">🗣️</span> Ouvir a história completa
+          </button>
+        </article>`;
+    }
+
     conteudo.innerHTML = `
       <section aria-labelledby="t-bv">
         <div class="hero">
@@ -187,17 +215,16 @@
           <p class="hero__sub">Missão espacial de cuidar, brincar e aprender!</p>
         </div>
         <span class="selo-pro">✨ Tudo liberado · Pro</span>
-        ${guia("Escolhe um amiguinho da tripulação. Depois a gente explora matemática, ciência, inglês e robôs!")}
+        ${guia("Escolhe um amiguinho. Eu conto a história completa em voz alta!")}
         <div class="personagens" role="list">
           ${DADOS.personagens.map((p) => {
             const tags = (p.tags || [p.emoji || "⭐"]).map((e) => `<span class="persona__tag" aria-hidden="true">${e}</span>`).join("");
-            const fala = p.falaPick || (p.nome + ". " + (p.descricao || ""));
             return `
             <button type="button" class="persona ${estado.personagemId===p.id?"is-escolhida":""}" data-id="${p.id}" role="listitem"
-              style="--c:${p.cor}" data-fala="${fala.replace(/"/g, "&quot;")}" aria-label="${fala.replace(/"/g, "&quot;")}">
+              style="--c:${p.cor}" data-fala-bio="1" aria-label="${escapar(p.nome)}. ${escapar(p.descricao || "")}">
               <div class="persona__arte" style="background:linear-gradient(145deg,${p.cor}55,${p.cor})">
                 <span class="persona__emoji" aria-hidden="true">${p.icone || p.emoji || "⭐"}</span>
-                ${AmiguitoPet.renderSvg(p.id,"feliz",[])}
+                ${AmiguitoPet.renderRetrato(p.id, { alt: p.nome, w: 88, h: 88, className: "pet-retrato pet-retrato--pick" })}
               </div>
               <div class="persona__info">
                 <div class="persona__nome">${p.nome}</div>
@@ -207,6 +234,7 @@
             </button>`;
           }).join("")}
         </div>
+        <div id="bio-slot" class="bio-slot" ${ja && estado.personagemId ? "" : "hidden"}>${ja && estado.personagemId ? bioCardHtml(DADOS.personagens.find((x)=>x.id===estado.personagemId)) : ""}</div>
         <div class="campo-nome">
           <label for="nome-pet">Apelido do amiguinho (opcional)</label>
           <input id="nome-pet" maxlength="12" autocomplete="off" placeholder="Ex: Cometa, Nina, Blue" value="${escapar(estado.nomePet||"")}">
@@ -220,22 +248,51 @@
     let escolhido = estado.personagemId;
     const input = conteudo.querySelector("#nome-pet");
     const btnStart = conteudo.querySelector("#btn-comecar");
+    const bioSlot = conteudo.querySelector("#bio-slot");
+
+    function falarBioCompleta(p) {
+      if (!p) return;
+      const texto = p.descricao_falada || p.descricao || p.nome;
+      anunciar(texto, { completo: true, rate: 0.92 });
+    }
+
+    function mostrarBio(p) {
+      if (!bioSlot || !p) return;
+      bioSlot.hidden = false;
+      bioSlot.innerHTML = bioCardHtml(p);
+      AmiguitoPet.amarrarFallbackRetratos(bioSlot);
+      const btn = bioSlot.querySelector("#btn-ouvir-bio");
+      if (btn) btn.addEventListener("click", () => {
+        AmiguitoSom.tap();
+        falarBioCompleta(p);
+      });
+    }
+
     conteudo.querySelectorAll(".persona").forEach((btn) => btn.addEventListener("click", () => {
       escolhido = btn.dataset.id;
       conteudo.querySelectorAll(".persona").forEach((b) => b.classList.toggle("is-escolhida", b.dataset.id === escolhido));
       if (btnStart) btnStart.disabled = false;
       AmiguitoSom.tap();
       const p = DADOS.personagens.find((x) => x.id === escolhido);
-      if (p) anunciar(p.falaPick || (p.nome + ". " + (p.descricao || "")));
+      mostrarBio(p);
+      falarBioCompleta(p);
     }));
+
+    AmiguitoPet.amarrarFallbackRetratos(conteudo);
+    if (escolhido) {
+      const p0 = DADOS.personagens.find((x) => x.id === escolhido);
+      if (p0) mostrarBio(p0);
+    }
 
     function aplicar() {
       const nome = (input.value || "").trim().slice(0, 12);
       if (estado.personagemId && estado.personagemId !== escolhido) {
         if (!confirm("Trocar de amiguinho reinicia o carinho dele. Continuar?")) return;
         const som = estado.somAtivo;
+        const figs = estado.modoFiguras;
         estado = AmiguitoStorage.resetar();
         estado.somAtivo = som;
+        estado.modoFiguras = figs;
         estado.viuHero = true;
       }
       estado.personagemId = escolhido;
@@ -266,7 +323,7 @@
       mostrarToast("Progresso apagado!");
       renderBoasVindas();
     });
-    posRender("Bem-vinda ao Amiguito Pro! Escolha um amiguinho na tela.", ".persona");
+    posRender("Bem-vinda ao Amiguito Pro! Escolha um amiguinho. Toque pra ouvir a história completa.", ".persona");
   }
 
   /* ===== Casa / Base ===== */
@@ -291,7 +348,7 @@
         <h2 id="t-casa" class="titulo-tela">Base d${(personagem() && personagem().tipo === "amiga") || nomeExibir().endsWith("a") ? "a" : "o"} ${escapar(nomeExibir())}</h2>
         ${guia("Toque nos botões pra cuidar. Depois partimos pras missões STEM!")}
         <div class="balao" role="status"><span class="balao__rotulo">Amiguito fala</span>${escapar(falaAtual)}</div>
-        ${AmiguitoPet.renderQuarto(AmiguitoPet.renderSvg(p.id, humor, estado.acessorios), `${classe} ${extra}`)}
+        ${AmiguitoPet.renderQuarto(AmiguitoPet.renderRetrato(p.id, { humor, acessorios: estado.acessorios, alt: "Retrato de " + (p.nome||""), w: 240, h: 240, className: "pet-retrato pet-retrato--casa" }), `${classe} ${extra}`)}
         <div class="necessidades">${AmiguitoPet.renderBarras(estado.necessidades)}</div>
         <div class="acoes" role="group" aria-label="Cuidar">
           <button type="button" class="acao" data-acao="brincar"><span class="acao__icone" aria-hidden="true">🎮</span>Brincar</button>
@@ -831,9 +888,9 @@
     mostrarToast(estado.modoFiguras ? "Só figuras 👁️" : "Com palavras 🔤");
   }
 
-  function anunciar(texto) {
+  function anunciar(texto, opts) {
     ultimaFala = texto;
-    AmiguitoFala.falar(texto);
+    AmiguitoFala.falar(texto, opts || {});
   }
 
   // Seletores que NUNCA recebem o overlay (perguntas / respostas / áreas de jogo)
@@ -848,6 +905,7 @@
 
   function posRender(falaTela, seletorGuia) {
     aplicarModoFiguras();
+    if (AmiguitoPet.amarrarFallbackRetratos) AmiguitoPet.amarrarFallbackRetratos(conteudo);
     AmiguitoFala.amarrar(conteudo);
     AmiguitoFala.amarrar(nav);
     if (falaTela) anunciar(falaTela);

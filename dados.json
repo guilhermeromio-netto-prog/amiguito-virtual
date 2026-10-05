@@ -13,7 +13,7 @@
         "🔬"
       ],
       "descricao": "Cabelo roxo. Ama ciência e estrelas.",
-      "falaPick": "Rumi! Cabelo roxo. Vamos explorar ciência?",
+      "falaPick": "Oi! Eu sou a Rumi. Tenho uns quatro aninhos e um cabelo roxo que brilha como uma ideia nova. Eu adoro ciência: misturar cores, olhar as estrelas e perguntar por quê as coisas acontecem. Sou calma, carinhosa e gosto de explorar com você, sem pressa. Quando a gente acerta uma missão, eu celebro com um sorriso grande. Vamos cuidar um do outro, brincar e aprender? Eu te mostro o céu e você me mostra o seu jeitinho especial. Pronto pra uma descoberta bem fofa?",
       "cor": "#9B7EDE",
       "cabelo": "#7B5BBF",
       "saudacoes": [
@@ -43,7 +43,24 @@
         "Você é uma estrela da ciência!",
         "Uau! Que descoberta!",
         "Rumi aprova com 100 estrelas!"
-      ]
+      ],
+      "idade_aparente": "4 anos",
+      "personalidade": [
+        "Curiosa e gentil, sempre pergunta por quê.",
+        "Ama descobrir coisas novas com calma.",
+        "Sorri quando vê estrelas e experimentos simples.",
+        "Ajuda os amigos a pensar juntos."
+      ],
+      "gosta_de": [
+        "ciência",
+        "estrelas",
+        "experimentos suaves",
+        "perguntas"
+      ],
+      "frase_assinatura": "Vamos descobrir juntos, bem de leve!",
+      "descricao_falada": "Oi! Eu sou a Rumi. Tenho uns quatro aninhos e um cabelo roxo que brilha como uma ideia nova. Eu adoro ciência: misturar cores, olhar as estrelas e perguntar por quê as coisas acontecem. Sou calma, carinhosa e gosto de explorar com você, sem pressa. Quando a gente acerta uma missão, eu celebro com um sorriso grande. Vamos cuidar um do outro, brincar e aprender? Eu te mostro o céu e você me mostra o seu jeitinho especial. Pronto pra uma descoberta bem fofa?",
+      "imagem": "img/personagens/rumi.webp",
+      "imagemFallback": "img/personagens/rumi.png"
     },
     {
       "id": "zoe",
@@ -57,7 +74,7 @@
         "🎯"
       ],
       "descricao": "Cabelo curto. Cheia de energia e desafios.",
-      "falaPick": "Zoe! Cabelo curto. Bora um desafio rápido?",
+      "falaPick": "Ei! Eu sou a Zoe. Meu cabelo é curto e escuro, perfeito pra missões rápidas. Tenho muita energia, mas sou gentil: eu gosto de desafios que a gente resolve juntos, com high-five no final. Se algo fica difícil, eu respiro e tento de novo. Adoro jogos, padrões e correr com a imaginação. Comigo a base fica animada, mas sempre segura e alegre. Quer ser minha parceira de aventura? Bora brilhar sem pressa demais!",
       "cor": "#5B8DEF",
       "cabelo": "#2C3E50",
       "saudacoes": [
@@ -87,7 +104,24 @@
         "Mandou bem demais!",
         "Zoe tá orgulhosa!",
         "Isso que é velocidade e carinho!"
-      ]
+      ],
+      "idade_aparente": "4 anos",
+      "personalidade": [
+        "Cheia de energia e coragem doce.",
+        "Gosta de desafios rápidos e justos.",
+        "Torce forte pelos amigos.",
+        "Ri fácil e anima a tripulação."
+      ],
+      "gosta_de": [
+        "desafios",
+        "corridas de ideias",
+        "high-five",
+        "jogos"
+      ],
+      "frase_assinatura": "Desafio aceito — e com carinho!",
+      "descricao_falada": "Ei! Eu sou a Zoe. Meu cabelo é curto e escuro, perfeito pra missões rápidas. Tenho muita energia, mas sou gentil: eu gosto de desafios que a gente resolve juntos, com high-five no final. Se algo fica difícil, eu respiro e tento de novo. Adoro jogos, padrões e correr com a imaginação. Comigo a base fica animada, mas sempre segura e alegre. Quer ser minha parceira de aventura? Bora brilhar sem pressa demais!",
+      "imagem": "img/personagens/zoe.webp",
+      "imagemFallback": "img/personagens/zoe.png"
     },
     {
       "id": "mira",
@@ -101,7 +135,7 @@
         "🧩"
       ],
       "descricao": "Cabelo vermelho. Ama contar e padrões.",
-      "falaPick": "Mira! Cabelo vermelho. Vamos contar juntos?",
+      "falaPick": "Olá! Eu sou a Mira. Meu cabelo vermelho é como um sinal de aventura alegre. Eu amo matemática: contar até vinte, achar formas e descobrir padrões escondidos. Sou paciente e te espero no seu tempo. Quando a gente acerta, eu bate palminhas. Gosto de missões claras, um passo depois do outro. Vamos contar juntos, cuidar um do outro e transformar números em brincadeira? Eu te ajudo e você me ensina também!",
       "cor": "#E85D4C",
       "cabelo": "#C0392B",
       "saudacoes": [
@@ -131,7 +165,24 @@
         "Você conta como uma estrela!",
         "Padrão perfeito!",
         "Mira bate palmas pra você!"
-      ]
+      ],
+      "idade_aparente": "4 anos",
+      "personalidade": [
+        "Paciente e corajosa com números.",
+        "Adora achar padrões escondidos.",
+        "Explica com carinho e exemplos.",
+        "Comemora cada contagemzinha."
+      ],
+      "gosta_de": [
+        "contar",
+        "formas",
+        "padrões",
+        "apertar as mãos"
+      ],
+      "frase_assinatura": "Contar é minha magia!",
+      "descricao_falada": "Olá! Eu sou a Mira. Meu cabelo vermelho é como um sinal de aventura alegre. Eu amo matemática: contar até vinte, achar formas e descobrir padrões escondidos. Sou paciente e te espero no seu tempo. Quando a gente acerta, eu bate palminhas. Gosto de missões claras, um passo depois do outro. Vamos contar juntos, cuidar um do outro e transformar números em brincadeira? Eu te ajudo e você me ensina também!",
+      "imagem": "img/personagens/mira.webp",
+      "imagemFallback": "img/personagens/mira.png"
     },
     {
       "id": "emily",
@@ -145,7 +196,7 @@
         "🎀"
       ],
       "descricao": "Cabelo rosa. Adora inglês e conversar.",
-      "falaPick": "Emily! Cabelo rosa. Hello! Vamos falar inglês?",
+      "falaPick": "Hello! Eu sou a Emily. Meu cabelo rosa é fofo como um laço. Eu adoro conversar em português e em inglês: hello, thank you, colors e little songs. Sou doce, escuto com atenção e gosto de abraços suaves. Aprender palavras comigo é brincadeira, nunca prova. Vamos falar, rir e cuidar um do outro? Eu te mostro palavras novas e você me mostra o seu sorriso. Ready? Vamos juntos!",
       "cor": "#F06292",
       "cabelo": "#F06292",
       "saudacoes": [
@@ -175,7 +226,24 @@
         "Great job!",
         "Emily claps for you!",
         "You are so kind!"
-      ]
+      ],
+      "idade_aparente": "4 anos",
+      "personalidade": [
+        "Doce, falante e acolhedora.",
+        "Adora palavras em português e inglês.",
+        "Celebra cada hello e thank you.",
+        "Gosta de conversas curtinhas e abraços."
+      ],
+      "gosta_de": [
+        "inglês",
+        "conversas",
+        "cores",
+        "músicas suaves"
+      ],
+      "frase_assinatura": "Hello! Pink hair, happy heart!",
+      "descricao_falada": "Hello! Eu sou a Emily. Meu cabelo rosa é fofo como um laço. Eu adoro conversar em português e em inglês: hello, thank you, colors e little songs. Sou doce, escuto com atenção e gosto de abraços suaves. Aprender palavras comigo é brincadeira, nunca prova. Vamos falar, rir e cuidar um do outro? Eu te mostro palavras novas e você me mostra o seu sorriso. Ready? Vamos juntos!",
+      "imagem": "img/personagens/emily.webp",
+      "imagemFallback": "img/personagens/emily.png"
     },
     {
       "id": "leozinho",
@@ -189,7 +257,7 @@
         "💻"
       ],
       "descricao": "Cabelo azul. Inventa robôs e códigos.",
-      "falaPick": "Léozinho! Cabelo azul. Vamos programar um robô?",
+      "falaPick": "Fala! Eu sou o Léozinho. Meu cabelo azul sobe como anteninhas de inventor. Eu amo robôs, sequências e brincar de programar com blocos. Sou paciente: um passo, depois outro, e a magia acontece. Se algo quebra, a gente conserta juntos, sem bravo. Eu celebro cada ideia com um high-five de engenheiro. Quer montar uma missão tecnológica bem divertida? Eu te ajudo a pensar e você me ajuda a sorrir.",
       "cor": "#0288D1",
       "cabelo": "#0288D1",
       "saudacoes": [
@@ -219,7 +287,24 @@
         "Commit aprovado!",
         "Léozinho deu deploy de orgulho!",
         "Código lindo!"
-      ]
+      ],
+      "idade_aparente": "4 anos",
+      "personalidade": [
+        "Inventor alegre e paciente.",
+        "Ama robôs, sequências e consertos.",
+        "Explica passo a passo.",
+        "Fica orgulhoso de cada ideia boa."
+      ],
+      "gosta_de": [
+        "robôs",
+        "programar",
+        "consertar",
+        "blocos"
+      ],
+      "frase_assinatura": "Léozinho online — bora inventar!",
+      "descricao_falada": "Fala! Eu sou o Léozinho. Meu cabelo azul sobe como anteninhas de inventor. Eu amo robôs, sequências e brincar de programar com blocos. Sou paciente: um passo, depois outro, e a magia acontece. Se algo quebra, a gente conserta juntos, sem bravo. Eu celebro cada ideia com um high-five de engenheiro. Quer montar uma missão tecnológica bem divertida? Eu te ajudo a pensar e você me ajuda a sorrir.",
+      "imagem": "img/personagens/leozinho.webp",
+      "imagemFallback": "img/personagens/leozinho.png"
     },
     {
       "id": "void",
@@ -233,7 +318,7 @@
         "✨"
       ],
       "descricao": "Cabelo escuro suave. Calmo como o céu da noite.",
-      "falaPick": "Void! Cabelo escuro brilhante. Vamos olhar as estrelas bem de leve?",
+      "falaPick": "Oi… eu sou o Void. Meu cabelo é escuro e macio, com um brilhinho suave de noite. Eu não sou assustador: sou um amigo misterioso do espaço, calmo e carinhoso. Gosto de olhar as estrelas, contar histórias bem leves e ficar pertinho em silêncio confortável. Quando você precisa de paz, eu estou aqui. Vamos explorar o céu com cuidado, rir baixinho e cuidar um do outro? Eu te mostro a nebulosa e você me mostra seu abraço.",
       "cor": "#5C6BC0",
       "cabelo": "#2A2F4A",
       "saudacoes": [
@@ -263,7 +348,24 @@
         "Você brilha sem fazer barulho.",
         "Missão suave: sucesso!",
         "Void sorriu (bem de leve)!"
-      ]
+      ],
+      "idade_aparente": "4 anos",
+      "personalidade": [
+        "Calmo, misterioso e muito gentil.",
+        "Gosta de silêncio confortável e estrelas.",
+        "Nunca assusta — só acolhe com suavidade.",
+        "Fala baixo e escuta com o coração."
+      ],
+      "gosta_de": [
+        "estrelas",
+        "histórias suaves",
+        "nebulosas",
+        "carinho leve"
+      ],
+      "frase_assinatura": "O espaço é quietinho e legal.",
+      "descricao_falada": "Oi… eu sou o Void. Meu cabelo é escuro e macio, com um brilhinho suave de noite. Eu não sou assustador: sou um amigo misterioso do espaço, calmo e carinhoso. Gosto de olhar as estrelas, contar histórias bem leves e ficar pertinho em silêncio confortável. Quando você precisa de paz, eu estou aqui. Vamos explorar o céu com cuidado, rir baixinho e cuidar um do outro? Eu te mostro a nebulosa e você me mostra seu abraço.",
+      "imagem": "img/personagens/void.webp",
+      "imagemFallback": "img/personagens/void.png"
     },
     {
       "id": "nova",
@@ -277,7 +379,7 @@
         "🤍"
       ],
       "descricao": "Cabelo prateado. Brilha como estrela nova.",
-      "falaPick": "Nova! Cabelo prateado. Pronto pra brilhar juntos?",
+      "falaPick": "Oi! Eu sou a Nova. Meu cabelo prateado cintila como uma estrela novinha. Eu adoro espalhar brilho: elogiar, dançar bem de leve e celebrar cada conquista pequenininha. Sou delicada, esperançosa e sempre torço por você. Comigo a base fica iluminada e segura. Quer brilhar juntos? Eu te empresto um pouquinho de luz e você me empresta o seu sorriso. Pronto pra uma missão cintilante?",
       "cor": "#B39DDB",
       "cabelo": "#D7D3E8",
       "saudacoes": [
@@ -307,7 +409,24 @@
         "Você é pura luz!",
         "Nova explodiu de orgulho (suave)!",
         "Brilho máximo!"
-      ]
+      ],
+      "idade_aparente": "4 anos",
+      "personalidade": [
+        "Brilhante, esperançosa e delicada.",
+        "Espalha elogios como luzinha.",
+        "Ama celebrar pequenas vitórias.",
+        "Sonha com cometas e abraços."
+      ],
+      "gosta_de": [
+        "estrelas",
+        "brilho",
+        "elogios",
+        "dança suave"
+      ],
+      "frase_assinatura": "Vamos espalhar brilho pela base!",
+      "descricao_falada": "Oi! Eu sou a Nova. Meu cabelo prateado cintila como uma estrela novinha. Eu adoro espalhar brilho: elogiar, dançar bem de leve e celebrar cada conquista pequenininha. Sou delicada, esperançosa e sempre torço por você. Comigo a base fica iluminada e segura. Quer brilhar juntos? Eu te empresto um pouquinho de luz e você me empresta o seu sorriso. Pronto pra uma missão cintilante?",
+      "imagem": "img/personagens/nova.webp",
+      "imagemFallback": "img/personagens/nova.png"
     },
     {
       "id": "pixi",
@@ -321,7 +440,7 @@
         "🎨"
       ],
       "descricao": "Cabelo verde menta. Adora cores e natureza.",
-      "falaPick": "Pixi! Cabelo verde. Vamos pintar a natureza?",
+      "falaPick": "Oi oi! Eu sou a Pixi. Meu cabelo verde menta parece folhinha fresca. Eu amo cores, natureza e pintar o espaço com imaginação. Sou brincalhona, mas cuidadosa: a gente ri, explora e protege as plantinhas e os amigos. Aprender comigo é misturar tintas, achar animais e celebrar a beleza do mundo. Vem colorir a base comigo? Eu te mostro um arco-íris e você me mostra sua cor preferida.",
       "cor": "#26A69A",
       "cabelo": "#2BBBAD",
       "saudacoes": [
@@ -351,7 +470,24 @@
         "Que cores lindas!",
         "Pixi bateu asas de alegria!",
         "Natureza aprova!"
-      ]
+      ],
+      "idade_aparente": "4 anos",
+      "personalidade": [
+        "Brincalhona, colorida e gentil com a natureza.",
+        "Ama misturar cores e imaginar florestas.",
+        "Ri fácil e convida todo mundo.",
+        "Cuida das plantinhas e dos amigos."
+      ],
+      "gosta_de": [
+        "cores",
+        "natureza",
+        "pintura",
+        "folhinhas"
+      ],
+      "frase_assinatura": "Pixi pousou — vamos colorir!",
+      "descricao_falada": "Oi oi! Eu sou a Pixi. Meu cabelo verde menta parece folhinha fresca. Eu amo cores, natureza e pintar o espaço com imaginação. Sou brincalhona, mas cuidadosa: a gente ri, explora e protege as plantinhas e os amigos. Aprender comigo é misturar tintas, achar animais e celebrar a beleza do mundo. Vem colorir a base comigo? Eu te mostro um arco-íris e você me mostra sua cor preferida.",
+      "imagem": "img/personagens/pixi.webp",
+      "imagemFallback": "img/personagens/pixi.png"
     },
     {
       "id": "sol",
@@ -365,7 +501,7 @@
         "😊"
       ],
       "descricao": "Cabelo dourado. Quente, alegre e abraçador.",
-      "falaPick": "Sol! Cabelo dourado. Vamos espalhar solzinho?",
+      "falaPick": "E aí! Eu sou o Sol. Meu cabelo dourado é quentinho como um abraço de manhã. Eu gosto de espalhar alegria, brincar, cantar e cuidar da tripulação. Quando alguém fica triste, eu ofereço um high-five dourado e um tempo pra respirar. Também descanso quando preciso — sol também faz pausa. Quer iluminar a missão comigo? Eu te aqueço com carinho e você me ensina suas brincadeiras favoritas.",
       "cor": "#F9A825",
       "cabelo": "#F4A261",
       "saudacoes": [
@@ -395,7 +531,24 @@
         "Você iluminou tudo!",
         "Sol tá orgulhoso!",
         "Dia perfeito!"
-      ]
+      ],
+      "idade_aparente": "4 anos",
+      "personalidade": [
+        "Alegre, quentinho e abraçador.",
+        "Anima o dia com sorrisos.",
+        "Gosta de ajudar e compartilhar.",
+        "Também descansa quando a nuvem passa."
+      ],
+      "gosta_de": [
+        "abraços",
+        "brincadeiras",
+        "manhãs",
+        "músicas alegres"
+      ],
+      "frase_assinatura": "Bom dia o dia inteiro!",
+      "descricao_falada": "E aí! Eu sou o Sol. Meu cabelo dourado é quentinho como um abraço de manhã. Eu gosto de espalhar alegria, brincar, cantar e cuidar da tripulação. Quando alguém fica triste, eu ofereço um high-five dourado e um tempo pra respirar. Também descanso quando preciso — sol também faz pausa. Quer iluminar a missão comigo? Eu te aqueço com carinho e você me ensina suas brincadeiras favoritas.",
+      "imagem": "img/personagens/sol.webp",
+      "imagemFallback": "img/personagens/sol.png"
     }
   ],
   "acessorios": [
