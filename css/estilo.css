@@ -588,10 +588,18 @@ body.modo-figuras .pic-btn small { display: none; }
 .letra-emoji { font-size: 3rem; display: block; margin: 0.35rem 0; }
 
 .guia-seta {
-  position: fixed; z-index: 40; pointer-events: none;
+  position: fixed; z-index: 15; pointer-events: none !important;
   display: flex; flex-direction: column; align-items: center;
   filter: drop-shadow(0 4px 12px rgba(27,20,64,0.35));
   transition: left 280ms ease, top 280ms ease;
+}
+.guia-seta[hidden] { display: none !important; }
+/* Nunca destacar opções/perguntas de quiz */
+.opcao.destaque-guia,
+.pic-btn.destaque-guia,
+.geo-regiao.destaque-guia,
+.jogo__pergunta.destaque-guia {
+  box-shadow: none !important;
 }
 .guia-seta img { width: 48px; height: 48px; border-radius: 50%; background: #fff; border: 2px solid var(--cor-borda); }
 .guia-seta__seta { font-size: 1.4rem; animation: aponta 1s ease-in-out infinite; }

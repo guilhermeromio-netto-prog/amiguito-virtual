@@ -65,6 +65,7 @@
     nav.hidden = !estado.personagemId;
     destacarNav(p[0] || "casa");
     atualizarChrome();
+    if (typeof esconderGuia === "function") esconderGuia();
     conteudo.classList.remove("is-transicao");
     void conteudo.offsetWidth;
     conteudo.classList.add("is-transicao");
@@ -485,7 +486,7 @@
     };
     if (id.startsWith("geo-") && window.AmiguitoGeo) AmiguitoGeo.montar(id, root, onStemDone);
     else AmiguitoStem.montar(id, root, onStemDone);
-    posRender(meta.titulo + ". Ouça e toque.", "#btn-ouvir, .pic-btn, .geo-regiao");
+    posRender(meta.titulo + ". Ouça e toque.", null); // atividades: sem seta sobre respostas
   }
 
   function renderRota(id) {
@@ -617,7 +618,7 @@
           ${desafio?"":`<p style="margin-top:0.85rem"><a class="btn btn--fantasma btn--sm" href="#/ensinar/${licaoId}/desafio">Modo desafio</a></p>`}
         </div>
       </section>`;
-    posRender(tituloP, ".opcao");
+    posRender(tituloP, null); // sem overlay nas respostas
     anunciar(tituloP);
     const botoes = [...conteudo.querySelectorAll(".opcao")];
     botoes.forEach((btn) => btn.addEventListener("click", () => {
@@ -821,31 +822,55 @@
     AmiguitoFala.falar(texto);
   }
 
+  // Seletores que NUNCA recebem o overlay (perguntas / respostas / áreas de jogo)
+  const GUIA_PROIBIDO = /\.opcao|\.pic-btn|\.geo-regiao|\.jogo__pergunta|\.jogo__opcoes|\.memoria-carta|\.porta|\.ritmo-pad|\.comida-item|\.drag-alvo|\.drag-item|\.acao|\.necessidade|\.letra-gigante|#stem-root|#ler-root|#jogo-root/i;
+
+  function esconderGuia() {
+    if (!guiaSeta) return;
+    guiaSeta.hidden = true;
+    guiaAlvoSel = null;
+    document.querySelectorAll(".destaque-guia").forEach((el) => el.classList.remove("destaque-guia"));
+  }
+
   function posRender(falaTela, seletorGuia) {
     aplicarModoFiguras();
     AmiguitoFala.amarrar(conteudo);
     AmiguitoFala.amarrar(nav);
     if (falaTela) anunciar(falaTela);
-    guiaAlvoSel = seletorGuia || null;
+    // Em telas de pergunta/resposta: só fala, sem seta flutuante
+    if (!seletorGuia || GUIA_PROIBIDO.test(String(seletorGuia))) {
+      esconderGuia();
+      return;
+    }
+    guiaAlvoSel = seletorGuia;
     requestAnimationFrame(() => posicionarGuia(guiaAlvoSel));
   }
 
   function posicionarGuia(sel) {
     if (!guiaSeta) return;
     document.querySelectorAll(".destaque-guia").forEach((el) => el.classList.remove("destaque-guia"));
-    if (!sel || !estado.personagemId) {
+    if (!sel || !estado.personagemId || GUIA_PROIBIDO.test(String(sel))) {
       guiaSeta.hidden = true;
       return;
     }
     const el = conteudo.querySelector(sel) || document.querySelector(sel);
     if (!el) { guiaSeta.hidden = true; return; }
+    // Se o alvo for (ou estiver dentro de) pergunta/opções, não mostrar
+    if (el.closest(".jogo__opcoes, .jogo__pergunta, .pic-grid, .opcao, #stem-root, #ler-root, #jogo-root, .card.jogo, section.jogo")) {
+      guiaSeta.hidden = true;
+      return;
+    }
     el.classList.add("destaque-guia");
     const r = el.getBoundingClientRect();
-    const top = Math.max(8, r.top - 64);
-    const left = Math.min(window.innerWidth - 60, Math.max(8, r.left + r.width / 2 - 24));
+    // Canto inferior, longe do conteúdo central
+    const top = Math.min(window.innerHeight - 100, Math.max(8, r.bottom + 8));
+    const left = Math.min(window.innerWidth - 64, Math.max(8, r.left + r.width / 2 - 24));
     guiaSeta.style.top = top + "px";
     guiaSeta.style.left = left + "px";
     guiaSeta.hidden = false;
+    // Auto-esconde no primeiro toque da tela
+    const hideOnce = () => { esconderGuia(); conteudo.removeEventListener("pointerdown", hideOnce, true); };
+    conteudo.addEventListener("pointerdown", hideOnce, true);
   }
 
 
@@ -961,7 +986,7 @@
       </div>`;
       posRender(res.msg, "a.btn--primario");
     }, falar);
-    posRender(titulos[kind] + ". Ouça e toque na figurinha.", "#btn-ouvir-letra, #btn-ouvir");
+    posRender(titulos[kind] + ". Ouça e toque na figurinha.", null);
   }
 
 
