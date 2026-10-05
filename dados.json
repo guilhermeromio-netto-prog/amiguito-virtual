@@ -1,0 +1,285 @@
+{
+  "versao": 1,
+  "personagens": [
+    {
+      "id": "luna",
+      "nome": "Luna",
+      "tipo": "gatinha",
+      "emoji": "🐱",
+      "descricao": "Curiosa e carinhosa. Adora descobrir cores e palavras novas.",
+      "cor": "#FFB4C8",
+      "saudacoes": [
+        "Miau! Eu sou a Luna. Vamos brincar?",
+        "Oi! Que bom te ver! Estava pensando em você.",
+        "Purr… você chegou! Me conta o que vamos fazer?"
+      ],
+      "pedidos": {
+        "fome": ["Estou com fominha… Tem um peixinho aí?", "Miau… meu barriguinha roncou!"],
+        "humor": ["Quero brincar um pouquinho!", "Estou entediada… vamos pular?"],
+        "energia": ["Ufa… preciso de um soninho.", "Meus olhinhos estão pesados…"],
+        "carinho": ["Posso um carinho na cabecinha?", "Miau… um abraço me deixaria feliz!"]
+      },
+      "elogios": [
+        "Você é demais! Eu aprendi com você!",
+        "Uau! Que orgulho de ter você como amiga!",
+        "Purr… isso foi lindo! Obrigada por me ensinar!"
+      ]
+    },
+    {
+      "id": "pipoca",
+      "nome": "Pipoca",
+      "tipo": "cachorrinho",
+      "emoji": "🐶",
+      "descricao": "Brincalhão e leal. Adora números e correr por aí.",
+      "cor": "#FFD07A",
+      "saudacoes": [
+        "Au au! Eu sou o Pipoca! Vamos brincar?",
+        "Oi, amiga! Abanei o rabo só de te ver!",
+        "Au! Chegou a melhor parte do meu dia: você!"
+      ],
+      "pedidos": {
+        "fome": ["Au… estou com fome! Tem um biscoitinho?", "Meu estômago fez um barulhinho engraçado!"],
+        "humor": ["Quero correr e pular! Vamos?", "Me joga a bolinha! Por favorzinho!"],
+        "energia": ["Hora da soneca… cansei um pouquinho.", "Vou deitar aqui do seu ladinho…"],
+        "carinho": ["Posso um cafuné nas orelhas?", "Au! Um abraço me deixa super feliz!"]
+      },
+      "elogios": [
+        "Você é a melhor professora do mundo!",
+        "Au au! Eu sabia que você ia acertar!",
+        "Meu coração abanou de orgulho!"
+      ]
+    },
+    {
+      "id": "fogo",
+      "nome": "Fogo",
+      "tipo": "dragãozinho",
+      "emoji": "🐉",
+      "descricao": "Gentil e corajoso. Ensina bondade e espalha faíscas de alegria.",
+      "cor": "#A8E6CF",
+      "saudacoes": [
+        "Olá! Eu sou o Fogo. Não mordo — só abraço!",
+        "Oi! Minhas asas bateram de alegria!",
+        "Chegou! Vamos espalhar bondade juntos?"
+      ],
+      "pedidos": {
+        "fome": ["Hmm… um petisco de dragão cairia bem!", "Minha barriguinha de fogo está vazia…"],
+        "humor": ["Quero voar um pouquinho! Brinca comigo?", "Vamos fazer uma missão divertida?"],
+        "energia": ["Preciso guardar energia pra voar depois…", "Uma soneca mágica, por favor?"],
+        "carinho": ["Um abraço de dragão? Eu prometo ser gentil.", "Pode fazer cafuné nas minhas escamas?"]
+      },
+      "elogios": [
+        "Você tem um coração de ouro!",
+        "Isso! Bondade é a magia mais forte!",
+        "Uau! Você me ensinou algo lindo hoje!"
+      ]
+    }
+  ],
+  "licoes": [
+    {
+      "id": "cores",
+      "titulo": "Cores",
+      "icone": "🎨",
+      "tipo": "cores",
+      "descricao": "Ensine as cores pro seu amiguito",
+      "perguntas": [
+        { "pergunta": "Qual é a cor do céu num dia de sol?", "opcoes": [
+          { "texto": "Azul", "cor": "#4BA3C7", "certa": true },
+          { "texto": "Verde", "cor": "#55A868", "certa": false },
+          { "texto": "Rosa", "cor": "#F28BA6", "certa": false }
+        ]},
+        { "pergunta": "Qual cor parece um tomate maduro?", "opcoes": [
+          { "texto": "Amarelo", "cor": "#F0C93A", "certa": false },
+          { "texto": "Vermelho", "cor": "#E74C3C", "certa": true },
+          { "texto": "Roxo", "cor": "#9B84C7", "certa": false }
+        ]},
+        { "pergunta": "Qual cor lembra a grama?", "opcoes": [
+          { "texto": "Verde", "cor": "#55A868", "certa": true },
+          { "texto": "Laranja", "cor": "#E67E22", "certa": false },
+          { "texto": "Azul", "cor": "#4BA3C7", "certa": false }
+        ]},
+        { "pergunta": "Qual cor é da banana?", "opcoes": [
+          { "texto": "Rosa", "cor": "#F28BA6", "certa": false },
+          { "texto": "Amarelo", "cor": "#F0C93A", "certa": true },
+          { "texto": "Marrom", "cor": "#8B6914", "certa": false }
+        ]}
+      ]
+    },
+    {
+      "id": "numeros",
+      "titulo": "Números",
+      "icone": "🔢",
+      "tipo": "numeros",
+      "descricao": "Conte de 1 a 10 com o amiguito",
+      "perguntas": [
+        { "pergunta": "Quanto é 2 + 2?", "opcoes": [
+          { "texto": "3", "certa": false },
+          { "texto": "4", "certa": true },
+          { "texto": "5", "certa": false }
+        ]},
+        { "pergunta": "Quantas patas tem um cachorro?", "opcoes": [
+          { "texto": "2", "certa": false },
+          { "texto": "4", "certa": true },
+          { "texto": "6", "certa": false }
+        ]},
+        { "pergunta": "Qual número vem depois do 7?", "opcoes": [
+          { "texto": "6", "certa": false },
+          { "texto": "8", "certa": true },
+          { "texto": "9", "certa": false }
+        ]},
+        { "pergunta": "Se você tem 5 balas e come 1, sobram…", "opcoes": [
+          { "texto": "4", "certa": true },
+          { "texto": "3", "certa": false },
+          { "texto": "6", "certa": false }
+        ]}
+      ]
+    },
+    {
+      "id": "palavras",
+      "titulo": "Palavras",
+      "icone": "📝",
+      "tipo": "palavras",
+      "descricao": "Ensine palavrinhas em português",
+      "perguntas": [
+        { "pergunta": "Como se diz 'obrigado' de forma carinhosa?", "opcoes": [
+          { "texto": "Oi", "certa": false },
+          { "texto": "Obrigadinho", "certa": true },
+          { "texto": "Tchau", "certa": false }
+        ]},
+        { "pergunta": "Qual palavra usamos quando encontramos alguém?", "opcoes": [
+          { "texto": "Olá", "certa": true },
+          { "texto": "Adeus", "certa": false },
+          { "texto": "Dormir", "certa": false }
+        ]},
+        { "pergunta": "O oposto de 'grande' é…", "opcoes": [
+          { "texto": "Alto", "certa": false },
+          { "texto": "Pequeno", "certa": true },
+          { "texto": "Forte", "certa": false }
+        ]},
+        { "pergunta": "Qual palavra mostra carinho?", "opcoes": [
+          { "texto": "Amigo", "certa": true },
+          { "texto": "Pedra", "certa": false },
+          { "texto": "Nuvem", "certa": false }
+        ]}
+      ]
+    },
+    {
+      "id": "gentileza",
+      "titulo": "Gentileza",
+      "icone": "💛",
+      "tipo": "gentileza",
+      "descricao": "Aprenda a ser gentil com todos",
+      "perguntas": [
+        { "pergunta": "Seu amigo caiu. O que você faz?", "opcoes": [
+          { "texto": "Ajudo ele a levantar", "certa": true },
+          { "texto": "Rio dele", "certa": false },
+          { "texto": "Ignoro", "certa": false }
+        ]},
+        { "pergunta": "Alguém te emprestou um brinquedo. Você…", "opcoes": [
+          { "texto": "Agradece e cuida bem", "certa": true },
+          { "texto": "Esconde o brinquedo", "certa": false },
+          { "texto": "Quebra de propósito", "certa": false }
+        ]},
+        { "pergunta": "Na fila da merenda, o certo é…", "opcoes": [
+          { "texto": "Furá a fila", "certa": false },
+          { "texto": "Esperar a sua vez", "certa": true },
+          { "texto": "Empurrar os outros", "certa": false }
+        ]},
+        { "pergunta": "Quando alguém erra, você…", "opcoes": [
+          { "texto": "Incentiva a tentar de novo", "certa": true },
+          { "texto": "Zomba", "certa": false },
+          { "texto": "Fica bravo", "certa": false }
+        ]}
+      ]
+    }
+  ],
+  "missoes": [
+    {
+      "id": "missao-cor",
+      "titulo": "Caça à cor",
+      "texto": "Ache algo AZUL na sua casa e me conte! Pode ser um brinquedo, uma blusa ou a janela.",
+      "emoji": "🔵",
+      "tipo": "observar",
+      "recompensa": "adesivo-azul"
+    },
+    {
+      "id": "missao-abreco",
+      "titulo": "Abraço surpresa",
+      "texto": "Dê um abraço em alguém da sua família e diga: 'Eu gosto de você!'",
+      "emoji": "🤗",
+      "tipo": "gentileza",
+      "recompensa": "adesivo-coracao"
+    },
+    {
+      "id": "missao-contar",
+      "titulo": "Conte até 5",
+      "texto": "Conte em voz alta até 5, batendo palminhas. Eu baterei as asas (ou o rabo) junto!",
+      "emoji": "👏",
+      "tipo": "numeros",
+      "recompensa": "adesivo-estrela"
+    },
+    {
+      "id": "missao-agua",
+      "titulo": "Beber água",
+      "texto": "Beba um gole d'água agora. Cuidar do corpo também é carinho!",
+      "emoji": "💧",
+      "tipo": "cuidado",
+      "recompensa": "adesivo-gota"
+    },
+    {
+      "id": "missao-sorriso",
+      "titulo": "Sorriso poderoso",
+      "texto": "Faça a maior cara feliz que conseguir e mostre pro espelho!",
+      "emoji": "😄",
+      "tipo": "humor",
+      "recompensa": "adesivo-sol"
+    },
+    {
+      "id": "missao-organizar",
+      "titulo": "Um brinquedo no lugar",
+      "texto": "Guarde um brinquedo que estiver fora do lugar. Ordem também é magia!",
+      "emoji": "🧸",
+      "tipo": "responsabilidade",
+      "recompensa": "adesivo-casa"
+    }
+  ],
+  "dicas": [
+    "Beber água deixa o cérebro mais esperto!",
+    "Errar faz parte de aprender — tente de novo com carinho.",
+    "Um 'por favor' e um 'obrigado' abrem muitos sorrisos.",
+    "Dormir bem ajuda a crescer e a sonhar!",
+    "Compartilhar um brinquedo é um superpoder.",
+    "Quando estiver triste, respire fundo três vezes.",
+    "Ler um pouquinho todo dia deixa a imaginação gigante.",
+    "Cuidar de um amigo (como eu!) ensina responsabilidade.",
+    "Sorrir pra alguém pode alegrar o dia inteiro dela.",
+    "Mover o corpinho — pular, dançar, caminhar — dá energia!"
+  ],
+  "trofeus": [
+    { "id": "primeiro-amigo", "nome": "Primeiro amigo", "desc": "Escolheu seu amiguito", "icone": "🐾" },
+    { "id": "cuidador", "nome": "Cuidadora", "desc": "Cuidou 10 vezes", "icone": "💝" },
+    { "id": "professora", "nome": "Professora", "desc": "Completou uma lição", "icone": "📚" },
+    { "id": "sabia", "nome": "Sabichona", "desc": "Completou todas as lições", "icone": "🧠" },
+    { "id": "missao-feita", "nome": "Aventureira", "desc": "Fez uma missão", "icone": "⭐" },
+    { "id": "missao-mestre", "nome": "Mestre das missões", "desc": "Fez 5 missões", "icone": "🏅" },
+    { "id": "coracao-cheio", "nome": "Coração cheio", "desc": "Deixou carinho no máximo", "icone": "💗" },
+    { "id": "nivel-5", "nome": "Nível 5", "desc": "Chegou ao nível 5", "icone": "🌈" }
+  ],
+  "respostasCerto": [
+    "Isso! Você acertou!",
+    "Mandou bem demais!",
+    "Uau! Que orgulho!",
+    "Perfeito! Continua assim!"
+  ],
+  "respostasErrado": [
+    "Quase! Tenta de novo, você consegue!",
+    "Hmm, não foi essa… mas errar é aprender!",
+    "Ops! Olha com carinho e tenta outra vez.",
+    "Não desiste! Eu acredito em você!"
+  ],
+  "falasCuidado": {
+    "alimentar": ["Nhoc nhoc! Que delícia!", "Obrigada! Barriguinha feliz!", "Isso era exatamente o que eu queria!"],
+    "brincar": ["Hihi! Que diversão!", "De novo! De novo!", "Você é a melhor parceira de brincadeira!"],
+    "dormir": ["Zzz… sonhando com você…", "Que soninho gostoso…", "Acordei renovada! Obrigada!"],
+    "carinho": ["Purr… / Au… / Que abraço bom!", "Meu coração ficou quentinho!", "Mais um pouquinho? Obrigada!"]
+  }
+}
