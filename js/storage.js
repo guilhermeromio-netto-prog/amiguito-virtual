@@ -1,10 +1,10 @@
 (function (global) {
   const CHAVE = "amiguito-virtual-v1";
-  const IDS_NOVOS = ["rumi", "zoe", "mira", "emily", "leozinho"];
+  const IDS_NOVOS = ["rumi", "zoe", "mira", "emily", "leozinho", "void", "nova", "pixi", "sol"];
   const IDS_ANTIGOS = ["luna", "pipoca", "fogo"];
 
   const estadoPadrao = () => ({
-    versaoSave: 3,
+    versaoSave: 4,
     personagemId: null,
     nomePet: "",
     necessidades: { humor: 85, energia: 85, carinho: 85, diversao: 85 },
@@ -59,7 +59,7 @@
     if (merged.personagemId && !IDS_NOVOS.includes(merged.personagemId)) {
       merged.personagemId = null;
     }
-    merged.versaoSave = 3;
+    merged.versaoSave = 4;
     return merged;
   }
 

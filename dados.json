@@ -5,8 +5,15 @@
       "id": "rumi",
       "nome": "Rumi",
       "tipo": "amiga",
-      "emoji": "👧",
-      "descricao": "Cabelo roxo e ideias brilhantes. Adora ciência e estrelas.",
+      "emoji": "💜",
+      "icone": "🔬",
+      "tags": [
+        "💜",
+        "🌟",
+        "🔬"
+      ],
+      "descricao": "Cabelo roxo. Ama ciência e estrelas.",
+      "falaPick": "Rumi! Cabelo roxo. Vamos explorar ciência?",
       "cor": "#9B7EDE",
       "cabelo": "#7B5BBF",
       "saudacoes": [
@@ -42,8 +49,15 @@
       "id": "zoe",
       "nome": "Zoe",
       "tipo": "amiga",
-      "emoji": "🧒",
-      "descricao": "Cabelo curto e muita energia. Rainha dos desafios rápidos.",
+      "emoji": "⚡",
+      "icone": "🏃",
+      "tags": [
+        "✂️",
+        "⚡",
+        "🎯"
+      ],
+      "descricao": "Cabelo curto. Cheia de energia e desafios.",
+      "falaPick": "Zoe! Cabelo curto. Bora um desafio rápido?",
       "cor": "#5B8DEF",
       "cabelo": "#2C3E50",
       "saudacoes": [
@@ -79,8 +93,15 @@
       "id": "mira",
       "nome": "Mira",
       "tipo": "amiga",
-      "emoji": "👧",
-      "descricao": "Cabelo vermelho e coração corajoso. Ama matemática e padrões.",
+      "emoji": "❤️",
+      "icone": "🔢",
+      "tags": [
+        "❤️",
+        "🔢",
+        "🧩"
+      ],
+      "descricao": "Cabelo vermelho. Ama contar e padrões.",
+      "falaPick": "Mira! Cabelo vermelho. Vamos contar juntos?",
       "cor": "#E85D4C",
       "cabelo": "#C0392B",
       "saudacoes": [
@@ -102,13 +123,13 @@
           "Me conta um elogio?"
         ],
         "diversao": [
-          "Números estão chamando!",
-          "Jogo de formas, por favor!"
+          "Quero um jogo de formas!",
+          "Desafio de números?"
         ]
       },
       "elogios": [
-        "Cálculo perfeito!",
-        "Você pensa como uma estrela!",
+        "Você conta como uma estrela!",
+        "Padrão perfeito!",
         "Mira bate palmas pra você!"
       ]
     },
@@ -116,22 +137,29 @@
       "id": "emily",
       "nome": "Emily",
       "tipo": "amiga",
-      "emoji": "👧",
-      "descricao": "Cabelo rosa e voz doce. Adora inglês e conversas.",
-      "cor": "#FF8FB8",
+      "emoji": "🌸",
+      "icone": "🗣️",
+      "tags": [
+        "🌸",
+        "🗣️",
+        "🎀"
+      ],
+      "descricao": "Cabelo rosa. Adora inglês e conversar.",
+      "falaPick": "Emily! Cabelo rosa. Hello! Vamos falar inglês?",
+      "cor": "#F06292",
       "cabelo": "#F06292",
       "saudacoes": [
         "Hello! Eu sou a Emily!",
         "Pink hair, happy heart!",
-        "Shall we speak English juntos?"
+        "Vamos dizer hello e thank you?"
       ],
       "pedidos": {
         "humor": [
-          "Let's play a word game!",
-          "Vamos dizer Hello bem alto?"
+          "Wanna play English?",
+          "Diga uma cor em inglês!"
         ],
         "energia": [
-          "Nap time… sweet dreams",
+          "Nap time… soft pillow.",
           "Emily precisa de um descanso"
         ],
         "carinho": [
@@ -139,51 +167,234 @@
           "Um carinho faz meu cabelo brilhar"
         ],
         "diversao": [
-          "I'm bored… English jogo?",
-          "Diálogo rapidinho?"
+          "Sing a tiny song?",
+          "Jogo de palavras?"
         ]
       },
       "elogios": [
-        "Amazing! You did it!",
+        "Great job!",
         "Emily claps for you!",
-        "Thank you, superstar!"
+        "You are so kind!"
       ]
     },
     {
       "id": "leozinho",
       "nome": "Léozinho",
       "tipo": "amigo",
-      "emoji": "👦",
-      "descricao": "Cabelo azul e mente de inventor. Ama programar e robôs.",
-      "cor": "#4FC3F7",
+      "emoji": "💙",
+      "icone": "🤖",
+      "tags": [
+        "💙",
+        "🤖",
+        "💻"
+      ],
+      "descricao": "Cabelo azul. Inventa robôs e códigos.",
+      "falaPick": "Léozinho! Cabelo azul. Vamos programar um robô?",
+      "cor": "#0288D1",
       "cabelo": "#0288D1",
       "saudacoes": [
         "Fala! Léozinho online!",
         "Cabelo azul = modo inventor ligado!",
-        "Vamos montar uma sequência?"
+        "Bora montar uma sequência?"
       ],
       "pedidos": {
         "humor": [
-          "Cadê o robô pra programar?",
-          "Desafio de setas, topa?"
+          "Quero programar!",
+          "Monta um padrão comigo?"
         ],
         "energia": [
-          "Sistema em modo sono…",
-          "Reiniciando em 3… 2…"
+          "Modo sleep…",
+          "Recarregando circuitos…"
         ],
         "carinho": [
-          "Ping de amizade?",
-          "High-five de engenheiro!"
+          "High-five de engenheiro?",
+          "Me dá um like espacial?"
         ],
         "diversao": [
-          "Sem bugs, sem diversão… joga!",
-          "Arruma a sequência comigo!"
+          "Jogo de robô, por favor!",
+          "Conserta comigo?"
         ]
       },
       "elogios": [
-        "Código limpo! Mandou bem!",
+        "Commit aprovado!",
         "Léozinho deu deploy de orgulho!",
-        "Bug zero — você arrasou!"
+        "Código lindo!"
+      ]
+    },
+    {
+      "id": "void",
+      "nome": "Void",
+      "tipo": "amigo",
+      "emoji": "🌌",
+      "icone": "🌙",
+      "tags": [
+        "🌌",
+        "🌙",
+        "✨"
+      ],
+      "descricao": "Cabelo escuro suave. Calmo como o céu da noite.",
+      "falaPick": "Void! Cabelo escuro brilhante. Vamos olhar as estrelas bem de leve?",
+      "cor": "#5C6BC0",
+      "cabelo": "#2A2F4A",
+      "saudacoes": [
+        "Oi… eu sou o Void. O espaço é quietinho e legal.",
+        "Não sou assustador — sou só misterioso e macio.",
+        "Quer ver uma estrela piscar comigo?"
+      ],
+      "pedidos": {
+        "humor": [
+          "Conta uma história do espaço?",
+          "Vamos achar uma constelação?"
+        ],
+        "energia": [
+          "Soneca sob as estrelas…",
+          "Modo lua: zzz"
+        ],
+        "carinho": [
+          "Um carinho bem suave?",
+          "Senta perto… eu gosto de companhia"
+        ],
+        "diversao": [
+          "Jogo calminho de estrelas?",
+          "Esconde-esconde na nebulosa?"
+        ]
+      },
+      "elogios": [
+        "Você brilha sem fazer barulho.",
+        "Missão suave: sucesso!",
+        "Void sorriu (bem de leve)!"
+      ]
+    },
+    {
+      "id": "nova",
+      "nome": "Nova",
+      "tipo": "amiga",
+      "emoji": "⭐",
+      "icone": "💫",
+      "tags": [
+        "⭐",
+        "💫",
+        "🤍"
+      ],
+      "descricao": "Cabelo prateado. Brilha como estrela nova.",
+      "falaPick": "Nova! Cabelo prateado. Pronto pra brilhar juntos?",
+      "cor": "#B39DDB",
+      "cabelo": "#D7D3E8",
+      "saudacoes": [
+        "Oi! Sou a Nova — uma estrela novinha!",
+        "Meu cabelo prateado cintila pra você.",
+        "Vamos espalhar brilho pela base?"
+      ],
+      "pedidos": {
+        "humor": [
+          "Quero um jogo brilhante!",
+          "Desenha uma estrela comigo?"
+        ],
+        "energia": [
+          "Recarregar o brilho…",
+          "Soninho de cometa…"
+        ],
+        "carinho": [
+          "Abraço cintilante?",
+          "Faz meu cabelo brilhar?"
+        ],
+        "diversao": [
+          "Dança das estrelas?",
+          "Caça ao brilho?"
+        ]
+      },
+      "elogios": [
+        "Você é pura luz!",
+        "Nova explodiu de orgulho (suave)!",
+        "Brilho máximo!"
+      ]
+    },
+    {
+      "id": "pixi",
+      "nome": "Pixi",
+      "tipo": "amiga",
+      "emoji": "🧚",
+      "icone": "🍃",
+      "tags": [
+        "🧚",
+        "🍃",
+        "🎨"
+      ],
+      "descricao": "Cabelo verde menta. Adora cores e natureza.",
+      "falaPick": "Pixi! Cabelo verde. Vamos pintar a natureza?",
+      "cor": "#26A69A",
+      "cabelo": "#2BBBAD",
+      "saudacoes": [
+        "Oi oi! Pixi pousou!",
+        "Cabelo menta = humor de floresta espacial!",
+        "Vamos misturar cores e rir?"
+      ],
+      "pedidos": {
+        "humor": [
+          "Me mostra uma cor viva!",
+          "Brinca de natureza comigo?"
+        ],
+        "energia": [
+          "Soneca na folhinha…",
+          "Pixi precisa de pausa fofa"
+        ],
+        "carinho": [
+          "Carinho de fada?",
+          "Asinha de abraço?"
+        ],
+        "diversao": [
+          "Jogo de cores?",
+          "Esconde atrás da árvore?"
+        ]
+      },
+      "elogios": [
+        "Que cores lindas!",
+        "Pixi bateu asas de alegria!",
+        "Natureza aprova!"
+      ]
+    },
+    {
+      "id": "sol",
+      "nome": "Sol",
+      "tipo": "amigo",
+      "emoji": "☀️",
+      "icone": "🌻",
+      "tags": [
+        "☀️",
+        "🌻",
+        "😊"
+      ],
+      "descricao": "Cabelo dourado. Quente, alegre e abraçador.",
+      "falaPick": "Sol! Cabelo dourado. Vamos espalhar solzinho?",
+      "cor": "#F9A825",
+      "cabelo": "#F4A261",
+      "saudacoes": [
+        "E aí! Eu sou o Sol! Bom dia o dia inteiro!",
+        "Cabelo dourado = modo alegria ligado!",
+        "Quer um abraço quentinho de missão?"
+      ],
+      "pedidos": {
+        "humor": [
+          "Conta uma piada solar!",
+          "Vamos sorrir bem grande?"
+        ],
+        "energia": [
+          "Nuvem passou… soneca rápida",
+          "Sol também descansa"
+        ],
+        "carinho": [
+          "Abraço quentinho?",
+          "High-five dourado!"
+        ],
+        "diversao": [
+          "Dança do sol?",
+          "Jogo bem animado?"
+        ]
+      },
+      "elogios": [
+        "Você iluminou tudo!",
+        "Sol tá orgulhoso!",
+        "Dia perfeito!"
       ]
     }
   ],

@@ -189,11 +189,23 @@
         <span class="selo-pro">✨ Tudo liberado · Pro</span>
         ${guia("Escolhe um amiguinho da tripulação. Depois a gente explora matemática, ciência, inglês e robôs!")}
         <div class="personagens" role="list">
-          ${DADOS.personagens.map((p) => `
-            <button type="button" class="persona ${estado.personagemId===p.id?"is-escolhida":""}" data-id="${p.id}" role="listitem" style="--c:${p.cor}">
-              <div class="persona__arte" style="background:linear-gradient(145deg,${p.cor}55,${p.cor})">${AmiguitoPet.renderSvg(p.id,"feliz",[])}</div>
-              <div><div class="persona__nome">${p.nome}</div><div class="persona__desc">${p.descricao}</div></div>
-            </button>`).join("")}
+          ${DADOS.personagens.map((p) => {
+            const tags = (p.tags || [p.emoji || "⭐"]).map((e) => `<span class="persona__tag" aria-hidden="true">${e}</span>`).join("");
+            const fala = p.falaPick || (p.nome + ". " + (p.descricao || ""));
+            return `
+            <button type="button" class="persona ${estado.personagemId===p.id?"is-escolhida":""}" data-id="${p.id}" role="listitem"
+              style="--c:${p.cor}" data-fala="${fala.replace(/"/g, "&quot;")}" aria-label="${fala.replace(/"/g, "&quot;")}">
+              <div class="persona__arte" style="background:linear-gradient(145deg,${p.cor}55,${p.cor})">
+                <span class="persona__emoji" aria-hidden="true">${p.icone || p.emoji || "⭐"}</span>
+                ${AmiguitoPet.renderSvg(p.id,"feliz",[])}
+              </div>
+              <div class="persona__info">
+                <div class="persona__nome">${p.nome}</div>
+                <div class="persona__tags">${tags}</div>
+                <div class="persona__desc">${p.descricao || ""}</div>
+              </div>
+            </button>`;
+          }).join("")}
         </div>
         <div class="campo-nome">
           <label for="nome-pet">Apelido do amiguinho (opcional)</label>
@@ -213,6 +225,8 @@
       conteudo.querySelectorAll(".persona").forEach((b) => b.classList.toggle("is-escolhida", b.dataset.id === escolhido));
       if (btnStart) btnStart.disabled = false;
       AmiguitoSom.tap();
+      const p = DADOS.personagens.find((x) => x.id === escolhido);
+      if (p) anunciar(p.falaPick || (p.nome + ". " + (p.descricao || "")));
     }));
 
     function aplicar() {
@@ -274,7 +288,7 @@
       <section aria-labelledby="t-casa">
         <span class="selo-pro">✨ Base Espacial · Pro</span>
         <div class="nivel">⭐ Nível ${estado.nivel} · ${estado.xp}/${AmiguitoStorage.xpParaNivel(estado.nivel)} XP</div>
-        <h2 id="t-casa" class="titulo-tela">Base d${nomeExibir().endsWith("a") || ["Rumi","Zoe","Mira","Emily"].includes(nomeExibir()) ? "a" : "o"} ${escapar(nomeExibir())}</h2>
+        <h2 id="t-casa" class="titulo-tela">Base d${(personagem() && personagem().tipo === "amiga") || nomeExibir().endsWith("a") ? "a" : "o"} ${escapar(nomeExibir())}</h2>
         ${guia("Toque nos botões pra cuidar. Depois partimos pras missões STEM!")}
         <div class="balao" role="status"><span class="balao__rotulo">Amiguito fala</span>${escapar(falaAtual)}</div>
         ${AmiguitoPet.renderQuarto(AmiguitoPet.renderSvg(p.id, humor, estado.acessorios), `${classe} ${extra}`)}

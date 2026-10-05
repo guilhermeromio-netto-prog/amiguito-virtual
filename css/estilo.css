@@ -199,7 +199,25 @@ body {
 .guia-chip strong { display: block; font-size: 0.78rem; color: #5B4B8A; text-transform: uppercase; letter-spacing: 0.04em; }
 .guia-chip p { font-size: 0.92rem; font-weight: 700; margin: 0.1rem 0 0; }
 
-.personagens { display: grid; gap: 0.7rem; margin-top: 0.75rem; }
+.personagens {
+  display: grid; gap: 0.65rem; margin-top: 0.75rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 520px) {
+  .personagens { grid-template-columns: 1fr 1fr; }
+}
+.persona__emoji {
+  position: absolute; top: 6px; left: 6px; font-size: 1.35rem;
+  background: #fff; border-radius: 50%; width: 2rem; height: 2rem;
+  display: grid; place-items: center; box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  z-index: 2;
+}
+.persona__tags { display: flex; gap: 0.25rem; margin: 0.15rem 0 0.2rem; font-size: 1.05rem; }
+.persona__tag { line-height: 1; }
+body.modo-figuras .persona__desc { display: none !important; }
+body.modo-figuras .persona__tags { font-size: 1.25rem; }
+body.modo-figuras .persona__emoji { width: 2.4rem; height: 2.4rem; font-size: 1.5rem; }
+
 .persona {
   display: grid; grid-template-columns: 88px 1fr; gap: 0.75rem; align-items: center;
   text-align: left; padding: 0.75rem; border: 3px solid var(--cor-borda); border-radius: var(--raio);
@@ -212,6 +230,7 @@ body {
 }
 .persona.is-escolhida { border-color: #5B4B8A; background: #F6F2FF; box-shadow: 0 0 0 3px rgba(91,75,138,0.25); }
 .persona__arte {
+  position: relative;
   width: 88px; height: 88px; border-radius: 50%; display: grid; place-items: center; overflow: hidden;
 }
 .persona__nome { font-size: 1.15rem; font-weight: 900; margin-bottom: 0.12rem; }
