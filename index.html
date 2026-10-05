@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Amiguito Pro — aventure-se no espaço com a astronauta, amiguinhos e trilhas de matemática, ciência, inglês e tecnologia. byGui">
+  <meta name="description" content="Amiguito Pro — app espacial com áudio e figuras para crianças que ainda não leem. byGui">
   <meta name="theme-color" content="#5B4B8A">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Amiguito Pro">
-  <title>Amiguito Pro · Espaço · byGui</title>
+  <title>Amiguito Pro · Figuras e Áudio · byGui</title>
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="apple-touch-icon" href="img/icon-180.png">
   <link rel="stylesheet" href="css/estilo.css">
 </head>
-<body>
+<body class="modo-figuras">
   <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
   <div id="app" class="app">
@@ -21,27 +21,49 @@
         <img class="topo__avatar" src="img/astronauta-guia.png" width="40" height="40" alt="" aria-hidden="true">
         <div>
           <h1 class="topo__titulo">Amiguito Pro</h1>
-          <p class="topo__selo" id="topo-selo">Missão Espacial · Aprender</p>
+          <p class="topo__selo" id="topo-selo">Áudio · Figuras · Espaço</p>
         </div>
       </div>
       <div class="topo__acoes">
         <span id="streak-badge" class="streak" hidden title="Dias seguidos"></span>
-        <button type="button" id="btn-som" class="btn btn--icone" aria-pressed="false" aria-label="Ativar sons" title="Sons">
+        <button type="button" id="btn-falar" class="btn btn--icone" aria-label="Ouvir de novo" data-fala="Ouvir de novo" title="Ouvir">
+          <span aria-hidden="true">🗣️</span>
+        </button>
+        <button type="button" id="btn-figuras" class="btn btn--icone" aria-pressed="true" aria-label="Modo só figuras ligado" data-fala="Modo só figuras" title="Só figuras">
+          <span aria-hidden="true">👁️</span>
+        </button>
+        <button type="button" id="btn-som" class="btn btn--icone" aria-pressed="false" aria-label="Ativar sons e fala" data-fala="Ligar ou desligar som" title="Sons">
           <span aria-hidden="true">🔇</span>
         </button>
       </div>
     </header>
 
+    <div id="guia-seta" class="guia-seta" hidden aria-hidden="true">
+      <img src="img/astronauta-guia.png" width="48" height="48" alt="">
+      <span class="guia-seta__seta" aria-hidden="true">👇</span>
+    </div>
+
     <main id="conteudo" class="conteudo" tabindex="-1"></main>
 
     <nav id="nav-principal" class="nav" hidden aria-label="Menu principal">
-      <a href="#/casa" class="nav__item" data-rota="casa"><span class="nav__icone" aria-hidden="true">🏠</span><span>Base</span></a>
-      <a href="#/brincar" class="nav__item" data-rota="brincar"><span class="nav__icone" aria-hidden="true">🎮</span><span>Brincar</span></a>
-      <a href="#/stem" class="nav__item" data-rota="stem"><span class="nav__icone" aria-hidden="true">🚀</span><span>Missões</span></a>
-      <a href="#/mais" class="nav__item" data-rota="mais"><span class="nav__icone" aria-hidden="true">✨</span><span>Mais</span></a>
+      <a href="#/casa" class="nav__item" data-rota="casa" data-fala="Base" aria-label="Base">
+        <span class="nav__icone" aria-hidden="true">🏠</span><span class="nav__txt">Base</span>
+      </a>
+      <a href="#/brincar" class="nav__item" data-rota="brincar" data-fala="Brincar" aria-label="Brincar">
+        <span class="nav__icone" aria-hidden="true">🎮</span><span class="nav__txt">Brincar</span>
+      </a>
+      <a href="#/stem" class="nav__item" data-rota="stem" data-fala="Missões" aria-label="Missões">
+        <span class="nav__icone" aria-hidden="true">🚀</span><span class="nav__txt">Missões</span>
+      </a>
+      <a href="#/mais" class="nav__item" data-rota="mais" data-fala="Mais" aria-label="Mais">
+        <span class="nav__icone" aria-hidden="true">✨</span><span class="nav__txt">Mais</span>
+      </a>
     </nav>
 
-    <footer class="rodape"><p>Feito com carinho · <strong>byGui</strong></p></footer>
+    <footer class="rodape">
+      <p>Feito com carinho · <strong>byGui</strong></p>
+      <p><a href="#/adulto" class="link-adulto" data-fala="Área do adulto">Adulto</a></p>
+    </footer>
   </div>
 
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
@@ -49,6 +71,7 @@
 
   <script src="js/storage.js" defer></script>
   <script src="js/som.js" defer></script>
+  <script src="js/fala.js" defer></script>
   <script src="js/ia.js" defer></script>
   <script src="js/pet.js" defer></script>
   <script src="js/ensinar.js" defer></script>
@@ -57,6 +80,7 @@
   <script src="js/yoga.js" defer></script>
   <script src="js/roteiros.js" defer></script>
   <script src="js/stem.js" defer></script>
+  <script src="js/ler.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>
 </html>

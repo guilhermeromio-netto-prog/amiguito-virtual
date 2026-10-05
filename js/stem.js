@@ -21,6 +21,7 @@
       <div class="jogo__opcoes">${shuffle(opts).map(o=>`<button type="button" class="opcao" data-v="${o}">${o}</button>`).join("")}</div>`;
     // fix emoji display
     root.querySelector(".objetos-conta").textContent = Array(n).fill(emoji).join(" ");
+    falarStem("Quantos tem? Toque no número certo.");
     root.querySelectorAll(".opcao").forEach((b) => b.addEventListener("click", () => {
       const ok = Number(b.dataset.v) === n;
       b.classList.add(ok ? "is-certa" : "is-errada");
@@ -39,6 +40,7 @@
         <button type="button" class="opcao" data-lado="a" style="min-height:100px;font-size:1.5rem">${Array(a).fill("🔵").join("")}<br><small>${a}</small></button>
         <button type="button" class="opcao" data-lado="b" style="min-height:100px;font-size:1.5rem">${Array(b).fill("🟢").join("")}<br><small>${b}</small></button>
       </div>`;
+    falarStem("Quem tem mais?");
     root.querySelectorAll(".opcao").forEach((btn) => btn.addEventListener("click", () => {
       const ok = (btn.dataset.lado === "a") === esquerdaMais;
       btn.classList.add(ok ? "is-certa" : "is-errada");
@@ -53,6 +55,7 @@
     const seq = [x, y, x, y, x];
     const proximo = y;
     const opts = shuffle([proximo, x, "🌈"]);
+    falarStem("O que vem depois no padrão?");
     root.innerHTML = `
       <div class="jogo-hud"><span>O que vem depois?</span><span>Padrão</span></div>
       <p class="jogo__pergunta" style="font-size:1.8rem;letter-spacing:4px">${seq.join(" ")} → ?</p>
@@ -136,6 +139,7 @@
     let seq = [];
     const banco = ["⬆️", "⬇️", "⬅️", "➡️", "⭐"];
     function paint() {
+      if (!seq.length) falarStem("Programe o robô: duas setas para cima, uma para a direita, e estrela.");
       root.innerHTML = `
         <div class="jogo-hud"><span>Leve o robô até a estrela</span><span>Tech</span></div>
         <p class="subtitulo">Meta: ${alvo.join(" ")}</p>
@@ -179,6 +183,10 @@
       if (ok) onDone({ sucesso: true, msg: `Corrigido: ${certo.join(" ")}`, trilha: "tech" });
       else AmiguitoSom && AmiguitoSom.erro();
     }));
+  }
+
+  function falarStem(txt) {
+    if (window.AmiguitoFala) AmiguitoFala.falar(txt);
   }
 
   function montar(id, root, onDone) {

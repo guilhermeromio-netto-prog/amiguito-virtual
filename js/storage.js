@@ -23,6 +23,8 @@
     dicaDoDia: null,
     dicaData: null,
     somAtivo: false,
+    modoFiguras: true, // padrão ON — criança que não lê
+    primeiraVisita: true,
     idiomaDica: "pt",
     streak: 0,
     ultimoDia: null,

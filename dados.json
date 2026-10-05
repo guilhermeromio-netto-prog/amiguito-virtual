@@ -1348,6 +1348,50 @@
   ],
   "roteiros": [
     {
+      "id": "quero-ler",
+      "titulo": "Quero ler",
+      "icone": "🔤",
+      "cor": "bg-rosa",
+      "desc": "Letras, sons e figurinhas",
+      "passos": [
+        {
+          "id": "l1",
+          "titulo": "Letras com figura",
+          "tipo": "ler",
+          "ref": "letras",
+          "estrelas": 2
+        },
+        {
+          "id": "l2",
+          "titulo": "Sílabas",
+          "tipo": "ler",
+          "ref": "silabas",
+          "estrelas": 2
+        },
+        {
+          "id": "l3",
+          "titulo": "Palavra e figura",
+          "tipo": "ler",
+          "ref": "palavras",
+          "estrelas": 2
+        },
+        {
+          "id": "l4",
+          "titulo": "Repetir letras",
+          "tipo": "ler",
+          "ref": "letras",
+          "estrelas": 1
+        },
+        {
+          "id": "l5",
+          "titulo": "Desafio figuras",
+          "tipo": "ler",
+          "ref": "palavras",
+          "estrelas": 2
+        }
+      ]
+    },
+    {
       "id": "math-missao",
       "titulo": "Missão Matemática",
       "icone": "🧮",
@@ -1804,6 +1848,12 @@
       "nome": "Joinha espacial",
       "desc": "Missão com a astronauta",
       "icone": "👩‍🚀"
+    },
+    {
+      "id": "leitora",
+      "nome": "Quero ler",
+      "desc": "Fez a trilha de letras",
+      "icone": "📖"
     }
   ],
   "respostasCerto": [
@@ -1839,6 +1889,218 @@
     "diversao": [
       "Isso anima a base inteira!",
       "Missão diversão: sucesso!"
+    ]
+  },
+  "alfabetizacao": {
+    "letras": [
+      {
+        "letra": "A",
+        "som": "á",
+        "palavra": "astronauta",
+        "emoji": "👩‍🚀",
+        "fala": "A de astronauta"
+      },
+      {
+        "letra": "B",
+        "som": "bê",
+        "palavra": "bola",
+        "emoji": "⚽",
+        "fala": "B de bola"
+      },
+      {
+        "letra": "C",
+        "som": "cê",
+        "palavra": "casa",
+        "emoji": "🏠",
+        "fala": "C de casa"
+      },
+      {
+        "letra": "D",
+        "som": "dê",
+        "palavra": "dado",
+        "emoji": "🎲",
+        "fala": "D de dado"
+      },
+      {
+        "letra": "E",
+        "som": "é",
+        "palavra": "estrela",
+        "emoji": "⭐",
+        "fala": "E de estrela"
+      },
+      {
+        "letra": "F",
+        "som": "éfe",
+        "palavra": "foguete",
+        "emoji": "🚀",
+        "fala": "F de foguete"
+      },
+      {
+        "letra": "G",
+        "som": "gê",
+        "palavra": "gato",
+        "emoji": "🐱",
+        "fala": "G de gato"
+      },
+      {
+        "letra": "L",
+        "som": "éle",
+        "palavra": "lua",
+        "emoji": "🌙",
+        "fala": "L de lua"
+      },
+      {
+        "letra": "M",
+        "som": "ême",
+        "palavra": "mão",
+        "emoji": "✋",
+        "fala": "M de mão"
+      },
+      {
+        "letra": "P",
+        "som": "pê",
+        "palavra": "peixe",
+        "emoji": "🐟",
+        "fala": "P de peixe"
+      },
+      {
+        "letra": "R",
+        "som": "érre",
+        "palavra": "robô",
+        "emoji": "🤖",
+        "fala": "R de robô"
+      },
+      {
+        "letra": "S",
+        "som": "ésse",
+        "palavra": "sol",
+        "emoji": "☀️",
+        "fala": "S de sol"
+      }
+    ],
+    "silabas": [
+      {
+        "alvo": "BA",
+        "emoji": "⚽",
+        "fala": "BA de bola",
+        "opcoes": [
+          "BA",
+          "BO",
+          "BU"
+        ]
+      },
+      {
+        "alvo": "CA",
+        "emoji": "🏠",
+        "fala": "CA de casa",
+        "opcoes": [
+          "CA",
+          "CO",
+          "CE"
+        ]
+      },
+      {
+        "alvo": "LU",
+        "emoji": "🌙",
+        "fala": "LU de lua",
+        "opcoes": [
+          "LA",
+          "LE",
+          "LU"
+        ]
+      },
+      {
+        "alvo": "SO",
+        "emoji": "☀️",
+        "fala": "SO de sol",
+        "opcoes": [
+          "SA",
+          "SO",
+          "SU"
+        ]
+      },
+      {
+        "alvo": "FO",
+        "emoji": "🚀",
+        "fala": "FO de foguete",
+        "opcoes": [
+          "FA",
+          "FI",
+          "FO"
+        ]
+      },
+      {
+        "alvo": "MA",
+        "emoji": "✋",
+        "fala": "MA de mão",
+        "opcoes": [
+          "MA",
+          "ME",
+          "MI"
+        ]
+      }
+    ],
+    "palavras": [
+      {
+        "palavra": "SOL",
+        "emoji": "☀️",
+        "fala": "Sol",
+        "distratores": [
+          "🌙",
+          "⚽",
+          "🏠"
+        ]
+      },
+      {
+        "palavra": "LUA",
+        "emoji": "🌙",
+        "fala": "Lua",
+        "distratores": [
+          "☀️",
+          "🚀",
+          "🐱"
+        ]
+      },
+      {
+        "palavra": "GATO",
+        "emoji": "🐱",
+        "fala": "Gato",
+        "distratores": [
+          "🐶",
+          "🐟",
+          "⚽"
+        ]
+      },
+      {
+        "palavra": "CASA",
+        "emoji": "🏠",
+        "fala": "Casa",
+        "distratores": [
+          "🚀",
+          "⭐",
+          "✋"
+        ]
+      },
+      {
+        "palavra": "BOLA",
+        "emoji": "⚽",
+        "fala": "Bola",
+        "distratores": [
+          "🎲",
+          "🌙",
+          "🤖"
+        ]
+      },
+      {
+        "palavra": "FOGUETE",
+        "emoji": "🚀",
+        "fala": "Foguete",
+        "distratores": [
+          "⭐",
+          "🏠",
+          "🐟"
+        ]
+      }
     ]
   }
 }

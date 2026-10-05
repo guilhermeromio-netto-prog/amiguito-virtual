@@ -523,3 +523,97 @@ body {
   .trofeus-grade { grid-template-columns: repeat(3, 1fr); }
   .memoria-grid { grid-template-columns: repeat(4, 1fr); }
 }
+
+/* ===== Modo só figuras (não-leitores) ===== */
+body.modo-figuras .nav__txt,
+body.modo-figuras .topo__selo,
+body.modo-figuras .selo-pro,
+body.modo-figuras .card-link__meta,
+body.modo-figuras .subtitulo,
+body.modo-figuras .necessidade > span:first-child,
+body.modo-figuras .necessidade > span:last-child,
+body.modo-figuras .passo__num + div > div:not(.estrelas),
+body.modo-figuras .trofeu__desc,
+body.modo-figuras .stat__label,
+body.modo-figuras .persona__desc,
+body.modo-figuras .guia-chip strong,
+body.modo-figuras .balao__rotulo,
+body.modo-figuras .dica-dia__rotulo,
+body.modo-figuras .campo-nome label,
+body.modo-figuras .missao__texto,
+body.modo-figuras .jogo-hud span:last-child {
+  position: absolute !important;
+  width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); border: 0;
+  white-space: nowrap;
+}
+body.modo-figuras .titulo-tela {
+  font-size: 1.15rem; text-align: center;
+}
+body.modo-figuras .guia-chip p {
+  font-size: 0.95rem; font-weight: 800;
+}
+body.modo-figuras .nav__icone { font-size: 1.65rem; }
+body.modo-figuras .acao__icone { font-size: 2.1rem; }
+body.modo-figuras .acao { font-size: 0.78rem; min-height: 96px; }
+body.modo-figuras .card-link__icone { width: 64px; height: 64px; font-size: 2rem; }
+body.modo-figuras .opcao { font-size: 1.35rem; min-height: 68px; }
+body.modo-figuras .persona__nome { font-size: 1.05rem; }
+
+.pic-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 0.75rem;
+}
+.pic-btn {
+  min-height: 110px; border-radius: var(--raio); border: 3px solid var(--cor-borda);
+  background: #fff; font-size: 2.8rem; cursor: pointer; font-family: inherit;
+  display: grid; place-items: center; transition: transform var(--transicao), border-color var(--transicao);
+}
+.pic-btn:focus-visible { outline: 3px solid var(--cor-lavanda-escuro); outline-offset: 2px; }
+.pic-btn:active { transform: scale(0.96); }
+.pic-btn.is-certa { border-color: var(--cor-bom); background: #E8F8EE; }
+.pic-btn.is-errada { border-color: var(--cor-baixo); background: #FDEEEA; }
+.pic-btn small {
+  display: block; font-size: 0.85rem; font-weight: 900; margin-top: 0.25rem; color: var(--cor-texto);
+}
+body.modo-figuras .pic-btn small { display: none; }
+
+.letra-card {
+  text-align: center; padding: 1.25rem; background: linear-gradient(180deg,#EDE6FF,#FFF8F0);
+  border-radius: var(--raio); border: 2px solid var(--cor-lavanda); margin-bottom: 0.85rem;
+}
+.letra-gigante {
+  font-size: 4.5rem; font-weight: 900; line-height: 1; color: #5B4B8A;
+  text-shadow: 0 4px 0 rgba(91,75,138,0.15);
+}
+.letra-emoji { font-size: 3rem; display: block; margin: 0.35rem 0; }
+
+.guia-seta {
+  position: fixed; z-index: 40; pointer-events: none;
+  display: flex; flex-direction: column; align-items: center;
+  filter: drop-shadow(0 4px 12px rgba(27,20,64,0.35));
+  transition: left 280ms ease, top 280ms ease;
+}
+.guia-seta img { width: 48px; height: 48px; border-radius: 50%; background: #fff; border: 2px solid var(--cor-borda); }
+.guia-seta__seta { font-size: 1.4rem; animation: aponta 1s ease-in-out infinite; }
+@keyframes aponta { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+@media (prefers-reduced-motion: reduce) {
+  .guia-seta__seta { animation: none; }
+}
+
+.destaque-guia {
+  box-shadow: 0 0 0 4px rgba(255,230,109,0.95), 0 0 0 8px rgba(91,75,138,0.35) !important;
+  position: relative; z-index: 5;
+}
+
+.link-adulto {
+  font-size: 0.75rem; color: var(--cor-texto-suave); font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.adulto-box {
+  background: #fff; border: 2px solid var(--cor-borda); border-radius: var(--raio);
+  padding: 1.1rem; font-size: 0.92rem; line-height: 1.5; color: var(--cor-texto);
+}
+.adulto-box ul { margin: 0.5rem 0 0.75rem 1.1rem; }
+.replay-bar {
+  display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin: 0.5rem 0 0.85rem;
+}

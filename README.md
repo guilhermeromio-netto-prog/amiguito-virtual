@@ -1,32 +1,27 @@
-# Amiguito Pro · Missão Espacial · byGui
+# Amiguito Pro · Figuras + Áudio · byGui
 
-App estático pra crianças (~3–4 anos) **cuidarem de amiguinhos, brincarem e aprenderem STEM** — matemática, ciência, inglês e tecnologia — com a **astronauta guia** (joinha!).
+App espacial pra crianças (~3–4 anos), **incluindo quem ainda não lê**: ícones grandes, **modo só figuras** (ligado por padrão) e **fala em português** (Web Speech API).
 
 🌐 **https://guilhermeromio-netto-prog.github.io/amiguito-virtual/**
 
+## Sem precisar ler
+
+1. **👁️ Modo só figuras** — esconde rótulos longos; fica o essencial em ícones.
+2. **🗣️ Ouvir** — repete o que a tela falou (no iPhone, toque aqui depois de ligar o 🔊).
+3. **🔊 Som** — mudo por padrão; ao ligar, ativa bip + fala pt-BR.
+4. **🔤 Quero ler** — letras com som e figurinha, sílabas e palavras curtas (ouvir → tocar na figura).
+5. **Guia astronauta** — destaca o próximo toque recomendado.
+
 ## Tripulação
 
-| Amiguinho | Destaque |
-|-----------|----------|
-| **Rumi** | Cabelo roxo · ciência |
-| **Zoe** | Cabelo curto · desafios |
-| **Mira** | Cabelo vermelho · matemática |
-| **Emily** | Cabelo rosa · inglês |
-| **Léozinho** | Cabelo azul · programação |
+Rumi · Zoe · Mira · Emily · Léozinho (+ hero da astronauta)
 
-## O que tem
+## Adulto
 
-- Base espacial (humor, energia, carinho, diversão)
-- Minigames + trajes
-- Missões STEM (contar, padrões, robô, diálogo EN, clima…)
-- Roteiros com estrelas (Math, Ciência, Inglês, Tech, Dia da Astronauta, Yoga)
-- Sons originais (Web Audio) — **mudo por padrão**
-- Progresso no `localStorage` (migra saves antigos; personagens-animal pedem nova escolha)
+No rodapé: link **Adulto** (com confirmação). A voz depende do aparelho; iOS/Safari costuma exigir um toque do usuário para começar a falar.
 
-## Dica pra adultos
+## Stack
 
-Sessões curtas (5–10 min). Celebre o esforço. Inglês em voz alta juntos. Yoga: sem forçar; não é orientação médica. Experiências de ciência são de mentirinha / com adulto.
+HTML/CSS/JS estático · GitHub Pages · progresso em `localStorage`
 
-## Privacidade
-
-Sem conta, sem anúncios, sem pagamento, sem rastreamento. Assinatura **byGui**.
+Feito com carinho · **byGui**

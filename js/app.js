@@ -8,6 +8,11 @@
   const toastEl = document.getElementById("toast");
   const streakBadge = document.getElementById("streak-badge");
   const confete = document.getElementById("confete");
+  const btnFalar = document.getElementById("btn-falar");
+  const btnFiguras = document.getElementById("btn-figuras");
+  const guiaSeta = document.getElementById("guia-seta");
+  let ultimaFala = "";
+  let guiaAlvoSel = null;
 
   async function iniciar() {
     try {
@@ -21,9 +26,22 @@
     estado = AmiguitoStorage.aplicarDecaimento(AmiguitoStorage.carregar());
     window.AmiguitoEstado = estado;
     AmiguitoStorage.salvar(estado);
+    aplicarModoFiguras();
     atualizarChrome();
     btnSom.addEventListener("click", alternarSom);
+    if (btnFiguras) btnFiguras.addEventListener("click", alternarFiguras);
+    if (btnFalar) btnFalar.addEventListener("click", () => {
+      // gesto do usuário — essencial no iOS
+      if (!estado.somAtivo) {
+        estado.somAtivo = true;
+        AmiguitoStorage.salvar(estado);
+        atualizarChrome();
+      }
+      AmiguitoFala.falar(ultimaFala || "Amiguito Pro", { force: true });
+    });
     window.addEventListener("hashchange", rotear);
+    // desbloquear vozes
+    if (window.speechSynthesis) speechSynthesis.getVoices();
     rotear();
     setInterval(() => {
       if (!estado.personagemId) return;
@@ -42,13 +60,17 @@
     if (yogaTimer) { clearInterval(yogaTimer); yogaTimer = null; }
     const p = partes();
     const r = rotaAtual();
-    if (!estado.personagemId && r && r !== "inicio") { location.hash = "#/"; return; }
+    if (p[0] === "adulto") { atualizarChrome(); return renderAdulto(); }
+    if (!estado.personagemId && r && r !== "inicio" && r !== "adulto") { location.hash = "#/"; return; }
     nav.hidden = !estado.personagemId;
     destacarNav(p[0] || "casa");
     atualizarChrome();
     conteudo.classList.remove("is-transicao");
     void conteudo.offsetWidth;
     conteudo.classList.add("is-transicao");
+
+    if (p[0] === "ler" && p[1]) return renderLer(p[1]);
+    if (p[0] === "ler") return renderLerHub();
 
     if (!estado.personagemId || !r || r === "inicio") return renderBoasVindas();
     if (p[0] === "casa") return renderCasa();
@@ -81,6 +103,7 @@
 
   function atualizarChrome() {
     window.AmiguitoEstado = estado;
+    aplicarModoFiguras();
     btnSom.setAttribute("aria-pressed", String(!!estado.somAtivo));
     btnSom.setAttribute("aria-label", estado.somAtivo ? "Desativar sons" : "Ativar sons");
     btnSom.innerHTML = `<span aria-hidden="true">${estado.somAtivo ? "🔊" : "🔇"}</span>`;
@@ -125,7 +148,13 @@
     estado.somAtivo = !estado.somAtivo;
     AmiguitoStorage.salvar(estado);
     atualizarChrome();
-    if (estado.somAtivo) AmiguitoSom.sucesso();
+    if (estado.somAtivo) {
+      AmiguitoSom.sucesso();
+      AmiguitoFala.falar(ultimaFala || "Som ligado", { force: true });
+    } else {
+      AmiguitoFala.cancelar();
+      AmiguitoSom.stopBgm();
+    }
   }
 
   function escapar(s) {
@@ -135,7 +164,8 @@
     return `<p class="voltar"><a class="btn btn--fantasma btn--sm" href="${href}">← ${label || "Voltar"}</a></p>`;
   }
   function guia(txt) {
-    return `<div class="guia-chip"><img src="img/astronauta-guia.png" width="56" height="56" alt="Menina astronauta dando joinha"><div><strong>Guia espacial</strong><p>${escapar(txt)}</p></div></div>`;
+    return `<div class="guia-chip"><img src="img/astronauta-guia.png" width="56" height="56" alt="Menina astronauta dando joinha"><div><strong>Guia espacial</strong><p>${escapar(txt)}</p></div>
+      <button type="button" class="btn btn--icone" data-fala="${escapar(txt)}" aria-label="Ouvir guia" id="btn-guia-ouvir">🗣️</button></div>`;
   }
 
   /* ===== Welcome ===== */
@@ -220,6 +250,7 @@
       mostrarToast("Progresso apagado!");
       renderBoasVindas();
     });
+    posRender("Bem-vinda ao Amiguito Pro! Escolha um amiguinho na tela.", ".persona");
   }
 
   /* ===== Casa / Base ===== */
@@ -254,8 +285,12 @@
         </div>
         <p style="margin-top:0.9rem"><a class="btn btn--primario btn--bloco" href="#/stem">🚀 Missões STEM</a></p>
       </section>`;
-    conteudo.querySelectorAll(".acao").forEach((b) => b.addEventListener("click", () => cuidar(b.dataset.acao)));
+    conteudo.querySelectorAll(".acao").forEach((b) => {
+      b.setAttribute("data-fala", b.textContent.trim());
+      b.addEventListener("click", () => cuidar(b.dataset.acao));
+    });
     animacaoPet = "";
+    posRender("Base espacial. Cuide do amiguinho.", ".acao[data-acao=\"carinho\"]");
   }
 
   function cuidar(acao) {
@@ -305,12 +340,13 @@
         ${guia("Minigames rápidos pra aquecer os motores!")}
         <div class="grade-cards">
           ${DADOS.jogos.map((j) => `
-            <a class="card-link" href="#/brincar/${j.id}">
+            <a class="card-link" href="#/brincar/${j.id}" data-fala="${j.titulo}" aria-label="${j.titulo}">
               <span class="card-link__icone ${j.cor}" aria-hidden="true">${j.icone}</span>
               <span><span class="card-link__titulo">${j.titulo}</span><span class="card-link__meta">${j.desc}</span></span>
             </a>`).join("")}
         </div>
       </section>`;
+    posRender("Brincar. Escolha um jogo.", ".card-link");
   }
 
   function renderJogo(id) {
@@ -371,7 +407,13 @@
     conteudo.innerHTML = `
       <section aria-labelledby="t-stem">
         <h2 id="t-stem" class="titulo-tela">Missões STEM</h2>
-        ${guia("Matemática, ciência, inglês e tecnologia — do jeitinho de astronauta!")}
+        ${guia("Matemática, ciência, inglês, tecnologia e Quero ler!")}
+        <div class="grade-cards" style="margin-bottom:0.85rem">
+          <a class="card-link destaque-guia" href="#/ler" data-fala="Quero ler" aria-label="Quero ler">
+            <span class="card-link__icone bg-rosa" aria-hidden="true">🔤</span>
+            <span><span class="card-link__titulo">Quero ler</span><span class="card-link__meta">Letras e figurinhas com áudio</span></span>
+          </a>
+        </div>
         <h3 style="font-size:1rem;margin:0.5rem 0">Roteiros</h3>
         <div class="grade-cards">
           ${DADOS.roteiros.map((r) => {
@@ -388,13 +430,14 @@
         <h3 style="font-size:1rem;margin:1.1rem 0 0.5rem">Atividades rápidas</h3>
         <div class="grade-cards">
           ${DADOS.stemAtividades.map((a) => `
-            <a class="card-link" href="#/stem/atividade/${a.id}">
+            <a class="card-link" href="#/stem/atividade/${a.id}" data-fala="${a.titulo}" aria-label="${a.titulo}">
               <span class="card-link__icone bg-lavanda" aria-hidden="true">${a.icone}</span>
               <span><span class="card-link__titulo">${a.titulo}</span>
               <span class="card-link__meta">${a.desc} · ${a.trilha}</span></span>
             </a>`).join("")}
         </div>
       </section>`;
+    posRender("Missões. Toque em Quero ler ou num roteiro.", "a[href=\"#/ler\"]");
   }
 
   function renderStemAtividade(id) {
@@ -490,13 +533,15 @@
         <h2 class="titulo-tela">Mais</h2>
         ${guia("Lições, missões do dia, yoga e troféus da tripulação.")}
         <div class="grade-cards">
-          <a class="card-link" href="#/ensinar"><span class="card-link__icone bg-lavanda" aria-hidden="true">📚</span><span><span class="card-link__titulo">Ensinar & Inglês</span><span class="card-link__meta">Lições + desafio</span></span></a>
+          <a class="card-link" href="#/ler" data-fala="Quero ler" aria-label="Quero ler"><span class="card-link__icone bg-rosa" aria-hidden="true">🔤</span><span><span class="card-link__titulo">Quero ler</span><span class="card-link__meta">Letras e áudio</span></span></a>
+          <a class="card-link" href="#/ensinar" data-fala="Ensinar"><span class="card-link__icone bg-lavanda" aria-hidden="true">📚</span><span><span class="card-link__titulo">Ensinar & Inglês</span><span class="card-link__meta">Lições + desafio</span></span></a>
           <a class="card-link" href="#/aprender"><span class="card-link__icone bg-sol" aria-hidden="true">✨</span><span><span class="card-link__titulo">${escapar(nomeExibir())} ensina</span><span class="card-link__meta">Missões do dia</span></span></a>
           <a class="card-link" href="#/yoga"><span class="card-link__icone bg-menta" aria-hidden="true">🧘</span><span><span class="card-link__titulo">Yoga Suave</span><span class="card-link__meta">Poses calmas</span></span></a>
           <a class="card-link" href="#/trofeus"><span class="card-link__icone bg-rosa" aria-hidden="true">🏆</span><span><span class="card-link__titulo">Troféus</span><span class="card-link__meta">Conquistas</span></span></a>
-          <a class="card-link" href="#/"><span class="card-link__icone bg-espaco" aria-hidden="true">👩‍🚀</span><span><span class="card-link__titulo">Tripulação</span><span class="card-link__meta">Trocar amiguinho</span></span></a>
+          <a class="card-link" href="#/" data-fala="Tripulação"><span class="card-link__icone bg-espaco" aria-hidden="true">👩‍🚀</span><span><span class="card-link__titulo">Tripulação</span><span class="card-link__meta">Trocar amiguinho</span></span></a>
         </div>
       </section>`;
+    posRender("Mais opções. Quero ler fica no alto.", "a[href=\"#/ler\"]");
   }
 
   function renderEnsinar() {
@@ -558,6 +603,8 @@
           ${desafio?"":`<p style="margin-top:0.85rem"><a class="btn btn--fantasma btn--sm" href="#/ensinar/${licaoId}/desafio">Modo desafio</a></p>`}
         </div>
       </section>`;
+    posRender(tituloP, ".opcao");
+    anunciar(tituloP);
     const botoes = [...conteudo.querySelectorAll(".opcao")];
     botoes.forEach((btn) => btn.addEventListener("click", () => {
       const op = pergunta.opcoes[Number(btn.dataset.i)];
@@ -734,6 +781,150 @@
       <div class="painel-config"><a class="btn btn--fantasma" href="#/">Trocar tripulação</a></div>
     </section>`;
   }
+
+
+  function aplicarModoFiguras() {
+    document.body.classList.toggle("modo-figuras", !!estado.modoFiguras);
+    if (btnFiguras) {
+      btnFiguras.setAttribute("aria-pressed", String(!!estado.modoFiguras));
+      btnFiguras.setAttribute("aria-label", estado.modoFiguras ? "Modo só figuras ligado" : "Modo só figuras desligado");
+      btnFiguras.innerHTML = `<span aria-hidden="true">${estado.modoFiguras ? "👁️" : "🔤"}</span>`;
+    }
+  }
+
+  function alternarFiguras() {
+    estado.modoFiguras = !estado.modoFiguras;
+    estado.primeiraVisita = false;
+    AmiguitoStorage.salvar(estado);
+    aplicarModoFiguras();
+    AmiguitoSom.tap();
+    AmiguitoFala.falar(estado.modoFiguras ? "Modo só figuras ligado" : "Mostrando as palavras", { force: true });
+    mostrarToast(estado.modoFiguras ? "Só figuras 👁️" : "Com palavras 🔤");
+  }
+
+  function anunciar(texto) {
+    ultimaFala = texto;
+    AmiguitoFala.falar(texto);
+  }
+
+  function posRender(falaTela, seletorGuia) {
+    aplicarModoFiguras();
+    AmiguitoFala.amarrar(conteudo);
+    AmiguitoFala.amarrar(nav);
+    if (falaTela) anunciar(falaTela);
+    guiaAlvoSel = seletorGuia || null;
+    requestAnimationFrame(() => posicionarGuia(guiaAlvoSel));
+  }
+
+  function posicionarGuia(sel) {
+    if (!guiaSeta) return;
+    document.querySelectorAll(".destaque-guia").forEach((el) => el.classList.remove("destaque-guia"));
+    if (!sel || !estado.personagemId) {
+      guiaSeta.hidden = true;
+      return;
+    }
+    const el = conteudo.querySelector(sel) || document.querySelector(sel);
+    if (!el) { guiaSeta.hidden = true; return; }
+    el.classList.add("destaque-guia");
+    const r = el.getBoundingClientRect();
+    const top = Math.max(8, r.top - 64);
+    const left = Math.min(window.innerWidth - 60, Math.max(8, r.left + r.width / 2 - 24));
+    guiaSeta.style.top = top + "px";
+    guiaSeta.style.left = left + "px";
+    guiaSeta.hidden = false;
+  }
+
+  function renderLerHub() {
+    conteudo.innerHTML = `
+      <section aria-labelledby="t-ler">
+        ${linkVoltar("#/stem", "Missões")}
+        <h2 id="t-ler" class="titulo-tela">🔤 Quero ler</h2>
+        ${guia("Ouça e toque na figurinha. Sem pressa!")}
+        <div class="grade-cards">
+          <a class="card-link" href="#/ler/letras" data-fala="Letras com figurinha" aria-label="Letras">
+            <span class="card-link__icone bg-rosa" aria-hidden="true">🅰️</span>
+            <span><span class="card-link__titulo">Letras</span><span class="card-link__meta">Som + figura</span></span>
+          </a>
+          <a class="card-link" href="#/ler/silabas" data-fala="Sílabas" aria-label="Sílabas">
+            <span class="card-link__icone bg-ceu" aria-hidden="true">🅱️</span>
+            <span><span class="card-link__titulo">Sílabas</span><span class="card-link__meta">BA CA LU</span></span>
+          </a>
+          <a class="card-link" href="#/ler/palavras" data-fala="Palavras e figurinhas" aria-label="Palavras">
+            <span class="card-link__icone bg-sol" aria-hidden="true">📖</span>
+            <span><span class="card-link__titulo">Palavras</span><span class="card-link__meta">Ouvir e achar</span></span>
+          </a>
+          <a class="card-link" href="#/stem/rota/quero-ler" data-fala="Roteiro Quero ler" aria-label="Roteiro">
+            <span class="card-link__icone bg-lavanda" aria-hidden="true">🗺️</span>
+            <span><span class="card-link__titulo">Roteiro</span><span class="card-link__meta">Passo a passo</span></span>
+          </a>
+        </div>
+      </section>`;
+    posRender("Quero ler. Escolha letras, sílabas ou palavras.", ".card-link");
+  }
+
+  function renderLer(tipo) {
+    const map = { letras: "letras", silabas: "silabas", palavras: "palavras" };
+    const kind = map[tipo] || "letras";
+    const titulos = { letras: "Letras", silabas: "Sílabas", palavras: "Palavras" };
+    conteudo.innerHTML = `
+      <section>
+        ${linkVoltar("#/ler", "Quero ler")}
+        <h2 class="titulo-tela">${titulos[kind] || "Ler"}</h2>
+        <div id="ler-root"></div>
+      </section>`;
+    const root = document.getElementById("ler-root");
+    const falar = (txt, opts) => { ultimaFala = txt; AmiguitoFala.falar(txt, opts); };
+    AmiguitoLer.montar(kind, root, DADOS.alfabetizacao, (res) => {
+      AmiguitoStorage.ganharXp(estado, 10);
+      desbloquearTrofeu("leitora");
+      if (pendenteRota) {
+        const rota = DADOS.roteiros.find((r) => r.id === pendenteRota.rotaId);
+        const passo = rota && rota.passos.find((x) => x.id === pendenteRota.passoId);
+        if (passo && passo.tipo === "ler") {
+          AmiguitoRoteiros.marcarPasso(estado, pendenteRota.rotaId, pendenteRota.passoId, rota.passos);
+          if (AmiguitoStorage.progressoRota(estado, pendenteRota.rotaId).completo) desbloquearTrofeu("roteiro");
+          pendenteRota = null;
+        }
+      }
+      AmiguitoStorage.salvar(estado);
+      AmiguitoSom.sucesso();
+      celebrar();
+      anunciar(res.msg);
+      root.innerHTML = `<div class="card" style="text-align:center">
+        <div style="font-size:2.5rem">🎉</div>
+        <p class="titulo-tela" style="font-size:1.2rem">${escapar(res.msg)}</p>
+        ${guia("Mandou bem! Quer mais?")}
+        <a class="btn btn--primario" href="#/ler" data-fala="Mais leitura">Mais</a>
+      </div>`;
+      posRender(res.msg, "a.btn--primario");
+    }, falar);
+    posRender(titulos[kind] + ". Ouça e toque na figurinha.", "#btn-ouvir-letra, #btn-ouvir");
+  }
+
+
+  function renderAdulto() {
+    if (!confirm("Área do adulto. Continuar?")) {
+      history.back();
+      return;
+    }
+    nav.hidden = true;
+    conteudo.innerHTML = `
+      <section>
+        <h2 class="titulo-tela">Área do adulto</h2>
+        <div class="adulto-box">
+          <p><strong>Amiguito Pro</strong> foi feito pra criança que ainda não lê: ícones grandes, modo só figuras e fala em português.</p>
+          <ul>
+            <li>Ative o som 🔊 (no iPhone/iPad, toque em 🗣️ depois de ligar o som — o navegador exige um toque).</li>
+            <li>O botão 👁️ liga/desliga o <em>modo só figuras</em> (padrão: ligado).</li>
+            <li>A qualidade da voz depende do aparelho (voz pt-BR do sistema).</li>
+            <li>Progresso fica só neste aparelho.</li>
+          </ul>
+          <p><a class="btn btn--primario btn--bloco" href="#/casa" data-fala="Voltar">Voltar ao app</a></p>
+        </div>
+      </section>`;
+    AmiguitoFala.cancelar();
+  }
+
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", iniciar);
   else iniciar();
