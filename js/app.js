@@ -76,6 +76,7 @@
     if (p[0] === "casa") return renderCasa();
     if (p[0] === "brincar" && p[1]) return renderJogo(p[1]);
     if (p[0] === "brincar") return renderBrincar();
+    if (p[0] === "aprender-hub") return renderAprenderHub();
     if (p[0] === "stem" && p[1] === "atividade" && p[2]) return renderStemAtividade(p[2]);
     if (p[0] === "stem" && p[1] === "rota" && p[2]) return renderRota(p[2]);
     if (p[0] === "stem") return renderStemHub();
@@ -93,7 +94,7 @@
   }
 
   function destacarNav(base) {
-    const map = { casa:"casa", brincar:"brincar", stem:"stem", roteiros:"stem", mais:"mais", ensinar:"mais", aprender:"mais", yoga:"mais", trofeus:"mais", canto:"mais" };
+    const map = { casa:"casa", brincar:"brincar", stem:"stem", "aprender-hub":"stem", roteiros:"stem", mais:"mais", ensinar:"mais", aprender:"mais", yoga:"mais", trofeus:"mais", canto:"mais", ler:"stem" };
     const alvo = map[base] || "casa";
     nav.querySelectorAll(".nav__item").forEach((a) => a.classList.toggle("is-ativo", a.dataset.rota === alvo));
   }
@@ -283,7 +284,7 @@
           <button type="button" class="acao" data-acao="dormir"><span class="acao__icone" aria-hidden="true">😴</span>Descansar</button>
           <button type="button" class="acao" data-acao="carinho"><span class="acao__icone" aria-hidden="true">💕</span>Carinho</button>
         </div>
-        <p style="margin-top:0.9rem"><a class="btn btn--primario btn--bloco" href="#/stem">🚀 Missões STEM</a></p>
+        <p style="margin-top:0.9rem"><a class="btn btn--primario btn--bloco" href="#/aprender-hub" data-fala="Aprender">🚀 Aprender</a></p>
       </section>`;
     conteudo.querySelectorAll(".acao").forEach((b) => {
       b.setAttribute("data-fala", b.textContent.trim());
@@ -407,7 +408,8 @@
     conteudo.innerHTML = `
       <section aria-labelledby="t-stem">
         <h2 id="t-stem" class="titulo-tela">Missões STEM</h2>
-        ${guia("Matemática, ciência, inglês, tecnologia e Quero ler!")}
+        ${guia("Temas e roteiros. Comece pelo hub Aprender!")}
+        <p style="margin-bottom:0.75rem"><a class="btn btn--primario btn--bloco" href="#/aprender-hub" data-fala="Hub Aprender">🎨 Hub Aprender</a></p>
         <div class="grade-cards" style="margin-bottom:0.85rem">
           <a class="card-link destaque-guia" href="#/ler" data-fala="Quero ler" aria-label="Quero ler">
             <span class="card-link__icone bg-rosa" aria-hidden="true">🔤</span>
@@ -452,26 +454,38 @@
         <div id="stem-root"></div>
       </section>`;
     const root = document.getElementById("stem-root");
-    AmiguitoStem.montar(id, root, (res) => {
+    const onStemDone = (res) => {
       if (!estado.stemFeitas.includes(id)) estado.stemFeitas.push(id);
       AmiguitoStorage.ganharXp(estado, 8);
-      if (res.trilha === "tech") desbloquearTrofeu("programadora");
-      if (res.trilha === "matematica") desbloquearTrofeu("matematica");
-      if (res.trilha === "ciencia") desbloquearTrofeu("cientista");
-      if (res.trilha === "ingles") desbloquearTrofeu("bilingue");
+      const trilha = res.trilha || res.tema || "";
+      if (trilha === "tech") desbloquearTrofeu("programadora");
+      if (trilha === "matematica") desbloquearTrofeu("matematica");
+      if (trilha === "ciencia") desbloquearTrofeu("cientista");
+      if (trilha === "ingles") desbloquearTrofeu("bilingue");
+      if (trilha === "geo" || id.startsWith("geo-")) desbloquearTrofeu("geografa");
       completarPassoTipo("stem", id);
       AmiguitoStorage.salvar(estado);
       AmiguitoSom.sucesso();
       celebrar();
+      AmiguitoPet.soltarParticulas(["⭐","🌍","🎉","✨"]);
+      anunciar(res.msg);
       mostrarToast(res.msg);
-      conteudo.querySelector(".progresso-missao > i").style.width = "100%";
+      const bar = conteudo.querySelector(".progresso-missao > i");
+      if (bar) bar.style.width = "100%";
       root.innerHTML = `<div class="card" style="text-align:center;margin-top:0.75rem">
         <div style="font-size:2.5rem">🚀</div>
         <p class="titulo-tela" style="font-size:1.2rem">${escapar(res.msg)}</p>
-        ${guia("Missão cumprida! Quer outra?")}
-        <a class="btn btn--primario" href="#/stem">Mais missões</a>
+        ${guia("Mandou bem! Quer outra?")}
+        <div class="replay-bar"><button type="button" class="btn btn--sol btn--sm" data-fala="${escapar(res.msg)}" id="btn-replay-stem">🗣️</button></div>
+        <a class="btn btn--primario" href="#/aprender-hub" data-fala="Aprender">Mais</a>
       </div>`;
-    });
+      const br = root.querySelector("#btn-replay-stem");
+      if (br) br.addEventListener("click", () => AmiguitoFala.falar(res.msg, { force: true }));
+      posRender(res.msg, "a.btn--primario");
+    };
+    if (id.startsWith("geo-") && window.AmiguitoGeo) AmiguitoGeo.montar(id, root, onStemDone);
+    else AmiguitoStem.montar(id, root, onStemDone);
+    posRender(meta.titulo + ". Ouça e toque.", "#btn-ouvir, .pic-btn, .geo-regiao");
   }
 
   function renderRota(id) {
@@ -832,6 +846,55 @@
     guiaSeta.style.top = top + "px";
     guiaSeta.style.left = left + "px";
     guiaSeta.hidden = false;
+  }
+
+
+  function renderAprenderHub() {
+    const cena = `<div class="cena-ilustrada" aria-hidden="true"><span class="cena-ilustrada__nuvem">☁️</span><span class="cena-ilustrada__sol">☀️</span>
+      <div style="position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:2rem">🌳🏠🌴</div></div>`;
+    conteudo.innerHTML = `
+      <section aria-labelledby="t-hub">
+        <h2 id="t-hub" class="titulo-tela">Aprender</h2>
+        ${guia("Toque num tema. Eu falo e você aponta!")}
+        ${cena}
+        <div class="hub-temas">
+          <a class="tema-card tema-card--geo" href="#/stem/atividade/geo-brasil" data-fala="Geografia Brasil" aria-label="Geografia">
+            <span class="tema-card__icone">🇧🇷</span><span>Brasil</span>
+          </a>
+          <a class="tema-card tema-card--geo" href="#/stem/atividade/geo-continentes" data-fala="Mundo" aria-label="Mundo">
+            <span class="tema-card__icone">🌍</span><span>Mundo</span>
+          </a>
+          <a class="tema-card tema-card--math" href="#/stem/atividade/contar-objetos" data-fala="Matemática" aria-label="Matemática">
+            <span class="tema-card__icone">🔢</span><span>Contar</span>
+          </a>
+          <a class="tema-card tema-card--ciencia" href="#/stem/atividade/clima" data-fala="Ciência" aria-label="Ciência">
+            <span class="tema-card__icone">🔬</span><span>Ciência</span>
+          </a>
+          <a class="tema-card tema-card--ingles" href="#/ensinar/ingles-basico" data-fala="Inglês" aria-label="Inglês">
+            <span class="tema-card__icone">🌍</span><span>Hello</span>
+          </a>
+          <a class="tema-card tema-card--tech" href="#/stem/atividade/programar" data-fala="Robô" aria-label="Tecnologia">
+            <span class="tema-card__icone">🤖</span><span>Robô</span>
+          </a>
+          <a class="tema-card tema-card--ler" href="#/ler" data-fala="Quero ler" aria-label="Quero ler">
+            <span class="tema-card__icone">🔤</span><span>Ler</span>
+          </a>
+          <a class="tema-card" href="#/stem" data-fala="Todos os roteiros" aria-label="Roteiros">
+            <span class="tema-card__icone">🗺️</span><span>Roteiros</span>
+          </a>
+        </div>
+        <div class="grade-cards">
+          <a class="card-link" href="#/stem/rota/brasilzinho" data-fala="Roteiro Brasilzinho" aria-label="Brasilzinho">
+            <span class="card-link__icone bg-menta" aria-hidden="true">🇧🇷</span>
+            <span><span class="card-link__titulo">Brasilzinho</span><span class="card-link__meta">Regiões e lugares</span></span>
+          </a>
+          <a class="card-link" href="#/stem/rota/volta-mundo" data-fala="Volta ao mundo" aria-label="Volta ao mundo">
+            <span class="card-link__icone bg-ceu" aria-hidden="true">🌎</span>
+            <span><span class="card-link__titulo">Volta ao mundo</span><span class="card-link__meta">Continentes e animais</span></span>
+          </a>
+        </div>
+      </section>`;
+    posRender("Aprender. Escolha um tema.", ".tema-card");
   }
 
   function renderLerHub() {

@@ -1254,6 +1254,41 @@
       "trilha": "tech",
       "icone": "🔧",
       "desc": "Ache e corrija o erro"
+    },
+    {
+      "id": "geo-brasil",
+      "titulo": "Brasilzinho",
+      "trilha": "geografia",
+      "icone": "🇧🇷",
+      "desc": "Toque nas regiões do mapa"
+    },
+    {
+      "id": "geo-lugares",
+      "titulo": "Lugares do Brasil",
+      "trilha": "geografia",
+      "icone": "🌴",
+      "desc": "Amazônia, Rio, praia…"
+    },
+    {
+      "id": "geo-continentes",
+      "titulo": "Continentes",
+      "trilha": "geografia",
+      "icone": "🌍",
+      "desc": "Ache no mapa do mundo"
+    },
+    {
+      "id": "geo-animais",
+      "titulo": "Animais do mundo",
+      "trilha": "geografia",
+      "icone": "🦁",
+      "desc": "Onde cada animal vive?"
+    },
+    {
+      "id": "geo-arrastar",
+      "titulo": "Viagem do animal",
+      "trilha": "geografia",
+      "icone": "🧳",
+      "desc": "Arraste até o continente"
     }
   ],
   "callResponse": [
@@ -1387,6 +1422,101 @@
           "titulo": "Desafio figuras",
           "tipo": "ler",
           "ref": "palavras",
+          "estrelas": 2
+        }
+      ]
+    },
+    {
+      "id": "brasilzinho",
+      "titulo": "Brasilzinho",
+      "icone": "🇧🇷",
+      "cor": "bg-menta",
+      "desc": "Regiões e lugares do Brasil",
+      "passos": [
+        {
+          "id": "b1",
+          "titulo": "Regiões no mapa",
+          "tipo": "stem",
+          "ref": "geo-brasil",
+          "estrelas": 2
+        },
+        {
+          "id": "b2",
+          "titulo": "Lugares famosos",
+          "tipo": "stem",
+          "ref": "geo-lugares",
+          "estrelas": 2
+        },
+        {
+          "id": "b3",
+          "titulo": "Ciência natureza",
+          "tipo": "licao",
+          "ref": "ciencia-natureza",
+          "estrelas": 1
+        },
+        {
+          "id": "b4",
+          "titulo": "Regiões de novo",
+          "tipo": "stem",
+          "ref": "geo-brasil",
+          "estrelas": 1
+        },
+        {
+          "id": "b5",
+          "titulo": "Desafio Brasil",
+          "tipo": "stem",
+          "ref": "geo-lugares",
+          "estrelas": 2
+        }
+      ]
+    },
+    {
+      "id": "volta-mundo",
+      "titulo": "Volta ao mundo",
+      "icone": "🌎",
+      "cor": "bg-ceu",
+      "desc": "Continentes e animais",
+      "passos": [
+        {
+          "id": "v1",
+          "titulo": "Continentes",
+          "tipo": "stem",
+          "ref": "geo-continentes",
+          "estrelas": 2
+        },
+        {
+          "id": "v2",
+          "titulo": "Animais do mundo",
+          "tipo": "stem",
+          "ref": "geo-animais",
+          "estrelas": 2
+        },
+        {
+          "id": "v3",
+          "titulo": "Arrastar viagem",
+          "tipo": "stem",
+          "ref": "geo-arrastar",
+          "estrelas": 2
+        },
+        {
+          "id": "v4",
+          "titulo": "Inglês animals",
+          "tipo": "licao",
+          "ref": "ingles-espaco",
+          "estrelas": 1
+        },
+        {
+          "id": "v5",
+          "titulo": "Continentes de novo",
+          "tipo": "stem",
+          "ref": "geo-continentes",
+          "estrelas": 1
+        },
+        {
+          "id": "v6",
+          "titulo": "Desafio mundo",
+          "tipo": "stem",
+          "ref": "geo-arrastar",
           "estrelas": 2
         }
       ]
@@ -1729,16 +1859,16 @@
     }
   ],
   "dicas": [
-    "Astronautas também bebem água e descansam!",
-    "Errar faz parte de aprender — tente de novo.",
-    "Hello! Please! Thank you! — palavrinhas mágicas.",
-    "Um padrão é quando algo se repete com ordem.",
-    "Programar é dar passos claros, um depois do outro.",
-    "No espaço imaginário a gente viaja com a mente!",
-    "Contar com os dedos é uma ferramenta poderosa.",
-    "Cuidar de um amigo ensina responsabilidade.",
-    "Respire fundo três vezes quando precisar de calma.",
-    "Você é inteligente E carinhosa — os dois juntos!"
+    "Brasil tem Norte, Sul e mais!",
+    "Ouça e toque na figurinha.",
+    "Hello! Please! Thank you!",
+    "Errar é aprender. Tenta de novo!",
+    "Astronautas também descansam!",
+    "Arraste com o dedinho!",
+    "África tem leões. Ásia tem panda!",
+    "Amazônia é floresta gigante!",
+    "Você é inteligente e carinhosa!",
+    "Beber água ajuda o cérebro!"
   ],
   "trofeus": [
     {
@@ -1854,6 +1984,12 @@
       "nome": "Quero ler",
       "desc": "Fez a trilha de letras",
       "icone": "📖"
+    },
+    {
+      "id": "geografa",
+      "nome": "Exploradora",
+      "desc": "Fez geografia",
+      "icone": "🗺️"
     }
   ],
   "respostasCerto": [

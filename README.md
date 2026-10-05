@@ -1,27 +1,26 @@
-# Amiguito Pro · Figuras + Áudio · byGui
+# Amiguito Pro · Geografia + Áudio · byGui
 
-App espacial pra crianças (~3–4 anos), **incluindo quem ainda não lê**: ícones grandes, **modo só figuras** (ligado por padrão) e **fala em português** (Web Speech API).
+App espacial pra ~3–4 anos (**sem precisar ler**): figurinhas, fala pt-BR, mapas infantis do Brasil e do mundo.
 
 🌐 **https://guilhermeromio-netto-prog.github.io/amiguito-virtual/**
 
-## Sem precisar ler
+## Novidades
 
-1. **👁️ Modo só figuras** — esconde rótulos longos; fica o essencial em ícones.
-2. **🗣️ Ouvir** — repete o que a tela falou (no iPhone, toque aqui depois de ligar o 🔊).
-3. **🔊 Som** — mudo por padrão; ao ligar, ativa bip + fala pt-BR.
-4. **🔤 Quero ler** — letras com som e figurinha, sílabas e palavras curtas (ouvir → tocar na figura).
-5. **Guia astronauta** — destaca o próximo toque recomendado.
+- **Hub Aprender** (`#/aprender-hub`) — Brasil, Mundo, Contar, Ciência, Hello, Robô, Ler
+- **Brasilzinho** e **Volta ao mundo** — roteiros com mapa SVG original
+- Fala mais curta e um pouco mais lenta; botão 🗣️ em toda atividade
+- Arrastar animal até o continente (ou toque)
+- Modo só figuras 👁️ (padrão ligado)
 
-## Tripulação
+## Como a criança usa
 
-Rumi · Zoe · Mira · Emily · Léozinho (+ hero da astronauta)
+1. Liga 🔊 (no iPhone, toca 🗣️ depois).
+2. Em **Aprender**, escolhe um tema pelas figurinhas.
+3. Ouça → veja o mapa/figura → toque ou arraste.
+4. A astronauta aponta o próximo passo.
 
 ## Adulto
 
-No rodapé: link **Adulto** (com confirmação). A voz depende do aparelho; iOS/Safari costuma exigir um toque do usuário para começar a falar.
-
-## Stack
-
-HTML/CSS/JS estático · GitHub Pages · progresso em `localStorage`
+Link **Adulto** no rodapé. Voz depende do aparelho; iOS exige gesto do usuário.
 
 Feito com carinho · **byGui**
