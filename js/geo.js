@@ -154,22 +154,30 @@
 
   function montarContinentes(root, onDone) {
     const C = shuffle(CONTINENTES)[0];
+    function win() {
+      AmiguitoSom && AmiguitoSom.sucesso();
+      falar("Isso! " + C.nome);
+      const cena = root.querySelector(".geo-cena");
+      if (cena) cena.innerHTML = mapaMundosSvg(C.id);
+      setTimeout(() => onDone({ sucesso: true, msg: "Volta ao mundo: " + C.nome + "!", tema: "geo" }), 550);
+    }
     root.innerHTML = `
-      <div class="geo-cena">${mapaMundosSvg(null)}</div>
+      <div class="geo-cena">${mapaMundosSvg(C.id)}</div>
       <div class="replay-bar"><button type="button" class="btn btn--sol btn--sm" id="btn-ouvir" data-fala="${C.fala}">🗣️</button></div>
-      <p class="subtitulo" style="text-align:center">Toque: ${C.emoji} ${C.nome}</p>`;
-    falar("Ache no mapa. " + C.fala);
+      <p class="subtitulo" style="text-align:center">Toque no mapa ou na figurinha: ${C.emoji}</p>
+      <div class="pic-grid">${picGrid(shuffle(CONTINENTES))}</div>`;
+    falar("Ache. " + C.fala);
     root.querySelector("#btn-ouvir").addEventListener("click", () => falar(C.fala));
     root.querySelectorAll(".geo-regiao").forEach((el) => {
       el.addEventListener("click", () => {
-        if (el.dataset.id === C.id) {
-          AmiguitoSom && AmiguitoSom.sucesso();
-          falar("Isso! " + C.nome);
-          root.querySelector(".geo-cena").innerHTML = mapaMundosSvg(C.id);
-          setTimeout(() => onDone({ sucesso: true, msg: "Volta ao mundo: " + C.nome + "!", tema: "geo" }), 600);
-        } else { AmiguitoSom && AmiguitoSom.erro(); falar("Quase!"); }
+        if (el.dataset.id === C.id) win();
+        else { AmiguitoSom && AmiguitoSom.erro(); falar("Quase!"); }
       });
     });
+    root.querySelectorAll(".pic-btn").forEach((b) => b.addEventListener("click", () => {
+      if (b.dataset.id === C.id) { b.classList.add("is-certa"); win(); }
+      else { b.classList.add("is-errada"); AmiguitoSom && AmiguitoSom.erro(); falar("Quase!"); }
+    }));
   }
 
   function montarAnimaisMundo(root, onDone) {
