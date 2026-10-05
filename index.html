@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Amiguito Virtual — um bichinho pra cuidar, ensinar e aprender juntos. byGui">
+  <meta name="description" content="Amiguito Pro — cuidade, brinque, aprenda inglês, yoga e missões com seu bichinho. byGui">
   <meta name="theme-color" content="#7EC8E3">
-  <title>Amiguito Virtual · byGui</title>
+  <title>Amiguito Pro · byGui</title>
   <link rel="stylesheet" href="css/estilo.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23FFB4C8'/%3E%3Ctext y='68' x='50' text-anchor='middle' font-size='55'%3E🐾%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23FFB4C8'/%3E%3Ctext y='68' x='50' text-anchor='middle' font-size='52'%3E🐾%3C/text%3E%3C/svg%3E">
 </head>
 <body>
   <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -16,48 +16,42 @@
     <header class="topo" role="banner">
       <div class="topo__marca">
         <span class="topo__pata" aria-hidden="true">🐾</span>
-        <h1 class="topo__titulo">Amiguito Virtual</h1>
+        <div>
+          <h1 class="topo__titulo">Amiguito Pro</h1>
+          <p class="topo__selo" id="topo-selo">Cuidar · Brincar · Aprender</p>
+        </div>
       </div>
-      <button type="button" id="btn-som" class="btn btn--icone" aria-pressed="false" aria-label="Ativar sons" title="Sons">
-        <span aria-hidden="true">🔇</span>
-      </button>
+      <div class="topo__acoes">
+        <span id="streak-badge" class="streak" hidden title="Dias seguidos"></span>
+        <button type="button" id="btn-som" class="btn btn--icone" aria-pressed="false" aria-label="Ativar sons" title="Sons">
+          <span aria-hidden="true">🔇</span>
+        </button>
+      </div>
     </header>
 
-    <main id="conteudo" class="conteudo" tabindex="-1">
-      <!-- Telas renderizadas por JS -->
-    </main>
+    <main id="conteudo" class="conteudo" tabindex="-1"></main>
 
     <nav id="nav-principal" class="nav" hidden aria-label="Menu principal">
-      <a href="#/casa" class="nav__item" data-rota="casa">
-        <span class="nav__icone" aria-hidden="true">🏠</span>
-        <span>Casa</span>
-      </a>
-      <a href="#/ensinar" class="nav__item" data-rota="ensinar">
-        <span class="nav__icone" aria-hidden="true">📚</span>
-        <span>Ensinar</span>
-      </a>
-      <a href="#/aprender" class="nav__item" data-rota="aprender">
-        <span class="nav__icone" aria-hidden="true">✨</span>
-        <span>Aprender</span>
-      </a>
-      <a href="#/trofeus" class="nav__item" data-rota="trofeus">
-        <span class="nav__icone" aria-hidden="true">🏆</span>
-        <span>Troféus</span>
-      </a>
+      <a href="#/casa" class="nav__item" data-rota="casa"><span class="nav__icone" aria-hidden="true">🏠</span><span>Casa</span></a>
+      <a href="#/brincar" class="nav__item" data-rota="brincar"><span class="nav__icone" aria-hidden="true">🎮</span><span>Brincar</span></a>
+      <a href="#/roteiros" class="nav__item" data-rota="roteiros"><span class="nav__icone" aria-hidden="true">🗺️</span><span>Roteiros</span></a>
+      <a href="#/mais" class="nav__item" data-rota="mais"><span class="nav__icone" aria-hidden="true">✨</span><span>Mais</span></a>
     </nav>
 
-    <footer class="rodape">
-      <p>Feito com carinho · <strong>byGui</strong></p>
-    </footer>
+    <footer class="rodape"><p>Feito com carinho · <strong>byGui</strong></p></footer>
   </div>
 
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <div id="confete" class="confete" aria-hidden="true"></div>
 
   <script src="js/storage.js" defer></script>
   <script src="js/ia.js" defer></script>
   <script src="js/pet.js" defer></script>
   <script src="js/ensinar.js" defer></script>
   <script src="js/aprender.js" defer></script>
+  <script src="js/jogos.js" defer></script>
+  <script src="js/yoga.js" defer></script>
+  <script src="js/roteiros.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>
 </html>

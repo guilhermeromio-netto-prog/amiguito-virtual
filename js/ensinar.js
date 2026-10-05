@@ -1,4 +1,3 @@
-/* Jogos de ensinar */
 (function (global) {
   function embaralhar(arr) {
     const a = arr.slice();
@@ -8,21 +7,20 @@
     }
     return a;
   }
-
-  function montarPergunta(licao, indice) {
-    const p = licao.perguntas[indice];
+  function montarPergunta(licao, indice, desafio) {
+    const pool = licao.perguntas;
+    if (!pool || !pool.length) return null;
+    const idx = desafio ? Math.floor(Math.random() * pool.length) : indice;
+    const p = pool[idx % pool.length];
     if (!p) return null;
     return {
       pergunta: p.pergunta,
+      perguntaEn: p.perguntaEn || "",
       opcoes: embaralhar(p.opcoes),
-      total: licao.perguntas.length,
-      indice
+      total: desafio ? Math.min(6, pool.length + 2) : pool.length,
+      indice: desafio ? indice : idx
     };
   }
-
-  function verificar(opcao) {
-    return !!(opcao && opcao.certa);
-  }
-
+  function verificar(opcao) { return !!(opcao && opcao.certa); }
   global.AmiguitoEnsinar = { montarPergunta, verificar, embaralhar };
 })(window);
