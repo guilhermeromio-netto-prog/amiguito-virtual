@@ -346,9 +346,10 @@
     conteudo.innerHTML = `
       <section aria-labelledby="t-casa">
         <span class="selo-pro">✨ Base Espacial · Pro</span>
+        ${htmlNovidades()}
         <div class="nivel">⭐ Nível ${estado.nivel} · ${estado.xp}/${AmiguitoStorage.xpParaNivel(estado.nivel)} XP</div>
         <h2 id="t-casa" class="titulo-tela">Base d${(personagem() && personagem().tipo === "amiga") || nomeExibir().endsWith("a") ? "a" : "o"} ${escapar(nomeExibir())}</h2>
-        ${guia("Toque nos botões pra cuidar. Depois partimos pras missões STEM!")}
+        ${guia("Toque Carinho pra ver a animação grandona. Embaixo tem Músicas!")}
         <div class="balao" role="status"><span class="balao__rotulo">Amiguito fala</span>${escapar(falaAtual)}</div>
         ${AmiguitoPet.renderQuarto(AmiguitoPet.renderRetrato(p.id, { humor, acessorios: estado.acessorios, alt: "Retrato de " + (p.nome||""), w: 240, h: 240, className: "pet-retrato pet-retrato--casa" }), `${classe} ${extra}`)}
         <div class="necessidades">${AmiguitoPet.renderBarras(estado.necessidades)}</div>
@@ -358,14 +359,17 @@
           <button type="button" class="acao" data-acao="dormir"><span class="acao__icone" aria-hidden="true">😴</span>Descansar</button>
           <button type="button" class="acao" data-acao="carinho"><span class="acao__icone" aria-hidden="true">💕</span>Carinho</button>
         </div>
+        ${htmlMusicaPicker({ casa: true })}
         <p style="margin-top:0.9rem"><a class="btn btn--primario btn--bloco" href="#/aprender-hub" data-fala="Aprender">🚀 Aprender</a></p>
       </section>`;
     conteudo.querySelectorAll(".acao").forEach((b) => {
       b.setAttribute("data-fala", b.textContent.trim());
       b.addEventListener("click", () => cuidar(b.dataset.acao));
     });
-    setTimeout(() => { animacaoPet = ""; }, 800);
-    posRender("Base espacial. Cuide do amiguinho.", null);
+    amarrarMusicaPicker(conteudo);
+    amarrarNovidades(conteudo);
+    setTimeout(() => { animacaoPet = ""; }, 1600);
+    posRender("Base espacial. Cuide e escolha uma música.", "#btn-tocar-musica");
   }
 
   function cuidar(acao) {
@@ -409,7 +413,7 @@
     const msgs = { carinho: "Muito amor! 💕", dormir: "Zzz… 😴", brincar: "Pula-pula! 🎮", diversao: "Festa! 🎉" };
     mostrarToast(msgs[acao] || "Legal!");
     anunciar(falaAtual);
-    setTimeout(() => { renderCasa(); }, 720);
+    setTimeout(() => { renderCasa(); }, 1550);
   }
 
   /* ===== Brincar ===== */
@@ -621,46 +625,135 @@
   }
 
   /* ===== Ensinar / Yoga / etc — same patterns ===== */
-  function htmlMusicaPicker() {
+  function metaMusica(id) {
+    return (AmiguitoSom.TEMAS || []).find((x) => x.id === (id || estado.temaMusica || "calma")) || { id: "calma", nome: "Calma", fala: "Música calma" };
+  }
+
+  function fraseMusicaLigada(id) {
+    const m = metaMusica(id);
+    const mapa = {
+      calma: "Música calma ligada",
+      festa: "Música de festa ligada",
+      espaco: "Música do espaço ligada",
+      floresta: "Música da floresta ligada",
+      foco: "Música de estudar ligada"
+    };
+    return mapa[m.id] || (m.fala + " ligada");
+  }
+
+  function tocarMusicaAgora(id) {
+    const tema = id || estado.temaMusica || "calma";
+    estado.temaMusica = tema;
+    estado.somAtivo = true; // gesto explícito (iOS)
+    AmiguitoStorage.salvar(estado);
+    atualizarChrome();
+    AmiguitoSom.setTema(tema);
+    AmiguitoSom.syncBgm(true, tema);
+    const frase = fraseMusicaLigada(tema);
+    anunciar(frase, { completo: true, force: true });
+    mostrarToast("🎵 " + frase);
+    return frase;
+  }
+
+  function htmlMusicaPicker(opts) {
+    opts = opts || {};
     const tema = estado.temaMusica || "calma";
+    const casa = !!opts.casa;
     const chips = (AmiguitoSom.TEMAS || []).map((tm) => `
       <button type="button" class="musica-chip ${tema===tm.id?"is-ativo":""}" data-tema="${tm.id}"
         data-fala="${tm.fala}" aria-label="${tm.fala}" aria-pressed="${tema===tm.id}">
         <span class="musica-chip__icone" aria-hidden="true">${tm.icone}</span>
         <span class="musica-chip__nome">${tm.nome}</span>
       </button>`).join("");
+    if (casa) {
+      return `
+      <div class="musica-casa" id="painel-musica">
+        <p class="musica-casa__titulo"><span aria-hidden="true">🎵</span> Músicas</p>
+        <div class="musica-picker musica-picker--casa" role="group" aria-label="Escolher música">${chips}</div>
+        <button type="button" class="btn btn-tocar-musica" id="btn-tocar-musica" data-fala="Tocar música" aria-label="Tocar música">
+          ▶️ Tocar música
+        </button>
+      </div>`;
+    }
     return `
       <div class="card" style="margin-top:1rem" id="painel-musica">
         <p style="font-weight:900;margin:0 0 0.35rem">🎵 Músicas da base</p>
-        <p class="subtitulo" style="margin:0 0 0.5rem">Originais e suaves. Só tocam com o som ligado.</p>
+        <p class="subtitulo" style="margin:0 0 0.5rem">Originais e suaves. Toque num tema e depois em Tocar.</p>
         <div class="musica-picker" role="group" aria-label="Escolher música">${chips}</div>
-        ${!estado.somAtivo ? `<p class="subtitulo" style="margin-top:0.55rem">🔇 Ligue o som no alto pra ouvir.</p>` : ""}
+        <button type="button" class="btn btn-tocar-musica" id="btn-tocar-musica" data-fala="Tocar música" aria-label="Tocar música">
+          ▶️ Tocar música
+        </button>
       </div>`;
   }
 
   function amarrarMusicaPicker(root) {
-    (root || conteudo).querySelectorAll(".musica-chip").forEach((btn) => {
+    const r = root || conteudo;
+    r.querySelectorAll(".musica-chip").forEach((btn) => {
       btn.addEventListener("click", () => {
         const id = btn.dataset.tema;
         estado.temaMusica = id;
         AmiguitoStorage.salvar(estado);
         AmiguitoSom.setTema(id);
-        // Mudo por padrão: só toca se som já estiver ligado
-        if (estado.somAtivo) {
-          AmiguitoSom.syncBgm(true, id);
-          AmiguitoSom.tap();
-          const meta = (AmiguitoSom.TEMAS || []).find((x) => x.id === id);
-          anunciar(meta ? meta.fala : "Música");
-          mostrarToast("Tema: " + (meta ? meta.nome : id));
-        } else {
-          mostrarToast("Tema salvo! Ligue o 🔊 pra ouvir.");
-        }
-        (root || conteudo).querySelectorAll(".musica-chip").forEach((b) => {
+        AmiguitoSom.tap();
+        r.querySelectorAll(".musica-chip").forEach((b) => {
           const on = b.dataset.tema === id;
           b.classList.toggle("is-ativo", on);
           b.setAttribute("aria-pressed", String(on));
         });
+        // Se som já ligado: toca na hora. Senão: destaque o botão Tocar (gesto iOS)
+        if (estado.somAtivo) {
+          tocarMusicaAgora(id);
+        } else {
+          const play = r.querySelector("#btn-tocar-musica");
+          if (play) {
+            play.classList.add("destaque-guia");
+            play.focus();
+          }
+          mostrarToast("Toque em ▶️ Tocar música");
+          anunciar("Toque em tocar música");
+        }
       });
+    });
+    const playBtn = r.querySelector("#btn-tocar-musica");
+    if (playBtn) {
+      playBtn.addEventListener("click", () => {
+        tocarMusicaAgora(estado.temaMusica || "calma");
+        playBtn.classList.remove("destaque-guia");
+      });
+    }
+  }
+
+  function htmlNovidades() {
+    try {
+      if (localStorage.getItem("novidades-v2") === "1") return "";
+    } catch (_) {}
+    return `
+      <aside class="novidades" id="card-novidades" role="dialog" aria-labelledby="nov-tit">
+        <div class="novidades__topo">
+          <img src="img/astronauta-guia.png" width="64" height="64" alt="">
+          <div>
+            <h3 class="novidades__titulo" id="nov-tit">Novidades! 🚀</h3>
+            <p class="subtitulo" style="margin:0">Tem coisa nova na base</p>
+          </div>
+        </div>
+        <ul>
+          <li>🎵 <strong>Músicas</strong> — calma, festa, espaço, floresta, foco</li>
+          <li>💕 <strong>Animações</strong> — carinho e brincar bem grandões</li>
+          <li>⚡ <strong>Desafio</strong> — foguete, combo e estrelas</li>
+        </ul>
+        <button type="button" class="btn btn--primario btn--bloco" id="btn-novidades-ok" data-fala="Entendi">Entendi! 👍</button>
+      </aside>`;
+  }
+
+  function amarrarNovidades(root) {
+    const btn = (root || conteudo).querySelector("#btn-novidades-ok");
+    if (!btn) return;
+    btn.addEventListener("click", () => {
+      try { localStorage.setItem("novidades-v2", "1"); } catch (_) {}
+      const card = (root || conteudo).querySelector("#card-novidades");
+      if (card) card.remove();
+      AmiguitoSom.sucesso();
+      anunciar("Entendi! Vamos cuidar e ouvir música.");
     });
   }
 

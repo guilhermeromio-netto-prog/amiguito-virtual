@@ -769,41 +769,110 @@ body.modo-figuras .bio-card__lista { display: none; }
 }
 .particula--grande { animation-name: sobe-grande; animation-duration: 1.35s; }
 
-.pet-cena__arte.is-carinho { animation: carinho-bounce 0.7s ease; }
+.pet-cena__arte.is-carinho { animation: carinho-bounce 1.5s ease; }
 @keyframes carinho-bounce {
-  0%{transform:scale(1)}
-  30%{transform:scale(1.12) translateY(-10px)}
-  55%{transform:scale(0.96) rotate(-4deg)}
-  75%{transform:scale(1.08) rotate(4deg)}
-  100%{transform:scale(1)}
+  0%{transform:scale(1) translateY(0)}
+  20%{transform:scale(1.22) translateY(-36px)}
+  40%{transform:scale(0.92) translateY(-8px) rotate(-8deg)}
+  60%{transform:scale(1.18) translateY(-42px) rotate(8deg)}
+  80%{transform:scale(1.08) translateY(-14px)}
+  100%{transform:scale(1) translateY(0)}
 }
-.pet-cena__arte.is-brincar { animation: brincar-pula 0.75s ease; }
+.pet-cena__arte.is-brincar { animation: brincar-pula 1.5s ease; }
 @keyframes brincar-pula {
   0%,100%{transform:translateY(0) scale(1)}
-  25%{transform:translateY(-28px) scale(1.08) rotate(-5deg)}
-  50%{transform:translateY(-8px) scale(1.04) rotate(5deg)}
-  75%{transform:translateY(-22px) scale(1.06)}
+  15%{transform:translateY(-48px) scale(1.18) rotate(-8deg)}
+  35%{transform:translateY(-12px) scale(1.05) rotate(6deg)}
+  55%{transform:translateY(-52px) scale(1.2) rotate(-5deg)}
+  75%{transform:translateY(-18px) scale(1.08)}
 }
-.pet-cena__arte.is-festa { animation: festa-gira 0.8s ease; }
+.pet-cena__arte.is-festa { animation: festa-gira 1.5s ease; }
 @keyframes festa-gira {
   0%{transform:rotate(0) scale(1)}
-  25%{transform:rotate(-10deg) scale(1.1)}
-  50%{transform:rotate(10deg) scale(1.12)}
-  75%{transform:rotate(-6deg) scale(1.06)}
+  20%{transform:rotate(-14deg) scale(1.2) translateY(-24px)}
+  40%{transform:rotate(14deg) scale(1.22) translateY(-36px)}
+  60%{transform:rotate(-10deg) scale(1.15) translateY(-16px)}
+  80%{transform:rotate(8deg) scale(1.1)}
   100%{transform:rotate(0) scale(1)}
 }
-.pet-cena__arte.is-dormir-fx { animation: dormir-balanco 1.1s ease; }
+.pet-cena__arte.is-dormir-fx { animation: dormir-balanco 1.5s ease; }
 @keyframes dormir-balanco {
-  0%,100%{transform:translateY(0)}
-  40%{transform:translateY(10px) scale(0.97)}
-  70%{transform:translateY(4px)}
+  0%,100%{transform:translateY(0) scale(1)}
+  30%{transform:translateY(16px) scale(0.94)}
+  60%{transform:translateY(8px) scale(0.97)}
 }
-.pet-cena__arte.is-comer { animation: comer-nham 0.65s ease; }
+.pet-cena__arte.is-comer { animation: comer-nham 1.5s ease; }
 @keyframes comer-nham {
   0%,100%{transform:scale(1)}
-  30%{transform:scale(1.1) translateY(-6px)}
-  50%{transform:scale(0.92)}
-  70%{transform:scale(1.06)}
+  25%{transform:scale(1.2) translateY(-18px)}
+  45%{transform:scale(0.88)}
+  65%{transform:scale(1.14) translateY(-10px)}
+  85%{transform:scale(1.05)}
+}
+
+/* Flash fullscreen de corações no cuidado */
+.fx-flash {
+  position: fixed; inset: 0; z-index: 55; pointer-events: none;
+  display: grid; place-items: center;
+  background: radial-gradient(circle at 50% 40%, rgba(255,182,193,0.55), rgba(255,255,255,0) 70%);
+  opacity: 0; transition: opacity 0.2s;
+}
+.fx-flash.is-on { opacity: 1; animation: flash-fade 1.5s ease forwards; }
+.fx-flash__hearts {
+  font-size: 3.2rem; letter-spacing: 0.15em;
+  animation: hearts-pop 1.5s ease forwards;
+  filter: drop-shadow(0 4px 12px rgba(255,80,120,0.45));
+}
+@keyframes flash-fade {
+  0%{opacity:0} 15%{opacity:1} 70%{opacity:0.85} 100%{opacity:0}
+}
+@keyframes hearts-pop {
+  0%{transform:scale(0.3);opacity:0}
+  25%{transform:scale(1.35);opacity:1}
+  60%{transform:scale(1.1) translateY(-20px)}
+  100%{transform:scale(1.4) translateY(-60px);opacity:0}
+}
+.particula--gigante { font-size: 2.6rem !important; animation-duration: 1.6s !important; }
+
+/* Novidades card */
+.novidades {
+  position: relative; z-index: 8;
+  background: linear-gradient(160deg, #F6F2FF, #E0F2FE);
+  border: 3px solid #5B4B8A; border-radius: var(--raio);
+  padding: 1rem; margin: 0.75rem 0 1rem;
+  box-shadow: 0 8px 24px rgba(91,75,138,0.22);
+  text-align: left;
+}
+.novidades__topo { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem; }
+.novidades__topo img { width: 64px; height: 64px; border-radius: 50%; background: #fff; border: 2px solid #5B4B8A; }
+.novidades__titulo { margin: 0; font-size: 1.2rem; font-weight: 900; color: #5B4B8A; }
+.novidades ul { margin: 0.4rem 0 0.85rem 1.1rem; padding: 0; font-weight: 700; line-height: 1.45; }
+.novidades li { margin-bottom: 0.25rem; }
+
+/* Músicas na Base — faixa bem visível */
+.musica-casa {
+  margin: 0.85rem 0 0.5rem;
+  background: #FFF7ED; border: 3px solid #F59E0B; border-radius: var(--raio);
+  padding: 0.75rem;
+}
+.musica-casa__titulo {
+  font-weight: 900; font-size: 1.05rem; margin: 0 0 0.45rem;
+  display: flex; align-items: center; gap: 0.35rem;
+}
+.musica-picker--casa {
+  display: flex; gap: 0.45rem; overflow-x: auto; padding-bottom: 0.25rem;
+  -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory;
+}
+.musica-picker--casa .musica-chip {
+  min-width: 76px; flex: 0 0 auto; scroll-snap-align: start;
+  min-height: 78px; border-width: 3px;
+}
+.btn-tocar-musica {
+  margin-top: 0.55rem; width: 100%;
+  font-size: 1.05rem !important; font-weight: 900 !important;
+  min-height: 52px; border-radius: 999px !important;
+  background: linear-gradient(135deg, #FBBF24, #F59E0B) !important;
+  color: #7C2D12 !important; border: 3px solid #D97706 !important;
 }
 @media (prefers-reduced-motion: reduce) {
   .app.is-shake-suave,

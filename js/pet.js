@@ -219,17 +219,31 @@
     }
   }
 
-  /** Efeitos grandes de cuidado: coraçãos, migalhas, zzz, fogos */
+  /** Efeitos GRANDES de cuidado (1.5s) — causa→efeito óbvio pra ~3–4 anos */
   function efeitoCuidado(acao) {
     const mapa = {
-      carinho: { emojis: ["💖","💕","💗","✨","⭐"], classe: "is-carinho", shake: true },
-      brincar: { emojis: ["🎮","⭐","🎉","✨","🌟"], classe: "is-brincar", shake: true },
-      diversao: { emojis: ["🎉","😄","🌈","✨","🎊"], classe: "is-festa", shake: true },
-      dormir: { emojis: ["💤","😴","🌙","✨"], classe: "is-dormir-fx", shake: false },
-      alimentar: { emojis: ["🍪","🍎","✨","😋","🌟"], classe: "is-comer", shake: true }
+      carinho: { emojis: ["💖","💕","💗","✨","⭐","💘"], classe: "is-carinho", shake: true, flash: "💖 💕 💖" },
+      brincar: { emojis: ["🎮","⭐","🎉","✨","🌟","🚀"], classe: "is-brincar", shake: true, flash: "⭐ 🎮 ⭐" },
+      diversao: { emojis: ["🎉","😄","🌈","✨","🎊","🥳"], classe: "is-festa", shake: true, flash: "🎉 🌈 🎉" },
+      dormir: { emojis: ["💤","😴","🌙","✨","⭐"], classe: "is-dormir-fx", shake: false, flash: "💤 🌙 💤" },
+      alimentar: { emojis: ["🍪","🍎","✨","😋","🌟"], classe: "is-comer", shake: true, flash: "🍎 🍪 😋" }
     };
     const cfg = mapa[acao] || mapa.carinho;
-    soltarParticulas(cfg.emojis, { count: 10, grande: true, dur: 1600 });
+    soltarParticulas(cfg.emojis, { count: 16, grande: true, dur: 1700 });
+    // partículas gigantes extras
+    const box = document.getElementById("particulas") || document.getElementById("fx-camada");
+    if (box) {
+      for (let i = 0; i < 6; i++) {
+        const s = document.createElement("span");
+        s.className = "particula particula--grande particula--gigante";
+        s.textContent = cfg.emojis[i % cfg.emojis.length];
+        s.style.left = (5 + Math.random() * 90) + "%";
+        s.style.bottom = (5 + Math.random() * 50) + "%";
+        s.style.animationDelay = (i * 70) + "ms";
+        box.appendChild(s);
+        setTimeout(() => s.remove(), 1800);
+      }
+    }
     const arte = document.getElementById("pet-arte");
     const app = document.getElementById("app");
     if (arte) {
@@ -239,8 +253,24 @@
     }
     if (cfg.shake && app) {
       app.classList.add("is-shake-suave");
-      setTimeout(() => app.classList.remove("is-shake-suave"), 420);
+      setTimeout(() => app.classList.remove("is-shake-suave"), 600);
     }
+    // fullscreen soft flash
+    let flash = document.getElementById("fx-flash");
+    if (!flash) {
+      flash = document.createElement("div");
+      flash.id = "fx-flash";
+      flash.className = "fx-flash";
+      flash.setAttribute("aria-hidden", "true");
+      flash.innerHTML = '<div class="fx-flash__hearts"></div>';
+      document.body.appendChild(flash);
+    }
+    const hearts = flash.querySelector(".fx-flash__hearts");
+    if (hearts) hearts.textContent = cfg.flash || "💖 ✨ 💖";
+    flash.classList.remove("is-on");
+    void flash.offsetWidth;
+    flash.classList.add("is-on");
+    setTimeout(() => flash.classList.remove("is-on"), 1600);
     return cfg.classe;
   }
 
