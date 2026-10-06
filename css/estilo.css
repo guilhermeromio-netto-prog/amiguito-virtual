@@ -974,3 +974,126 @@ body.modo-figuras .musica-chip__nome { font-size: 0.7rem; }
 
 .jogo-hud { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; font-weight: 800; margin-bottom: 0.5rem; }
 .boca-alvo.is-nham { animation: comer-nham 0.45s ease; font-size: 3.2rem; }
+
+/* ===== Amiguito Pro — loop de cuidado (inspiração de sessão curta, marca própria) ===== */
+.base-pou .titulo-tela { font-size: 1.35rem; }
+.base-topbar { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.4rem 0 0.5rem; }
+.pill-moedas, .pill-nivel {
+  background: #FFF7ED; border: 3px solid #F59E0B; border-radius: 999px;
+  padding: 0.35rem 0.75rem; font-weight: 900; font-size: 0.95rem;
+}
+.pill-nivel { background: #EEF2FF; border-color: #818CF8; color: #3730A3; }
+.xp-bar {
+  position: relative; height: 18px; background: #E0E7FF; border-radius: 999px;
+  border: 2px solid #A5B4FC; overflow: hidden; margin-bottom: 0.65rem;
+}
+.xp-bar__fill { height: 100%; background: linear-gradient(90deg, #A78BFA, #60A5FA); transition: width .4s; }
+.xp-bar__txt { position: absolute; inset: 0; display: grid; place-items: center; font-size: 0.7rem; font-weight: 800; color: #312E81; }
+
+.meters { display: grid; gap: 0.45rem; margin: 0.65rem 0 0.85rem; }
+.meter {
+  background: #fff; border: 2px solid var(--cor-borda); border-radius: 14px; padding: 0.45rem 0.55rem;
+}
+.meter__top { display: flex; align-items: center; gap: 0.35rem; font-weight: 800; font-size: 0.88rem; margin-bottom: 0.25rem; }
+.meter__ico { font-size: 1.25rem; }
+.meter__nome { flex: 1; }
+.meter__val { font-variant-numeric: tabular-nums; color: var(--cor-texto-suave); }
+.meter__barra { height: 14px; background: #F1F5F9; border-radius: 999px; overflow: hidden; }
+.meter__fill { height: 100%; border-radius: 999px; transition: width .35s; }
+.meter__fill.is-bom { background: linear-gradient(90deg, #34D399, #6EE7B7); }
+.meter__fill.is-medio { background: linear-gradient(90deg, #FBBF24, #FCD34D); }
+.meter__fill.is-baixo { background: linear-gradient(90deg, #F87171, #FCA5A5); animation: meter-pulse 1s ease infinite; }
+@keyframes meter-pulse { 0%,100%{opacity:1} 50%{opacity:.75} }
+
+.acoes--pou {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem;
+}
+.acao--pou {
+  min-height: 92px !important; border-radius: 20px !important; border-width: 3px !important;
+  display: flex !important; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.2rem; font-size: 1rem !important; font-weight: 900 !important;
+  background: #fff !important;
+}
+.acao--pou .acao__icone { font-size: 2.1rem !important; line-height: 1; }
+.acao--pou .acao__txt { font-size: 0.95rem; }
+.acao--pou[data-acao="alimentar"] { border-color: #FB7185 !important; background: #FFF1F2 !important; }
+.acao--pou[data-acao="brincar"] { border-color: #60A5FA !important; background: #EFF6FF !important; }
+.acao--pou[data-acao="limpar"] { border-color: #2DD4BF !important; background: #F0FDFA !important; }
+.acao--pou[data-acao="dormir"] { border-color: #A78BFA !important; background: #F5F3FF !important; }
+
+.atalhos-pou { margin-top: 0.75rem; }
+.card-link--grande { min-height: 84px; }
+
+/* Evolução visual */
+.estagio-bebe .pet-retrato__img { transform: scale(0.88); filter: saturate(1.05); }
+.estagio-crianca .pet-retrato__img { transform: scale(1); filter: saturate(1.1) contrast(1.02); }
+.estagio-explorador .pet-retrato__img {
+  transform: scale(1.06);
+  filter: saturate(1.15) drop-shadow(0 0 10px rgba(96,165,250,.55));
+}
+.estagio-selo {
+  display: block; text-align: center; font-weight: 900; font-size: 0.85rem;
+  margin-top: 0.25rem; color: #5B4B8A;
+}
+.quarto--bebe { background: linear-gradient(180deg, #FDF4FF, #FCE7F3 60%, #FEF3C7); }
+.quarto--crianca { background: linear-gradient(180deg, #EEF2FF, #E0E7FF 55%, #DBEAFE); }
+.quarto--explorador { background: linear-gradient(180deg, #0F172A, #1E1B4B 45%, #312E81); color: #fff; }
+.quarto--explorador .estrela-fundo { color: #FDE68A; }
+.quarto__moveis { position: absolute; inset: 0; pointer-events: none; }
+.quarto__decor { position: absolute; font-size: 1.6rem; }
+.quarto__decor[data-id="planta"] { left: 8%; bottom: 12%; }
+.quarto__decor[data-id="lampada"] { right: 10%; top: 18%; }
+.quarto__decor[data-id="poster"] { left: 12%; top: 14%; }
+.quarto__decor[data-id="sofa"] { right: 14%; bottom: 10%; font-size: 2rem; }
+.quarto__decor[data-id="janela-arco"] { right: 8%; top: 10%; font-size: 1.8rem; }
+
+.app.is-levelup { animation: levelup-glow 1.6s ease; }
+@keyframes levelup-glow {
+  0%,100%{ filter: none; }
+  30%{ filter: drop-shadow(0 0 24px rgba(250,204,21,.8)); }
+  60%{ filter: drop-shadow(0 0 40px rgba(167,139,250,.9)); }
+}
+
+/* Jogos */
+.jogo-hud--pro { flex-wrap: wrap; gap: 0.35rem; }
+.jogo-hud__pts { font-size: 1.2rem; font-weight: 900; color: #5B4B8A; }
+.jogo-hud__hi { margin-left: auto; font-size: 0.85rem; }
+.comida-item--grande, .porta--grande, .ritmo-pad--grande {
+  min-width: 72px !important; min-height: 72px !important; font-size: 2rem !important;
+}
+.jogo-area--chuva { position: relative; height: 280px; overflow: hidden; background: linear-gradient(180deg, #E0F2FE, #FEF3C7); border-radius: var(--raio); border: 3px solid var(--cor-borda); }
+.queda-item {
+  position: absolute; top: -10%; font-size: 2.2rem; background: #fff; border: 3px solid #F59E0B;
+  border-radius: 50%; width: 64px; height: 64px; cursor: pointer;
+  animation: cair-item linear forwards; z-index: 2;
+}
+.queda-item--ruim { border-color: #94A3B8; opacity: 0.9; }
+@keyframes cair-item { from{top:-12%} to{top:110%} }
+.jogo-lives { text-align: center; font-size: 1.3rem; margin: 0.25rem 0; }
+.jogo-area--banho { position: relative; height: 260px; background: linear-gradient(180deg, #CCFBF1, #E0F2FE); border-radius: var(--raio); border: 3px solid #2DD4BF; overflow: hidden; }
+.banho-amigo { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-size: 4rem; opacity: 0.35; }
+.sujeira {
+  position: absolute; font-size: 1.8rem; width: 58px; height: 58px; border-radius: 50%;
+  border: 3px solid #78716C; background: #FFF7ED; cursor: pointer;
+}
+.sujeira.is-limpo { transform: scale(1.3); opacity: 0; transition: .28s; border-color: #34D399; }
+.ritmo-pad.is-flash { box-shadow: 0 0 0 6px rgba(251,191,36,.7); transform: scale(1.08); }
+
+/* Loja */
+.loja-grade { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 0.75rem; }
+.loja-card {
+  display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
+  padding: 0.85rem 0.5rem; min-height: 110px; border: 3px solid var(--cor-borda);
+  border-radius: var(--raio); background: #fff; font-family: inherit; cursor: pointer; color: inherit;
+}
+.loja-card__emoji { font-size: 2rem; }
+.loja-card__nome { font-weight: 900; font-size: 0.9rem; text-align: center; }
+.loja-card__preco { font-size: 0.8rem; font-weight: 800; color: #B45309; }
+.loja-card.is-equipado { border-color: #34D399; background: #ECFDF5; }
+.loja-card.is-unlocked:not(.is-equipado) { border-color: #818CF8; }
+.acessorio.is-locked { opacity: 0.55; }
+
+@media (prefers-reduced-motion: reduce) {
+  .queda-item { animation: none; top: 40%; }
+  .meter__fill.is-baixo, .app.is-levelup { animation: none !important; }
+}

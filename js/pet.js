@@ -31,6 +31,8 @@
     if (ids.includes("laco")) s += `<text x="62" y="20" font-size="18">🎀</text>`;
     if (ids.includes("estrela")) s += `<text x="10" y="28" font-size="18">⭐</text>`;
     if (ids.includes("foguete")) s += `<text x="68" y="78" font-size="18">🚀</text>`;
+    if (ids.includes("oculos-sol")) s += `<text x="28" y="42" font-size="26">😎</text>`;
+    if (ids.includes("bone")) s += `<text x="36" y="16" font-size="22">🧢</text>`;
     return s;
   }
 
@@ -152,17 +154,31 @@
     return fn(humor, acessorios || []);
   }
 
+  function valNeed(n, k) {
+    if (!n) return 50;
+    if (n[k] != null) return n[k];
+    // legado
+    if (k === "feliz") return Math.round(((n.humor || 50) + (n.carinho || 50) + (n.diversao || 50)) / 3);
+    if (k === "fome") return n.diversao != null ? n.diversao : 70;
+    if (k === "higiene") return n.carinho != null ? n.carinho : 70;
+    return 70;
+  }
+
   function humorDe(n) {
-    const media = (n.humor + n.energia + n.carinho + n.diversao) / 4;
-    if (n.energia < 22) return "dormindo";
-    if (media < 32) return "triste";
-    if (media > 88 && n.humor > 80) return "empolgado";
+    const fome = valNeed(n, "fome");
+    const feliz = valNeed(n, "feliz");
+    const energia = valNeed(n, "energia");
+    const higiene = valNeed(n, "higiene");
+    const media = (fome + feliz + energia + higiene) / 4;
+    if (energia < 22) return "dormindo";
+    if (media < 32 || fome < 20 || higiene < 18) return "triste";
+    if (media > 88 && feliz > 80) return "empolgado";
     if (media > 68) return "feliz";
     return "neutro";
   }
 
   function necessidadeMaisBaixa(n) {
-    return [["humor", n.humor], ["energia", n.energia], ["carinho", n.carinho], ["diversao", n.diversao]]
+    return [["fome", valNeed(n, "fome")], ["feliz", valNeed(n, "feliz")], ["energia", valNeed(n, "energia")], ["higiene", valNeed(n, "higiene")]]
       .sort((a, b) => a[1] - b[1])[0][0];
   }
 
@@ -172,30 +188,48 @@
     return "is-baixo";
   }
 
-  const LABELS = { humor: "Humor", energia: "Energia", carinho: "Carinho", diversao: "Diversão" };
+  const LABELS = {
+    fome: { nome: "Fome", icone: "🍎" },
+    feliz: { nome: "Feliz", icone: "😊" },
+    energia: { nome: "Energia", icone: "⚡" },
+    higiene: { nome: "Banho", icone: "🧼" }
+  };
 
   function renderBarras(n) {
-    return Object.keys(LABELS).map((k) => `
-      <div class="necessidade" role="group" aria-label="${LABELS[k]}: ${n[k]}%">
-        <span>${LABELS[k]}</span>
-        <div class="necessidade__barra"><div class="necessidade__preenchimento ${classeBarra(n[k])}" style="width:${n[k]}%"></div></div>
-        <span aria-hidden="true">${n[k]}%</span>
-      </div>`).join("");
+    return Object.keys(LABELS).map((k) => {
+      const v = valNeed(n, k);
+      const meta = LABELS[k];
+      return `
+      <div class="meter" role="group" aria-label="${meta.nome}: ${v}%">
+        <div class="meter__top"><span class="meter__ico" aria-hidden="true">${meta.icone}</span><span class="meter__nome">${meta.nome}</span><span class="meter__val">${v}</span></div>
+        <div class="meter__barra"><div class="meter__fill ${classeBarra(v)}" style="width:${v}%"></div></div>
+      </div>`;
+    }).join("");
   }
 
-  function renderQuarto(petHtml, classeArte) {
+  function renderQuarto(petHtml, classeArte, opts) {
+    opts = opts || {};
+    const estagio = opts.estagio || { id: "bebe" };
+    const moveis = opts.moveis || [];
     const stars = Array.from({ length: 8 }, (_, i) =>
       `<span class="estrela-fundo" style="left:${10 + i * 11}%;top:${8 + (i % 3) * 12}%;animation-delay:${i * 0.2}s">✦</span>`
     ).join("");
-    return `<div class="quarto">
+    const decor = moveis.map((id) => {
+      const map = { planta: "🪴", lampada: "💡", poster: "🖼️", sofa: "🛋️", "janela-arco": "🪟", "tapete-basico": "" };
+      const e = map[id];
+      return e ? `<span class="quarto__decor" data-id="${id}" aria-hidden="true">${e}</span>` : "";
+    }).join("");
+    return `<div class="quarto quarto--${estagio.id}">
       <div class="quarto__estrelas">${stars}</div>
       <div class="quarto__janela" aria-hidden="true"></div>
       <div class="quarto__painel" aria-hidden="true"></div>
       <div class="quarto__tapete"></div>
+      <div class="quarto__moveis">${decor}</div>
       <div class="pet-cena">
-        <div class="pet-cena__arte pet-bob ${classeArte}" id="pet-arte">
+        <div class="pet-cena__arte pet-bob estagio-${estagio.id} ${classeArte}" id="pet-arte">
           <div class="particulas" id="particulas"></div>
           ${petHtml}
+          <span class="estagio-selo" aria-hidden="true">${estagio.icone || ""} ${estagio.nome || ""}</span>
         </div>
       </div>
     </div>`;
@@ -226,7 +260,8 @@
       brincar: { emojis: ["🎮","⭐","🎉","✨","🌟","🚀"], classe: "is-brincar", shake: true, flash: "⭐ 🎮 ⭐" },
       diversao: { emojis: ["🎉","😄","🌈","✨","🎊","🥳"], classe: "is-festa", shake: true, flash: "🎉 🌈 🎉" },
       dormir: { emojis: ["💤","😴","🌙","✨","⭐"], classe: "is-dormir-fx", shake: false, flash: "💤 🌙 💤" },
-      alimentar: { emojis: ["🍪","🍎","✨","😋","🌟"], classe: "is-comer", shake: true, flash: "🍎 🍪 😋" }
+      alimentar: { emojis: ["🍪","🍎","✨","😋","🌟"], classe: "is-comer", shake: true, flash: "🍎 🍪 😋" },
+      limpar: { emojis: ["🧼","💧","✨","🛁","🌟"], classe: "is-carinho", shake: true, flash: "🧼 💧 ✨" }
     };
     const cfg = mapa[acao] || mapa.carinho;
     soltarParticulas(cfg.emojis, { count: 16, grande: true, dur: 1700 });

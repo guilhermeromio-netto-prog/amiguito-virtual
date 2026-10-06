@@ -84,6 +84,7 @@
     if (p[0] === "stem") return renderStemHub();
     if (p[0] === "roteiros" && p[1]) return renderRota(p[1]);
     if (p[0] === "roteiros") return renderStemHub();
+    if (p[0] === "loja") return renderLoja();
     if (p[0] === "mais") return renderMais();
     if (p[0] === "ensinar" && p[1]) return renderLicao(p[1], !!p[2]);
     if (p[0] === "ensinar") return renderEnsinar();
@@ -96,7 +97,7 @@
   }
 
   function destacarNav(base) {
-    const map = { casa:"casa", brincar:"brincar", stem:"stem", "aprender-hub":"stem", roteiros:"stem", mais:"mais", ensinar:"mais", aprender:"mais", yoga:"mais", trofeus:"mais", canto:"mais", ler:"stem" };
+    const map = { casa:"casa", brincar:"brincar", loja:"casa", stem:"stem", "aprender-hub":"stem", roteiros:"stem", mais:"mais", ensinar:"mais", aprender:"mais", yoga:"mais", trofeus:"mais", canto:"mais", ler:"stem" };
     const alvo = map[base] || "casa";
     nav.querySelectorAll(".nav__item").forEach((a) => a.classList.toggle("is-ativo", a.dataset.rota === alvo));
   }
@@ -147,6 +148,32 @@
       confete.appendChild(s);
       setTimeout(() => s.remove(), 2000);
     }
+  }
+
+  function celebrarNivel(nivelAntes) {
+    const est = AmiguitoStorage.estagioDe(estado.nivel);
+    celebrar();
+    AmiguitoSom.nivel();
+    const app = document.getElementById("app");
+    if (app) {
+      app.classList.add("is-levelup");
+      setTimeout(() => app.classList.remove("is-levelup"), 1800);
+    }
+    const msg = "Nível " + estado.nivel + "! Você é " + est.nome + "!";
+    mostrarToast("🆙 " + msg);
+    anunciar(msg, { completo: true, force: true });
+  }
+
+  function aplicarRecompensaJogo(res) {
+    if (res && res.higiene) {
+      estado.necessidades.higiene = AmiguitoStorage.clamp((estado.necessidades.higiene || 0) + 35);
+      estado.necessidades.feliz = AmiguitoStorage.clamp((estado.necessidades.feliz || 0) + 10);
+    }
+    if (res && (res.msg || "").toLowerCase().includes("barriga")) {
+      estado.necessidades.fome = AmiguitoStorage.clamp((estado.necessidades.fome || 0) + 30);
+      estado.necessidades.feliz = AmiguitoStorage.clamp((estado.necessidades.feliz || 0) + 8);
+    }
+    if (res && res.nivelInfo && res.nivelInfo.nivelou) celebrarNivel(res.nivelInfo.nivelAntes);
   }
 
   function alternarSom() {
@@ -299,7 +326,7 @@
       }
       estado.personagemId = escolhido;
       if (nome) { estado.nomePet = nome; desbloquearTrofeu("nomeada"); }
-      estado.necessidades = { humor: 85, energia: 85, carinho: 85, diversao: 85 };
+      estado.necessidades = { fome: 80, feliz: 85, energia: 85, higiene: 80 };
       estado.ultimaAtualizacao = Date.now();
       desbloquearTrofeu("primeiro-amigo");
       desbloquearTrofeu("astronauta");
@@ -335,6 +362,7 @@
     const p = personagem();
     const humor = AmiguitoPet.humorDe(estado.necessidades);
     const baixa = AmiguitoPet.necessidadeMaisBaixa(estado.necessidades);
+    const estagio = AmiguitoStorage.estagioDe(estado.nivel);
     if (!falaAtual) {
       falaAtual = estado.necessidades[baixa] < 40
         ? AmiguitoIA.falar(p, "pedido", { necessidade: baixa })
@@ -342,63 +370,97 @@
     }
     const classe = humor === "feliz" || humor === "empolgado" ? "is-feliz" : humor === "triste" ? "is-triste" : humor === "dormindo" ? "is-dormindo" : "";
     const extra = animacaoPet === "is-empolgado" ? "is-empolgado" : animacaoPet;
+    const xpMax = AmiguitoStorage.xpParaNivel(estado.nivel);
+    const xpPct = Math.round((estado.xp / xpMax) * 100);
 
     conteudo.innerHTML = `
-      <section aria-labelledby="t-casa">
-        <span class="selo-pro">✨ Base Espacial · Pro</span>
+      <section aria-labelledby="t-casa" class="base-pou">
+        <span class="selo-pro">✨ Amiguito Pro · Base</span>
         ${htmlNovidades()}
-        <div class="nivel">⭐ Nível ${estado.nivel} · ${estado.xp}/${AmiguitoStorage.xpParaNivel(estado.nivel)} XP</div>
+        <div class="base-topbar">
+          <div class="pill-moedas" aria-label="${estado.moedas} estrelas">⭐ ${estado.moedas || 0}</div>
+          <div class="pill-nivel" aria-label="Nível ${estado.nivel}">${estagio.icone} Nv.${estado.nivel} · ${estagio.nome}</div>
+        </div>
+        <div class="xp-bar" aria-label="Experiência">
+          <div class="xp-bar__fill" style="width:${xpPct}%"></div>
+          <span class="xp-bar__txt">${estado.xp}/${xpMax} XP</span>
+        </div>
         <h2 id="t-casa" class="titulo-tela">Base d${(personagem() && personagem().tipo === "amiga") || nomeExibir().endsWith("a") ? "a" : "o"} ${escapar(nomeExibir())}</h2>
-        ${guia("Toque Carinho pra ver a animação grandona. Embaixo tem Músicas!")}
+        ${guia("Cuide: comida, brincar, banho e dormir. Depois jogue e gaste estrelas na loja!")}
         <div class="balao" role="status"><span class="balao__rotulo">Amiguito fala</span>${escapar(falaAtual)}</div>
-        ${AmiguitoPet.renderQuarto(AmiguitoPet.renderRetrato(p.id, { humor, acessorios: estado.acessorios, alt: "Retrato de " + (p.nome||""), w: 240, h: 240, className: "pet-retrato pet-retrato--casa" }), `${classe} ${extra}`)}
-        <div class="necessidades">${AmiguitoPet.renderBarras(estado.necessidades)}</div>
-        <div class="acoes" role="group" aria-label="Cuidar">
-          <button type="button" class="acao" data-acao="brincar"><span class="acao__icone" aria-hidden="true">🎮</span>Brincar</button>
-          <button type="button" class="acao" data-acao="diversao"><span class="acao__icone" aria-hidden="true">🎉</span>Diversão</button>
-          <button type="button" class="acao" data-acao="dormir"><span class="acao__icone" aria-hidden="true">😴</span>Descansar</button>
-          <button type="button" class="acao" data-acao="carinho"><span class="acao__icone" aria-hidden="true">💕</span>Carinho</button>
+        ${AmiguitoPet.renderQuarto(
+          AmiguitoPet.renderRetrato(p.id, { humor, acessorios: estado.acessorios, alt: "Retrato de " + (p.nome||""), w: 240, h: 240, className: "pet-retrato pet-retrato--casa" }),
+          `${classe} ${extra}`,
+          { estagio, moveis: estado.moveis || [] }
+        )}
+        <div class="meters">${AmiguitoPet.renderBarras(estado.necessidades)}</div>
+        <div class="acoes acoes--pou" role="group" aria-label="Cuidar">
+          <button type="button" class="acao acao--pou" data-acao="alimentar" data-fala="Comer"><span class="acao__icone" aria-hidden="true">🍎</span><span class="acao__txt">Comer</span></button>
+          <button type="button" class="acao acao--pou" data-acao="brincar" data-fala="Brincar"><span class="acao__icone" aria-hidden="true">🎮</span><span class="acao__txt">Brincar</span></button>
+          <button type="button" class="acao acao--pou" data-acao="limpar" data-fala="Banho"><span class="acao__icone" aria-hidden="true">🧼</span><span class="acao__txt">Banho</span></button>
+          <button type="button" class="acao acao--pou" data-acao="dormir" data-fala="Dormir"><span class="acao__icone" aria-hidden="true">😴</span><span class="acao__txt">Dormir</span></button>
         </div>
         ${htmlMusicaPicker({ casa: true })}
-        <p style="margin-top:0.9rem"><a class="btn btn--primario btn--bloco" href="#/aprender-hub" data-fala="Aprender">🚀 Aprender</a></p>
+        <div class="atalhos-pou">
+          <a class="btn btn--primario btn--bloco" href="#/brincar" data-fala="Jogos">🎮 Jogos · ganhar ⭐</a>
+          <a class="btn btn--secundario btn--bloco" href="#/loja" data-fala="Loja" style="margin-top:0.45rem">🛍️ Loja da base</a>
+          <a class="btn btn--fantasma btn--bloco" href="#/aprender-hub" data-fala="Aprender" style="margin-top:0.45rem">🚀 Aprender</a>
+        </div>
       </section>`;
     conteudo.querySelectorAll(".acao").forEach((b) => {
-      b.setAttribute("data-fala", b.textContent.trim());
       b.addEventListener("click", () => cuidar(b.dataset.acao));
     });
     amarrarMusicaPicker(conteudo);
     amarrarNovidades(conteudo);
     setTimeout(() => { animacaoPet = ""; }, 1600);
-    posRender("Base espacial. Cuide e escolha uma música.", "#btn-tocar-musica");
+    posRender("Base. Cuide do amiguinho ou toque em músicas.", "#btn-tocar-musica");
   }
 
   function cuidar(acao) {
     const n = estado.necessidades;
+    // Banho → mini jogo limpeza
+    if (acao === "limpar") {
+      location.hash = "#/brincar/limpeza";
+      return;
+    }
+    // Comer → mini jogo alimentar (mais divertido) se fome alta? Always short care + optional
     const map = {
-      brincar: { humor: 28, energia: -6, diversao: 20, carinho: 6 },
-      diversao: { diversao: 32, humor: 16 },
-      dormir: { energia: 38, diversao: -4 },
-      carinho: { carinho: 34, humor: 14 }
+      alimentar: { fome: 34, feliz: 10, higiene: -4 },
+      brincar: { feliz: 28, energia: -10, fome: -6 },
+      diversao: { feliz: 30, energia: -8 },
+      dormir: { energia: 40, fome: -4 },
+      carinho: { feliz: 22, higiene: 4 },
+      limpar: { higiene: 36, feliz: 12 }
     };
     const delta = map[acao];
     if (!delta) return;
-    Object.keys(delta).forEach((k) => { n[k] = AmiguitoStorage.clamp(n[k] + delta[k]); });
+    Object.keys(delta).forEach((k) => { n[k] = AmiguitoStorage.clamp((n[k] || 0) + delta[k]); });
     estado.cuidadosFeitos += 1;
     estado.ultimaAtualizacao = Date.now();
-    AmiguitoStorage.ganharXp(estado, 3);
-    falaAtual = AmiguitoIA.falar(personagem(), "cuidado", { acao: acao === "diversao" ? "diversao" : acao, listasExtras: { falasCuidado: DADOS.falasCuidado } });
-    if (acao === "carinho") falaAtual = "High-five espacial! 💖";
-    if (acao === "brincar") falaAtual = "Vamos brincar! 🎮";
-    if (acao === "diversao") falaAtual = "Festa na base! 🎉";
-    if (acao === "dormir") falaAtual = "Hora do soninho… 💤";
-    AmiguitoSom.sting(acao);
-    const clsFx = AmiguitoPet.efeitoCuidado(acao);
-    animacaoPet = clsFx || (acao === "carinho" ? "is-empolgado" : "is-feliz");
+    const nivelInfo = AmiguitoStorage.ganharXp(estado, 4);
+    AmiguitoStorage.ganharMoedas(estado, 1);
+
+    const falas = {
+      alimentar: "Nham nham! Que delícia! 🍎",
+      brincar: "Vamos brincar! 🎮",
+      diversao: "Festa na base! 🎉",
+      dormir: "Hora do soninho… 💤",
+      carinho: "High-five espacial! 💖",
+      limpar: "Limpinho! 🧼"
+    };
+    falaAtual = falas[acao] || AmiguitoIA.falar(personagem(), "cuidado", { acao, listasExtras: { falasCuidado: DADOS.falasCuidado } });
+
+    const fxAcao = acao === "alimentar" ? "alimentar" : acao === "brincar" || acao === "diversao" ? "brincar" : acao === "dormir" ? "dormir" : acao === "limpar" ? "limpar" : "carinho";
+    AmiguitoSom.sting(fxAcao === "alimentar" ? "alimentar" : fxAcao === "limpar" ? "carinho" : fxAcao);
+    const clsFx = AmiguitoPet.efeitoCuidado(fxAcao);
+    animacaoPet = clsFx || "is-feliz";
+
     if (estado.cuidadosFeitos >= 10) desbloquearTrofeu("cuidador");
-    if (n.carinho >= 100) desbloquearTrofeu("coracao-cheio");
+    if (n.feliz >= 100) desbloquearTrofeu("coracao-cheio");
     if (estado.nivel >= 5) desbloquearTrofeu("nivel-5");
     if (estado.streak >= 3) desbloquearTrofeu("streak-3");
     AmiguitoStorage.salvar(estado);
+
     if (pendenteRota) {
       const rota = DADOS.roteiros.find((r) => r.id === pendenteRota.rotaId);
       const passo = rota && rota.passos.find((x) => x.id === pendenteRota.passoId);
@@ -410,68 +472,120 @@
         mostrarToast("Passo do roteiro ✔");
       }
     }
-    const msgs = { carinho: "Muito amor! 💕", dormir: "Zzz… 😴", brincar: "Pula-pula! 🎮", diversao: "Festa! 🎉" };
+    const msgs = { alimentar: "Nham! 🍎", dormir: "Zzz… 😴", brincar: "Pula-pula! 🎮", diversao: "Festa! 🎉", carinho: "Amor! 💕", limpar: "Limpinho! 🧼" };
     mostrarToast(msgs[acao] || "Legal!");
     anunciar(falaAtual);
+    if (nivelInfo.nivelou) setTimeout(() => celebrarNivel(nivelInfo.nivelAntes), 400);
     setTimeout(() => { renderCasa(); }, 1550);
   }
 
-  /* ===== Brincar ===== */
   function renderBrincar() {
     conteudo.innerHTML = `
       <section aria-labelledby="t-br">
-        <h2 id="t-br" class="titulo-tela">Brincar</h2>
-        ${guia("Minigames rápidos pra aquecer os motores!")}
+        <h2 id="t-br" class="titulo-tela">🎮 Jogos</h2>
+        <p class="subtitulo">Sessões curtinhas · ganhe ⭐ · você tem <strong>${estado.moedas || 0}</strong></p>
+        ${guia("Toque num jogo! Depois compre fofuras na loja.")}
         <div class="grade-cards">
-          ${DADOS.jogos.map((j) => `
-            <a class="card-link" href="#/brincar/${j.id}" data-fala="${j.titulo}" aria-label="${j.titulo}">
+          ${DADOS.jogos.map((j) => {
+            const hi = (estado.highScores && estado.highScores[j.id]) || 0;
+            return `
+            <a class="card-link card-link--grande" href="#/brincar/${j.id}" data-fala="${j.titulo}" aria-label="${j.titulo}">
               <span class="card-link__icone ${j.cor}" aria-hidden="true">${j.icone}</span>
-              <span><span class="card-link__titulo">${j.titulo}</span><span class="card-link__meta">${j.desc}</span></span>
-            </a>`).join("")}
+              <span><span class="card-link__titulo">${j.titulo}</span><span class="card-link__meta">${j.desc}${hi ? " · 🏆 " + hi : ""}</span></span>
+            </a>`;
+          }).join("")}
         </div>
+        <p style="margin-top:0.75rem"><a class="btn btn--secundario btn--bloco" href="#/loja" data-fala="Loja">🛍️ Loja da base</a></p>
       </section>`;
-    posRender("Brincar. Escolha um jogo.", ".card-link");
+    posRender("Jogos. Escolha um pra ganhar estrelas.", ".card-link");
   }
 
   function renderJogo(id) {
     const meta = DADOS.jogos.find((j) => j.id === id);
     if (!meta) { location.hash = "#/brincar"; return; }
     const p = personagem();
+    const hi = (estado.highScores && estado.highScores[id]) || 0;
     conteudo.innerHTML = `
       <section aria-labelledby="t-jg">
         ${linkVoltar("#/brincar","Jogos")}
         <h2 id="t-jg" class="titulo-tela">${meta.icone} ${meta.titulo}</h2>
-        <p class="subtitulo">${meta.desc}</p>
+        <p class="subtitulo">${meta.desc} · Recorde 🏆 ${hi} · ⭐ ${estado.moedas || 0}</p>
         <div id="jogo-root"></div>
       </section>`;
     const root = document.getElementById("jogo-root");
     const onDone = (res) => {
-      if (root._cleanup) root._cleanup();
-      AmiguitoJogos.registrarJogo(estado, id);
+      if (root._cleanup) try { root._cleanup(); } catch (_) {}
       if (estado.jogosJogados.length >= 3) desbloquearTrofeu("jogadora");
-      AmiguitoStorage.ganharXp(estado, 4);
+      aplicarRecompensaJogo(res);
       AmiguitoStorage.salvar(estado);
       AmiguitoSom.sucesso();
       celebrar();
-      mostrarToast(res.msg || "Mandou bem!");
+      const coins = res.coins != null ? res.coins : 0;
+      const score = res.score != null ? res.score : 0;
+      mostrarToast((res.msg || "Mandou bem!") + (coins ? " +" + coins + "⭐" : ""));
       completarPassoTipo("jogo", id);
-      root.innerHTML = `<div class="card" style="text-align:center">
-        <div style="font-size:2.5rem">🎉</div>
+      // brincar sobe feliz
+      estado.necessidades.feliz = AmiguitoStorage.clamp((estado.necessidades.feliz || 0) + 12);
+      estado.necessidades.energia = AmiguitoStorage.clamp((estado.necessidades.energia || 0) - 4);
+      AmiguitoStorage.salvar(estado);
+      root.innerHTML = `<div class="resultado-win card">
+        <span class="resultado-win__ico" aria-hidden="true">🎉</span>
         <p class="titulo-tela" style="font-size:1.25rem">${escapar(res.msg || "Você conseguiu!")}</p>
+        <p class="subtitulo">Pontos <strong>${score}</strong>${res.recorde ? " · Novo recorde! 🏆" : ""} · +${coins} ⭐</p>
         <div class="balao" style="text-align:left;margin:0.75rem 0"><span class="balao__rotulo">Amiguito fala</span>${escapar(AmiguitoIA.falar(p,"elogio"))}</div>
-        <a class="btn btn--primario" href="#/brincar">Mais jogos</a>
-        <a class="btn btn--fantasma" href="#/casa" style="margin-left:0.4rem">Base</a>
+        <a class="btn btn--primario" href="#/brincar" data-fala="Mais jogos">Mais jogos</a>
+        <a class="btn btn--secundario" href="#/loja" data-fala="Loja" style="margin-left:0.35rem">Loja</a>
+        <a class="btn btn--fantasma" href="#/casa" style="margin-left:0.35rem" data-fala="Base">Base</a>
       </div>`;
+      anunciar(res.msg || "Mandou bem!");
     };
-    if (id === "alimentar") AmiguitoJogos.montarAlimentar(root, onDone);
-    else if (id === "bolhas") AmiguitoJogos.montarBolhas(root, onDone);
-    else if (id === "esconde") AmiguitoJogos.montarEsconde(root, onDone, p.emoji);
-    else if (id === "memoria") AmiguitoJogos.montarMemoria(root, onDone, false);
-    else if (id === "danca") AmiguitoJogos.montarDanca(root, onDone);
-    else if (id === "fantasia") {
-      AmiguitoJogos.montarFantasia(root, (res) => { AmiguitoStorage.salvar(estado); onDone(res); }, estado, DADOS, (acc) => AmiguitoPet.renderSvg(p.id, "feliz", acc));
-    } else location.hash = "#/brincar";
+    AmiguitoJogos.montar(id, root, onDone, { estado, dados: DADOS, desafio: false });
   }
+
+  function renderLoja() {
+    const itens = AmiguitoEconomia.todos();
+    conteudo.innerHTML = `
+      <section>
+        ${linkVoltar("#/casa","Base")}
+        <h2 class="titulo-tela">🛍️ Loja da base</h2>
+        <p class="subtitulo">Só enfeites! Sem dinheiro de verdade. Você tem <strong>⭐ ${estado.moedas || 0}</strong></p>
+        ${guia("Toque pra comprar ou equipar. É só pra deixar a base bonita!")}
+        <div class="loja-grade">
+          ${itens.map((it) => {
+            const unlocked = AmiguitoEconomia.desbloqueado(estado, it);
+            const equipado = it.tipo === "movel" ? (estado.moveis || []).includes(it.id) : (estado.acessorios || []).includes(it.id);
+            return `<button type="button" class="loja-card ${unlocked?"is-unlocked":""} ${equipado?"is-equipado":""}" data-id="${it.id}" data-fala="${it.nome}">
+              <span class="loja-card__emoji">${it.emoji}</span>
+              <span class="loja-card__nome">${it.nome}</span>
+              <span class="loja-card__preco">${unlocked ? (equipado ? "✓ Usando" : "Equipar") : "⭐ " + it.preco}</span>
+            </button>`;
+          }).join("")}
+        </div>
+      </section>`;
+    conteudo.querySelectorAll(".loja-card").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.id;
+        const it = AmiguitoEconomia.item(id);
+        if (!AmiguitoEconomia.desbloqueado(estado, it)) {
+          const res = AmiguitoEconomia.comprar(estado, id);
+          if (!res.ok) { AmiguitoSom.erro(); mostrarToast(res.msg); anunciar(res.msg); return; }
+          AmiguitoSom.sucesso(); celebrar();
+          mostrarToast(res.msg);
+          anunciar("Comprado! " + it.nome);
+        } else if (it.tipo === "movel") {
+          AmiguitoEconomia.toggleMovel(estado, id);
+          AmiguitoSom.tap();
+        } else {
+          AmiguitoEconomia.equiparAcessorio(estado, id);
+          AmiguitoSom.tap();
+        }
+        AmiguitoStorage.salvar(estado);
+        renderLoja();
+      });
+    });
+    posRender("Loja da base. Compre enfeites com estrelas.", ".loja-card");
+  }
+
 
   function completarPassoTipo(tipo, ref) {
     if (!pendenteRota) return;
@@ -737,9 +851,10 @@
           </div>
         </div>
         <ul>
-          <li>🎵 <strong>Músicas</strong> — calma, festa, espaço, floresta, foco</li>
-          <li>💕 <strong>Animações</strong> — carinho e brincar bem grandões</li>
-          <li>⚡ <strong>Desafio</strong> — foguete, combo e estrelas</li>
+          <li>🍎 <strong>Cuidar</strong> — fome, feliz, energia e banho</li>
+          <li>🎮 <strong>Jogos</strong> — pontos, recorde e estrelas ⭐</li>
+          <li>🐣 <strong>Evoluir</strong> — bebê → criança → explorador</li>
+          <li>🛍️ <strong>Loja</strong> — móveis e trajes (sem dinheiro real)</li>
         </ul>
         <button type="button" class="btn btn--primario btn--bloco" id="btn-novidades-ok" data-fala="Entendi">Entendi! 👍</button>
       </aside>`;

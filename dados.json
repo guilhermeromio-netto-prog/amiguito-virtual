@@ -37,6 +37,18 @@
         "diversao": [
           "Estou entediada… tem um jogo?",
           "Vamos programar um robôzinho?"
+        ],
+        "fome": [
+          "Quero um lanchinho!",
+          "Barriguinha roncando…"
+        ],
+        "feliz": [
+          "Quero brincar de cientista!",
+          "Vamos inventar uma experiência?"
+        ],
+        "higiene": [
+          "Quero um banho!",
+          "Tô precisando de limpeza ✨"
         ]
       },
       "elogios": [
@@ -98,6 +110,18 @@
         "diversao": [
           "Tô sem ação… joga comigo!",
           "Memória ou robô?"
+        ],
+        "fome": [
+          "Quero um lanchinho!",
+          "Barriguinha roncando…"
+        ],
+        "feliz": [
+          "Quero um desafio AGORA!",
+          "Corrida de padrões?"
+        ],
+        "higiene": [
+          "Quero um banho!",
+          "Tô precisando de limpeza ✨"
         ]
       },
       "elogios": [
@@ -159,6 +183,18 @@
         "diversao": [
           "Quero um jogo de formas!",
           "Desafio de números?"
+        ],
+        "fome": [
+          "Quero um lanchinho!",
+          "Barriguinha roncando…"
+        ],
+        "feliz": [
+          "Me mostra um padrão legal!",
+          "Conta comigo até 20?"
+        ],
+        "higiene": [
+          "Quero um banho!",
+          "Tô precisando de limpeza ✨"
         ]
       },
       "elogios": [
@@ -220,6 +256,18 @@
         "diversao": [
           "Sing a tiny song?",
           "Jogo de palavras?"
+        ],
+        "fome": [
+          "Quero um lanchinho!",
+          "Barriguinha roncando…"
+        ],
+        "feliz": [
+          "Wanna play English?",
+          "Diga uma cor em inglês!"
+        ],
+        "higiene": [
+          "Quero um banho!",
+          "Tô precisando de limpeza ✨"
         ]
       },
       "elogios": [
@@ -281,6 +329,18 @@
         "diversao": [
           "Jogo de robô, por favor!",
           "Conserta comigo?"
+        ],
+        "fome": [
+          "Quero um lanchinho!",
+          "Barriguinha roncando…"
+        ],
+        "feliz": [
+          "Quero programar!",
+          "Monta um padrão comigo?"
+        ],
+        "higiene": [
+          "Quero um banho!",
+          "Tô precisando de limpeza ✨"
         ]
       },
       "elogios": [
@@ -342,6 +402,18 @@
         "diversao": [
           "Jogo calminho de estrelas?",
           "Esconde-esconde na nebulosa?"
+        ],
+        "fome": [
+          "Quero um lanchinho!",
+          "Barriguinha roncando…"
+        ],
+        "feliz": [
+          "Conta uma história do espaço?",
+          "Vamos achar uma constelação?"
+        ],
+        "higiene": [
+          "Quero um banho!",
+          "Tô precisando de limpeza ✨"
         ]
       },
       "elogios": [
@@ -403,6 +475,18 @@
         "diversao": [
           "Dança das estrelas?",
           "Caça ao brilho?"
+        ],
+        "fome": [
+          "Quero um lanchinho!",
+          "Barriguinha roncando…"
+        ],
+        "feliz": [
+          "Quero um jogo brilhante!",
+          "Desenha uma estrela comigo?"
+        ],
+        "higiene": [
+          "Quero um banho!",
+          "Tô precisando de limpeza ✨"
         ]
       },
       "elogios": [
@@ -464,6 +548,18 @@
         "diversao": [
           "Jogo de cores?",
           "Esconde atrás da árvore?"
+        ],
+        "fome": [
+          "Quero um lanchinho!",
+          "Barriguinha roncando…"
+        ],
+        "feliz": [
+          "Me mostra uma cor viva!",
+          "Brinca de natureza comigo?"
+        ],
+        "higiene": [
+          "Quero um banho!",
+          "Tô precisando de limpeza ✨"
         ]
       },
       "elogios": [
@@ -525,6 +621,18 @@
         "diversao": [
           "Dança do sol?",
           "Jogo bem animado?"
+        ],
+        "fome": [
+          "Quero um lanchinho!",
+          "Barriguinha roncando…"
+        ],
+        "feliz": [
+          "Conta uma piada solar!",
+          "Vamos sorrir bem grande?"
+        ],
+        "higiene": [
+          "Quero um banho!",
+          "Tô precisando de limpeza ✨"
         ]
       },
       "elogios": [
@@ -586,45 +694,59 @@
   "jogos": [
     {
       "id": "alimentar",
-      "titulo": "Lanche espacial",
+      "titulo": "Lanche",
       "icone": "🍎",
-      "desc": "Escolha o lanche certo",
+      "desc": "Comida certa",
       "cor": "bg-rosa"
     },
     {
+      "id": "chuva",
+      "titulo": "Chuva de lanche",
+      "icone": "🌧️",
+      "desc": "Pegue o que cai",
+      "cor": "bg-sol"
+    },
+    {
+      "id": "limpeza",
+      "titulo": "Banho",
+      "icone": "🧼",
+      "desc": "Limpe a sujeira",
+      "cor": "bg-menta"
+    },
+    {
       "id": "bolhas",
-      "titulo": "Estrelas e bolhas",
-      "icone": "🌌",
-      "desc": "Toque nas bolhas e estrelas",
+      "titulo": "Bolhas",
+      "icone": "🫧",
+      "desc": "Toque nas estrelas",
       "cor": "bg-espaco"
     },
     {
       "id": "esconde",
-      "titulo": "Cadê o amiguinho?",
+      "titulo": "Esconde",
       "icone": "🚪",
-      "desc": "Ache atrás das portas",
+      "desc": "Ache o amiguinho",
       "cor": "bg-lavanda"
     },
     {
       "id": "memoria",
-      "titulo": "Memória galáctica",
+      "titulo": "Memória",
       "icone": "🃏",
-      "desc": "Encontre os pares",
-      "cor": "bg-menta"
+      "desc": "Ache os pares",
+      "cor": "bg-peach"
     },
     {
       "id": "danca",
-      "titulo": "Batida do foguete",
+      "titulo": "Dança",
       "icone": "🥁",
-      "desc": "Repita a sequência",
+      "desc": "Repita a batida",
       "cor": "bg-sol"
     },
     {
       "id": "fantasia",
-      "titulo": "Traje espacial",
+      "titulo": "Traje",
       "icone": "🧑‍🚀",
       "desc": "Vista o amiguinho",
-      "cor": "bg-peach"
+      "cor": "bg-rosa"
     }
   ],
   "licoes": [
