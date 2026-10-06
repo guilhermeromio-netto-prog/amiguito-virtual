@@ -110,7 +110,7 @@
     btnSom.setAttribute("aria-pressed", String(!!estado.somAtivo));
     btnSom.setAttribute("aria-label", estado.somAtivo ? "Desativar sons" : "Ativar sons");
     btnSom.innerHTML = `<span aria-hidden="true">${estado.somAtivo ? "🔊" : "🔇"}</span>`;
-    AmiguitoSom.syncBgm(!!estado.somAtivo);
+    AmiguitoSom.syncBgm(!!estado.somAtivo, estado.temaMusica || "calma");
     if (estado.personagemId && estado.streak > 0) {
       streakBadge.hidden = false;
       streakBadge.textContent = `🔥 ${estado.streak}d`;
@@ -137,14 +137,16 @@
 
   function celebrar() {
     confete.innerHTML = "";
-    ["🎉","⭐","💖","✨","🚀","🌟"].forEach((e, i) => {
+    const pack = ["🎉","⭐","💖","✨","🚀","🌟","🌈","💫","🎊","💛"];
+    for (let i = 0; i < 14; i++) {
       const s = document.createElement("span");
-      s.textContent = e;
-      s.style.left = (8 + Math.random() * 84) + "%";
-      s.style.animationDelay = (i * 50) + "ms";
+      s.textContent = pack[i % pack.length];
+      s.style.left = (4 + Math.random() * 92) + "%";
+      s.style.animationDelay = (i * 40) + "ms";
+      s.style.fontSize = (1.1 + Math.random() * 0.7) + "rem";
       confete.appendChild(s);
-      setTimeout(() => s.remove(), 1800);
-    });
+      setTimeout(() => s.remove(), 2000);
+    }
   }
 
   function alternarSom() {
@@ -362,8 +364,8 @@
       b.setAttribute("data-fala", b.textContent.trim());
       b.addEventListener("click", () => cuidar(b.dataset.acao));
     });
-    animacaoPet = "";
-    posRender("Base espacial. Cuide do amiguinho.", ".acao[data-acao=\"carinho\"]");
+    setTimeout(() => { animacaoPet = ""; }, 800);
+    posRender("Base espacial. Cuide do amiguinho.", null);
   }
 
   function cuidar(acao) {
@@ -382,9 +384,12 @@
     AmiguitoStorage.ganharXp(estado, 3);
     falaAtual = AmiguitoIA.falar(personagem(), "cuidado", { acao: acao === "diversao" ? "diversao" : acao, listasExtras: { falasCuidado: DADOS.falasCuidado } });
     if (acao === "carinho") falaAtual = "High-five espacial! 💖";
-    animacaoPet = acao === "carinho" ? "is-empolgado" : "is-feliz";
-    if (acao === "carinho") { AmiguitoSom.carinho(); setTimeout(() => AmiguitoPet.soltarParticulas(["💖","⭐","✨","🚀"]), 40); }
-    else AmiguitoSom.tap();
+    if (acao === "brincar") falaAtual = "Vamos brincar! 🎮";
+    if (acao === "diversao") falaAtual = "Festa na base! 🎉";
+    if (acao === "dormir") falaAtual = "Hora do soninho… 💤";
+    AmiguitoSom.sting(acao);
+    const clsFx = AmiguitoPet.efeitoCuidado(acao);
+    animacaoPet = clsFx || (acao === "carinho" ? "is-empolgado" : "is-feliz");
     if (estado.cuidadosFeitos >= 10) desbloquearTrofeu("cuidador");
     if (n.carinho >= 100) desbloquearTrofeu("coracao-cheio");
     if (estado.nivel >= 5) desbloquearTrofeu("nivel-5");
@@ -401,8 +406,10 @@
         mostrarToast("Passo do roteiro ✔");
       }
     }
-    mostrarToast(acao === "carinho" ? "Muito amor! 💕" : acao === "dormir" ? "Zzz… 😴" : "Que diversão! 🎉");
-    renderCasa();
+    const msgs = { carinho: "Muito amor! 💕", dormir: "Zzz… 😴", brincar: "Pula-pula! 🎮", diversao: "Festa! 🎉" };
+    mostrarToast(msgs[acao] || "Legal!");
+    anunciar(falaAtual);
+    setTimeout(() => { renderCasa(); }, 720);
   }
 
   /* ===== Brincar ===== */
@@ -544,8 +551,9 @@
       mostrarToast(res.msg);
       const bar = conteudo.querySelector(".progresso-missao > i");
       if (bar) bar.style.width = "100%";
-      root.innerHTML = `<div class="card" style="text-align:center;margin-top:0.75rem">
-        <div style="font-size:2.5rem">🚀</div>
+      root.innerHTML = `<div class="resultado-win card" style="margin-top:0.75rem">
+        <span class="resultado-win__ico" aria-hidden="true">🚀</span>
+        <div class="estrelas-fila" aria-hidden="true"><span>⭐</span><span>⭐</span><span>⭐</span></div>
         <p class="titulo-tela" style="font-size:1.2rem">${escapar(res.msg)}</p>
         ${guia("Mandou bem! Quer outra?")}
         <div class="replay-bar"><button type="button" class="btn btn--sol btn--sm" data-fala="${escapar(res.msg)}" id="btn-replay-stem">🗣️</button></div>
@@ -613,11 +621,54 @@
   }
 
   /* ===== Ensinar / Yoga / etc — same patterns ===== */
+  function htmlMusicaPicker() {
+    const tema = estado.temaMusica || "calma";
+    const chips = (AmiguitoSom.TEMAS || []).map((tm) => `
+      <button type="button" class="musica-chip ${tema===tm.id?"is-ativo":""}" data-tema="${tm.id}"
+        data-fala="${tm.fala}" aria-label="${tm.fala}" aria-pressed="${tema===tm.id}">
+        <span class="musica-chip__icone" aria-hidden="true">${tm.icone}</span>
+        <span class="musica-chip__nome">${tm.nome}</span>
+      </button>`).join("");
+    return `
+      <div class="card" style="margin-top:1rem" id="painel-musica">
+        <p style="font-weight:900;margin:0 0 0.35rem">🎵 Músicas da base</p>
+        <p class="subtitulo" style="margin:0 0 0.5rem">Originais e suaves. Só tocam com o som ligado.</p>
+        <div class="musica-picker" role="group" aria-label="Escolher música">${chips}</div>
+        ${!estado.somAtivo ? `<p class="subtitulo" style="margin-top:0.55rem">🔇 Ligue o som no alto pra ouvir.</p>` : ""}
+      </div>`;
+  }
+
+  function amarrarMusicaPicker(root) {
+    (root || conteudo).querySelectorAll(".musica-chip").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.tema;
+        estado.temaMusica = id;
+        AmiguitoStorage.salvar(estado);
+        AmiguitoSom.setTema(id);
+        // Mudo por padrão: só toca se som já estiver ligado
+        if (estado.somAtivo) {
+          AmiguitoSom.syncBgm(true, id);
+          AmiguitoSom.tap();
+          const meta = (AmiguitoSom.TEMAS || []).find((x) => x.id === id);
+          anunciar(meta ? meta.fala : "Música");
+          mostrarToast("Tema: " + (meta ? meta.nome : id));
+        } else {
+          mostrarToast("Tema salvo! Ligue o 🔊 pra ouvir.");
+        }
+        (root || conteudo).querySelectorAll(".musica-chip").forEach((b) => {
+          const on = b.dataset.tema === id;
+          b.classList.toggle("is-ativo", on);
+          b.setAttribute("aria-pressed", String(on));
+        });
+      });
+    });
+  }
+
   function renderMais() {
     conteudo.innerHTML = `
       <section>
         <h2 class="titulo-tela">Mais</h2>
-        ${guia("Lições, missões do dia, yoga e troféus da tripulação.")}
+        ${guia("Lições, missões, yoga, troféus e músicas!")}
         <div class="grade-cards">
           <a class="card-link" href="#/ler" data-fala="Quero ler" aria-label="Quero ler"><span class="card-link__icone bg-rosa" aria-hidden="true">🔤</span><span><span class="card-link__titulo">Quero ler</span><span class="card-link__meta">Letras e áudio</span></span></a>
           <a class="card-link" href="#/ensinar" data-fala="Ensinar"><span class="card-link__icone bg-lavanda" aria-hidden="true">📚</span><span><span class="card-link__titulo">Ensinar & Inglês</span><span class="card-link__meta">Lições + desafio</span></span></a>
@@ -626,8 +677,10 @@
           <a class="card-link" href="#/trofeus"><span class="card-link__icone bg-rosa" aria-hidden="true">🏆</span><span><span class="card-link__titulo">Troféus</span><span class="card-link__meta">Conquistas</span></span></a>
           <a class="card-link" href="#/" data-fala="Tripulação"><span class="card-link__icone bg-espaco" aria-hidden="true">👩‍🚀</span><span><span class="card-link__titulo">Tripulação</span><span class="card-link__meta">Trocar amiguinho</span></span></a>
         </div>
+        ${htmlMusicaPicker()}
       </section>`;
-    posRender("Mais opções. Quero ler fica no alto.", "a[href=\"#/ler\"]");
+    amarrarMusicaPicker(conteudo);
+    posRender("Mais opções. Escolha uma música ou Quero ler.", "a[href=\"#/ler\"]");
   }
 
   function renderEnsinar() {
@@ -672,12 +725,19 @@
     let tituloP = pergunta.pergunta, hint = "";
     if (idioma === "en" && pergunta.perguntaEn) tituloP = pergunta.perguntaEn;
     if (idioma === "ambos" && pergunta.perguntaEn) hint = pergunta.perguntaEn;
+    if (jogoAtivo.combo == null) jogoAtivo.combo = 0;
+    const pctFog = Math.round((jogoAtivo.indice / total) * 100);
     conteudo.innerHTML = `
       <section class="jogo">
         ${linkVoltar("#/ensinar","Lições")}
-        <h2 class="titulo-tela">${licao.icone} ${licao.titulo}${desafio?" · Desafio":""}</h2>
-        <p class="subtitulo">Pergunta ${jogoAtivo.indice+1} de ${total}</p>
-        <div class="progresso-missao"><i style="width:${Math.round((jogoAtivo.indice/total)*100)}%"></i></div>
+        <h2 class="titulo-tela">${licao.icone} ${licao.titulo}</h2>
+        ${desafio ? `<div class="banner-desafio" aria-live="polite"><span aria-hidden="true">⚡</span> Desafio! <span aria-hidden="true">⚡</span></div>` : ""}
+        <div class="progresso-foguete ${pctFog >= 66 ? "is-quase" : ""}" aria-label="Progresso ${jogoAtivo.indice} de ${total}">
+          <span class="progresso-foguete__ico" aria-hidden="true">🚀</span>
+          <div class="progresso-foguete__trilho"><div class="progresso-foguete__fill" style="width:${pctFog}%"></div></div>
+          <span style="font-weight:900;font-size:0.85rem">${jogoAtivo.indice+1}/${total}</span>
+        </div>
+        ${jogoAtivo.combo >= 2 ? `<div class="combo-badge" aria-live="polite">🔥 Combo x${jogoAtivo.combo}</div>` : ""}
         <div class="card">
           <p class="jogo__pergunta">${escapar(tituloP)}${hint?`<span class="hint-en">${escapar(hint)}</span>`:""}</p>
           <div class="jogo__opcoes">${pergunta.opcoes.map((op,i)=>{
@@ -689,22 +749,33 @@
           ${desafio?"":`<p style="margin-top:0.85rem"><a class="btn btn--fantasma btn--sm" href="#/ensinar/${licaoId}/desafio">Modo desafio</a></p>`}
         </div>
       </section>`;
+    if (desafio && jogoAtivo.indice === 0 && !jogoAtivo._fanfarra) {
+      jogoAtivo._fanfarra = true;
+      AmiguitoSom.desafioFanfarra();
+    }
     posRender(tituloP, null); // sem overlay nas respostas
-    anunciar(tituloP);
+    anunciar(desafio && jogoAtivo.indice === 0 ? ("Desafio! " + tituloP) : tituloP);
     const botoes = [...conteudo.querySelectorAll(".opcao")];
     botoes.forEach((btn) => btn.addEventListener("click", () => {
       const op = pergunta.opcoes[Number(btn.dataset.i)];
       const certa = AmiguitoEnsinar.verificar(op);
       botoes.forEach((b) => { b.disabled = true; });
       btn.classList.add(certa ? "is-certa" : "is-errada");
-      if (certa) { jogoAtivo.acertos += 1; AmiguitoSom.sucesso(); mostrarToast(AmiguitoIA.falar(personagem(),"certo",{listasExtras:DADOS})); }
-      else {
+      btn.classList.add(certa ? "is-acerto-fx" : "is-erro-fx");
+      if (certa) {
+        jogoAtivo.acertos += 1;
+        jogoAtivo.combo = (jogoAtivo.combo || 0) + 1;
+        if (jogoAtivo.combo >= 3) { AmiguitoSom.combo(); celebrar(); mostrarToast("Combo x" + jogoAtivo.combo + "! 🔥"); }
+        else { AmiguitoSom.sucesso(); mostrarToast(AmiguitoIA.falar(personagem(),"certo",{listasExtras:DADOS})); }
+        AmiguitoPet.soltarParticulas(["⭐","✨","🌟","🎉"], { count: 6, grande: true });
+      } else {
+        jogoAtivo.combo = 0;
         const certaBtn = botoes.find((b,i) => pergunta.opcoes[i].certa);
         if (certaBtn) certaBtn.classList.add("is-certa");
         AmiguitoSom.erro();
         mostrarToast(AmiguitoIA.falar(personagem(),"errado",{listasExtras:DADOS}));
       }
-      setTimeout(() => { jogoAtivo.indice += 1; renderLicao(licaoId, desafio); }, 850);
+      setTimeout(() => { jogoAtivo.indice += 1; renderLicao(licaoId, desafio); }, 900);
     }));
   }
 
@@ -729,14 +800,22 @@
     AmiguitoStorage.salvar(estado);
     celebrar(); AmiguitoSom.nivel();
     const total = desafio ? Math.min(6, licao.perguntas.length + 2) : licao.perguntas.length;
-    conteudo.innerHTML = `<section class="jogo"><div class="card">
-      <div style="font-size:3rem">🎉</div>
-      <h2 class="titulo-tela">Lição concluída!</h2>
+    const estrelas = Math.max(1, Math.min(3, Math.round((jogoAtivo.acertos / Math.max(1, total)) * 3)));
+    const starHtml = Array.from({ length: 3 }, (_, i) => `<span aria-hidden="true">${i < estrelas ? "⭐" : "☆"}</span>`).join("");
+    conteudo.innerHTML = `<section class="jogo"><div class="resultado-win card">
+      <span class="resultado-win__ico" aria-hidden="true">${desafio ? "⚡" : "🎉"}</span>
+      <h2 class="titulo-tela">${desafio ? "Desafio completo!" : "Lição concluída!"}</h2>
+      <div class="estrelas-fila" aria-label="${estrelas} estrelas">${starHtml}</div>
       <p class="subtitulo">Acertos: ${jogoAtivo.acertos}/${total}</p>
+      <div class="progresso-foguete is-quase" aria-hidden="true">
+        <span class="progresso-foguete__ico">🚀</span>
+        <div class="progresso-foguete__trilho"><div class="progresso-foguete__fill" style="width:100%"></div></div>
+      </div>
       ${guia(AmiguitoIA.falar(personagem(),"elogio"))}
-      <a class="btn btn--primario" href="#/ensinar">Mais lições</a>
-      <a class="btn btn--secundario" href="#/casa" style="margin-left:0.4rem">Base</a>
+      <a class="btn btn--primario" href="#/ensinar" data-fala="Mais lições">Mais lições</a>
+      <a class="btn btn--secundario" href="#/casa" style="margin-left:0.4rem" data-fala="Base">Base</a>
     </div></section>`;
+    anunciar(desafio ? "Desafio completo! Mandou bem!" : "Lição concluída! Mandou bem!");
     jogoAtivo = null;
   }
 

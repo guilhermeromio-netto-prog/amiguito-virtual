@@ -201,19 +201,47 @@
     </div>`;
   }
 
-  function soltarParticulas(emojis) {
-    const box = document.getElementById("particulas");
+  function soltarParticulas(emojis, opts) {
+    opts = opts || {};
+    const box = document.getElementById("particulas") || document.getElementById("fx-camada");
     if (!box) return;
-    (emojis || ["💖", "⭐", "✨"]).forEach((e, i) => {
+    const n = opts.count || (emojis || []).length || 6;
+    const list = emojis && emojis.length ? emojis : ["💖", "⭐", "✨"];
+    for (let i = 0; i < n; i++) {
       const s = document.createElement("span");
-      s.className = "particula";
-      s.textContent = e;
-      s.style.left = (25 + Math.random() * 50) + "%";
-      s.style.bottom = (20 + Math.random() * 20) + "%";
-      s.style.animationDelay = (i * 80) + "ms";
+      s.className = "particula" + (opts.grande ? " particula--grande" : "");
+      s.textContent = list[i % list.length];
+      s.style.left = (10 + Math.random() * 80) + "%";
+      s.style.bottom = (8 + Math.random() * 40) + "%";
+      s.style.animationDelay = (i * 55) + "ms";
       box.appendChild(s);
-      setTimeout(() => s.remove(), 1200);
-    });
+      setTimeout(() => s.remove(), opts.dur || 1400);
+    }
+  }
+
+  /** Efeitos grandes de cuidado: coraçãos, migalhas, zzz, fogos */
+  function efeitoCuidado(acao) {
+    const mapa = {
+      carinho: { emojis: ["💖","💕","💗","✨","⭐"], classe: "is-carinho", shake: true },
+      brincar: { emojis: ["🎮","⭐","🎉","✨","🌟"], classe: "is-brincar", shake: true },
+      diversao: { emojis: ["🎉","😄","🌈","✨","🎊"], classe: "is-festa", shake: true },
+      dormir: { emojis: ["💤","😴","🌙","✨"], classe: "is-dormir-fx", shake: false },
+      alimentar: { emojis: ["🍪","🍎","✨","😋","🌟"], classe: "is-comer", shake: true }
+    };
+    const cfg = mapa[acao] || mapa.carinho;
+    soltarParticulas(cfg.emojis, { count: 10, grande: true, dur: 1600 });
+    const arte = document.getElementById("pet-arte");
+    const app = document.getElementById("app");
+    if (arte) {
+      arte.classList.remove("is-carinho","is-brincar","is-festa","is-dormir-fx","is-comer","is-feliz","is-empolgado");
+      void arte.offsetWidth;
+      arte.classList.add(cfg.classe);
+    }
+    if (cfg.shake && app) {
+      app.classList.add("is-shake-suave");
+      setTimeout(() => app.classList.remove("is-shake-suave"), 420);
+    }
+    return cfg.classe;
   }
 
   function renderRetrato(id, opts) {
@@ -249,6 +277,6 @@
   }
 
   global.AmiguitoPet = {
-    renderSvg, renderRetrato, amarrarFallbackRetratos, humorDe, necessidadeMaisBaixa, renderBarras, renderQuarto, soltarParticulas, LABELS
+    renderSvg, renderRetrato, amarrarFallbackRetratos, humorDe, necessidadeMaisBaixa, renderBarras, renderQuarto, soltarParticulas, efeitoCuidado, LABELS
   };
 })(window);

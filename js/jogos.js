@@ -13,6 +13,7 @@
     let acertos = 0;
     root.innerHTML = `
       <div class="jogo-hud"><span>Leve comida gostosa até a boquinha!</span><span id="jg-pts">0/3</span></div>
+      <div class="progresso-foguete" aria-hidden="true"><span class="progresso-foguete__ico">🚀</span><div class="progresso-foguete__trilho"><div class="progresso-foguete__fill" style="width:0%"></div></div></div>
       <div class="boca-alvo" id="boca-alvo" aria-label="Boquinha do amiguito">😋</div>
       <div class="comida-bandeja" id="bandeja"></div>
       <p class="subtitulo" style="text-align:center;margin-top:0.5rem">Toque na comida certa (3 vezes)</p>`;
@@ -28,13 +29,25 @@
         b.setAttribute("aria-label", c.ok ? "Comida gostosa" : "Não é comida");
         b.addEventListener("click", () => {
           if (c.ok) {
-            b.classList.add("is-certo");
+            b.classList.add("is-certo", "is-acerto-fx");
             acertos += 1;
             root.querySelector("#jg-pts").textContent = acertos + "/3";
             boca.textContent = "😄";
-            if (acertos >= 3) setTimeout(() => onDone({ sucesso: true, msg: "Barriguinha feliz!" }), 400);
+            boca.classList.add("is-nham");
+            setTimeout(() => boca.classList.remove("is-nham"), 450);
+            if (window.AmiguitoSom) AmiguitoSom.sting("alimentar");
+            if (window.AmiguitoPet) AmiguitoPet.soltarParticulas(["🍪","✨","🍎","⭐"], { count: 5, grande: true });
+            // progress fill
+            const fill = root.querySelector(".progresso-foguete__fill");
+            if (fill) fill.style.width = Math.round((acertos/3)*100) + "%";
+            if (acertos >= 3) {
+              if (window.AmiguitoSom) AmiguitoSom.combo();
+              setTimeout(() => onDone({ sucesso: true, msg: "Barriguinha feliz!" }), 450);
+            }
           } else {
+            b.classList.add("is-erro-fx");
             boca.textContent = "😝";
+            if (window.AmiguitoSom) AmiguitoSom.erro();
             setTimeout(() => { boca.textContent = "😋"; }, 400);
           }
         });
@@ -70,6 +83,7 @@
         el.remove();
         vivos -= 1;
         pontos += 1;
+            if (window.AmiguitoSom) AmiguitoSom.tap();
         root.querySelector("#jg-pts").textContent = pontos + "/" + meta;
         if (pontos >= meta) {
           clearInterval(timer);
@@ -151,7 +165,9 @@
           root.querySelector("#jg-pts").textContent = feitos + "/" + pares.length;
           viradas = [];
           bloqueio = false;
-          if (feitos >= pares.length) setTimeout(() => onDone({ sucesso: true, msg: "Memória de ouro!" }), 350);
+          if (window.AmiguitoSom) AmiguitoSom.sucesso();
+          if (window.AmiguitoPet) AmiguitoPet.soltarParticulas(["⭐","✨"], { count: 4, grande: true });
+          if (feitos >= pares.length) { if (window.AmiguitoSom) AmiguitoSom.combo(); setTimeout(() => onDone({ sucesso: true, msg: "Memória de ouro!" }), 350); }
         } else {
           setTimeout(() => {
             a.classList.remove("is-virada");

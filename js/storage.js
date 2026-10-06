@@ -4,7 +4,7 @@
   const IDS_ANTIGOS = ["luna", "pipoca", "fogo"];
 
   const estadoPadrao = () => ({
-    versaoSave: 4,
+    versaoSave: 5,
     personagemId: null,
     nomePet: "",
     necessidades: { humor: 85, energia: 85, carinho: 85, diversao: 85 },
@@ -23,6 +23,7 @@
     dicaDoDia: null,
     dicaData: null,
     somAtivo: false,
+    temaMusica: "calma",
     modoFiguras: true, // padrão ON — criança que não lê
     primeiraVisita: true,
     idiomaDica: "pt",
@@ -59,7 +60,8 @@
     if (merged.personagemId && !IDS_NOVOS.includes(merged.personagemId)) {
       merged.personagemId = null;
     }
-    merged.versaoSave = 4;
+    merged.versaoSave = 5;
+    if (!merged.temaMusica) merged.temaMusica = "calma";
     return merged;
   }
 
