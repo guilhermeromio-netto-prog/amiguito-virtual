@@ -1097,3 +1097,81 @@ body.modo-figuras .musica-chip__nome { font-size: 0.7rem; }
   .queda-item { animation: none; top: 40%; }
   .meter__fill.is-baixo, .app.is-levelup { animation: none !important; }
 }
+
+/* ===== Educar: Olha → Guia → Faz → Festa ===== */
+.edu-fases {
+  display: flex; gap: 0.35rem; list-style: none; padding: 0; margin: 0 0 0.75rem;
+  justify-content: space-between;
+}
+.edu-fase {
+  flex: 1; text-align: center; padding: 0.4rem 0.2rem; border-radius: 12px;
+  background: #F1F5F9; border: 2px solid #E2E8F0; font-size: 0.7rem; font-weight: 800;
+  opacity: 0.55; transition: .2s;
+}
+.edu-fase.is-ativa { opacity: 1; border-color: #818CF8; background: #EEF2FF; box-shadow: 0 0 0 3px rgba(129,140,248,.25); transform: scale(1.04); }
+.edu-fase__nome { display: block; margin-top: 0.1rem; }
+.edu-coach {
+  display: flex; align-items: center; gap: 0.55rem; margin-bottom: 0.75rem;
+  padding: 0.55rem 0.65rem; border-radius: 16px; background: linear-gradient(135deg,#EEF2FF,#FDF4FF);
+  border: 2px solid #C7D2FE;
+}
+.edu-coach__avatar { border-radius: 50%; flex-shrink: 0; background: #fff; }
+.edu-coach__bubble { flex: 1; min-width: 0; }
+.edu-coach__label { font-size: 0.7rem; color: #6366F1; text-transform: uppercase; letter-spacing: .04em; }
+.edu-coach__fala { margin: 0.15rem 0 0; font-weight: 800; font-size: 0.95rem; line-height: 1.25; }
+.edu-niveis { display: flex; gap: 0.4rem; justify-content: center; margin: 0.35rem 0 0.65rem; }
+.edu-nivel {
+  border: 3px solid #E2E8F0; background: #fff; border-radius: 14px; padding: 0.35rem 0.7rem;
+  font-family: inherit; font-weight: 900; cursor: pointer; font-size: 0.95rem;
+}
+.edu-nivel.is-ativo { border-color: #34D399; background: #ECFDF5; box-shadow: 0 0 0 3px rgba(52,211,153,.3); }
+.edu-porque {
+  display: flex; gap: 0.5rem; align-items: flex-start; margin-top: 0.75rem;
+  padding: 0.65rem 0.75rem; border-radius: 14px; background: #FFFBEB; border: 2px solid #FCD34D;
+  font-size: 0.9rem; line-height: 1.35;
+}
+.edu-porque[hidden] { display: none !important; }
+.edu-porque.is-visivel { animation: edu-pop .35s ease; }
+.edu-modelo { text-align: center; padding: 0.5rem; }
+.edu-modelo-txt--grande { font-size: 3rem; font-weight: 900; margin: 0.5rem 0; }
+.edu-modelo-cor { width: 96px; height: 96px; border-radius: 20px; margin: 0.5rem auto; border: 3px solid #334155; }
+.edu-guia-dica { text-align: center; font-size: 2.5rem; margin: 0.5rem 0; }
+.edu-drag { display: flex; flex-direction: column; gap: 0.75rem; }
+.edu-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.edu-slot {
+  min-height: 88px; border: 3px dashed #94A3B8; border-radius: 16px; background: #F8FAFC;
+  padding: 0.4rem; text-align: center; transition: .15s;
+}
+.edu-slot.is-over { border-color: #818CF8; background: #EEF2FF; }
+.edu-slot.is-preenchido { border-style: solid; border-color: #34D399; background: #ECFDF5; }
+.edu-slot__label { display: block; font-size: 0.75rem; font-weight: 800; color: #64748B; margin-bottom: 0.25rem; }
+.edu-slot__drop { font-size: 2rem; min-height: 2.2rem; }
+.edu-pecas { display: flex; flex-wrap: wrap; gap: 0.45rem; justify-content: center; }
+.edu-peca {
+  width: 64px; height: 64px; border-radius: 16px; border: 3px solid #CBD5E1; background: #fff;
+  font-size: 1.8rem; cursor: grab; font-family: inherit;
+}
+.edu-peca.is-selecionada { border-color: #818CF8; box-shadow: 0 0 0 4px rgba(129,140,248,.35); transform: scale(1.06); }
+.edu-peca.is-certa { border-color: #34D399; }
+.edu-reta {
+  display: flex; gap: 0.3rem; overflow-x: auto; padding: 0.5rem 0; margin: 0.5rem 0;
+  justify-content: center; flex-wrap: wrap;
+}
+.edu-reta__casa {
+  width: 44px; height: 44px; border-radius: 12px; border: 2px solid #6366F1; background: #EEF2FF;
+  display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem;
+}
+.edu-reta__casa.is-buraco { background: #FEF3C7; border-style: dashed; border-color: #F59E0B; color: #B45309; }
+.edu-reta__casa.is-acertou { background: #ECFDF5; border-color: #34D399; }
+.edu-letra-tray { text-align: center; }
+.letra-gigante { font-size: 4.5rem; font-weight: 900; line-height: 1; color: #4F46E5; }
+.letra-emoji { font-size: 2.5rem; display: block; margin: 0.25rem 0; }
+.edu-mostra-certo { animation: edu-brilho 0.8s ease; }
+@keyframes edu-pop { from { transform: scale(.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes edu-brilho {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(52,211,153,.5); }
+  50% { box-shadow: 0 0 0 10px rgba(52,211,153,.15); transform: scale(1.05); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .edu-fase.is-ativa, .edu-porque.is-visivel, .edu-mostra-certo { animation: none; transform: none; }
+}

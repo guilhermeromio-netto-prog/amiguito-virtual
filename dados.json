@@ -1,5 +1,5 @@
 {
-  "versao": 3,
+  "versao": 4,
   "personagens": [
     {
       "id": "rumi",
@@ -779,7 +779,8 @@
               "certa": false,
               "cor": "#F28BA6"
             }
-          ]
+          ],
+          "porque": "De dia o céu parece azul por causa da luz do Sol espalhada no ar."
         },
         {
           "pergunta": "Qual cor lembra um tomate?",
@@ -803,7 +804,8 @@
               "certa": false,
               "cor": "#9B84C7"
             }
-          ]
+          ],
+          "porque": "As cores vêm da luz. Cada cor é um jeitinho diferente de brilhar!"
         },
         {
           "pergunta": "A bandeira do Brasil tem…",
@@ -827,7 +829,8 @@
               "certa": false,
               "cor": "#F28BA6"
             }
-          ]
+          ],
+          "porque": "As cores vêm da luz. Cada cor é um jeitinho diferente de brilhar!"
         },
         {
           "pergunta": "Estrela no espaço parece…",
@@ -851,9 +854,11 @@
               "certa": false,
               "cor": "#666"
             }
-          ]
+          ],
+          "porque": "As cores vêm da luz. Cada cor é um jeitinho diferente de brilhar!"
         }
-      ]
+      ],
+      "porquePadrao": "As cores vêm da luz. Cada cor é um jeitinho diferente de brilhar!"
     },
     {
       "id": "numeros",
@@ -881,7 +886,8 @@
               "textoEn": "5",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Dois mais dois junta quatro pedacinhos no total."
         },
         {
           "pergunta": "Qual vem depois do 7?",
@@ -902,7 +908,8 @@
               "textoEn": "9",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Números contam quantidades — um, dois, três… assim a gente sabe quanto tem!"
         },
         {
           "pergunta": "3 foguetes + 1 foguete =",
@@ -923,7 +930,8 @@
               "textoEn": "5",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Números contam quantidades — um, dois, três… assim a gente sabe quanto tem!"
         },
         {
           "pergunta": "Qual é maior: 9 ou 4?",
@@ -944,9 +952,11 @@
               "textoEn": "Same",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Números contam quantidades — um, dois, três… assim a gente sabe quanto tem!"
         }
-      ]
+      ],
+      "porquePadrao": "Números contam quantidades — um, dois, três… assim a gente sabe quanto tem!"
     },
     {
       "id": "math-avancada",
@@ -974,7 +984,8 @@
               "textoEn": "16",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Dez mais cinco é quinze — a gente junta as duas quantidades."
         },
         {
           "pergunta": "Quanto é 8 − 3?",
@@ -995,7 +1006,8 @@
               "textoEn": "4",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Fazer contas é juntar ou separar quantidades, como juntar estrelinhas."
         },
         {
           "pergunta": "Qual forma tem 3 lados?",
@@ -1016,7 +1028,8 @@
               "textoEn": "Square",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Fazer contas é juntar ou separar quantidades, como juntar estrelinhas."
         },
         {
           "pergunta": "Padrão: ⭐🌙⭐🌙… o próximo é?",
@@ -1037,7 +1050,8 @@
               "textoEn": "🚀",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Fazer contas é juntar ou separar quantidades, como juntar estrelinhas."
         },
         {
           "pergunta": "Qual é MENOR: 12 ou 18?",
@@ -1058,7 +1072,8 @@
               "textoEn": "Same",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Fazer contas é juntar ou separar quantidades, como juntar estrelinhas."
         },
         {
           "pergunta": "Quantos lados tem um quadrado?",
@@ -1079,9 +1094,11 @@
               "textoEn": "5",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Fazer contas é juntar ou separar quantidades, como juntar estrelinhas."
         }
-      ]
+      ],
+      "porquePadrao": "Fazer contas é juntar ou separar quantidades, como juntar estrelinhas."
     },
     {
       "id": "ciencia-natureza",
@@ -1109,7 +1126,8 @@
               "textoEn": "Only toys",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Plantas usam luz do Sol, água e ar pra crescer fortes."
         },
         {
           "pergunta": "Quando chove, o céu fica…",
@@ -1130,7 +1148,8 @@
               "textoEn": "Lime green",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Na natureza, tudo precisa de cuidado: luz, água e ar."
         },
         {
           "pergunta": "Qual animal voa?",
@@ -1151,7 +1170,8 @@
               "textoEn": "Dog",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Na natureza, tudo precisa de cuidado: luz, água e ar."
         },
         {
           "pergunta": "Gelo é água…",
@@ -1172,9 +1192,11 @@
               "textoEn": "Flying",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Na natureza, tudo precisa de cuidado: luz, água e ar."
         }
-      ]
+      ],
+      "porquePadrao": "Na natureza, tudo precisa de cuidado: luz, água e ar."
     },
     {
       "id": "ciencia-espaco",
@@ -1202,7 +1224,8 @@
               "textoEn": "Only swimmers",
               "certa": false
             }
-          ]
+          ],
+          "porque": "O astronauta usa traje porque no espaço não tem ar pra respirar."
         },
         {
           "pergunta": "A Terra é um…",
@@ -1223,7 +1246,8 @@
               "textoEn": "Pencil",
               "certa": false
             }
-          ]
+          ],
+          "porque": "No espaço não tem ar como na Terra — por isso o traje protege o astronauta."
         },
         {
           "pergunta": "De dia vemos o…",
@@ -1244,7 +1268,8 @@
               "textoEn": "Nothing",
               "certa": false
             }
-          ]
+          ],
+          "porque": "No espaço não tem ar como na Terra — por isso o traje protege o astronauta."
         },
         {
           "pergunta": "Estrelas ficam…",
@@ -1265,7 +1290,8 @@
               "textoEn": "In the slipper",
               "certa": false
             }
-          ]
+          ],
+          "porque": "No espaço não tem ar como na Terra — por isso o traje protege o astronauta."
         },
         {
           "pergunta": "O traje espacial…",
@@ -1286,9 +1312,11 @@
               "textoEn": "Is only for swimming",
               "certa": false
             }
-          ]
+          ],
+          "porque": "No espaço não tem ar como na Terra — por isso o traje protege o astronauta."
         }
-      ]
+      ],
+      "porquePadrao": "No espaço não tem ar como na Terra — por isso o traje protege o astronauta."
     },
     {
       "id": "ingles-basico",
@@ -1316,7 +1344,8 @@
               "textoEn": "Please",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Hello é a palavra em inglês pra cumprimentar alguém."
         },
         {
           "pergunta": "POR FAVOR em inglês?",
@@ -1337,7 +1366,8 @@
               "textoEn": "Sorry",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Em inglês, as palavras soam diferente, mas apontam pras mesmas coisas."
         },
         {
           "pergunta": "OBRIGADO em inglês?",
@@ -1358,7 +1388,8 @@
               "textoEn": "Water",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Em inglês, as palavras soam diferente, mas apontam pras mesmas coisas."
         },
         {
           "pergunta": "TCHAU em inglês?",
@@ -1379,9 +1410,11 @@
               "textoEn": "Red",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Em inglês, as palavras soam diferente, mas apontam pras mesmas coisas."
         }
-      ]
+      ],
+      "porquePadrao": "Em inglês, as palavras soam diferente, mas apontam pras mesmas coisas."
     },
     {
       "id": "ingles-espaco",
@@ -1409,7 +1442,8 @@
               "textoEn": "Jar",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Star é estrela em inglês."
         },
         {
           "pergunta": "Lua em inglês?",
@@ -1430,7 +1464,8 @@
               "textoEn": "Book",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Astronautas de muitos países usam palavras em inglês no espaço."
         },
         {
           "pergunta": "Foguete em inglês?",
@@ -1451,7 +1486,8 @@
               "textoEn": "Ticket",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Astronautas de muitos países usam palavras em inglês no espaço."
         },
         {
           "pergunta": "Amigo em inglês?",
@@ -1472,7 +1508,8 @@
               "textoEn": "End",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Astronautas de muitos países usam palavras em inglês no espaço."
         },
         {
           "pergunta": "Como dizer 'eu gosto de você'?",
@@ -1493,9 +1530,11 @@
               "textoEn": "Go away",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Astronautas de muitos países usam palavras em inglês no espaço."
         }
-      ]
+      ],
+      "porquePadrao": "Astronautas de muitos países usam palavras em inglês no espaço."
     },
     {
       "id": "tech-basico",
@@ -1523,7 +1562,8 @@
               "textoEn": "Only mess",
               "certa": false
             }
-          ]
+          ],
+          "porque": "O robô só faz o que está no programa: uma sequência de passos."
         },
         {
           "pergunta": "Se o passo está errado, a gente…",
@@ -1544,7 +1584,8 @@
               "textoEn": "Yell at the robot",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Computadores e robôs seguem passos em ordem, um depois do outro."
         },
         {
           "pergunta": "Programar aqui é…",
@@ -1565,7 +1606,8 @@
               "textoEn": "Sleeping all day",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Computadores e robôs seguem passos em ordem, um depois do outro."
         },
         {
           "pergunta": "Seta → geralmente significa…",
@@ -1586,9 +1628,11 @@
               "textoEn": "Close your eyes",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Computadores e robôs seguem passos em ordem, um depois do outro."
         }
-      ]
+      ],
+      "porquePadrao": "Computadores e robôs seguem passos em ordem, um depois do outro."
     },
     {
       "id": "gentileza",
@@ -1616,7 +1660,8 @@
               "textoEn": "Ignore",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Ajudar quem caiu mostra cuidado e amizade."
         },
         {
           "pergunta": "Na fila, o certo é…",
@@ -1637,7 +1682,8 @@
               "textoEn": "Push",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Ser gentil aquece o coração de quem recebe — e o nosso também."
         },
         {
           "pergunta": "Quando erra, você…",
@@ -1658,7 +1704,8 @@
               "textoEn": "Mock yourself",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Ser gentil aquece o coração de quem recebe — e o nosso também."
         },
         {
           "pergunta": "Emprestar um brinquedo…",
@@ -1679,9 +1726,11 @@
               "textoEn": "Only for hiding",
               "certa": false
             }
-          ]
+          ],
+          "porque": "Ser gentil aquece o coração de quem recebe — e o nosso também."
         }
-      ]
+      ],
+      "porquePadrao": "Ser gentil aquece o coração de quem recebe — e o nosso também."
     }
   ],
   "stemAtividades": [
@@ -1690,91 +1739,136 @@
       "titulo": "Contar estrelas",
       "trilha": "matematica",
       "icone": "⭐",
-      "desc": "Conte e toque no número"
+      "desc": "Conte e toque no número",
+      "porque": "Contar é dizer quantos tem, um por um."
     },
     {
       "id": "mais-menos",
       "titulo": "Mais ou menos",
       "trilha": "matematica",
       "icone": "⚖️",
-      "desc": "Compare quem tem mais"
+      "desc": "Compare quem tem mais",
+      "porque": "Mais junta; menos tira — assim comparamos quantidades."
     },
     {
       "id": "padrao",
       "titulo": "Complete o padrão",
       "trilha": "matematica",
       "icone": "🔁",
-      "desc": "O que vem depois?"
+      "desc": "O que vem depois?",
+      "porque": "Padrões se repetem: a gente descobre o que vem depois."
     },
     {
       "id": "experimento",
       "titulo": "Experimento seguro",
       "trilha": "ciencia",
       "icone": "🧪",
-      "desc": "Escolha o passo certo"
+      "desc": "Escolha o passo certo",
+      "porque": "Na ciência a gente observa com atenção e segurança."
     },
     {
       "id": "clima",
       "titulo": "Clima do dia",
       "trilha": "ciencia",
       "icone": "⛅",
-      "desc": "Combine clima e ação"
+      "desc": "Combine clima e ação",
+      "porque": "O clima muda: sol, chuva, vento — cada um é diferente."
     },
     {
       "id": "dialogo-en",
       "titulo": "Diálogo Hello",
       "trilha": "ingles",
       "icone": "💬",
-      "desc": "Responda em inglês"
+      "desc": "Responda em inglês",
+      "porque": "Conversar em inglês é praticar sons novos com alegria."
     },
     {
       "id": "programar",
       "titulo": "Programar o robô",
       "trilha": "tech",
       "icone": "🤖",
-      "desc": "Monte a sequência de setas"
+      "desc": "Monte a sequência de setas",
+      "porque": "O robô só faz o que a sequência manda."
     },
     {
       "id": "consertar",
       "titulo": "Consertar os passos",
       "trilha": "tech",
       "icone": "🔧",
-      "desc": "Ache e corrija o erro"
+      "desc": "Ache e corrija o erro",
+      "porque": "Quando um passo está errado, a gente troca e tenta de novo."
     },
     {
       "id": "geo-brasil",
       "titulo": "Brasilzinho",
       "trilha": "geografia",
       "icone": "🇧🇷",
-      "desc": "Toque nas regiões do mapa"
+      "desc": "Toque nas regiões do mapa",
+      "porque": "O Brasil tem regiões com jeitos diferentes de ser."
     },
     {
       "id": "geo-lugares",
       "titulo": "Lugares do Brasil",
       "trilha": "geografia",
       "icone": "🌴",
-      "desc": "Amazônia, Rio, praia…"
+      "desc": "Amazônia, Rio, praia…",
+      "porque": "Cada lugar do Brasil tem uma paisagem especial."
     },
     {
       "id": "geo-continentes",
       "titulo": "Continentes",
       "trilha": "geografia",
       "icone": "🌍",
-      "desc": "Ache no mapa do mundo"
+      "desc": "Ache no mapa do mundo",
+      "porque": "Continentes são pedaços enormes de terra no planeta."
     },
     {
       "id": "geo-animais",
       "titulo": "Animais do mundo",
       "trilha": "geografia",
       "icone": "🦁",
-      "desc": "Onde cada animal vive?"
+      "desc": "Onde cada animal vive?",
+      "porque": "Animais vivem em continentes onde o clima combina com eles."
     },
     {
       "id": "geo-arrastar",
       "titulo": "Viagem do animal",
       "trilha": "geografia",
       "icone": "🧳",
-      "desc": "Arraste até o continente"
+      "desc": "Arraste até o continente",
+      "porque": "Levar o animal ao continente certo é cuidar do lar dele."
+    },
+    {
+      "id": "formas-puzzle",
+      "titulo": "Puzzle de formas",
+      "trilha": "matematica",
+      "icone": "🔷",
+      "desc": "Encaixe círculo, quadrado e triângulo",
+      "porque": "Formas ajudam a reconhecer desenhos e construir coisas."
+    },
+    {
+      "id": "reta-numerica",
+      "titulo": "Reta numérica",
+      "trilha": "matematica",
+      "icone": "📏",
+      "desc": "Coloque o número no lugar certo",
+      "porque": "Os números ficam em ordem na reta."
+    },
+    {
+      "id": "blocos-codigo",
+      "titulo": "Blocos de código",
+      "trilha": "tech",
+      "icone": "🧩",
+      "desc": "Encaixe os passos do robô",
+      "porque": "Programar é dar passos em ordem."
+    },
+    {
+      "id": "habitat-sort",
+      "titulo": "Lar dos animais",
+      "trilha": "ciencia",
+      "icone": "🌍",
+      "desc": "Leve cada animal ao habitat",
+      "porque": "Cada animal vive onde encontra comida, água e abrigo."
     }
   ],
   "callResponse": [
@@ -1815,56 +1909,112 @@
       "nome": "Pose do Gato",
       "emoji": "🐱",
       "segundos": 12,
-      "instrucao": "De quatro, arredonde as costas como um gatinho. Respira devagar."
+      "instrucao": "De quatro, arredonde as costas como um gatinho. Respira devagar.",
+      "porque": "Arredondar as costas alonga a coluna com suavidade.",
+      "passos": [
+        "Olha a figurinha da pose.",
+        "Imite com o corpo, bem de leve.",
+        "Respire com o timer.",
+        "Celebre: você cuidou de você!"
+      ]
     },
     {
       "id": "cachorro",
       "nome": "Cachorrinho",
       "emoji": "🐶",
       "segundos": 14,
-      "instrucao": "Mãos e pés no chão, bumbum pra cima (V invertido)."
+      "instrucao": "Mãos e pés no chão, bumbum pra cima (V invertido).",
+      "porque": "O V invertido alonga pernas e braços com calma.",
+      "passos": [
+        "Olha a figurinha da pose.",
+        "Imite com o corpo, bem de leve.",
+        "Respire com o timer.",
+        "Celebre: você cuidou de você!"
+      ]
     },
     {
       "id": "arvore",
       "nome": "Árvore",
       "emoji": "🌳",
       "segundos": 12,
-      "instrucao": "Em pé, um pé na panturrilha (não no joelho). Braços pra cima."
+      "instrucao": "Em pé, um pé na panturrilha (não no joelho). Braços pra cima.",
+      "porque": "Equilíbrio treina o foco e os pezinhos firmes.",
+      "passos": [
+        "Olha a figurinha da pose.",
+        "Imite com o corpo, bem de leve.",
+        "Respire com o timer.",
+        "Celebre: você cuidou de você!"
+      ]
     },
     {
       "id": "borboleta",
       "nome": "Borboleta",
       "emoji": "🦋",
       "segundos": 15,
-      "instrucao": "Sentada, solinhas juntas. Bata os joelhos como asinhas."
+      "instrucao": "Sentada, solinhas juntas. Bata os joelhos como asinhas.",
+      "porque": "Abrir os joelhos como asas solta o quadril.",
+      "passos": [
+        "Olha a figurinha da pose.",
+        "Imite com o corpo, bem de leve.",
+        "Respire com o timer.",
+        "Celebre: você cuidou de você!"
+      ]
     },
     {
       "id": "estrela",
       "nome": "Estrela",
       "emoji": "⭐",
       "segundos": 12,
-      "instrucao": "Pernas e braços bem abertos. Você é uma estrela!"
+      "instrucao": "Pernas e braços bem abertos. Você é uma estrela!",
+      "porque": "Abrir braços e pernas ocupa o espaço com alegria.",
+      "passos": [
+        "Olha a figurinha da pose.",
+        "Imite com o corpo, bem de leve.",
+        "Respire com o timer.",
+        "Celebre: você cuidou de você!"
+      ]
     },
     {
       "id": "crianca",
       "nome": "Criancinha",
       "emoji": "🛌",
       "segundos": 16,
-      "instrucao": "Ajoelhe, braços pra frente, testa no chão. Descanse."
+      "instrucao": "Ajoelhe, braços pra frente, testa no chão. Descanse.",
+      "porque": "A pose da criança é um descanso gostoso pro corpo.",
+      "passos": [
+        "Olha a figurinha da pose.",
+        "Imite com o corpo, bem de leve.",
+        "Respire com o timer.",
+        "Celebre: você cuidou de você!"
+      ]
     },
     {
       "id": "cobra",
       "nome": "Cobrinha",
       "emoji": "🐍",
       "segundos": 12,
-      "instrucao": "Barriga no chão, empurre o peito suavemente pra cima."
+      "instrucao": "Barriga no chão, empurre o peito suavemente pra cima.",
+      "porque": "Levantar o peito abre a frente do corpo com cuidado.",
+      "passos": [
+        "Olha a figurinha da pose.",
+        "Imite com o corpo, bem de leve.",
+        "Respire com o timer.",
+        "Celebre: você cuidou de você!"
+      ]
     },
     {
       "id": "montanha",
       "nome": "Montanha",
       "emoji": "⛰️",
       "segundos": 10,
-      "instrucao": "Em pé, bem altinha. Respire como uma montanha calma."
+      "instrucao": "Em pé, bem altinha. Respire como uma montanha calma.",
+      "porque": "Ficar ereta como montanha ajuda a respirar fundo.",
+      "passos": [
+        "Olha a figurinha da pose.",
+        "Imite com o corpo, bem de leve.",
+        "Respire com o timer.",
+        "Celebre: você cuidou de você!"
+      ]
     }
   ],
   "roteiros": [
@@ -2671,6 +2821,12 @@
           "🌙",
           "⚽",
           "🏠"
+        ],
+        "opcoes": [
+          "☀️",
+          "🌙",
+          "⚽",
+          "🏠"
         ]
       },
       {
@@ -2678,6 +2834,12 @@
         "emoji": "🌙",
         "fala": "Lua",
         "distratores": [
+          "☀️",
+          "🚀",
+          "🐱"
+        ],
+        "opcoes": [
+          "🌙",
           "☀️",
           "🚀",
           "🐱"
@@ -2691,6 +2853,12 @@
           "🐶",
           "🐟",
           "⚽"
+        ],
+        "opcoes": [
+          "🐱",
+          "🐶",
+          "🐟",
+          "⚽"
         ]
       },
       {
@@ -2698,6 +2866,12 @@
         "emoji": "🏠",
         "fala": "Casa",
         "distratores": [
+          "🚀",
+          "⭐",
+          "✋"
+        ],
+        "opcoes": [
+          "🏠",
           "🚀",
           "⭐",
           "✋"
@@ -2711,6 +2885,12 @@
           "🎲",
           "🌙",
           "🤖"
+        ],
+        "opcoes": [
+          "⚽",
+          "🎲",
+          "🌙",
+          "🤖"
         ]
       },
       {
@@ -2718,6 +2898,12 @@
         "emoji": "🚀",
         "fala": "Foguete",
         "distratores": [
+          "⭐",
+          "🏠",
+          "🐟"
+        ],
+        "opcoes": [
+          "🚀",
           "⭐",
           "🏠",
           "🐟"

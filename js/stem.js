@@ -189,7 +189,115 @@
     if (window.AmiguitoFala) AmiguitoFala.falar(txt);
   }
 
-  function montar(id, root, onDone) {
+
+  /** Puzzle de formas — arrastar */
+  function montarFormas(root, onDone, nivel) {
+    nivel = nivel || 1;
+    const all = [
+      { id: "c1", match: "circulo", icone: "🔵", label: "Círculo" },
+      { id: "q1", match: "quadrado", icone: "🟥", label: "Quadrado" },
+      { id: "t1", match: "triangulo", icone: "🔺", label: "Triângulo" },
+      { id: "e1", match: "estrela", icone: "⭐", label: "Estrela" }
+    ];
+    const pecas = nivel >= 3 ? all : all.slice(0, nivel === 1 ? 2 : 3);
+    const slots = pecas.map((p) => ({ id: "s-" + p.match, accept: p.match, label: p.label, icone: "⬜" }));
+    AmiguitoEducar.montarArrastarSlots(root, {
+      pecas, slots,
+      fala: "Encaixe cada forma no lugar.",
+      porque: "Formas ajudam a gente a reconhecer desenhos e construir coisas.",
+      msgOk: "Formas encaixadas!",
+      trilha: "matematica"
+    }, onDone);
+  }
+
+  /** Reta numérica — colocar o número */
+  function montarReta(root, onDone, nivel) {
+    nivel = nivel || 1;
+    const alvo = 3 + Math.floor(Math.random() * (nivel === 1 ? 4 : nivel === 2 ? 7 : 12));
+    const casa = alvo;
+    const opts = AmiguitoEnsinar.embaralhar([
+      casa,
+      Math.max(1, casa - 1),
+      casa + 1,
+      casa + 2
+    ]).slice(0, nivel === 1 ? 2 : 3);
+    if (!opts.includes(casa)) opts[0] = casa;
+    root.innerHTML = `
+      ${AmiguitoEducar.fasesHtml("pratica")}
+      ${AmiguitoEducar.coachHtml("A reta dos números: onde fica o " + casa + "?")}
+      <div class="edu-reta" aria-label="Reta numérica">
+        ${Array.from({ length: Math.max(5, casa + 1) }, (_, i) => {
+          const n = i + 1;
+          const hole = n === casa;
+          return `<div class="edu-reta__casa ${hole ? "is-buraco" : ""}" data-n="${n}">${hole ? "?" : n}</div>`;
+        }).join("")}
+      </div>
+      <div class="jogo__opcoes">${opts.map((o) => `<button type="button" class="opcao" data-v="${o}">${o}</button>`).join("")}</div>
+      ${AmiguitoEducar.porqueBox("Os números ficam em ordem: 1, 2, 3… cada um no seu lugar.")}`;
+    AmiguitoEducar.setCoach(root, "Toque no número que falta na reta.", true);
+    root.querySelectorAll(".opcao").forEach((b) => b.addEventListener("click", () => {
+      const ok = Number(b.dataset.v) === casa;
+      if (ok) {
+        b.classList.add("is-certa", "is-acerto-fx");
+        const buraco = root.querySelector(".edu-reta__casa.is-buraco");
+        if (buraco) { buraco.textContent = String(casa); buraco.classList.remove("is-buraco"); buraco.classList.add("is-acertou"); }
+        AmiguitoEducar.acertoFesta(root, "Os números ficam em ordem: cada um no seu lugar na reta.", "Número no lugar!");
+        setTimeout(() => onDone({ sucesso: true, msg: "Reta completa!", trilha: "matematica" }), 1200);
+      } else {
+        const certa = [...root.querySelectorAll(".opcao")].find((x) => Number(x.dataset.v) === casa);
+        AmiguitoEducar.erroGentil(null, b, certa, root);
+        setTimeout(() => montarReta(root, onDone, nivel), 1400);
+      }
+    }));
+  }
+
+  /** Blocos de código — ordem snap */
+  function montarBlocos(root, onDone, nivel) {
+    nivel = nivel || 1;
+    const sequencia = nivel >= 3
+      ? [{ id: "a", match: "1", icone: "1️⃣", label: "Andar" }, { id: "b", match: "2", icone: "2️⃣", label: "Pegar ⭐" }, { id: "c", match: "3", icone: "3️⃣", label: "Comemorar" }, { id: "d", match: "4", icone: "4️⃣", label: "Voltar" }]
+      : [{ id: "a", match: "1", icone: "1️⃣", label: "Andar" }, { id: "b", match: "2", icone: "2️⃣", label: "Pegar ⭐" }, { id: "c", match: "3", icone: "3️⃣", label: "Festa" }];
+    const slots = sequencia.map((s, i) => ({ id: "slot" + (i + 1), accept: String(i + 1), label: "Passo " + (i + 1), icone: "⬜" }));
+    AmiguitoEducar.montarArrastarSlots(root, {
+      pecas: sequencia,
+      slots,
+      fala: "Monte a sequência do robô: 1, 2, 3…",
+      porque: "Programar é dar passos em ordem — o robô só faz o que a gente encaixa.",
+      msgOk: "Robô programado!",
+      trilha: "tech"
+    }, onDone);
+  }
+
+  /** Habitat — sort animais */
+  function montarHabitat(root, onDone, nivel) {
+    const pecas = [
+      { id: "peixe", match: "mar", icone: "🐟", label: "Peixe" },
+      { id: "passaro", match: "ceu", icone: "🐦", label: "Pássaro" },
+      { id: "macaco", match: "floresta", icone: "🐒", label: "Macaco" },
+      { id: "camelo", match: "deserto", icone: "🐪", label: "Camelo" }
+    ].slice(0, nivel === 1 ? 2 : nivel === 2 ? 3 : 4);
+    const slots = [
+      { id: "mar", accept: "mar", label: "Mar", icone: "🌊" },
+      { id: "ceu", accept: "ceu", label: "Céu", icone: "☁️" },
+      { id: "floresta", accept: "floresta", label: "Floresta", icone: "🌳" },
+      { id: "deserto", accept: "deserto", label: "Deserto", icone: "🏜️" }
+    ].filter((s) => pecas.some((p) => p.match === s.accept));
+    AmiguitoEducar.montarArrastarSlots(root, {
+      pecas, slots,
+      fala: "Leve cada animal pro lar dele.",
+      porque: "Cada animal vive onde encontra comida, água e abrigo.",
+      msgOk: "Habitats combinados!",
+      trilha: "ciencia"
+    }, onDone);
+  }
+
+  function montar(id, root, onDone, opts) {
+    opts = opts || {};
+    const nivel = opts.nivel || 1;
+    if (id === "formas-puzzle") return montarFormas(root, onDone, nivel);
+    if (id === "reta-numerica") return montarReta(root, onDone, nivel);
+    if (id === "blocos-codigo") return montarBlocos(root, onDone, nivel);
+    if (id === "habitat-sort") return montarHabitat(root, onDone, nivel);
     const map = {
       "contar-objetos": montarContar,
       "mais-menos": montarMaisMenos,
@@ -200,7 +308,33 @@
       "programar": montarProgramar,
       "consertar": montarConsertar
     };
-    (map[id] || montarContar)(root, onDone);
+    const porqueStem = {
+      "contar-objetos": "Contar é dizer quantos tem, um por um.",
+      "mais-menos": "Mais junta; menos tira — assim comparamos quantidades.",
+      "padrao": "Padrões se repetem: a gente descobre o que vem depois.",
+      "experimento": "Na ciência a gente observa com atenção e segurança.",
+      "clima": "O clima muda: sol, chuva, vento — cada um é diferente.",
+      "dialogo-en": "Conversar em inglês é praticar sons novos com alegria.",
+      "programar": "O robô só faz o que a sequência manda.",
+      "consertar": "Quando um passo está errado, a gente troca e tenta de novo."
+    };
+    const fn = map[id] || montarContar;
+    if (window.AmiguitoEducar) {
+      const shell = document.createElement("div");
+      shell.innerHTML = AmiguitoEducar.fasesHtml("pratica") + AmiguitoEducar.coachHtml("Vamos juntos!") + '<div id="stem-inner"></div>' + AmiguitoEducar.porqueBox(porqueStem[id] || "");
+      root.innerHTML = "";
+      root.appendChild(shell);
+      AmiguitoEducar.setCoach(shell, "Olha, guia e faz — eu te acompanho!", true);
+      const inner = shell.querySelector("#stem-inner");
+      fn(inner, (res) => {
+        res = res || {};
+        res.porque = res.porque || porqueStem[id];
+        AmiguitoEducar.acertoFesta(shell, res.porque, res.msg || "Missão feita!");
+        setTimeout(() => onDone(res), 900);
+      });
+    } else {
+      fn(root, onDone);
+    }
   }
 
   global.AmiguitoStem = { montar };

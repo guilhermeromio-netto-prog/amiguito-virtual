@@ -33,6 +33,7 @@
     modoFiguras: true,
     primeiraVisita: true,
     idiomaDica: "pt",
+    nivelEducar: {},
     streak: 0,
     ultimoDia: null,
     viuHero: false,
@@ -79,7 +80,8 @@
       highScores: Object.assign({}, base.highScores, dados.highScores || {}),
       moveis: dados.moveis || [],
       acessoriosDesbloqueados: dados.acessoriosDesbloqueados || base.acessoriosDesbloqueados,
-      moveisDesbloqueados: dados.moveisDesbloqueados || base.moveisDesbloqueados
+      moveisDesbloqueados: dados.moveisDesbloqueados || base.moveisDesbloqueados,
+      nivelEducar: Object.assign({}, base.nivelEducar, dados.nivelEducar || {})
     });
     if (merged.moedas == null) merged.moedas = 20;
     if (merged.personagemId && IDS_ANTIGOS.includes(merged.personagemId)) {

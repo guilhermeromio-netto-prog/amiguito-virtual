@@ -259,7 +259,8 @@
     root.querySelector("#btn-tap-help").addEventListener("click", () => falar("Toque no continente certo"));
   }
 
-  function montar(id, root, onDone) {
+  function montar(id, root, onDone, opts) {
+    opts = opts || {};
     const map = {
       "geo-brasil": montarBrasilRegioes,
       "geo-lugares": montarLugares,
@@ -267,7 +268,32 @@
       "geo-animais": montarAnimaisMundo,
       "geo-arrastar": montarArrastar
     };
-    (map[id] || montarBrasilRegioes)(root, onDone);
+    const porqueGeo = {
+      "geo-brasil": "O Brasil tem regiões com jeitos diferentes de ser.",
+      "geo-lugares": "Cada lugar do Brasil tem uma paisagem especial.",
+      "geo-continentes": "Continentes são pedaços enormes de terra no planeta.",
+      "geo-animais": "Animais vivem onde o clima e a comida combinam com eles.",
+      "geo-arrastar": "Levar o animal ao continente certo é cuidar do lar dele."
+    };
+    const wrap = document.createElement("div");
+    wrap.className = "edu-geo-wrap";
+    root.innerHTML = "";
+    if (window.AmiguitoEducar) {
+      wrap.innerHTML = AmiguitoEducar.fasesHtml("pratica") + AmiguitoEducar.coachHtml("Vamos explorar o mapa juntos!") + '<div id="geo-inner"></div>' + AmiguitoEducar.porqueBox(porqueGeo[id] || "");
+      root.appendChild(wrap);
+      AmiguitoEducar.setCoach(wrap, "Toque nas figuras. Eu te guio!", true);
+      const inner = wrap.querySelector("#geo-inner");
+      const done2 = (res) => {
+        res = res || {};
+        res.porque = res.porque || porqueGeo[id];
+        res.tema = res.tema || "geo";
+        AmiguitoEducar.acertoFesta(wrap, res.porque, res.msg || "Mapa explorado!");
+        setTimeout(() => onDone(res), 900);
+      };
+      (map[id] || montarBrasilRegioes)(inner, done2);
+    } else {
+      (map[id] || montarBrasilRegioes)(root, onDone);
+    }
   }
 
   global.AmiguitoGeo = { montar, mapaBrasilSvg, mapaMundosSvg, REGIOES, CONTINENTES };

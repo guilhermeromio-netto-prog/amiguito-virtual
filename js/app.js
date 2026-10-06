@@ -642,14 +642,24 @@
   function renderStemAtividade(id) {
     const meta = DADOS.stemAtividades.find((a) => a.id === id);
     if (!meta) { location.hash = "#/stem"; return; }
+    const nivelStem = (estado.nivelEducar && estado.nivelEducar["stem:" + id]) || 1;
     conteudo.innerHTML = `
       <section>
         ${linkVoltar("#/stem","Missões")}
         <h2 class="titulo-tela">${meta.icone} ${meta.titulo}</h2>
         <p class="subtitulo">${meta.desc}</p>
+        ${AmiguitoEducar.niveisHtml(nivelStem)}
         <div class="progresso-missao" aria-hidden="true"><i style="width:15%"></i></div>
         <div id="stem-root"></div>
       </section>`;
+    conteudo.querySelectorAll(".edu-nivel").forEach((btn) => btn.addEventListener("click", () => {
+      const n = Number(btn.dataset.nivel) || 1;
+      if (!estado.nivelEducar) estado.nivelEducar = {};
+      estado.nivelEducar["stem:" + id] = n;
+      AmiguitoStorage.salvar(estado);
+      AmiguitoSom.tap();
+      renderStemAtividade(id);
+    }));
     const root = document.getElementById("stem-root");
     const onStemDone = (res) => {
       if (!estado.stemFeitas.includes(id)) estado.stemFeitas.push(id);
@@ -665,7 +675,8 @@
       AmiguitoSom.sucesso();
       celebrar();
       AmiguitoPet.soltarParticulas(["⭐","🌍","🎉","✨"]);
-      anunciar(res.msg);
+      const porque = res.porque || meta.porque || "";
+      anunciar(res.msg + (porque ? ". Por quê? " + porque : ""));
       mostrarToast(res.msg);
       const bar = conteudo.querySelector(".progresso-missao > i");
       if (bar) bar.style.width = "100%";
@@ -673,6 +684,7 @@
         <span class="resultado-win__ico" aria-hidden="true">🚀</span>
         <div class="estrelas-fila" aria-hidden="true"><span>⭐</span><span>⭐</span><span>⭐</span></div>
         <p class="titulo-tela" style="font-size:1.2rem">${escapar(res.msg)}</p>
+        ${porque ? `<div class="edu-porque is-visivel" style="margin:0.75rem 0"><span aria-hidden="true">💡</span><p><strong>Por quê?</strong> ${escapar(porque)}</p></div>` : ""}
         ${guia("Mandou bem! Quer outra?")}
         <div class="replay-bar"><button type="button" class="btn btn--sol btn--sm" data-fala="${escapar(res.msg)}" id="btn-replay-stem">🗣️</button></div>
         <a class="btn btn--primario" href="#/aprender-hub" data-fala="Aprender">Mais</a>
@@ -681,9 +693,10 @@
       if (br) br.addEventListener("click", () => AmiguitoFala.falar(res.msg, { force: true }));
       posRender(res.msg, "a.btn--primario");
     };
-    if (id.startsWith("geo-") && window.AmiguitoGeo) AmiguitoGeo.montar(id, root, onStemDone);
-    else AmiguitoStem.montar(id, root, onStemDone);
-    posRender(meta.titulo + ". Ouça e toque.", null); // atividades: sem seta sobre respostas
+    const optsStem = { nivel: (estado.nivelEducar && estado.nivelEducar["stem:" + id]) || 1 };
+    if (id.startsWith("geo-") && window.AmiguitoGeo) AmiguitoGeo.montar(id, root, onStemDone, optsStem);
+    else AmiguitoStem.montar(id, root, onStemDone, optsStem);
+    posRender(meta.titulo + ". O Educador te guia. Ouça e toque.", null);
   }
 
   function renderRota(id) {
@@ -896,6 +909,7 @@
       <section>
         ${linkVoltar("#/mais","Mais")}
         <h2 class="titulo-tela">Ensinar</h2>
+        <p class="subtitulo">Olha → Guia → Faz → Festa · 3 níveis · Educador astronauta</p>
         <div class="dicas-idioma" role="group" aria-label="Idioma">
           <button type="button" class="chip ${estado.idiomaDica==="pt"?"is-ativo":""}" data-idioma="pt">PT</button>
           <button type="button" class="chip ${estado.idiomaDica==="en"?"is-ativo":""}" data-idioma="en">EN</button>
@@ -923,68 +937,49 @@
   function renderLicao(licaoId, desafio) {
     const licao = DADOS.licoes.find((l) => l.id === licaoId);
     if (!licao) { location.hash = "#/ensinar"; return; }
-    if (!jogoAtivo || jogoAtivo.licaoId !== licaoId || jogoAtivo.desafio !== !!desafio) {
-      jogoAtivo = { licaoId, indice: 0, acertos: 0, desafio: !!desafio };
+    const nivelSalvo = (estado.nivelEducar && estado.nivelEducar[licaoId]) || 1;
+    if (!jogoAtivo || jogoAtivo.licaoId !== licaoId || jogoAtivo.desafio !== !!desafio || jogoAtivo._sessaoDone) {
+      jogoAtivo = { licaoId, indice: 0, acertos: 0, combo: 0, desafio: !!desafio, nivel: nivelSalvo, _sessaoDone: false };
     }
-    const total = desafio ? Math.min(6, licao.perguntas.length + 2) : licao.perguntas.length;
-    if (jogoAtivo.indice >= total) return finalizarLicao(licao, desafio);
-    const pergunta = AmiguitoEnsinar.montarPergunta(licao, jogoAtivo.indice, desafio);
-    const idioma = estado.idiomaDica || "pt";
-    let tituloP = pergunta.pergunta, hint = "";
-    if (idioma === "en" && pergunta.perguntaEn) tituloP = pergunta.perguntaEn;
-    if (idioma === "ambos" && pergunta.perguntaEn) hint = pergunta.perguntaEn;
-    if (jogoAtivo.combo == null) jogoAtivo.combo = 0;
-    const pctFog = Math.round((jogoAtivo.indice / total) * 100);
     conteudo.innerHTML = `
-      <section class="jogo">
+      <section class="jogo edu-licao">
         ${linkVoltar("#/ensinar","Lições")}
         <h2 class="titulo-tela">${licao.icone} ${licao.titulo}</h2>
         ${desafio ? `<div class="banner-desafio" aria-live="polite"><span aria-hidden="true">⚡</span> Desafio! <span aria-hidden="true">⚡</span></div>` : ""}
-        <div class="progresso-foguete ${pctFog >= 66 ? "is-quase" : ""}" aria-label="Progresso ${jogoAtivo.indice} de ${total}">
-          <span class="progresso-foguete__ico" aria-hidden="true">🚀</span>
-          <div class="progresso-foguete__trilho"><div class="progresso-foguete__fill" style="width:${pctFog}%"></div></div>
-          <span style="font-weight:900;font-size:0.85rem">${jogoAtivo.indice+1}/${total}</span>
-        </div>
-        ${jogoAtivo.combo >= 2 ? `<div class="combo-badge" aria-live="polite">🔥 Combo x${jogoAtivo.combo}</div>` : ""}
-        <div class="card">
-          <p class="jogo__pergunta">${escapar(tituloP)}${hint?`<span class="hint-en">${escapar(hint)}</span>`:""}</p>
-          <div class="jogo__opcoes">${pergunta.opcoes.map((op,i)=>{
-            let label = op.texto;
-            if (idioma==="en" && op.textoEn) label = op.textoEn;
-            if (idioma==="ambos" && op.textoEn) label = `${op.texto} · ${op.textoEn}`;
-            return `<button type="button" class="opcao ${op.cor?"opcao--cor":""}" data-i="${i}">${op.cor?`<span class="cor-swatch" style="background:${op.cor}"></span>`:""}${escapar(label)}</button>`;
-          }).join("")}</div>
-          ${desafio?"":`<p style="margin-top:0.85rem"><a class="btn btn--fantasma btn--sm" href="#/ensinar/${licaoId}/desafio">Modo desafio</a></p>`}
-        </div>
+        <p class="subtitulo">Olha → Guia → Faz → Festa · Educador te acompanha</p>
+        ${AmiguitoEducar.niveisHtml(jogoAtivo.nivel)}
+        ${desafio ? "" : `<p style="margin:0.35rem 0 0.75rem"><a class="btn btn--fantasma btn--sm" href="#/ensinar/${licaoId}/desafio" data-fala="Modo desafio">⚡ Desafio</a></p>`}
+        <div id="licao-root"></div>
       </section>`;
-    if (desafio && jogoAtivo.indice === 0 && !jogoAtivo._fanfarra) {
+    conteudo.querySelectorAll(".edu-nivel").forEach((btn) => btn.addEventListener("click", () => {
+      const n = Number(btn.dataset.nivel) || 1;
+      jogoAtivo.nivel = n;
+      if (!estado.nivelEducar) estado.nivelEducar = {};
+      estado.nivelEducar[licaoId] = n;
+      AmiguitoStorage.salvar(estado);
+      AmiguitoSom.tap();
+      renderLicao(licaoId, desafio);
+    }));
+    if (desafio && !jogoAtivo._fanfarra) {
       jogoAtivo._fanfarra = true;
       AmiguitoSom.desafioFanfarra();
     }
-    posRender(tituloP, null); // sem overlay nas respostas
-    anunciar(desafio && jogoAtivo.indice === 0 ? ("Desafio! " + tituloP) : tituloP);
-    const botoes = [...conteudo.querySelectorAll(".opcao")];
-    botoes.forEach((btn) => btn.addEventListener("click", () => {
-      const op = pergunta.opcoes[Number(btn.dataset.i)];
-      const certa = AmiguitoEnsinar.verificar(op);
-      botoes.forEach((b) => { b.disabled = true; });
-      btn.classList.add(certa ? "is-certa" : "is-errada");
-      btn.classList.add(certa ? "is-acerto-fx" : "is-erro-fx");
-      if (certa) {
-        jogoAtivo.acertos += 1;
-        jogoAtivo.combo = (jogoAtivo.combo || 0) + 1;
-        if (jogoAtivo.combo >= 3) { AmiguitoSom.combo(); celebrar(); mostrarToast("Combo x" + jogoAtivo.combo + "! 🔥"); }
-        else { AmiguitoSom.sucesso(); mostrarToast(AmiguitoIA.falar(personagem(),"certo",{listasExtras:DADOS})); }
-        AmiguitoPet.soltarParticulas(["⭐","✨","🌟","🎉"], { count: 6, grande: true });
-      } else {
-        jogoAtivo.combo = 0;
-        const certaBtn = botoes.find((b,i) => pergunta.opcoes[i].certa);
-        if (certaBtn) certaBtn.classList.add("is-certa");
-        AmiguitoSom.erro();
-        mostrarToast(AmiguitoIA.falar(personagem(),"errado",{listasExtras:DADOS}));
+    const root = conteudo.querySelector("#licao-root");
+    posRender(licao.titulo + ". O Educador vai te guiar.", null);
+    anunciar(desafio ? ("Desafio! " + licao.titulo) : ("Lição: " + licao.titulo + ". Olha comigo."));
+    AmiguitoEnsinar.iniciarSessao(root, licao, {
+      nivel: jogoAtivo.nivel,
+      desafio: !!desafio,
+      idioma: estado.idiomaDica || "pt"
+    }, {
+      onComplete: (st) => {
+        jogoAtivo.acertos = st.acertos;
+        jogoAtivo.indice = st.indice;
+        jogoAtivo.combo = st.combo;
+        jogoAtivo._sessaoDone = true;
+        finalizarLicao(licao, desafio);
       }
-      setTimeout(() => { jogoAtivo.indice += 1; renderLicao(licaoId, desafio); }, 900);
-    }));
+    });
   }
 
   function finalizarLicao(licao, desafio) {
@@ -1070,38 +1065,64 @@
     const pose = DADOS.yoga.find((y) => y.id === id);
     if (!pose) { location.hash = "#/yoga"; return; }
     let resto = pose.segundos;
-    conteudo.innerHTML = `<section>
-      ${linkVoltar("#/yoga","Poses")}
-      <h2 class="titulo-tela">${pose.emoji} ${pose.nome}</h2>
-      <div class="yoga-pose">
-        ${AmiguitoYoga.svgPose(pose.id)}
-        <p style="font-weight:800;margin:0.5rem 0 0.75rem">${escapar(pose.instrucao)}</p>
-        <div class="timer-anel" id="timer" style="--progresso:0%"><span id="timer-num">${resto}</span></div>
-        <button type="button" class="btn btn--menta" id="btn-yoga-start">Começar</button>
-        <p class="subtitulo" style="margin-top:0.75rem;font-size:0.8rem">Pare se sentir desconforto. Não é orientação médica.</p>
-      </div></section>`;
-    const timerEl = conteudo.querySelector("#timer");
-    const numEl = conteudo.querySelector("#timer-num");
-    conteudo.querySelector("#btn-yoga-start").addEventListener("click", (ev) => {
-      ev.target.disabled = true;
-      ev.target.textContent = "Respirando…";
-      yogaTimer = setInterval(() => {
-        resto -= 1;
-        timerEl.style.setProperty("--progresso", Math.round(((pose.segundos - resto) / pose.segundos) * 100) + "%");
-        numEl.textContent = String(Math.max(0, resto));
-        if (resto <= 0) {
-          clearInterval(yogaTimer); yogaTimer = null;
-          if (!estado.yogaFeitas.includes(pose.id)) estado.yogaFeitas.push(pose.id);
-          AmiguitoStorage.ganharXp(estado, 6);
-          if (estado.yogaFeitas.length >= 3) desbloquearTrofeu("yogi");
-          completarPassoTipo("yoga", pose.id);
-          AmiguitoStorage.salvar(estado);
-          AmiguitoSom.sucesso(); celebrar();
-          mostrarToast("Pose concluída! 🧘");
-          ev.target.textContent = "Feito com carinho ✨";
-        }
-      }, 1000);
-    });
+    let fase = "modelo";
+    const porque = pose.porque || "Mexer o corpo com calma deixa a gente mais tranquila.";
+    function paint() {
+      conteudo.innerHTML = `<section>
+        ${linkVoltar("#/yoga","Poses")}
+        <h2 class="titulo-tela">${pose.emoji} ${pose.nome}</h2>
+        ${AmiguitoEducar.fasesHtml(fase)}
+        ${AmiguitoEducar.coachHtml("")}
+        <div class="yoga-pose">
+          ${AmiguitoYoga.svgPose(pose.id)}
+          <p style="font-weight:800;margin:0.5rem 0 0.75rem">${escapar(pose.instrucao)}</p>
+          <div id="yoga-corpo"></div>
+          ${AmiguitoEducar.porqueBox(porque)}
+          <p class="subtitulo" style="margin-top:0.75rem;font-size:0.8rem">Pare se sentir desconforto. Não é orientação médica.</p>
+        </div></section>`;
+      const corpo = conteudo.querySelector("#yoga-corpo");
+      if (fase === "modelo") {
+        AmiguitoEducar.setCoach(conteudo, "Olha a figurinha. Assim é a pose " + pose.nome + ".", true);
+        corpo.innerHTML = `<button type="button" class="btn btn--primario btn--bloco" id="yoga-next" data-fala="Vi">Vi a pose! 👀</button>`;
+        conteudo.querySelector("#yoga-next").onclick = () => { fase = "guia"; paint(); };
+      } else if (fase === "guia") {
+        AmiguitoEducar.setCoach(conteudo, "Agora imite com o corpo, bem de leve. Sem forçar.", true);
+        corpo.innerHTML = `<button type="button" class="btn btn--primario btn--bloco" id="yoga-next" data-fala="Pronta">Estou na pose! 🖐️</button>`;
+        conteudo.querySelector("#yoga-next").onclick = () => { fase = "pratica"; paint(); };
+      } else if (fase === "pratica") {
+        AmiguitoEducar.setCoach(conteudo, "Respire comigo. Toque em Começar.", true);
+        resto = pose.segundos;
+        corpo.innerHTML = `
+          <div class="timer-anel" id="timer" style="--progresso:0%"><span id="timer-num">${resto}</span></div>
+          <button type="button" class="btn btn--menta btn--bloco" id="btn-yoga-start" data-fala="Começar">Começar</button>`;
+        const timerEl = conteudo.querySelector("#timer");
+        const numEl = conteudo.querySelector("#timer-num");
+        conteudo.querySelector("#btn-yoga-start").addEventListener("click", (ev) => {
+          ev.target.disabled = true;
+          ev.target.textContent = "Respirando…";
+          AmiguitoEducar.setCoach(conteudo, "Inspira… expira… com carinho.", true);
+          yogaTimer = setInterval(() => {
+            resto -= 1;
+            timerEl.style.setProperty("--progresso", Math.round(((pose.segundos - resto) / pose.segundos) * 100) + "%");
+            numEl.textContent = String(Math.max(0, resto));
+            if (resto <= 0) {
+              clearInterval(yogaTimer); yogaTimer = null;
+              if (!estado.yogaFeitas.includes(pose.id)) estado.yogaFeitas.push(pose.id);
+              AmiguitoStorage.ganharXp(estado, 6);
+              if (estado.yogaFeitas.length >= 3) desbloquearTrofeu("yogi");
+              completarPassoTipo("yoga", pose.id);
+              AmiguitoStorage.salvar(estado);
+              AmiguitoEducar.acertoFesta(conteudo, porque, "Pose concluída com carinho!");
+              AmiguitoSom.sucesso(); celebrar();
+              mostrarToast("Pose concluída! 🧘");
+              ev.target.textContent = "Feito com carinho ✨";
+            }
+          }, 1000);
+        });
+      }
+      posRender(pose.nome + ". O Educador guia a pose.", null);
+    }
+    paint();
   }
 
   function renderAprender() {
@@ -1263,6 +1284,15 @@
           <a class="tema-card tema-card--ler" href="#/ler" data-fala="Quero ler" aria-label="Quero ler">
             <span class="tema-card__icone">🔤</span><span>Ler</span>
           </a>
+          <a class="tema-card" href="#/stem/atividade/formas-puzzle" data-fala="Formas" aria-label="Formas">
+            <span class="tema-card__icone">🔷</span><span>Formas</span>
+          </a>
+          <a class="tema-card" href="#/stem/atividade/habitat-sort" data-fala="Habitats" aria-label="Habitats">
+            <span class="tema-card__icone">🌍</span><span>Habitats</span>
+          </a>
+          <a class="tema-card" href="#/stem/atividade/blocos-codigo" data-fala="Blocos" aria-label="Blocos">
+            <span class="tema-card__icone">🧩</span><span>Blocos</span>
+          </a>
           <a class="tema-card" href="#/stem" data-fala="Todos os roteiros" aria-label="Roteiros">
             <span class="tema-card__icone">🗺️</span><span>Roteiros</span>
           </a>
@@ -1300,6 +1330,10 @@
             <span class="card-link__icone bg-sol" aria-hidden="true">📖</span>
             <span><span class="card-link__titulo">Palavras</span><span class="card-link__meta">Ouvir e achar</span></span>
           </a>
+          <a class="card-link" href="#/ler/bandeja" data-fala="Bandeja de letras" aria-label="Bandeja">
+            <span class="card-link__icone bg-menta" aria-hidden="true">🧺</span>
+            <span><span class="card-link__titulo">Bandeja</span><span class="card-link__meta">Arraste a letra</span></span>
+          </a>
           <a class="card-link" href="#/stem/rota/quero-ler" data-fala="Roteiro Quero ler" aria-label="Roteiro">
             <span class="card-link__icone bg-lavanda" aria-hidden="true">🗺️</span>
             <span><span class="card-link__titulo">Roteiro</span><span class="card-link__meta">Passo a passo</span></span>
@@ -1310,9 +1344,9 @@
   }
 
   function renderLer(tipo) {
-    const map = { letras: "letras", silabas: "silabas", palavras: "palavras" };
+    const map = { letras: "letras", silabas: "silabas", palavras: "palavras", bandeja: "bandeja" };
     const kind = map[tipo] || "letras";
-    const titulos = { letras: "Letras", silabas: "Sílabas", palavras: "Palavras" };
+    const titulos = { letras: "Letras", silabas: "Sílabas", palavras: "Palavras", bandeja: "Bandeja" };
     conteudo.innerHTML = `
       <section>
         ${linkVoltar("#/ler", "Quero ler")}
