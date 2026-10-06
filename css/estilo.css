@@ -1175,3 +1175,40 @@ body.modo-figuras .musica-chip__nome { font-size: 0.7rem; }
 @media (prefers-reduced-motion: reduce) {
   .edu-fase.is-ativa, .edu-porque.is-visivel, .edu-mostra-certo { animation: none; transform: none; }
 }
+
+/* ===== Sequências longas + mídia Wikimedia ===== */
+.seq-barra {
+  display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.65rem;
+}
+.seq-barra__num { font-weight: 900; font-size: 0.85rem; min-width: 2.5rem; }
+.seq-barra__trilho {
+  flex: 1; height: 10px; border-radius: 999px; background: #E2E8F0; overflow: hidden;
+}
+.seq-barra__trilho > i {
+  display: block; height: 100%; background: linear-gradient(90deg,#818CF8,#C084FC);
+  border-radius: 999px; transition: width .3s;
+}
+.seq-acoes { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.35rem 0 0.75rem; }
+.seq-retomar { text-align: center; font-weight: 800; color: #6366F1; font-size: 0.85rem; }
+.seq-card { text-align: center; }
+.seq-parear { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 0.5rem; }
+.seq-parear__col { display: flex; flex-direction: column; gap: 0.4rem; }
+.seq-chip {
+  border: 3px solid #CBD5E1; background: #fff; border-radius: 14px; padding: 0.55rem 0.4rem;
+  font-family: inherit; font-weight: 800; font-size: 0.95rem; cursor: pointer; min-height: 48px;
+}
+.seq-chip.is-selecionada { border-color: #818CF8; box-shadow: 0 0 0 4px rgba(129,140,248,.3); }
+.seq-chip.is-certa { border-color: #34D399; background: #ECFDF5; }
+.midia-fig {
+  margin: 0 auto 0.65rem; max-width: 280px; text-align: center;
+}
+.midia-img {
+  width: 100%; max-width: 260px; height: auto; max-height: 180px; object-fit: contain;
+  border-radius: 16px; border: 3px solid #E2E8F0; background: #F8FAFC;
+}
+.midia-svg-fallback { width: 100%; max-width: 240px; height: auto; margin: 0 auto; display: block; }
+.midia-credito {
+  font-size: 0.65rem; color: #64748B; margin-top: 0.35rem; line-height: 1.3; font-weight: 600;
+}
+.midia-credito a { color: #6366F1; text-decoration: underline; }
+.edu-modelo-metodo { padding: 0.5rem; }

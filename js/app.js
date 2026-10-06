@@ -694,9 +694,25 @@
       posRender(res.msg, "a.btn--primario");
     };
     const optsStem = { nivel: (estado.nivelEducar && estado.nivelEducar["stem:" + id]) || 1 };
-    if (id.startsWith("geo-") && window.AmiguitoGeo) AmiguitoGeo.montar(id, root, onStemDone, optsStem);
-    else AmiguitoStem.montar(id, root, onStemDone, optsStem);
-    posRender(meta.titulo + ". O Educador te guia. Ouça e toque.", null);
+    const seqStem = acharSequencia({ stemId: id });
+    if (seqStem && window.AmiguitoSequencia) {
+      const bar = document.createElement("div");
+      bar.className = "seq-acoes";
+      bar.innerHTML = `<button type="button" class="btn btn--fantasma btn--sm" id="btn-seq-reiniciar" data-fala="Do zero">🔄 Do zero</button>`;
+      root.parentNode.insertBefore(bar, root);
+      bar.querySelector("#btn-seq-reiniciar").onclick = () => {
+        AmiguitoSequencia.limparProgresso(estado, seqStem.id);
+        renderStemAtividade(id);
+      };
+      iniciarSequenciaUI(root, seqStem, { nivel: optsStem.nivel }, (res) => {
+        onStemDone({ sucesso: true, msg: meta.titulo + " completa!", trilha: res.trilha || meta.trilha, porque: meta.porque });
+      });
+    } else if (id.startsWith("geo-") && window.AmiguitoGeo) {
+      AmiguitoGeo.montar(id, root, onStemDone, optsStem);
+    } else {
+      AmiguitoStem.montar(id, root, onStemDone, optsStem);
+    }
+    posRender(meta.titulo + ". Sequência com o Educador.", null);
   }
 
   function renderRota(id) {
@@ -934,6 +950,45 @@
     }));
   }
 
+  function acharSequencia(opts) {
+    const list = DADOS.sequencias || [];
+    if (opts.sequenciaId) return list.find((s) => s.id === opts.sequenciaId);
+    if (opts.licaoId) {
+      const l = DADOS.licoes.find((x) => x.id === opts.licaoId);
+      if (l && l.sequenciaId) return list.find((s) => s.id === l.sequenciaId);
+      return list.find((s) => s.licaoId === opts.licaoId);
+    }
+    if (opts.stemId) {
+      const a = DADOS.stemAtividades.find((x) => x.id === opts.stemId);
+      if (a && a.sequenciaId) return list.find((s) => s.id === a.sequenciaId);
+      return list.find((s) => s.stemId === opts.stemId);
+    }
+    if (opts.lerTipo) return list.find((s) => s.lerTipo === opts.lerTipo);
+    return null;
+  }
+
+  function iniciarSequenciaUI(root, seq, opts, onDone) {
+    opts = opts || {};
+    if (!seq || !window.AmiguitoSequencia) {
+      if (onDone) onDone({ acertos: 0, total: 0 });
+      return;
+    }
+    const prog = AmiguitoSequencia.lerProgresso(estado, seq.id);
+    AmiguitoSequencia.iniciar(root, seq, {
+      estado,
+      nivel: opts.nivel || 1,
+      continuar: opts.continuar !== false
+    }, {
+      onComplete: (res) => {
+        AmiguitoSequencia.limparProgresso(estado, seq.id);
+        if (onDone) onDone(res);
+      }
+    });
+    if (prog && prog.passo > 0) {
+      mostrarToast("Continuando passo " + (prog.passo + 1) + "…");
+    }
+  }
+
   function renderLicao(licaoId, desafio) {
     const licao = DADOS.licoes.find((l) => l.id === licaoId);
     if (!licao) { location.hash = "#/ensinar"; return; }
@@ -941,14 +996,18 @@
     if (!jogoAtivo || jogoAtivo.licaoId !== licaoId || jogoAtivo.desafio !== !!desafio || jogoAtivo._sessaoDone) {
       jogoAtivo = { licaoId, indice: 0, acertos: 0, combo: 0, desafio: !!desafio, nivel: nivelSalvo, _sessaoDone: false };
     }
+    const seq = acharSequencia({ licaoId });
     conteudo.innerHTML = `
       <section class="jogo edu-licao">
         ${linkVoltar("#/ensinar","Lições")}
         <h2 class="titulo-tela">${licao.icone} ${licao.titulo}</h2>
         ${desafio ? `<div class="banner-desafio" aria-live="polite"><span aria-hidden="true">⚡</span> Desafio! <span aria-hidden="true">⚡</span></div>` : ""}
-        <p class="subtitulo">Olha → Guia → Faz → Festa · Educador te acompanha</p>
+        <p class="subtitulo">${seq ? "Sequência de " + seq.passos.length + " passos · Olha → Arrasta → Combina → Desafio" : "Olha → Guia → Faz → Festa"}</p>
         ${AmiguitoEducar.niveisHtml(jogoAtivo.nivel)}
-        ${desafio ? "" : `<p style="margin:0.35rem 0 0.75rem"><a class="btn btn--fantasma btn--sm" href="#/ensinar/${licaoId}/desafio" data-fala="Modo desafio">⚡ Desafio</a></p>`}
+        <div class="seq-acoes">
+          ${seq ? `<button type="button" class="btn btn--fantasma btn--sm" id="btn-seq-reiniciar" data-fala="Começar do zero">🔄 Do zero</button>` : ""}
+          ${desafio ? "" : `<a class="btn btn--fantasma btn--sm" href="#/ensinar/${licaoId}/desafio" data-fala="Modo desafio">⚡ Desafio</a>`}
+        </div>
         <div id="licao-root"></div>
       </section>`;
     conteudo.querySelectorAll(".edu-nivel").forEach((btn) => btn.addEventListener("click", () => {
@@ -960,26 +1019,40 @@
       AmiguitoSom.tap();
       renderLicao(licaoId, desafio);
     }));
+    const rein = conteudo.querySelector("#btn-seq-reiniciar");
+    if (rein && seq) rein.addEventListener("click", () => {
+      AmiguitoSequencia.limparProgresso(estado, seq.id);
+      renderLicao(licaoId, desafio);
+    });
     if (desafio && !jogoAtivo._fanfarra) {
       jogoAtivo._fanfarra = true;
       AmiguitoSom.desafioFanfarra();
     }
     const root = conteudo.querySelector("#licao-root");
-    posRender(licao.titulo + ". O Educador vai te guiar.", null);
-    anunciar(desafio ? ("Desafio! " + licao.titulo) : ("Lição: " + licao.titulo + ". Olha comigo."));
-    AmiguitoEnsinar.iniciarSessao(root, licao, {
-      nivel: jogoAtivo.nivel,
-      desafio: !!desafio,
-      idioma: estado.idiomaDica || "pt"
-    }, {
-      onComplete: (st) => {
-        jogoAtivo.acertos = st.acertos;
-        jogoAtivo.indice = st.indice;
-        jogoAtivo.combo = st.combo;
+    posRender(licao.titulo + ". Sequência com o Educador.", null);
+    anunciar(desafio ? ("Desafio! " + licao.titulo) : ("Lição: " + licao.titulo + ". Vamos passo a passo."));
+    if (seq && window.AmiguitoSequencia && !desafio) {
+      iniciarSequenciaUI(root, seq, { nivel: jogoAtivo.nivel }, (res) => {
+        jogoAtivo.acertos = res.acertos || seq.passos.length;
+        jogoAtivo.indice = res.total || seq.passos.length;
         jogoAtivo._sessaoDone = true;
         finalizarLicao(licao, desafio);
-      }
-    });
+      });
+    } else {
+      AmiguitoEnsinar.iniciarSessao(root, licao, {
+        nivel: jogoAtivo.nivel,
+        desafio: !!desafio,
+        idioma: estado.idiomaDica || "pt"
+      }, {
+        onComplete: (st) => {
+          jogoAtivo.acertos = st.acertos;
+          jogoAtivo.indice = st.indice;
+          jogoAtivo.combo = st.combo;
+          jogoAtivo._sessaoDone = true;
+          finalizarLicao(licao, desafio);
+        }
+      });
+    }
   }
 
   function finalizarLicao(licao, desafio) {
@@ -1355,7 +1428,7 @@
       </section>`;
     const root = document.getElementById("ler-root");
     const falar = (txt, opts) => { ultimaFala = txt; AmiguitoFala.falar(txt, opts); };
-    AmiguitoLer.montar(kind, root, DADOS.alfabetizacao, (res) => {
+    const finishLer = (msg) => {
       AmiguitoStorage.ganharXp(estado, 10);
       desbloquearTrofeu("leitora");
       if (pendenteRota) {
@@ -1370,16 +1443,30 @@
       AmiguitoStorage.salvar(estado);
       AmiguitoSom.sucesso();
       celebrar();
-      anunciar(res.msg);
+      anunciar(msg);
       root.innerHTML = `<div class="card" style="text-align:center">
         <div style="font-size:2.5rem">🎉</div>
-        <p class="titulo-tela" style="font-size:1.2rem">${escapar(res.msg)}</p>
+        <p class="titulo-tela" style="font-size:1.2rem">${escapar(msg)}</p>
         ${guia("Mandou bem! Quer mais?")}
         <a class="btn btn--primario" href="#/ler" data-fala="Mais leitura">Mais</a>
       </div>`;
-      posRender(res.msg, "a.btn--primario");
-    }, falar);
-    posRender(titulos[kind] + ". Ouça e toque na figurinha.", null);
+      posRender(msg, "a.btn--primario");
+    };
+    const seqLer = acharSequencia({ lerTipo: kind });
+    if (seqLer && window.AmiguitoSequencia) {
+      const bar = document.createElement("div");
+      bar.className = "seq-acoes";
+      bar.innerHTML = `<button type="button" class="btn btn--fantasma btn--sm" id="btn-seq-reiniciar" data-fala="Do zero">🔄 Do zero</button>`;
+      root.parentNode.insertBefore(bar, root);
+      bar.querySelector("#btn-seq-reiniciar").onclick = () => {
+        AmiguitoSequencia.limparProgresso(estado, seqLer.id);
+        renderLer(tipo);
+      };
+      iniciarSequenciaUI(root, seqLer, { nivel: 1 }, () => finishLer(seqLer.titulo + " completa!"));
+    } else {
+      AmiguitoLer.montar(kind, root, DADOS.alfabetizacao, (res) => finishLer(res.msg), falar);
+    }
+    posRender(titulos[kind] + ". Sequência com áudio e figuras.", null);
   }
 
 
@@ -1398,7 +1485,8 @@
             <li>Ative o som 🔊 (no iPhone/iPad, toque em 🗣️ depois de ligar o som — o navegador exige um toque).</li>
             <li>O botão 👁️ liga/desliga o <em>modo só figuras</em> (padrão: ligado).</li>
             <li>A qualidade da voz depende do aparelho (voz pt-BR do sistema).</li>
-            <li>Progresso fica só neste aparelho.</li>
+            <li>Progresso fica só neste aparelho (incluindo sequência a meio).</li>
+            <li>Figuras das lições vêm de <strong>Wikimedia/Wikipedia</strong> (licença aberta) com crédito; se falhar, usamos SVG.</li>
           </ul>
           <p><a class="btn btn--primario btn--bloco" href="#/casa" data-fala="Voltar">Voltar ao app</a></p>
         </div>
@@ -1407,6 +1495,7 @@
   }
 
 
+  if (window.AmiguitoMidia) AmiguitoMidia.carregarCatalogo();
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", iniciar);
   else iniciar();
 })();

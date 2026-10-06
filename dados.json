@@ -1,5 +1,5 @@
 {
-  "versao": 4,
+  "versao": 5,
   "personagens": [
     {
       "id": "rumi",
@@ -858,7 +858,8 @@
           "porque": "As cores vêm da luz. Cada cor é um jeitinho diferente de brilhar!"
         }
       ],
-      "porquePadrao": "As cores vêm da luz. Cada cor é um jeitinho diferente de brilhar!"
+      "porquePadrao": "As cores vêm da luz. Cada cor é um jeitinho diferente de brilhar!",
+      "sequenciaId": "seq-cores"
     },
     {
       "id": "numeros",
@@ -956,7 +957,8 @@
           "porque": "Números contam quantidades — um, dois, três… assim a gente sabe quanto tem!"
         }
       ],
-      "porquePadrao": "Números contam quantidades — um, dois, três… assim a gente sabe quanto tem!"
+      "porquePadrao": "Números contam quantidades — um, dois, três… assim a gente sabe quanto tem!",
+      "sequenciaId": "seq-numeros"
     },
     {
       "id": "math-avancada",
@@ -1098,7 +1100,8 @@
           "porque": "Fazer contas é juntar ou separar quantidades, como juntar estrelinhas."
         }
       ],
-      "porquePadrao": "Fazer contas é juntar ou separar quantidades, como juntar estrelinhas."
+      "porquePadrao": "Fazer contas é juntar ou separar quantidades, como juntar estrelinhas.",
+      "sequenciaId": "seq-math"
     },
     {
       "id": "ciencia-natureza",
@@ -1196,7 +1199,8 @@
           "porque": "Na natureza, tudo precisa de cuidado: luz, água e ar."
         }
       ],
-      "porquePadrao": "Na natureza, tudo precisa de cuidado: luz, água e ar."
+      "porquePadrao": "Na natureza, tudo precisa de cuidado: luz, água e ar.",
+      "sequenciaId": "seq-ciencia-nat"
     },
     {
       "id": "ciencia-espaco",
@@ -1316,7 +1320,8 @@
           "porque": "No espaço não tem ar como na Terra — por isso o traje protege o astronauta."
         }
       ],
-      "porquePadrao": "No espaço não tem ar como na Terra — por isso o traje protege o astronauta."
+      "porquePadrao": "No espaço não tem ar como na Terra — por isso o traje protege o astronauta.",
+      "sequenciaId": "seq-ciencia-esp"
     },
     {
       "id": "ingles-basico",
@@ -1414,7 +1419,8 @@
           "porque": "Em inglês, as palavras soam diferente, mas apontam pras mesmas coisas."
         }
       ],
-      "porquePadrao": "Em inglês, as palavras soam diferente, mas apontam pras mesmas coisas."
+      "porquePadrao": "Em inglês, as palavras soam diferente, mas apontam pras mesmas coisas.",
+      "sequenciaId": "seq-ingles"
     },
     {
       "id": "ingles-espaco",
@@ -1534,7 +1540,8 @@
           "porque": "Astronautas de muitos países usam palavras em inglês no espaço."
         }
       ],
-      "porquePadrao": "Astronautas de muitos países usam palavras em inglês no espaço."
+      "porquePadrao": "Astronautas de muitos países usam palavras em inglês no espaço.",
+      "sequenciaId": "seq-ingles-esp"
     },
     {
       "id": "tech-basico",
@@ -1632,7 +1639,8 @@
           "porque": "Computadores e robôs seguem passos em ordem, um depois do outro."
         }
       ],
-      "porquePadrao": "Computadores e robôs seguem passos em ordem, um depois do outro."
+      "porquePadrao": "Computadores e robôs seguem passos em ordem, um depois do outro.",
+      "sequenciaId": "seq-tech"
     },
     {
       "id": "gentileza",
@@ -1730,7 +1738,8 @@
           "porque": "Ser gentil aquece o coração de quem recebe — e o nosso também."
         }
       ],
-      "porquePadrao": "Ser gentil aquece o coração de quem recebe — e o nosso também."
+      "porquePadrao": "Ser gentil aquece o coração de quem recebe — e o nosso também.",
+      "sequenciaId": "seq-gentileza"
     }
   ],
   "stemAtividades": [
@@ -1740,7 +1749,8 @@
       "trilha": "matematica",
       "icone": "⭐",
       "desc": "Conte e toque no número",
-      "porque": "Contar é dizer quantos tem, um por um."
+      "porque": "Contar é dizer quantos tem, um por um.",
+      "sequenciaId": "seq-stem-contar-objetos"
     },
     {
       "id": "mais-menos",
@@ -1748,7 +1758,8 @@
       "trilha": "matematica",
       "icone": "⚖️",
       "desc": "Compare quem tem mais",
-      "porque": "Mais junta; menos tira — assim comparamos quantidades."
+      "porque": "Mais junta; menos tira — assim comparamos quantidades.",
+      "sequenciaId": "seq-stem-mais-menos"
     },
     {
       "id": "padrao",
@@ -1756,7 +1767,8 @@
       "trilha": "matematica",
       "icone": "🔁",
       "desc": "O que vem depois?",
-      "porque": "Padrões se repetem: a gente descobre o que vem depois."
+      "porque": "Padrões se repetem: a gente descobre o que vem depois.",
+      "sequenciaId": "seq-stem-padrao"
     },
     {
       "id": "experimento",
@@ -1764,7 +1776,8 @@
       "trilha": "ciencia",
       "icone": "🧪",
       "desc": "Escolha o passo certo",
-      "porque": "Na ciência a gente observa com atenção e segurança."
+      "porque": "Na ciência a gente observa com atenção e segurança.",
+      "sequenciaId": "seq-stem-experimento"
     },
     {
       "id": "clima",
@@ -1772,7 +1785,8 @@
       "trilha": "ciencia",
       "icone": "⛅",
       "desc": "Combine clima e ação",
-      "porque": "O clima muda: sol, chuva, vento — cada um é diferente."
+      "porque": "O clima muda: sol, chuva, vento — cada um é diferente.",
+      "sequenciaId": "seq-stem-clima"
     },
     {
       "id": "dialogo-en",
@@ -1780,7 +1794,8 @@
       "trilha": "ingles",
       "icone": "💬",
       "desc": "Responda em inglês",
-      "porque": "Conversar em inglês é praticar sons novos com alegria."
+      "porque": "Conversar em inglês é praticar sons novos com alegria.",
+      "sequenciaId": "seq-stem-dialogo-en"
     },
     {
       "id": "programar",
@@ -1788,7 +1803,8 @@
       "trilha": "tech",
       "icone": "🤖",
       "desc": "Monte a sequência de setas",
-      "porque": "O robô só faz o que a sequência manda."
+      "porque": "O robô só faz o que a sequência manda.",
+      "sequenciaId": "seq-stem-programar"
     },
     {
       "id": "consertar",
@@ -1796,7 +1812,8 @@
       "trilha": "tech",
       "icone": "🔧",
       "desc": "Ache e corrija o erro",
-      "porque": "Quando um passo está errado, a gente troca e tenta de novo."
+      "porque": "Quando um passo está errado, a gente troca e tenta de novo.",
+      "sequenciaId": "seq-stem-consertar"
     },
     {
       "id": "geo-brasil",
@@ -1804,7 +1821,8 @@
       "trilha": "geografia",
       "icone": "🇧🇷",
       "desc": "Toque nas regiões do mapa",
-      "porque": "O Brasil tem regiões com jeitos diferentes de ser."
+      "porque": "O Brasil tem regiões com jeitos diferentes de ser.",
+      "sequenciaId": "seq-geo-brasil"
     },
     {
       "id": "geo-lugares",
@@ -1812,7 +1830,8 @@
       "trilha": "geografia",
       "icone": "🌴",
       "desc": "Amazônia, Rio, praia…",
-      "porque": "Cada lugar do Brasil tem uma paisagem especial."
+      "porque": "Cada lugar do Brasil tem uma paisagem especial.",
+      "sequenciaId": "seq-geo-lugares"
     },
     {
       "id": "geo-continentes",
@@ -1820,7 +1839,8 @@
       "trilha": "geografia",
       "icone": "🌍",
       "desc": "Ache no mapa do mundo",
-      "porque": "Continentes são pedaços enormes de terra no planeta."
+      "porque": "Continentes são pedaços enormes de terra no planeta.",
+      "sequenciaId": "seq-geo-mundo"
     },
     {
       "id": "geo-animais",
@@ -1828,7 +1848,8 @@
       "trilha": "geografia",
       "icone": "🦁",
       "desc": "Onde cada animal vive?",
-      "porque": "Animais vivem em continentes onde o clima combina com eles."
+      "porque": "Animais vivem em continentes onde o clima combina com eles.",
+      "sequenciaId": "seq-geo-animais"
     },
     {
       "id": "geo-arrastar",
@@ -1836,7 +1857,8 @@
       "trilha": "geografia",
       "icone": "🧳",
       "desc": "Arraste até o continente",
-      "porque": "Levar o animal ao continente certo é cuidar do lar dele."
+      "porque": "Levar o animal ao continente certo é cuidar do lar dele.",
+      "sequenciaId": "seq-geo-arrastar"
     },
     {
       "id": "formas-puzzle",
@@ -1844,7 +1866,8 @@
       "trilha": "matematica",
       "icone": "🔷",
       "desc": "Encaixe círculo, quadrado e triângulo",
-      "porque": "Formas ajudam a reconhecer desenhos e construir coisas."
+      "porque": "Formas ajudam a reconhecer desenhos e construir coisas.",
+      "sequenciaId": "seq-stem-formas"
     },
     {
       "id": "reta-numerica",
@@ -1852,7 +1875,8 @@
       "trilha": "matematica",
       "icone": "📏",
       "desc": "Coloque o número no lugar certo",
-      "porque": "Os números ficam em ordem na reta."
+      "porque": "Os números ficam em ordem na reta.",
+      "sequenciaId": "seq-stem-reta"
     },
     {
       "id": "blocos-codigo",
@@ -1860,7 +1884,8 @@
       "trilha": "tech",
       "icone": "🧩",
       "desc": "Encaixe os passos do robô",
-      "porque": "Programar é dar passos em ordem."
+      "porque": "Programar é dar passos em ordem.",
+      "sequenciaId": "seq-stem-blocos"
     },
     {
       "id": "habitat-sort",
@@ -1868,7 +1893,8 @@
       "trilha": "ciencia",
       "icone": "🌍",
       "desc": "Leve cada animal ao habitat",
-      "porque": "Cada animal vive onde encontra comida, água e abrigo."
+      "porque": "Cada animal vive onde encontra comida, água e abrigo.",
+      "sequenciaId": "seq-stem-habitat"
     }
   ],
   "callResponse": [
@@ -2910,5 +2936,5166 @@
         ]
       }
     ]
-  }
+  },
+  "sequencias": [
+    {
+      "id": "seq-cores",
+      "licaoId": "cores",
+      "titulo": "Cores do mundo",
+      "trilha": "cores",
+      "icone": "🎨",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "O Sol",
+          "fala": "Olha o Sol! A luz traz cores.",
+          "midia": "sol",
+          "porque": "A luz do Sol tem cores misturadas.",
+          "emoji": "☀️"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Céu azul",
+          "fala": "De dia o céu parece azul.",
+          "midia": "azul",
+          "porque": "A luz azul se espalha no ar.",
+          "emoji": "🔵"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Qual cor do céu de dia?",
+          "fala": "Qual cor do céu de dia?",
+          "opcoes": [
+            {
+              "texto": "Azul",
+              "certa": true,
+              "cor": "#4BA3C7"
+            },
+            {
+              "texto": "Verde",
+              "cor": "#2ECC71"
+            },
+            {
+              "texto": "Marrom",
+              "cor": "#8B5A2B"
+            }
+          ],
+          "porque": "O céu parece azul pela luz espalhada.",
+          "midia": "azul"
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Cor e coisa",
+          "fala": "Combine a cor com a figurinha",
+          "pares": [
+            {
+              "id": "sol",
+              "a": "Amarelo",
+              "aEmoji": "🟡",
+              "b": "Sol",
+              "bEmoji": "☀️"
+            },
+            {
+              "id": "folha",
+              "a": "Verde",
+              "aEmoji": "🟢",
+              "b": "Folha",
+              "bEmoji": "🍃"
+            },
+            {
+              "id": "ceu",
+              "a": "Azul",
+              "aEmoji": "🔵",
+              "b": "Céu",
+              "bEmoji": "🌤️"
+            }
+          ],
+          "porque": "Cores ajudam a reconhecer o mundo."
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Separe quente e frio",
+          "itens": [
+            {
+              "label": "Sol",
+              "emoji": "☀️",
+              "cat": "quente"
+            },
+            {
+              "label": "Fogo",
+              "emoji": "🔥",
+              "cat": "quente"
+            },
+            {
+              "label": "Gelo",
+              "emoji": "🧊",
+              "cat": "frio"
+            },
+            {
+              "label": "Água",
+              "emoji": "💧",
+              "cat": "frio"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "quente",
+              "label": "Quente",
+              "emoji": "🔥"
+            },
+            {
+              "id": "frio",
+              "label": "Frio",
+              "emoji": "❄️"
+            }
+          ],
+          "porque": "Cores lembram calor ou frescor."
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Encaixe a cor",
+          "pecas": [
+            {
+              "id": "r",
+              "match": "vermelho",
+              "icone": "🔴",
+              "label": "Vermelho"
+            },
+            {
+              "id": "a",
+              "match": "azul",
+              "icone": "🔵",
+              "label": "Azul"
+            },
+            {
+              "id": "v",
+              "match": "verde",
+              "icone": "🟢",
+              "label": "Verde"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "vermelho",
+              "label": "Vermelho",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "azul",
+              "label": "Azul",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "verde",
+              "label": "Verde",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Cada cor tem um nome."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Cor das folhas?",
+          "fala": "Cor das folhas?",
+          "opcoes": [
+            {
+              "texto": "Verde",
+              "certa": true,
+              "cor": "#2ECC71"
+            },
+            {
+              "texto": "Roxo",
+              "cor": "#9B59B6"
+            }
+          ],
+          "porque": "Folhas verdes têm clorofila.",
+          "midia": "verde"
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Depois do vermelho no arco-íris?",
+          "fala": "Desafio! Depois do vermelho no arco-íris?",
+          "opcoes": [
+            {
+              "texto": "Laranja",
+              "certa": true
+            },
+            {
+              "texto": "Preto"
+            },
+            {
+              "texto": "Cinza"
+            }
+          ],
+          "porque": "Depois do vermelho vem o laranja.",
+          "midia": "arcoiris"
+        }
+      ]
+    },
+    {
+      "id": "seq-numeros",
+      "licaoId": "numeros",
+      "titulo": "Números amigos",
+      "trilha": "matematica",
+      "icone": "🔢",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Números",
+          "fala": "Números contam quantidades.",
+          "midia": "numeros",
+          "porque": "Números dizem quanto tem.",
+          "emoji": "🔢"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Maçãs",
+          "fala": "Imagine contar: um, dois, três!",
+          "midia": "maca",
+          "porque": "Contar é um por um.",
+          "emoji": "🍎"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Quanto é 2 + 2?",
+          "fala": "Quanto é 2 + 2?",
+          "opcoes": [
+            {
+              "texto": "4",
+              "certa": true
+            },
+            {
+              "texto": "3"
+            },
+            {
+              "texto": "5"
+            }
+          ],
+          "porque": "Dois mais dois é quatro.",
+          "midia": null
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Números em ordem",
+          "pecas": [
+            {
+              "id": "n1",
+              "match": "1",
+              "icone": "1️⃣",
+              "label": "1"
+            },
+            {
+              "id": "n2",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "2"
+            },
+            {
+              "id": "n3",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "3"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1º",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2º",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3º",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Números em ordem na reta."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Número e quantidade",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "a",
+              "a": "2",
+              "aEmoji": "2️⃣",
+              "b": "⭐⭐",
+              "bEmoji": ""
+            },
+            {
+              "id": "b",
+              "a": "3",
+              "aEmoji": "3️⃣",
+              "b": "🌙🌙🌙",
+              "bEmoji": ""
+            },
+            {
+              "id": "c",
+              "a": "1",
+              "aEmoji": "1️⃣",
+              "b": "🚀",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Número casa com quantidade."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Depois do 3?",
+          "fala": "Depois do 3?",
+          "opcoes": [
+            {
+              "texto": "4",
+              "certa": true
+            },
+            {
+              "texto": "2"
+            },
+            {
+              "texto": "7"
+            }
+          ],
+          "porque": "Depois do três vem o quatro.",
+          "midia": null
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Par e ímpar",
+          "itens": [
+            {
+              "label": "2",
+              "emoji": "2️⃣",
+              "cat": "par"
+            },
+            {
+              "label": "4",
+              "emoji": "4️⃣",
+              "cat": "par"
+            },
+            {
+              "label": "1",
+              "emoji": "1️⃣",
+              "cat": "impar"
+            },
+            {
+              "label": "3",
+              "emoji": "3️⃣",
+              "cat": "impar"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "par",
+              "label": "Par",
+              "emoji": "👯"
+            },
+            {
+              "id": "impar",
+              "label": "Ímpar",
+              "emoji": "☝️"
+            }
+          ],
+          "porque": "Par combina em duplas."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "5 - 1?",
+          "fala": "Desafio! 5 - 1?",
+          "opcoes": [
+            {
+              "texto": "4",
+              "certa": true
+            },
+            {
+              "texto": "6"
+            },
+            {
+              "texto": "1"
+            }
+          ],
+          "porque": "Tirar um de cinco deixa quatro.",
+          "midia": null
+        }
+      ]
+    },
+    {
+      "id": "seq-math",
+      "licaoId": "math-avancada",
+      "titulo": "Matemática Pro",
+      "trilha": "matematica",
+      "icone": "🧮",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Círculo",
+          "fala": "Redondinho, sem cantos.",
+          "midia": "circulo",
+          "porque": "Formas ajudam a reconhecer.",
+          "emoji": "🔵"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Triângulo",
+          "fala": "Três lados!",
+          "midia": "triangulo",
+          "porque": null,
+          "emoji": "🔺"
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Encaixe formas",
+          "pecas": [
+            {
+              "id": "c",
+              "match": "circulo",
+              "icone": "🔵",
+              "label": "Círculo"
+            },
+            {
+              "id": "t",
+              "match": "triangulo",
+              "icone": "🔺",
+              "label": "Triângulo"
+            },
+            {
+              "id": "q",
+              "match": "quadrado",
+              "icone": "🟥",
+              "label": "Quadrado"
+            }
+          ],
+          "slots": [
+            {
+              "id": "sc",
+              "accept": "circulo",
+              "label": "Círculo",
+              "icone": "⬜"
+            },
+            {
+              "id": "st",
+              "accept": "triangulo",
+              "label": "Triângulo",
+              "icone": "⬜"
+            },
+            {
+              "id": "sq",
+              "accept": "quadrado",
+              "label": "Quadrado",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Cada forma é única."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "10 + 5 = ?",
+          "fala": "10 + 5 = ?",
+          "opcoes": [
+            {
+              "texto": "15",
+              "certa": true
+            },
+            {
+              "texto": "12"
+            },
+            {
+              "texto": "20"
+            }
+          ],
+          "porque": "Dez mais cinco é quinze.",
+          "midia": null
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Contas",
+          "fala": "Combine a conta com o resultado",
+          "pares": [
+            {
+              "id": "x",
+              "a": "3+1",
+              "aEmoji": "",
+              "b": "4",
+              "bEmoji": "4️⃣"
+            },
+            {
+              "id": "y",
+              "a": "2+2",
+              "aEmoji": "",
+              "b": "4",
+              "bEmoji": "4️⃣"
+            },
+            {
+              "id": "z",
+              "a": "5-1",
+              "aEmoji": "",
+              "b": "4",
+              "bEmoji": "4️⃣"
+            }
+          ],
+          "porque": "Contas diferentes, mesmo resultado."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Maior: 9 ou 6?",
+          "fala": "Maior: 9 ou 6?",
+          "opcoes": [
+            {
+              "texto": "9",
+              "certa": true
+            },
+            {
+              "texto": "6"
+            }
+          ],
+          "porque": "Nove tem mais que seis.",
+          "midia": null
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Metade de 8?",
+          "fala": "Desafio! Metade de 8?",
+          "opcoes": [
+            {
+              "texto": "4",
+              "certa": true
+            },
+            {
+              "texto": "2"
+            },
+            {
+              "texto": "8"
+            }
+          ],
+          "porque": "Metade = duas partes iguais.",
+          "midia": null
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Pequeno e grande",
+          "itens": [
+            {
+              "label": "1",
+              "emoji": "1️⃣",
+              "cat": "peq"
+            },
+            {
+              "label": "2",
+              "emoji": "2️⃣",
+              "cat": "peq"
+            },
+            {
+              "label": "8",
+              "emoji": "8️⃣",
+              "cat": "grande"
+            },
+            {
+              "label": "9",
+              "emoji": "9️⃣",
+              "cat": "grande"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "peq",
+              "label": "Pequeno",
+              "emoji": "🐣"
+            },
+            {
+              "id": "grande",
+              "label": "Grande",
+              "emoji": "🐘"
+            }
+          ],
+          "porque": "Comparar é ver quem tem mais."
+        }
+      ]
+    },
+    {
+      "id": "seq-ciencia-nat",
+      "licaoId": "ciencia-natureza",
+      "titulo": "Natureza viva",
+      "trilha": "ciencia",
+      "icone": "🌱",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Árvore",
+          "fala": "Ela bebe água e come luz.",
+          "midia": "arvore",
+          "porque": "Plantas usam luz, água e ar.",
+          "emoji": "🌳"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Água",
+          "fala": "Vapor, nuvem, chuva.",
+          "midia": "agua",
+          "porque": "O ciclo da água não para.",
+          "emoji": "💧"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Plantas precisam de…",
+          "fala": "Plantas precisam de…",
+          "opcoes": [
+            {
+              "texto": "Luz e água",
+              "certa": true
+            },
+            {
+              "texto": "Só chocolate"
+            },
+            {
+              "texto": "Só TV"
+            }
+          ],
+          "porque": "Luz, água e ar.",
+          "midia": "arvore"
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Lar dos bichos",
+          "itens": [
+            {
+              "label": "Peixe",
+              "emoji": "🐟",
+              "cat": "mar"
+            },
+            {
+              "label": "Pássaro",
+              "emoji": "🐦",
+              "cat": "ceu"
+            },
+            {
+              "label": "Macaco",
+              "emoji": "🐒",
+              "cat": "floresta"
+            },
+            {
+              "label": "Camelo",
+              "emoji": "🐪",
+              "cat": "deserto"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "mar",
+              "label": "Mar",
+              "emoji": "🌊"
+            },
+            {
+              "id": "ceu",
+              "label": "Céu",
+              "emoji": "☁️"
+            },
+            {
+              "id": "floresta",
+              "label": "Floresta",
+              "emoji": "🌳"
+            },
+            {
+              "id": "deserto",
+              "label": "Deserto",
+              "emoji": "🏜️"
+            }
+          ],
+          "porque": "Lar = comida, água e abrigo."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Animal e comida",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "p",
+              "a": "Panda",
+              "aEmoji": "🐼",
+              "b": "Bambu",
+              "bEmoji": "🎋"
+            },
+            {
+              "id": "l",
+              "a": "Leão",
+              "aEmoji": "🦁",
+              "b": "Carne",
+              "bEmoji": "🥩"
+            },
+            {
+              "id": "co",
+              "a": "Coelho",
+              "aEmoji": "🐰",
+              "b": "Cenoura",
+              "bEmoji": "🥕"
+            }
+          ],
+          "porque": "Cada animal come o que precisa."
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Flor",
+          "fala": "Flores viram frutos.",
+          "midia": "flor",
+          "porque": null,
+          "emoji": "🌸"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Chuva vem das…",
+          "fala": "Chuva vem das…",
+          "opcoes": [
+            {
+              "texto": "Nuvens",
+              "certa": true
+            },
+            {
+              "texto": "TV"
+            },
+            {
+              "texto": "Sofá"
+            }
+          ],
+          "porque": "Água sobe, vira nuvem, volta.",
+          "midia": "agua"
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Peixes precisam de…",
+          "fala": "Desafio! Peixes precisam de…",
+          "opcoes": [
+            {
+              "texto": "Água com ar",
+              "certa": true
+            },
+            {
+              "texto": "Areia seca"
+            }
+          ],
+          "porque": "Peixes respiram na água.",
+          "midia": "peixe"
+        }
+      ]
+    },
+    {
+      "id": "seq-ciencia-esp",
+      "licaoId": "ciencia-espaco",
+      "titulo": "Espaço",
+      "trilha": "ciencia",
+      "icone": "🚀",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Astronauta",
+          "fala": "Traje no espaço!",
+          "midia": "astronauta",
+          "porque": "No espaço não tem ar como na Terra.",
+          "emoji": "👩‍🚀"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Foguete",
+          "fala": "Sobe bem rápido.",
+          "midia": "foguete",
+          "porque": "Foguetes levam gente ao espaço.",
+          "emoji": "🚀"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Lua",
+          "fala": "Brilha com luz do Sol.",
+          "midia": "lua",
+          "porque": "A Lua não tem luz própria.",
+          "emoji": "🌙"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Quem usa traje no espaço?",
+          "fala": "Quem usa traje no espaço?",
+          "opcoes": [
+            {
+              "texto": "Astronauta",
+              "certa": true
+            },
+            {
+              "texto": "Peixe"
+            },
+            {
+              "texto": "Sofá"
+            }
+          ],
+          "porque": "O traje traz ar.",
+          "midia": "astronauta"
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Céu",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "s",
+              "a": "Estrela",
+              "aEmoji": "⭐",
+              "b": "Brilha longe",
+              "bEmoji": "✨"
+            },
+            {
+              "id": "l",
+              "a": "Lua",
+              "aEmoji": "🌙",
+              "b": "Satélite",
+              "bEmoji": "🛰️"
+            },
+            {
+              "id": "f",
+              "a": "Foguete",
+              "aEmoji": "🚀",
+              "b": "Sobe",
+              "bEmoji": "⬆️"
+            }
+          ],
+          "porque": "Vemos estrelas, lua e foguetes."
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Viagem",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "1️⃣",
+              "label": "Terra"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "Foguete"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "Espaço"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "Começo",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "Meio",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "Chegada",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Começo, meio e fim."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "A Terra é…",
+          "fala": "A Terra é…",
+          "opcoes": [
+            {
+              "texto": "Um planeta",
+              "certa": true
+            },
+            {
+              "texto": "Um peixe"
+            }
+          ],
+          "porque": "Planeta redondo.",
+          "midia": "azul"
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "A Lua brilha porque…",
+          "fala": "Desafio! A Lua brilha porque…",
+          "opcoes": [
+            {
+              "texto": "Reflete o Sol",
+              "certa": true
+            },
+            {
+              "texto": "Tem lanterna"
+            }
+          ],
+          "porque": "Reflete a luz do Sol.",
+          "midia": "lua"
+        }
+      ]
+    },
+    {
+      "id": "seq-ingles",
+      "licaoId": "ingles-basico",
+      "titulo": "Hello!",
+      "trilha": "ingles",
+      "icone": "🗣️",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Hello",
+          "fala": "Hello quer dizer olá!",
+          "midia": "gato",
+          "porque": "Em inglês as palavras soam diferente.",
+          "emoji": "👋"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "OLÁ em inglês?",
+          "fala": "OLÁ em inglês?",
+          "opcoes": [
+            {
+              "texto": "Hello",
+              "certa": true
+            },
+            {
+              "texto": "Banana"
+            },
+            {
+              "texto": "Chair"
+            }
+          ],
+          "porque": "Hello é olá.",
+          "midia": null
+        },
+        {
+          "tipo": "parear",
+          "titulo": "PT e EN",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "h",
+              "a": "Olá",
+              "aEmoji": "👋",
+              "b": "Hello",
+              "bEmoji": ""
+            },
+            {
+              "id": "t",
+              "a": "Obrigado",
+              "aEmoji": "🙏",
+              "b": "Thank you",
+              "bEmoji": ""
+            },
+            {
+              "id": "n",
+              "a": "Boa noite",
+              "aEmoji": "🌙",
+              "b": "Good night",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Mesma ideia, sons diferentes."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Thank you em português?",
+          "fala": "Thank you em português?",
+          "opcoes": [
+            {
+              "texto": "Obrigado",
+              "certa": true
+            },
+            {
+              "texto": "Adeus"
+            }
+          ],
+          "porque": "Thank you = obrigado.",
+          "midia": null
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Fala ou comida?",
+          "itens": [
+            {
+              "label": "Hello",
+              "emoji": "👋",
+              "cat": "fala"
+            },
+            {
+              "label": "Bye",
+              "emoji": "👋",
+              "cat": "fala"
+            },
+            {
+              "label": "Apple",
+              "emoji": "🍎",
+              "cat": "comida"
+            },
+            {
+              "label": "Banana",
+              "emoji": "🍌",
+              "cat": "comida"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "fala",
+              "label": "Fala",
+              "emoji": "🗣️"
+            },
+            {
+              "id": "comida",
+              "label": "Comida",
+              "emoji": "🍽️"
+            }
+          ],
+          "porque": "Cumprimento não é comida!"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Dog",
+          "fala": "Dog é cachorro.",
+          "midia": "cachorro",
+          "porque": null,
+          "emoji": "🐶"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "How are you?",
+          "fala": "How are you?",
+          "opcoes": [
+            {
+              "texto": "Como vai?",
+              "certa": true
+            },
+            {
+              "texto": "Corre já!"
+            }
+          ],
+          "porque": "Pergunta como você está.",
+          "midia": null
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Good night?",
+          "fala": "Desafio! Good night?",
+          "opcoes": [
+            {
+              "texto": "Boa noite",
+              "certa": true
+            },
+            {
+              "texto": "Bom dia"
+            }
+          ],
+          "porque": "Good night = boa noite.",
+          "midia": "lua"
+        }
+      ]
+    },
+    {
+      "id": "seq-ingles-esp",
+      "licaoId": "ingles-espaco",
+      "titulo": "Space words",
+      "trilha": "ingles",
+      "icone": "🌌",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Star",
+          "fala": "Star é estrela.",
+          "midia": "estrela",
+          "porque": "Astronautas usam inglês no espaço.",
+          "emoji": "⭐"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Moon",
+          "fala": "Moon é lua.",
+          "midia": "lua",
+          "porque": null,
+          "emoji": "🌙"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Estrela em inglês?",
+          "fala": "Estrela em inglês?",
+          "opcoes": [
+            {
+              "texto": "Star",
+              "certa": true
+            },
+            {
+              "texto": "Car"
+            },
+            {
+              "texto": "Soup"
+            }
+          ],
+          "porque": "Star = estrela.",
+          "midia": "estrela"
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Space",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "s",
+              "a": "Star",
+              "aEmoji": "⭐",
+              "b": "Estrela",
+              "bEmoji": ""
+            },
+            {
+              "id": "m",
+              "a": "Moon",
+              "aEmoji": "🌙",
+              "b": "Lua",
+              "bEmoji": ""
+            },
+            {
+              "id": "r",
+              "a": "Rocket",
+              "aEmoji": "🚀",
+              "b": "Foguete",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Palavras do espaço."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Rocket é…",
+          "fala": "Rocket é…",
+          "opcoes": [
+            {
+              "texto": "Foguete",
+              "certa": true
+            },
+            {
+              "texto": "Banheira"
+            }
+          ],
+          "porque": "Rocket = foguete.",
+          "midia": "foguete"
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Hello Star",
+          "pecas": [
+            {
+              "id": "h",
+              "match": "1",
+              "icone": "Hi",
+              "label": "Hello"
+            },
+            {
+              "id": "s",
+              "match": "2",
+              "icone": "⭐",
+              "label": "Star"
+            }
+          ],
+          "slots": [
+            {
+              "id": "a",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "b",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Frases têm ordem."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Space significa…",
+          "fala": "Space significa…",
+          "opcoes": [
+            {
+              "texto": "Espaço",
+              "certa": true
+            },
+            {
+              "texto": "Sapato"
+            }
+          ],
+          "porque": "Space = espaço.",
+          "midia": null
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Friend?",
+          "fala": "Desafio! Friend?",
+          "opcoes": [
+            {
+              "texto": "Amigo",
+              "certa": true
+            },
+            {
+              "texto": "Fogo"
+            }
+          ],
+          "porque": "Friend = amigo.",
+          "midia": null
+        }
+      ]
+    },
+    {
+      "id": "seq-tech",
+      "licaoId": "tech-basico",
+      "titulo": "Robô passos",
+      "trilha": "tech",
+      "icone": "🤖",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Robô",
+          "fala": "Segue passos em ordem.",
+          "midia": "foguete",
+          "porque": "Programar é uma receita de passos.",
+          "emoji": "🤖"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Um robô segue…",
+          "fala": "Um robô segue…",
+          "opcoes": [
+            {
+              "texto": "Uma sequência",
+              "certa": true
+            },
+            {
+              "texto": "Bagunça"
+            }
+          ],
+          "porque": "O programa manda.",
+          "midia": null
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Andar Pegar Festa",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "1️⃣",
+              "label": "Andar"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "Pegar"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "Festa"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "A ordem muda o resultado."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Comando",
+          "fala": "Combine símbolo e ação",
+          "pares": [
+            {
+              "id": "u",
+              "a": "⬆️",
+              "aEmoji": "",
+              "b": "Cima",
+              "bEmoji": ""
+            },
+            {
+              "id": "r",
+              "a": "➡️",
+              "aEmoji": "",
+              "b": "Direita",
+              "bEmoji": ""
+            },
+            {
+              "id": "s",
+              "a": "⭐",
+              "aEmoji": "",
+              "b": "Pegar",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Cada símbolo é um comando."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Se errou…",
+          "fala": "Se errou…",
+          "opcoes": [
+            {
+              "texto": "Corrige e tenta",
+              "certa": true
+            },
+            {
+              "texto": "Desiste pra sempre"
+            }
+          ],
+          "porque": "Errar faz parte.",
+          "midia": null
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Bom / não",
+          "itens": [
+            {
+              "label": "Planejar",
+              "emoji": "📝",
+              "cat": "feito"
+            },
+            {
+              "label": "Testar",
+              "emoji": "🧪",
+              "cat": "feito"
+            },
+            {
+              "label": "Chutar o robô",
+              "emoji": "🚫",
+              "cat": "nao"
+            },
+            {
+              "label": "Gritar",
+              "emoji": "😤",
+              "cat": "nao"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "feito",
+              "label": "Bom",
+              "emoji": "✅"
+            },
+            {
+              "id": "nao",
+              "label": "Não",
+              "emoji": "❌"
+            }
+          ],
+          "porque": "Cuidamos com calma."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Código é como…",
+          "fala": "Desafio! Código é como…",
+          "opcoes": [
+            {
+              "texto": "Uma receita",
+              "certa": true
+            },
+            {
+              "texto": "Um travesseiro"
+            }
+          ],
+          "porque": "Receita de passos.",
+          "midia": null
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Primeiro passo?",
+          "fala": "Primeiro passo?",
+          "opcoes": [
+            {
+              "texto": "O começo",
+              "certa": true
+            },
+            {
+              "texto": "O fim"
+            }
+          ],
+          "porque": "Sempre pelo começo.",
+          "midia": null
+        }
+      ]
+    },
+    {
+      "id": "seq-gentileza",
+      "licaoId": "gentileza",
+      "titulo": "Coração gentil",
+      "trilha": "gentileza",
+      "icone": "💙",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Amizade",
+          "fala": "Cuidar aquece o coração.",
+          "midia": "cachorro",
+          "porque": "Gentileza faz bem pra todos.",
+          "emoji": "💙"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Amigo caiu. Você…",
+          "fala": "Amigo caiu. Você…",
+          "opcoes": [
+            {
+              "texto": "Ajuda",
+              "certa": true
+            },
+            {
+              "texto": "Ri na cara"
+            }
+          ],
+          "porque": "Ajudar mostra cuidado.",
+          "midia": null
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Gentileza",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "a",
+              "a": "Triste",
+              "aEmoji": "😢",
+              "b": "Ouvir",
+              "bEmoji": "👂"
+            },
+            {
+              "id": "b",
+              "a": "Fila",
+              "aEmoji": "🧍",
+              "b": "Esperar",
+              "bEmoji": "⏳"
+            },
+            {
+              "id": "c",
+              "a": "Erro",
+              "aEmoji": "😅",
+              "b": "Tentar de novo",
+              "bEmoji": "💪"
+            }
+          ],
+          "porque": "Cada situação pede carinho."
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Gentil / não",
+          "itens": [
+            {
+              "label": "Compartilhar",
+              "emoji": "🎁",
+              "cat": "sim"
+            },
+            {
+              "label": "Abraçar",
+              "emoji": "🤗",
+              "cat": "sim"
+            },
+            {
+              "label": "Empurrar",
+              "emoji": "🙅",
+              "cat": "nao"
+            },
+            {
+              "label": "Xingar",
+              "emoji": "😠",
+              "cat": "nao"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "sim",
+              "label": "Gentil",
+              "emoji": "💚"
+            },
+            {
+              "id": "nao",
+              "label": "Não",
+              "emoji": "💔"
+            }
+          ],
+          "porque": "Gentileza respeita o outro."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Na fila…",
+          "fala": "Na fila…",
+          "opcoes": [
+            {
+              "texto": "Espera a vez",
+              "certa": true
+            },
+            {
+              "texto": "Fura sempre"
+            }
+          ],
+          "porque": "Esperar é justo.",
+          "midia": null
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Se errar…",
+          "fala": "Desafio! Se errar…",
+          "opcoes": [
+            {
+              "texto": "Respira e tenta",
+              "certa": true
+            },
+            {
+              "texto": "Só desiste"
+            }
+          ],
+          "porque": "Errar faz parte.",
+          "midia": null
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Alguém triste…",
+          "fala": "Alguém triste…",
+          "opcoes": [
+            {
+              "texto": "Oferece carinho",
+              "certa": true
+            },
+            {
+              "texto": "Ignora"
+            }
+          ],
+          "porque": "Ouvir pode alegrar.",
+          "midia": null
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Festa",
+          "fala": "Você praticou gentileza!",
+          "midia": "arcoiris",
+          "porque": "Gentileza é um superpoder.",
+          "emoji": "🌈"
+        }
+      ]
+    },
+    {
+      "id": "seq-stem-formas",
+      "stemId": "formas-puzzle",
+      "titulo": "Puzzle formas",
+      "trilha": "matematica",
+      "icone": "🔷",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Círculo",
+          "fala": "Sem cantos.",
+          "midia": "circulo",
+          "porque": null,
+          "emoji": "🔵"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Quadrado",
+          "fala": "Quatro lados.",
+          "midia": "quadrado",
+          "porque": null,
+          "emoji": "🟥"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Triângulo",
+          "fala": "Três lados.",
+          "midia": "triangulo",
+          "porque": null,
+          "emoji": "🔺"
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Encaixe",
+          "pecas": [
+            {
+              "id": "c",
+              "match": "circulo",
+              "icone": "🔵",
+              "label": "Círculo"
+            },
+            {
+              "id": "q",
+              "match": "quadrado",
+              "icone": "🟥",
+              "label": "Quadrado"
+            },
+            {
+              "id": "t",
+              "match": "triangulo",
+              "icone": "🔺",
+              "label": "Triângulo"
+            }
+          ],
+          "slots": [
+            {
+              "id": "sc",
+              "accept": "circulo",
+              "label": "Círculo",
+              "icone": "⬜"
+            },
+            {
+              "id": "sq",
+              "accept": "quadrado",
+              "label": "Quadrado",
+              "icone": "⬜"
+            },
+            {
+              "id": "st",
+              "accept": "triangulo",
+              "label": "Triângulo",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Formas ajudam a construir."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Nome",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "c",
+              "a": "🔵",
+              "aEmoji": "",
+              "b": "Círculo",
+              "bEmoji": ""
+            },
+            {
+              "id": "t",
+              "a": "🔺",
+              "aEmoji": "",
+              "b": "Triângulo",
+              "bEmoji": ""
+            },
+            {
+              "id": "q",
+              "a": "🟥",
+              "aEmoji": "",
+              "b": "Quadrado",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Cada forma tem nome."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "3 lados?",
+          "fala": "3 lados?",
+          "opcoes": [
+            {
+              "texto": "Triângulo",
+              "certa": true
+            },
+            {
+              "texto": "Círculo"
+            }
+          ],
+          "porque": "Triângulo tem três lados.",
+          "midia": "triangulo"
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Redondo / cantos",
+          "itens": [
+            {
+              "label": "Círculo",
+              "emoji": "🔵",
+              "cat": "redondo"
+            },
+            {
+              "label": "Sol",
+              "emoji": "☀️",
+              "cat": "redondo"
+            },
+            {
+              "label": "Quadrado",
+              "emoji": "🟥",
+              "cat": "cantos"
+            },
+            {
+              "label": "Triângulo",
+              "emoji": "🔺",
+              "cat": "cantos"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "redondo",
+              "label": "Redondo",
+              "emoji": "⭕"
+            },
+            {
+              "id": "cantos",
+              "label": "Cantos",
+              "emoji": "📐"
+            }
+          ],
+          "porque": "Redondas ou com cantos."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "A roda parece…",
+          "fala": "Desafio! A roda parece…",
+          "opcoes": [
+            {
+              "texto": "Círculo",
+              "certa": true
+            },
+            {
+              "texto": "Triângulo"
+            }
+          ],
+          "porque": "Rodas circulares rolam.",
+          "midia": "circulo"
+        }
+      ]
+    },
+    {
+      "id": "seq-stem-habitat",
+      "stemId": "habitat-sort",
+      "titulo": "Lares",
+      "trilha": "ciencia",
+      "icone": "🌍",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Leão",
+          "fala": "Vive na África.",
+          "midia": "leao",
+          "porque": "Cada animal tem um lar.",
+          "emoji": "🦁"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Peixe",
+          "fala": "Vive na água.",
+          "midia": "peixe",
+          "porque": null,
+          "emoji": "🐟"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Elefante",
+          "fala": "Gosta de savana.",
+          "midia": "elefante",
+          "porque": null,
+          "emoji": "🐘"
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Leve ao lar",
+          "itens": [
+            {
+              "label": "Peixe",
+              "emoji": "🐟",
+              "cat": "mar"
+            },
+            {
+              "label": "Pássaro",
+              "emoji": "🐦",
+              "cat": "ceu"
+            },
+            {
+              "label": "Macaco",
+              "emoji": "🐒",
+              "cat": "floresta"
+            },
+            {
+              "label": "Camelo",
+              "emoji": "🐪",
+              "cat": "deserto"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "mar",
+              "label": "Mar",
+              "emoji": "🌊"
+            },
+            {
+              "id": "ceu",
+              "label": "Céu",
+              "emoji": "☁️"
+            },
+            {
+              "id": "floresta",
+              "label": "Floresta",
+              "emoji": "🌳"
+            },
+            {
+              "id": "deserto",
+              "label": "Deserto",
+              "emoji": "🏜️"
+            }
+          ],
+          "porque": "Lar = comida, água, abrigo."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Animal–lugar",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "l",
+              "a": "Leão",
+              "aEmoji": "🦁",
+              "b": "África",
+              "bEmoji": "🌍"
+            },
+            {
+              "id": "p",
+              "a": "Panda",
+              "aEmoji": "🐼",
+              "b": "Ásia",
+              "bEmoji": "🐼"
+            },
+            {
+              "id": "c",
+              "a": "Canguru",
+              "aEmoji": "🦘",
+              "b": "Oceania",
+              "bEmoji": "🦘"
+            }
+          ],
+          "porque": "Continentes e lares."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Peixe vive…",
+          "fala": "Peixe vive…",
+          "opcoes": [
+            {
+              "texto": "Na água",
+              "certa": true
+            },
+            {
+              "texto": "No deserto"
+            }
+          ],
+          "porque": "Peixes precisam de água.",
+          "midia": "peixe"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Oceano",
+          "fala": "Casa de muitos seres.",
+          "midia": "oceano",
+          "porque": null,
+          "emoji": "🌊"
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Camelo vive no…",
+          "fala": "Desafio! Camelo vive no…",
+          "opcoes": [
+            {
+              "texto": "Deserto",
+              "certa": true
+            },
+            {
+              "texto": "Fundo do mar"
+            }
+          ],
+          "porque": "Camelos no deserto.",
+          "midia": null
+        }
+      ]
+    },
+    {
+      "id": "seq-stem-blocos",
+      "stemId": "blocos-codigo",
+      "titulo": "Blocos",
+      "trilha": "tech",
+      "icone": "🧩",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Passos",
+          "fala": "Um, dois, três…",
+          "midia": "numeros",
+          "porque": "Programar é ordenar.",
+          "emoji": "🧩"
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "1-2-3",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "1️⃣",
+              "label": "1"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "2"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "3"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "A ordem importa."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "O robô faz o que…",
+          "fala": "O robô faz o que…",
+          "opcoes": [
+            {
+              "texto": "A sequência manda",
+              "certa": true
+            },
+            {
+              "texto": "Ele inventa"
+            }
+          ],
+          "porque": "O programa manda.",
+          "midia": null
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Símbolo",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "u",
+              "a": "⬆️",
+              "aEmoji": "",
+              "b": "Andar",
+              "bEmoji": ""
+            },
+            {
+              "id": "s",
+              "a": "⭐",
+              "aEmoji": "",
+              "b": "Pegar",
+              "bEmoji": ""
+            },
+            {
+              "id": "f",
+              "a": "🎉",
+              "aEmoji": "",
+              "b": "Festa",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Símbolos são comandos."
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Andar Estrela Festa",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "⬆️",
+              "label": "Andar"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "⭐",
+              "label": "Estrela"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "🎉",
+              "label": "Festa"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Receita do robô."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Ordem errada…",
+          "fala": "Desafio! Ordem errada…",
+          "opcoes": [
+            {
+              "texto": "Ajuste os blocos",
+              "certa": true
+            },
+            {
+              "texto": "Quebre o tablet"
+            }
+          ],
+          "porque": "Corrigimos os blocos.",
+          "midia": null
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Último passo?",
+          "fala": "Último passo?",
+          "opcoes": [
+            {
+              "texto": "Comemorar",
+              "certa": true
+            },
+            {
+              "texto": "Apagar o Sol"
+            }
+          ],
+          "porque": "No fim celebramos!",
+          "midia": null
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Feito",
+          "fala": "Robô programado!",
+          "midia": "estrela",
+          "porque": "Você pensou como engenheira!",
+          "emoji": "⭐"
+        }
+      ]
+    },
+    {
+      "id": "seq-stem-reta",
+      "stemId": "reta-numerica",
+      "titulo": "Reta",
+      "trilha": "matematica",
+      "icone": "📏",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Reta",
+          "fala": "1 2 3…",
+          "midia": "numeros",
+          "porque": "Cada número tem lugar.",
+          "emoji": "📏"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Depois do 4?",
+          "fala": "Depois do 4?",
+          "opcoes": [
+            {
+              "texto": "5",
+              "certa": true
+            },
+            {
+              "texto": "3"
+            }
+          ],
+          "porque": "Sobe de um em um.",
+          "midia": null
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Ordene 2 3 4",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "2"
+            },
+            {
+              "id": "b",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "3"
+            },
+            {
+              "id": "c",
+              "match": "4",
+              "icone": "4️⃣",
+              "label": "4"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "4",
+              "label": "4",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Ordem na reta."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Antes do 3?",
+          "fala": "Antes do 3?",
+          "opcoes": [
+            {
+              "texto": "2",
+              "certa": true
+            },
+            {
+              "texto": "5"
+            }
+          ],
+          "porque": "Antes do três: dois.",
+          "midia": null
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Vizinhos",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "a",
+              "a": "5",
+              "aEmoji": "5️⃣",
+              "b": "entre 4 e 6",
+              "bEmoji": ""
+            },
+            {
+              "id": "b",
+              "a": "1",
+              "aEmoji": "1️⃣",
+              "b": "começo",
+              "bEmoji": "🏁"
+            },
+            {
+              "id": "c",
+              "a": "10",
+              "aEmoji": "🔟",
+              "b": "dezena",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Todo número tem vizinhos."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Entre 2 e 4?",
+          "fala": "Desafio! Entre 2 e 4?",
+          "opcoes": [
+            {
+              "texto": "3",
+              "certa": true
+            },
+            {
+              "texto": "7"
+            }
+          ],
+          "porque": "Três no meio.",
+          "midia": null
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Maior: 8 ou 3?",
+          "fala": "Maior: 8 ou 3?",
+          "opcoes": [
+            {
+              "texto": "8",
+              "certa": true
+            },
+            {
+              "texto": "3"
+            }
+          ],
+          "porque": "Oito depois do três.",
+          "midia": null
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Completa",
+          "fala": "Dominou a reta!",
+          "midia": "numeros",
+          "porque": null,
+          "emoji": "🎉"
+        }
+      ]
+    },
+    {
+      "id": "seq-geo-brasil",
+      "stemId": "geo-brasil",
+      "titulo": "Brasilzinho",
+      "trilha": "geo",
+      "icone": "🇧🇷",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Brasil",
+          "fala": "Nosso país!",
+          "midia": "brasil",
+          "porque": "Regiões diferentes.",
+          "emoji": "🇧🇷"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Amazônia",
+          "fala": "Floresta no Norte.",
+          "midia": "amazonia",
+          "porque": "Floresta gigante.",
+          "emoji": "🌳"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Rio",
+          "fala": "Cristo e praia.",
+          "midia": "rio",
+          "porque": null,
+          "emoji": "🏞️"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Amazônia fica no…",
+          "fala": "Amazônia fica no…",
+          "opcoes": [
+            {
+              "texto": "Norte",
+              "certa": true
+            },
+            {
+              "texto": "Antártida"
+            }
+          ],
+          "porque": "Norte do Brasil.",
+          "midia": "amazonia"
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Região",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "n",
+              "a": "Norte",
+              "aEmoji": "🌳",
+              "b": "Floresta",
+              "bEmoji": ""
+            },
+            {
+              "id": "ne",
+              "a": "Nordeste",
+              "aEmoji": "🏖️",
+              "b": "Praia",
+              "bEmoji": ""
+            },
+            {
+              "id": "s",
+              "a": "Sul",
+              "aEmoji": "🧉",
+              "b": "Friozinho",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Cada região tem um jeito."
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Brasil / mundo",
+          "itens": [
+            {
+              "label": "Brasil",
+              "emoji": "🇧🇷",
+              "cat": "br"
+            },
+            {
+              "label": "Amazônia",
+              "emoji": "🦜",
+              "cat": "br"
+            },
+            {
+              "label": "África",
+              "emoji": "🦁",
+              "cat": "mundo"
+            },
+            {
+              "label": "Europa",
+              "emoji": "🏰",
+              "cat": "mundo"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "br",
+              "label": "Brasil",
+              "emoji": "🇧🇷"
+            },
+            {
+              "id": "mundo",
+              "label": "Mundo",
+              "emoji": "🌎"
+            }
+          ],
+          "porque": "Brasil é parte do mundo."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Bandeira do Brasil…",
+          "fala": "Desafio! Bandeira do Brasil…",
+          "opcoes": [
+            {
+              "texto": "Verde e amarela",
+              "certa": true
+            },
+            {
+              "texto": "Só preta"
+            }
+          ],
+          "porque": "Verde, amarelo, azul, branco.",
+          "midia": "brasil"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Orgulho",
+          "fala": "Explorou o Brasil!",
+          "midia": "brasil",
+          "porque": null,
+          "emoji": "🎉"
+        }
+      ]
+    },
+    {
+      "id": "seq-geo-mundo",
+      "stemId": "geo-continentes",
+      "titulo": "Continentes",
+      "trilha": "geo",
+      "icone": "🌎",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "África",
+          "fala": "Leões!",
+          "midia": "africa",
+          "porque": "Continentes são pedaços grandes.",
+          "emoji": "🦁"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Ásia",
+          "fala": "Pandas.",
+          "midia": "asia",
+          "porque": null,
+          "emoji": "🐼"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Europa",
+          "fala": "Castelos.",
+          "midia": "europa",
+          "porque": null,
+          "emoji": "🏰"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Canguru vive na…",
+          "fala": "Canguru vive na…",
+          "opcoes": [
+            {
+              "texto": "Oceania",
+              "certa": true
+            },
+            {
+              "texto": "Geladeira"
+            }
+          ],
+          "porque": "Oceania.",
+          "midia": null
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Animal",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "l",
+              "a": "🦁",
+              "aEmoji": "",
+              "b": "África",
+              "bEmoji": ""
+            },
+            {
+              "id": "p",
+              "a": "🐼",
+              "aEmoji": "",
+              "b": "Ásia",
+              "bEmoji": ""
+            },
+            {
+              "id": "c",
+              "a": "🦘",
+              "aEmoji": "",
+              "b": "Oceania",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Lares nos continentes."
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "América / outro",
+          "itens": [
+            {
+              "label": "Brasil",
+              "emoji": "🇧🇷",
+              "cat": "am"
+            },
+            {
+              "label": "Onça",
+              "emoji": "🐆",
+              "cat": "am"
+            },
+            {
+              "label": "Leão",
+              "emoji": "🦁",
+              "cat": "out"
+            },
+            {
+              "label": "Panda",
+              "emoji": "🐼",
+              "cat": "out"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "am",
+              "label": "América",
+              "emoji": "🌎"
+            },
+            {
+              "id": "out",
+              "label": "Outro",
+              "emoji": "🌍"
+            }
+          ],
+          "porque": "Moramos na América."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Europa é…",
+          "fala": "Desafio! Europa é…",
+          "opcoes": [
+            {
+              "texto": "Um continente",
+              "certa": true
+            },
+            {
+              "texto": "Um sofá"
+            }
+          ],
+          "porque": "Continente.",
+          "midia": "europa"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Mundo",
+          "fala": "Exploradora!",
+          "midia": "oceano",
+          "porque": null,
+          "emoji": "🌍"
+        }
+      ]
+    },
+    {
+      "id": "seq-geo-animais",
+      "stemId": "geo-animais",
+      "titulo": "Animais do mundo",
+      "trilha": "geo",
+      "icone": "🦁",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Leão",
+          "fala": "África.",
+          "midia": "leao",
+          "porque": null,
+          "emoji": "🦁"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Panda",
+          "fala": "Ásia.",
+          "midia": "asia",
+          "porque": null,
+          "emoji": "🐼"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Elefante",
+          "fala": "Savana.",
+          "midia": "elefante",
+          "porque": null,
+          "emoji": "🐘"
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Onde vive?",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "l",
+              "a": "Leão",
+              "aEmoji": "🦁",
+              "b": "África",
+              "bEmoji": ""
+            },
+            {
+              "id": "p",
+              "a": "Panda",
+              "aEmoji": "🐼",
+              "b": "Ásia",
+              "bEmoji": ""
+            },
+            {
+              "id": "c",
+              "a": "Canguru",
+              "aEmoji": "🦘",
+              "b": "Oceania",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Cada um no seu continente."
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Separe",
+          "itens": [
+            {
+              "label": "Leão",
+              "emoji": "🦁",
+              "cat": "africa"
+            },
+            {
+              "label": "Elefante",
+              "emoji": "🐘",
+              "cat": "africa"
+            },
+            {
+              "label": "Panda",
+              "emoji": "🐼",
+              "cat": "asia"
+            },
+            {
+              "label": "Canguru",
+              "emoji": "🦘",
+              "cat": "oceania"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "africa",
+              "label": "África",
+              "emoji": "🌍"
+            },
+            {
+              "id": "asia",
+              "label": "Ásia",
+              "emoji": "🏯"
+            },
+            {
+              "id": "oceania",
+              "label": "Oceania",
+              "emoji": "🦘"
+            }
+          ],
+          "porque": "Lares diferentes."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Onça vive nas…",
+          "fala": "Onça vive nas…",
+          "opcoes": [
+            {
+              "texto": "Américas",
+              "certa": true
+            },
+            {
+              "texto": "Geladeira"
+            }
+          ],
+          "porque": "Américas.",
+          "midia": null
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Tucano vive no…",
+          "fala": "Desafio! Tucano vive no…",
+          "opcoes": [
+            {
+              "texto": "Brasil",
+              "certa": true
+            },
+            {
+              "texto": "Lua"
+            }
+          ],
+          "porque": "No Brasil.",
+          "midia": "brasil"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Fim",
+          "fala": "Animais explorados!",
+          "midia": "passaro",
+          "porque": null,
+          "emoji": "🎉"
+        }
+      ]
+    },
+    {
+      "id": "seq-geo-arrastar",
+      "stemId": "geo-arrastar",
+      "titulo": "Viagem do animal",
+      "trilha": "geo",
+      "icone": "🧳",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Viagem",
+          "fala": "Leve o animal pra casa.",
+          "midia": "leao",
+          "porque": "Cuidar do lar do animal.",
+          "emoji": "🧳"
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Leão → África",
+          "pecas": [
+            {
+              "id": "l",
+              "match": "africa",
+              "icone": "🦁",
+              "label": "Leão"
+            },
+            {
+              "id": "p",
+              "match": "asia",
+              "icone": "🐼",
+              "label": "Panda"
+            }
+          ],
+          "slots": [
+            {
+              "id": "af",
+              "accept": "africa",
+              "label": "África",
+              "icone": "🌍"
+            },
+            {
+              "id": "as",
+              "accept": "asia",
+              "label": "Ásia",
+              "icone": "🏯"
+            }
+          ],
+          "porque": "Leve ao continente certo."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Canguru → ?",
+          "fala": "Canguru → ?",
+          "opcoes": [
+            {
+              "texto": "Oceania",
+              "certa": true
+            },
+            {
+              "texto": "Ártico"
+            }
+          ],
+          "porque": "Oceania.",
+          "midia": null
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Viagem",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "a",
+              "a": "🐟",
+              "aEmoji": "",
+              "b": "Oceano",
+              "bEmoji": "🌊"
+            },
+            {
+              "id": "b",
+              "a": "🦜",
+              "aEmoji": "",
+              "b": "Floresta",
+              "bEmoji": "🌳"
+            },
+            {
+              "id": "c",
+              "a": "🐪",
+              "aEmoji": "",
+              "b": "Deserto",
+              "bEmoji": "🏜️"
+            }
+          ],
+          "porque": "Lar certo."
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Voador / nadador",
+          "itens": [
+            {
+              "label": "Pássaro",
+              "emoji": "🐦",
+              "cat": "voa"
+            },
+            {
+              "label": "Avião-brinquedo",
+              "emoji": "✈️",
+              "cat": "voa"
+            },
+            {
+              "label": "Peixe",
+              "emoji": "🐟",
+              "cat": "nada"
+            },
+            {
+              "label": "Baleia",
+              "emoji": "🐋",
+              "cat": "nada"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "voa",
+              "label": "Céu",
+              "emoji": "☁️"
+            },
+            {
+              "id": "nada",
+              "label": "Água",
+              "emoji": "🌊"
+            }
+          ],
+          "porque": "Alguns voam, outros nadam."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Panda → ?",
+          "fala": "Desafio! Panda → ?",
+          "opcoes": [
+            {
+              "texto": "Ásia",
+              "certa": true
+            },
+            {
+              "texto": "Oceania"
+            }
+          ],
+          "porque": "Ásia.",
+          "midia": "asia"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Chegou",
+          "fala": "Viagem completa!",
+          "midia": "oceano",
+          "porque": null,
+          "emoji": "🎉"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Cuidar do lar é…",
+          "fala": "Cuidar do lar é…",
+          "opcoes": [
+            {
+              "texto": "Importante",
+              "certa": true
+            },
+            {
+              "texto": "Bobagem"
+            }
+          ],
+          "porque": "Todo ser precisa de lar.",
+          "midia": null
+        }
+      ]
+    },
+    {
+      "id": "seq-geo-lugares",
+      "stemId": "geo-lugares",
+      "titulo": "Lugares do Brasil",
+      "trilha": "geo",
+      "icone": "📍",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Rio",
+          "fala": "Cidade maravilhosa.",
+          "midia": "rio",
+          "porque": null,
+          "emoji": "🏞️"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Amazônia",
+          "fala": "Floresta.",
+          "midia": "amazonia",
+          "porque": null,
+          "emoji": "🦜"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Cristo Redentor fica no…",
+          "fala": "Cristo Redentor fica no…",
+          "opcoes": [
+            {
+              "texto": "Rio",
+              "certa": true
+            },
+            {
+              "texto": "Deserto do Saara"
+            }
+          ],
+          "porque": "Rio de Janeiro.",
+          "midia": "rio"
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Lugar",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "a",
+              "a": "Amazônia",
+              "aEmoji": "🦜",
+              "b": "Norte",
+              "bEmoji": ""
+            },
+            {
+              "id": "r",
+              "a": "Rio",
+              "aEmoji": "⛰️",
+              "b": "Sudeste",
+              "bEmoji": ""
+            },
+            {
+              "id": "p",
+              "a": "Praia",
+              "aEmoji": "🏖️",
+              "b": "Nordeste",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Lugares e regiões."
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Natureza / cidade",
+          "itens": [
+            {
+              "label": "Amazônia",
+              "emoji": "🌳",
+              "cat": "nat"
+            },
+            {
+              "label": "Pantanal",
+              "emoji": "🐊",
+              "cat": "nat"
+            },
+            {
+              "label": "Rio",
+              "emoji": "🏙️",
+              "cat": "cid"
+            },
+            {
+              "label": "São Paulo",
+              "emoji": "🌆",
+              "cat": "cid"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "nat",
+              "label": "Natureza",
+              "emoji": "🌿"
+            },
+            {
+              "id": "cid",
+              "label": "Cidade",
+              "emoji": "🏙️"
+            }
+          ],
+          "porque": "Brasil tem natureza e cidades."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Pantanal é…",
+          "fala": "Desafio! Pantanal é…",
+          "opcoes": [
+            {
+              "texto": "Cheio de animais",
+              "certa": true
+            },
+            {
+              "texto": "Uma pizza"
+            }
+          ],
+          "porque": "Muitos animais.",
+          "midia": null
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Brasil",
+          "fala": "Lugares incríveis!",
+          "midia": "brasil",
+          "porque": null,
+          "emoji": "🇧🇷"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Praia tem…",
+          "fala": "Praia tem…",
+          "opcoes": [
+            {
+              "texto": "Areia e mar",
+              "certa": true
+            },
+            {
+              "texto": "Só neve"
+            }
+          ],
+          "porque": "Areia e mar.",
+          "midia": null
+        }
+      ]
+    },
+    {
+      "id": "seq-ler-letras",
+      "lerTipo": "letras",
+      "titulo": "Letras vivas",
+      "trilha": "ler",
+      "icone": "🔤",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Letra A",
+          "fala": "A de astronauta!",
+          "midia": "letra_a",
+          "porque": "Cada letra tem um som.",
+          "emoji": "🅰️"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Alfabeto",
+          "fala": "Letras formam palavras.",
+          "midia": "alfabeto",
+          "porque": null,
+          "emoji": "🔤"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Letra de astronauta?",
+          "fala": "Letra de astronauta?",
+          "opcoes": [
+            {
+              "texto": "A",
+              "certa": true
+            },
+            {
+              "texto": "Z"
+            },
+            {
+              "texto": "Q"
+            }
+          ],
+          "porque": "A de astronauta.",
+          "midia": "letra_a"
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Bandeja A",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "ok",
+              "icone": "A",
+              "label": "A"
+            },
+            {
+              "id": "b",
+              "match": "x",
+              "icone": "M",
+              "label": "M"
+            },
+            {
+              "id": "c",
+              "match": "y",
+              "icone": "S",
+              "label": "S"
+            }
+          ],
+          "slots": [
+            {
+              "id": "ban",
+              "accept": "ok",
+              "label": "Bandeja A",
+              "icone": "🧺"
+            }
+          ],
+          "porque": "Olho e mão juntos.",
+          "meta": 1
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Som",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "a",
+              "a": "A",
+              "aEmoji": "",
+              "b": "á",
+              "bEmoji": ""
+            },
+            {
+              "id": "m",
+              "a": "M",
+              "aEmoji": "",
+              "b": "ême",
+              "bEmoji": ""
+            },
+            {
+              "id": "s",
+              "a": "S",
+              "aEmoji": "",
+              "b": "ésse",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Cada letra tem som."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Banana começa com…",
+          "fala": "Banana começa com…",
+          "opcoes": [
+            {
+              "texto": "B",
+              "certa": true
+            },
+            {
+              "texto": "X"
+            }
+          ],
+          "porque": "B de banana.",
+          "midia": "banana"
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "SOL começa com…",
+          "fala": "Desafio! SOL começa com…",
+          "opcoes": [
+            {
+              "texto": "S",
+              "certa": true
+            },
+            {
+              "texto": "P"
+            }
+          ],
+          "porque": "S de sol.",
+          "midia": "sol"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Leitora",
+          "fala": "Brincou com letras!",
+          "midia": "alfabeto",
+          "porque": null,
+          "emoji": "🎉"
+        }
+      ]
+    },
+    {
+      "id": "seq-ler-silabas",
+      "lerTipo": "silabas",
+      "titulo": "Sílabas",
+      "trilha": "ler",
+      "icone": "🅱️",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "BA",
+          "fala": "BA de banana.",
+          "midia": "banana",
+          "porque": "Sílabas são pedacinhos de som.",
+          "emoji": "🍌"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Qual é BA?",
+          "fala": "Qual é BA?",
+          "opcoes": [
+            {
+              "texto": "BA",
+              "certa": true
+            },
+            {
+              "texto": "BO"
+            },
+            {
+              "texto": "BU"
+            }
+          ],
+          "porque": "BA de banana.",
+          "midia": null
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Sílaba",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "ba",
+              "a": "BA",
+              "aEmoji": "",
+              "b": "🍌",
+              "bEmoji": ""
+            },
+            {
+              "id": "lu",
+              "a": "LU",
+              "aEmoji": "",
+              "b": "🌙",
+              "bEmoji": ""
+            },
+            {
+              "id": "sa",
+              "a": "SA",
+              "aEmoji": "",
+              "b": "⭐",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Sílabas montam palavras."
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Monte BA-NA-NA",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "BA",
+              "label": "BA"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "NA",
+              "label": "NA"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "NA",
+              "label": "NA"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Pedacinhos em ordem."
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "LU de lua?",
+          "fala": "LU de lua?",
+          "opcoes": [
+            {
+              "texto": "LU",
+              "certa": true
+            },
+            {
+              "texto": "LI"
+            }
+          ],
+          "porque": "LU de lua.",
+          "midia": "lua"
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "SA de estrela (som)?",
+          "fala": "Desafio! SA de estrela (som)?",
+          "opcoes": [
+            {
+              "texto": "Sim, SA/ES",
+              "certa": true
+            },
+            {
+              "texto": "Só XXX"
+            }
+          ],
+          "porque": "Sons montam a palavra.",
+          "midia": "estrela"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Sílabas",
+          "fala": "Mandou bem!",
+          "midia": "alfabeto",
+          "porque": null,
+          "emoji": "🎉"
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Sílaba / número",
+          "itens": [
+            {
+              "label": "BA",
+              "emoji": "🅱️",
+              "cat": "sil"
+            },
+            {
+              "label": "LU",
+              "emoji": "🔤",
+              "cat": "sil"
+            },
+            {
+              "label": "2",
+              "emoji": "2️⃣",
+              "cat": "num"
+            },
+            {
+              "label": "5",
+              "emoji": "5️⃣",
+              "cat": "num"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "sil",
+              "label": "Sílaba",
+              "emoji": "🔤"
+            },
+            {
+              "id": "num",
+              "label": "Número",
+              "emoji": "🔢"
+            }
+          ],
+          "porque": "Sílabas não são números."
+        }
+      ]
+    },
+    {
+      "id": "seq-ler-palavras",
+      "lerTipo": "palavras",
+      "titulo": "Palavras",
+      "trilha": "ler",
+      "icone": "📖",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "SOL",
+          "fala": "Ilumina o dia.",
+          "midia": "sol",
+          "porque": "Palavras nomeiam o mundo.",
+          "emoji": "☀️"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "LUA",
+          "fala": "Brilha à noite.",
+          "midia": "lua",
+          "porque": null,
+          "emoji": "🌙"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Figurinha de SOL?",
+          "fala": "Figurinha de SOL?",
+          "opcoes": [
+            {
+              "texto": "☀️",
+              "certa": true
+            },
+            {
+              "texto": "🌙"
+            },
+            {
+              "texto": "🐟"
+            }
+          ],
+          "porque": "Sol do dia.",
+          "midia": "sol"
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Palavra",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "s",
+              "a": "SOL",
+              "aEmoji": "",
+              "b": "☀️",
+              "bEmoji": ""
+            },
+            {
+              "id": "l",
+              "a": "LUA",
+              "aEmoji": "",
+              "b": "🌙",
+              "bEmoji": ""
+            },
+            {
+              "id": "g",
+              "a": "GATO",
+              "aEmoji": "",
+              "b": "🐱",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Letras formam o nome."
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "S-O-L",
+          "pecas": [
+            {
+              "id": "s",
+              "match": "1",
+              "icone": "S",
+              "label": "S"
+            },
+            {
+              "id": "o",
+              "match": "2",
+              "icone": "O",
+              "label": "O"
+            },
+            {
+              "id": "l",
+              "match": "3",
+              "icone": "L",
+              "label": "L"
+            }
+          ],
+          "slots": [
+            {
+              "id": "a",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "b",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "c",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Ordem das letras."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "LUA combina com…",
+          "fala": "Desafio! LUA combina com…",
+          "opcoes": [
+            {
+              "texto": "🌙",
+              "certa": true
+            },
+            {
+              "texto": "🍌"
+            }
+          ],
+          "porque": "Lua à noite.",
+          "midia": "lua"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "GATO é…",
+          "fala": "GATO é…",
+          "opcoes": [
+            {
+              "texto": "Animal",
+              "certa": true
+            },
+            {
+              "texto": "Foguete"
+            }
+          ],
+          "porque": "Animal.",
+          "midia": "gato"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Fim",
+          "fala": "Palavras ok!",
+          "midia": "alfabeto",
+          "porque": null,
+          "emoji": "📚"
+        }
+      ]
+    },
+    {
+      "id": "seq-ler-bandeja",
+      "lerTipo": "bandeja",
+      "titulo": "Bandeja",
+      "trilha": "ler",
+      "icone": "🧺",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Bandeja",
+          "fala": "Coloque a letra certa.",
+          "midia": "letra_a",
+          "porque": "Olho e mão juntos.",
+          "emoji": "🧺"
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Ache o A",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "ok",
+              "icone": "A",
+              "label": "A"
+            },
+            {
+              "id": "x",
+              "match": "x",
+              "icone": "E",
+              "label": "E"
+            },
+            {
+              "id": "y",
+              "match": "y",
+              "icone": "O",
+              "label": "O"
+            }
+          ],
+          "slots": [
+            {
+              "id": "b",
+              "accept": "ok",
+              "label": "Bandeja",
+              "icone": "🧺"
+            }
+          ],
+          "porque": "Letra A na bandeja.",
+          "meta": 1
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "A de…",
+          "fala": "A de…",
+          "opcoes": [
+            {
+              "texto": "Astronauta",
+              "certa": true
+            },
+            {
+              "texto": "Zebra"
+            }
+          ],
+          "porque": "A de astronauta.",
+          "midia": "astronauta"
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Ache o M",
+          "pecas": [
+            {
+              "id": "m",
+              "match": "ok",
+              "icone": "M",
+              "label": "M"
+            },
+            {
+              "id": "x",
+              "match": "x",
+              "icone": "P",
+              "label": "P"
+            },
+            {
+              "id": "y",
+              "match": "y",
+              "icone": "S",
+              "label": "S"
+            }
+          ],
+          "slots": [
+            {
+              "id": "b",
+              "accept": "ok",
+              "label": "Bandeja M",
+              "icone": "🧺"
+            }
+          ],
+          "porque": "M na bandeja.",
+          "meta": 1
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Letra",
+          "fala": "Combine",
+          "pares": [
+            {
+              "id": "a",
+              "a": "A",
+              "aEmoji": "",
+              "b": "🚀",
+              "bEmoji": ""
+            },
+            {
+              "id": "b",
+              "a": "B",
+              "aEmoji": "",
+              "b": "🍌",
+              "bEmoji": ""
+            },
+            {
+              "id": "s",
+              "a": "S",
+              "aEmoji": "",
+              "b": "☀️",
+              "bEmoji": ""
+            }
+          ],
+          "porque": "Letra e figurinha."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "Bandeja do S: qual letra?",
+          "fala": "Desafio! Bandeja do S: qual letra?",
+          "opcoes": [
+            {
+              "texto": "S",
+              "certa": true
+            },
+            {
+              "texto": "T"
+            }
+          ],
+          "porque": "S de sol.",
+          "midia": "sol"
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Ok",
+          "fala": "Bandeja completa!",
+          "midia": "alfabeto",
+          "porque": null,
+          "emoji": "🎉"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Letras na bandeja treinam…",
+          "fala": "Letras na bandeja treinam…",
+          "opcoes": [
+            {
+              "texto": "Olho e mão",
+              "certa": true
+            },
+            {
+              "texto": "Só o pé"
+            }
+          ],
+          "porque": "Olho e mão juntos.",
+          "midia": null
+        }
+      ]
+    },
+    {
+      "id": "seq-stem-contar-objetos",
+      "stemId": "contar-objetos",
+      "titulo": "Contar",
+      "trilha": "matematica",
+      "icone": "⭐",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Contar",
+          "fala": "Vamos nessa missão!",
+          "midia": "estrela",
+          "porque": "Contar é um por um.",
+          "emoji": "⭐"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Missão: você está pronta?",
+          "fala": "Missão: você está pronta?",
+          "opcoes": [
+            {
+              "texto": "Sim!",
+              "certa": true
+            },
+            {
+              "texto": "Depois nunca"
+            }
+          ],
+          "porque": "Começar com vontade.",
+          "midia": null
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Ordene 1-2-3",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "1️⃣",
+              "label": "1"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "2"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "3"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Ordem ajuda a pensar."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Combine",
+          "fala": "Toque os pares",
+          "pares": [
+            {
+              "id": "a",
+              "a": "Olha",
+              "aEmoji": "👀",
+              "b": "Aprende",
+              "bEmoji": "🧠"
+            },
+            {
+              "id": "b",
+              "a": "Faz",
+              "aEmoji": "🖐️",
+              "b": "Pratica",
+              "bEmoji": "✨"
+            },
+            {
+              "id": "c",
+              "a": "Festa",
+              "aEmoji": "🎉",
+              "b": "Celebra",
+              "bEmoji": "⭐"
+            }
+          ],
+          "porque": "Passos do aprender."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "O Educador te guia. Você…",
+          "fala": "Desafio! O Educador te guia. Você…",
+          "opcoes": [
+            {
+              "texto": "Escuta e tenta",
+              "certa": true
+            },
+            {
+              "texto": "Desiste"
+            }
+          ],
+          "porque": "Contar é um por um.",
+          "midia": null
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Mandou bem se…",
+          "fala": "Mandou bem se…",
+          "opcoes": [
+            {
+              "texto": "Tentou com carinho",
+              "certa": true
+            },
+            {
+              "texto": "Só xingou"
+            }
+          ],
+          "porque": "Tentar com carinho.",
+          "midia": null
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Festa",
+          "fala": "Contar completa!",
+          "midia": "estrela",
+          "porque": "Missão concluída!",
+          "emoji": "⭐"
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Feito hoje",
+          "itens": [
+            {
+              "label": "Olhou",
+              "emoji": "👀",
+              "cat": "ok"
+            },
+            {
+              "label": "Praticou",
+              "emoji": "🖐️",
+              "cat": "ok"
+            },
+            {
+              "label": "Desistiu na hora",
+              "emoji": "😴",
+              "cat": "no"
+            },
+            {
+              "label": "Bagunçou sem olhar",
+              "emoji": "🤪",
+              "cat": "no"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "ok",
+              "label": "Bom",
+              "emoji": "✅"
+            },
+            {
+              "id": "no",
+              "label": "Evitar",
+              "emoji": "🚫"
+            }
+          ],
+          "porque": "Bom hábito de aprender."
+        }
+      ]
+    },
+    {
+      "id": "seq-stem-mais-menos",
+      "stemId": "mais-menos",
+      "titulo": "Mais ou menos",
+      "trilha": "matematica",
+      "icone": "🔵",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Mais ou menos",
+          "fala": "Vamos nessa missão!",
+          "midia": "numeros",
+          "porque": "Comparar quantidades.",
+          "emoji": "🔵"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Missão: você está pronta?",
+          "fala": "Missão: você está pronta?",
+          "opcoes": [
+            {
+              "texto": "Sim!",
+              "certa": true
+            },
+            {
+              "texto": "Depois nunca"
+            }
+          ],
+          "porque": "Começar com vontade.",
+          "midia": null
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Ordene 1-2-3",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "1️⃣",
+              "label": "1"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "2"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "3"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Ordem ajuda a pensar."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Combine",
+          "fala": "Toque os pares",
+          "pares": [
+            {
+              "id": "a",
+              "a": "Olha",
+              "aEmoji": "👀",
+              "b": "Aprende",
+              "bEmoji": "🧠"
+            },
+            {
+              "id": "b",
+              "a": "Faz",
+              "aEmoji": "🖐️",
+              "b": "Pratica",
+              "bEmoji": "✨"
+            },
+            {
+              "id": "c",
+              "a": "Festa",
+              "aEmoji": "🎉",
+              "b": "Celebra",
+              "bEmoji": "⭐"
+            }
+          ],
+          "porque": "Passos do aprender."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "O Educador te guia. Você…",
+          "fala": "Desafio! O Educador te guia. Você…",
+          "opcoes": [
+            {
+              "texto": "Escuta e tenta",
+              "certa": true
+            },
+            {
+              "texto": "Desiste"
+            }
+          ],
+          "porque": "Comparar quantidades.",
+          "midia": null
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Mandou bem se…",
+          "fala": "Mandou bem se…",
+          "opcoes": [
+            {
+              "texto": "Tentou com carinho",
+              "certa": true
+            },
+            {
+              "texto": "Só xingou"
+            }
+          ],
+          "porque": "Tentar com carinho.",
+          "midia": null
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Festa",
+          "fala": "Mais ou menos completa!",
+          "midia": "numeros",
+          "porque": "Missão concluída!",
+          "emoji": "🔵"
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Feito hoje",
+          "itens": [
+            {
+              "label": "Olhou",
+              "emoji": "👀",
+              "cat": "ok"
+            },
+            {
+              "label": "Praticou",
+              "emoji": "🖐️",
+              "cat": "ok"
+            },
+            {
+              "label": "Desistiu na hora",
+              "emoji": "😴",
+              "cat": "no"
+            },
+            {
+              "label": "Bagunçou sem olhar",
+              "emoji": "🤪",
+              "cat": "no"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "ok",
+              "label": "Bom",
+              "emoji": "✅"
+            },
+            {
+              "id": "no",
+              "label": "Evitar",
+              "emoji": "🚫"
+            }
+          ],
+          "porque": "Bom hábito de aprender."
+        }
+      ]
+    },
+    {
+      "id": "seq-stem-padrao",
+      "stemId": "padrao",
+      "titulo": "Padrão",
+      "trilha": "matematica",
+      "icone": "🌈",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Padrão",
+          "fala": "Vamos nessa missão!",
+          "midia": "arcoiris",
+          "porque": "Padrões se repetem.",
+          "emoji": "🌈"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Missão: você está pronta?",
+          "fala": "Missão: você está pronta?",
+          "opcoes": [
+            {
+              "texto": "Sim!",
+              "certa": true
+            },
+            {
+              "texto": "Depois nunca"
+            }
+          ],
+          "porque": "Começar com vontade.",
+          "midia": null
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Ordene 1-2-3",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "1️⃣",
+              "label": "1"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "2"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "3"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Ordem ajuda a pensar."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Combine",
+          "fala": "Toque os pares",
+          "pares": [
+            {
+              "id": "a",
+              "a": "Olha",
+              "aEmoji": "👀",
+              "b": "Aprende",
+              "bEmoji": "🧠"
+            },
+            {
+              "id": "b",
+              "a": "Faz",
+              "aEmoji": "🖐️",
+              "b": "Pratica",
+              "bEmoji": "✨"
+            },
+            {
+              "id": "c",
+              "a": "Festa",
+              "aEmoji": "🎉",
+              "b": "Celebra",
+              "bEmoji": "⭐"
+            }
+          ],
+          "porque": "Passos do aprender."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "O Educador te guia. Você…",
+          "fala": "Desafio! O Educador te guia. Você…",
+          "opcoes": [
+            {
+              "texto": "Escuta e tenta",
+              "certa": true
+            },
+            {
+              "texto": "Desiste"
+            }
+          ],
+          "porque": "Padrões se repetem.",
+          "midia": null
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Mandou bem se…",
+          "fala": "Mandou bem se…",
+          "opcoes": [
+            {
+              "texto": "Tentou com carinho",
+              "certa": true
+            },
+            {
+              "texto": "Só xingou"
+            }
+          ],
+          "porque": "Tentar com carinho.",
+          "midia": null
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Festa",
+          "fala": "Padrão completa!",
+          "midia": "arcoiris",
+          "porque": "Missão concluída!",
+          "emoji": "🌈"
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Feito hoje",
+          "itens": [
+            {
+              "label": "Olhou",
+              "emoji": "👀",
+              "cat": "ok"
+            },
+            {
+              "label": "Praticou",
+              "emoji": "🖐️",
+              "cat": "ok"
+            },
+            {
+              "label": "Desistiu na hora",
+              "emoji": "😴",
+              "cat": "no"
+            },
+            {
+              "label": "Bagunçou sem olhar",
+              "emoji": "🤪",
+              "cat": "no"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "ok",
+              "label": "Bom",
+              "emoji": "✅"
+            },
+            {
+              "id": "no",
+              "label": "Evitar",
+              "emoji": "🚫"
+            }
+          ],
+          "porque": "Bom hábito de aprender."
+        }
+      ]
+    },
+    {
+      "id": "seq-stem-experimento",
+      "stemId": "experimento",
+      "titulo": "Experimento",
+      "trilha": "ciencia",
+      "icone": "🧪",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Experimento",
+          "fala": "Vamos nessa missão!",
+          "midia": "agua",
+          "porque": "Ciência com segurança.",
+          "emoji": "🧪"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Missão: você está pronta?",
+          "fala": "Missão: você está pronta?",
+          "opcoes": [
+            {
+              "texto": "Sim!",
+              "certa": true
+            },
+            {
+              "texto": "Depois nunca"
+            }
+          ],
+          "porque": "Começar com vontade.",
+          "midia": null
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Ordene 1-2-3",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "1️⃣",
+              "label": "1"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "2"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "3"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Ordem ajuda a pensar."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Combine",
+          "fala": "Toque os pares",
+          "pares": [
+            {
+              "id": "a",
+              "a": "Olha",
+              "aEmoji": "👀",
+              "b": "Aprende",
+              "bEmoji": "🧠"
+            },
+            {
+              "id": "b",
+              "a": "Faz",
+              "aEmoji": "🖐️",
+              "b": "Pratica",
+              "bEmoji": "✨"
+            },
+            {
+              "id": "c",
+              "a": "Festa",
+              "aEmoji": "🎉",
+              "b": "Celebra",
+              "bEmoji": "⭐"
+            }
+          ],
+          "porque": "Passos do aprender."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "O Educador te guia. Você…",
+          "fala": "Desafio! O Educador te guia. Você…",
+          "opcoes": [
+            {
+              "texto": "Escuta e tenta",
+              "certa": true
+            },
+            {
+              "texto": "Desiste"
+            }
+          ],
+          "porque": "Ciência com segurança.",
+          "midia": null
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Mandou bem se…",
+          "fala": "Mandou bem se…",
+          "opcoes": [
+            {
+              "texto": "Tentou com carinho",
+              "certa": true
+            },
+            {
+              "texto": "Só xingou"
+            }
+          ],
+          "porque": "Tentar com carinho.",
+          "midia": null
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Festa",
+          "fala": "Experimento completa!",
+          "midia": "agua",
+          "porque": "Missão concluída!",
+          "emoji": "🧪"
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Feito hoje",
+          "itens": [
+            {
+              "label": "Olhou",
+              "emoji": "👀",
+              "cat": "ok"
+            },
+            {
+              "label": "Praticou",
+              "emoji": "🖐️",
+              "cat": "ok"
+            },
+            {
+              "label": "Desistiu na hora",
+              "emoji": "😴",
+              "cat": "no"
+            },
+            {
+              "label": "Bagunçou sem olhar",
+              "emoji": "🤪",
+              "cat": "no"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "ok",
+              "label": "Bom",
+              "emoji": "✅"
+            },
+            {
+              "id": "no",
+              "label": "Evitar",
+              "emoji": "🚫"
+            }
+          ],
+          "porque": "Bom hábito de aprender."
+        }
+      ]
+    },
+    {
+      "id": "seq-stem-clima",
+      "stemId": "clima",
+      "titulo": "Clima",
+      "trilha": "ciencia",
+      "icone": "☀️",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Clima",
+          "fala": "Vamos nessa missão!",
+          "midia": "sol",
+          "porque": "Clima muda: sol, chuva, frio.",
+          "emoji": "☀️"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Missão: você está pronta?",
+          "fala": "Missão: você está pronta?",
+          "opcoes": [
+            {
+              "texto": "Sim!",
+              "certa": true
+            },
+            {
+              "texto": "Depois nunca"
+            }
+          ],
+          "porque": "Começar com vontade.",
+          "midia": null
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Ordene 1-2-3",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "1️⃣",
+              "label": "1"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "2"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "3"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Ordem ajuda a pensar."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Combine",
+          "fala": "Toque os pares",
+          "pares": [
+            {
+              "id": "a",
+              "a": "Olha",
+              "aEmoji": "👀",
+              "b": "Aprende",
+              "bEmoji": "🧠"
+            },
+            {
+              "id": "b",
+              "a": "Faz",
+              "aEmoji": "🖐️",
+              "b": "Pratica",
+              "bEmoji": "✨"
+            },
+            {
+              "id": "c",
+              "a": "Festa",
+              "aEmoji": "🎉",
+              "b": "Celebra",
+              "bEmoji": "⭐"
+            }
+          ],
+          "porque": "Passos do aprender."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "O Educador te guia. Você…",
+          "fala": "Desafio! O Educador te guia. Você…",
+          "opcoes": [
+            {
+              "texto": "Escuta e tenta",
+              "certa": true
+            },
+            {
+              "texto": "Desiste"
+            }
+          ],
+          "porque": "Clima muda: sol, chuva, frio.",
+          "midia": null
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Mandou bem se…",
+          "fala": "Mandou bem se…",
+          "opcoes": [
+            {
+              "texto": "Tentou com carinho",
+              "certa": true
+            },
+            {
+              "texto": "Só xingou"
+            }
+          ],
+          "porque": "Tentar com carinho.",
+          "midia": null
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Festa",
+          "fala": "Clima completa!",
+          "midia": "sol",
+          "porque": "Missão concluída!",
+          "emoji": "☀️"
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Feito hoje",
+          "itens": [
+            {
+              "label": "Olhou",
+              "emoji": "👀",
+              "cat": "ok"
+            },
+            {
+              "label": "Praticou",
+              "emoji": "🖐️",
+              "cat": "ok"
+            },
+            {
+              "label": "Desistiu na hora",
+              "emoji": "😴",
+              "cat": "no"
+            },
+            {
+              "label": "Bagunçou sem olhar",
+              "emoji": "🤪",
+              "cat": "no"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "ok",
+              "label": "Bom",
+              "emoji": "✅"
+            },
+            {
+              "id": "no",
+              "label": "Evitar",
+              "emoji": "🚫"
+            }
+          ],
+          "porque": "Bom hábito de aprender."
+        }
+      ]
+    },
+    {
+      "id": "seq-stem-dialogo-en",
+      "stemId": "dialogo-en",
+      "titulo": "Diálogo",
+      "trilha": "ingles",
+      "icone": "💬",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Diálogo",
+          "fala": "Vamos nessa missão!",
+          "midia": "gato",
+          "porque": "Praticar inglês com alegria.",
+          "emoji": "💬"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Missão: você está pronta?",
+          "fala": "Missão: você está pronta?",
+          "opcoes": [
+            {
+              "texto": "Sim!",
+              "certa": true
+            },
+            {
+              "texto": "Depois nunca"
+            }
+          ],
+          "porque": "Começar com vontade.",
+          "midia": null
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Ordene 1-2-3",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "1️⃣",
+              "label": "1"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "2"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "3"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Ordem ajuda a pensar."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Combine",
+          "fala": "Toque os pares",
+          "pares": [
+            {
+              "id": "a",
+              "a": "Olha",
+              "aEmoji": "👀",
+              "b": "Aprende",
+              "bEmoji": "🧠"
+            },
+            {
+              "id": "b",
+              "a": "Faz",
+              "aEmoji": "🖐️",
+              "b": "Pratica",
+              "bEmoji": "✨"
+            },
+            {
+              "id": "c",
+              "a": "Festa",
+              "aEmoji": "🎉",
+              "b": "Celebra",
+              "bEmoji": "⭐"
+            }
+          ],
+          "porque": "Passos do aprender."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "O Educador te guia. Você…",
+          "fala": "Desafio! O Educador te guia. Você…",
+          "opcoes": [
+            {
+              "texto": "Escuta e tenta",
+              "certa": true
+            },
+            {
+              "texto": "Desiste"
+            }
+          ],
+          "porque": "Praticar inglês com alegria.",
+          "midia": null
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Mandou bem se…",
+          "fala": "Mandou bem se…",
+          "opcoes": [
+            {
+              "texto": "Tentou com carinho",
+              "certa": true
+            },
+            {
+              "texto": "Só xingou"
+            }
+          ],
+          "porque": "Tentar com carinho.",
+          "midia": null
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Festa",
+          "fala": "Diálogo completa!",
+          "midia": "gato",
+          "porque": "Missão concluída!",
+          "emoji": "💬"
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Feito hoje",
+          "itens": [
+            {
+              "label": "Olhou",
+              "emoji": "👀",
+              "cat": "ok"
+            },
+            {
+              "label": "Praticou",
+              "emoji": "🖐️",
+              "cat": "ok"
+            },
+            {
+              "label": "Desistiu na hora",
+              "emoji": "😴",
+              "cat": "no"
+            },
+            {
+              "label": "Bagunçou sem olhar",
+              "emoji": "🤪",
+              "cat": "no"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "ok",
+              "label": "Bom",
+              "emoji": "✅"
+            },
+            {
+              "id": "no",
+              "label": "Evitar",
+              "emoji": "🚫"
+            }
+          ],
+          "porque": "Bom hábito de aprender."
+        }
+      ]
+    },
+    {
+      "id": "seq-stem-programar",
+      "stemId": "programar",
+      "titulo": "Programar",
+      "trilha": "tech",
+      "icone": "🤖",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Programar",
+          "fala": "Vamos nessa missão!",
+          "midia": "foguete",
+          "porque": "Passos em ordem.",
+          "emoji": "🤖"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Missão: você está pronta?",
+          "fala": "Missão: você está pronta?",
+          "opcoes": [
+            {
+              "texto": "Sim!",
+              "certa": true
+            },
+            {
+              "texto": "Depois nunca"
+            }
+          ],
+          "porque": "Começar com vontade.",
+          "midia": null
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Ordene 1-2-3",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "1️⃣",
+              "label": "1"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "2"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "3"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Ordem ajuda a pensar."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Combine",
+          "fala": "Toque os pares",
+          "pares": [
+            {
+              "id": "a",
+              "a": "Olha",
+              "aEmoji": "👀",
+              "b": "Aprende",
+              "bEmoji": "🧠"
+            },
+            {
+              "id": "b",
+              "a": "Faz",
+              "aEmoji": "🖐️",
+              "b": "Pratica",
+              "bEmoji": "✨"
+            },
+            {
+              "id": "c",
+              "a": "Festa",
+              "aEmoji": "🎉",
+              "b": "Celebra",
+              "bEmoji": "⭐"
+            }
+          ],
+          "porque": "Passos do aprender."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "O Educador te guia. Você…",
+          "fala": "Desafio! O Educador te guia. Você…",
+          "opcoes": [
+            {
+              "texto": "Escuta e tenta",
+              "certa": true
+            },
+            {
+              "texto": "Desiste"
+            }
+          ],
+          "porque": "Passos em ordem.",
+          "midia": null
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Mandou bem se…",
+          "fala": "Mandou bem se…",
+          "opcoes": [
+            {
+              "texto": "Tentou com carinho",
+              "certa": true
+            },
+            {
+              "texto": "Só xingou"
+            }
+          ],
+          "porque": "Tentar com carinho.",
+          "midia": null
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Festa",
+          "fala": "Programar completa!",
+          "midia": "foguete",
+          "porque": "Missão concluída!",
+          "emoji": "🤖"
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Feito hoje",
+          "itens": [
+            {
+              "label": "Olhou",
+              "emoji": "👀",
+              "cat": "ok"
+            },
+            {
+              "label": "Praticou",
+              "emoji": "🖐️",
+              "cat": "ok"
+            },
+            {
+              "label": "Desistiu na hora",
+              "emoji": "😴",
+              "cat": "no"
+            },
+            {
+              "label": "Bagunçou sem olhar",
+              "emoji": "🤪",
+              "cat": "no"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "ok",
+              "label": "Bom",
+              "emoji": "✅"
+            },
+            {
+              "id": "no",
+              "label": "Evitar",
+              "emoji": "🚫"
+            }
+          ],
+          "porque": "Bom hábito de aprender."
+        }
+      ]
+    },
+    {
+      "id": "seq-stem-consertar",
+      "stemId": "consertar",
+      "titulo": "Consertar",
+      "trilha": "tech",
+      "icone": "🔧",
+      "passos": [
+        {
+          "tipo": "olhar",
+          "titulo": "Consertar",
+          "fala": "Vamos nessa missão!",
+          "midia": "numeros",
+          "porque": "Corrigir o passo errado.",
+          "emoji": "🔧"
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Missão: você está pronta?",
+          "fala": "Missão: você está pronta?",
+          "opcoes": [
+            {
+              "texto": "Sim!",
+              "certa": true
+            },
+            {
+              "texto": "Depois nunca"
+            }
+          ],
+          "porque": "Começar com vontade.",
+          "midia": null
+        },
+        {
+          "tipo": "arrastar",
+          "fala": "Ordene 1-2-3",
+          "pecas": [
+            {
+              "id": "a",
+              "match": "1",
+              "icone": "1️⃣",
+              "label": "1"
+            },
+            {
+              "id": "b",
+              "match": "2",
+              "icone": "2️⃣",
+              "label": "2"
+            },
+            {
+              "id": "c",
+              "match": "3",
+              "icone": "3️⃣",
+              "label": "3"
+            }
+          ],
+          "slots": [
+            {
+              "id": "s1",
+              "accept": "1",
+              "label": "1",
+              "icone": "⬜"
+            },
+            {
+              "id": "s2",
+              "accept": "2",
+              "label": "2",
+              "icone": "⬜"
+            },
+            {
+              "id": "s3",
+              "accept": "3",
+              "label": "3",
+              "icone": "⬜"
+            }
+          ],
+          "porque": "Ordem ajuda a pensar."
+        },
+        {
+          "tipo": "parear",
+          "titulo": "Combine",
+          "fala": "Toque os pares",
+          "pares": [
+            {
+              "id": "a",
+              "a": "Olha",
+              "aEmoji": "👀",
+              "b": "Aprende",
+              "bEmoji": "🧠"
+            },
+            {
+              "id": "b",
+              "a": "Faz",
+              "aEmoji": "🖐️",
+              "b": "Pratica",
+              "bEmoji": "✨"
+            },
+            {
+              "id": "c",
+              "a": "Festa",
+              "aEmoji": "🎉",
+              "b": "Celebra",
+              "bEmoji": "⭐"
+            }
+          ],
+          "porque": "Passos do aprender."
+        },
+        {
+          "tipo": "desafio",
+          "pergunta": "O Educador te guia. Você…",
+          "fala": "Desafio! O Educador te guia. Você…",
+          "opcoes": [
+            {
+              "texto": "Escuta e tenta",
+              "certa": true
+            },
+            {
+              "texto": "Desiste"
+            }
+          ],
+          "porque": "Corrigir o passo errado.",
+          "midia": null
+        },
+        {
+          "tipo": "quiz",
+          "pergunta": "Mandou bem se…",
+          "fala": "Mandou bem se…",
+          "opcoes": [
+            {
+              "texto": "Tentou com carinho",
+              "certa": true
+            },
+            {
+              "texto": "Só xingou"
+            }
+          ],
+          "porque": "Tentar com carinho.",
+          "midia": null
+        },
+        {
+          "tipo": "olhar",
+          "titulo": "Festa",
+          "fala": "Consertar completa!",
+          "midia": "numeros",
+          "porque": "Missão concluída!",
+          "emoji": "🔧"
+        },
+        {
+          "tipo": "ordenar",
+          "fala": "Feito hoje",
+          "itens": [
+            {
+              "label": "Olhou",
+              "emoji": "👀",
+              "cat": "ok"
+            },
+            {
+              "label": "Praticou",
+              "emoji": "🖐️",
+              "cat": "ok"
+            },
+            {
+              "label": "Desistiu na hora",
+              "emoji": "😴",
+              "cat": "no"
+            },
+            {
+              "label": "Bagunçou sem olhar",
+              "emoji": "🤪",
+              "cat": "no"
+            }
+          ],
+          "categorias": [
+            {
+              "id": "ok",
+              "label": "Bom",
+              "emoji": "✅"
+            },
+            {
+              "id": "no",
+              "label": "Evitar",
+              "emoji": "🚫"
+            }
+          ],
+          "porque": "Bom hábito de aprender."
+        }
+      ]
+    }
+  ]
 }

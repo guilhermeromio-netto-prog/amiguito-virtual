@@ -329,8 +329,8 @@
       fn(inner, (res) => {
         res = res || {};
         res.porque = res.porque || porqueStem[id];
-        AmiguitoEducar.acertoFesta(shell, res.porque, res.msg || "Missão feita!");
-        setTimeout(() => onDone(res), 900);
+        if (res.porque) AmiguitoEducar.mostrarPorque(shell, res.porque);
+        onDone(res);
       });
     } else {
       fn(root, onDone);

@@ -208,11 +208,11 @@
 
     function paint() {
       const certa = opcoesBase.find((o) => o.certa);
-      const modeloVisual = certa
-        ? (certa.cor
-          ? `<div class="edu-modelo-cor" style="background:${certa.cor}" aria-hidden="true"></div><p class="edu-modelo-txt">${escapar(certa.texto)}</p>`
-          : `<p class="edu-modelo-txt edu-modelo-txt--grande">${escapar(certa.emoji || certa.texto)}</p>`)
-        : "";
+      // Pedagogy: NEVER show the correct answer in modelo/guia — only the method
+      const modeloVisual = `<div class="edu-modelo-metodo" aria-hidden="true">
+          <span style="font-size:2.4rem">👀</span>
+          <p class="edu-modelo-txt">Olha a pergunta. Depois você escolhe sozinha.</p>
+        </div>`;
 
       root.innerHTML = `
         ${fasesHtml(fase)}
@@ -226,14 +226,14 @@
       const corpo = root.querySelector("#edu-corpo");
       if (fase === "modelo") {
         setFase(root, "modelo");
-        setCoach(root, "Olha comigo: a resposta parece assim.", true);
+        setCoach(root, "Olha a pergunta comigo. Ainda não responda — só observar!", true);
         corpo.innerHTML = `<div class="edu-modelo">${modeloVisual}
           <button type="button" class="btn btn--primario btn--bloco" id="edu-next" data-fala="Continuar">Vi! Continuar 👀</button></div>`;
         root.querySelector("#edu-next").onclick = () => { fase = "guia"; paint(); };
       } else if (fase === "guia") {
         setFase(root, "guia");
-        setCoach(root, "Agora você vai escolher. Eu fico aqui te guiando.", true);
-        corpo.innerHTML = `<div class="edu-guia-dica" aria-hidden="true">${certa && certa.cor ? `<span class="cor-swatch" style="background:${certa.cor};width:48px;height:48px;border-radius:12px;display:inline-block"></span>` : "⭐"}</div>
+        setCoach(root, "Eu te guio com a voz. A resposta certa você descobre!", true);
+        corpo.innerHTML = `<div class="edu-guia-dica" aria-hidden="true">🧭✨</div>
           <button type="button" class="btn btn--primario btn--bloco" id="edu-next" data-fala="Estou pronta">Estou pronta! 🖐️</button>`;
         root.querySelector("#edu-next").onclick = () => { fase = "pratica"; paint(); };
       } else if (fase === "pratica") {

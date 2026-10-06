@@ -34,6 +34,7 @@
     primeiraVisita: true,
     idiomaDica: "pt",
     nivelEducar: {},
+    sequenciasProgresso: {},
     streak: 0,
     ultimoDia: null,
     viuHero: false,
@@ -81,7 +82,8 @@
       moveis: dados.moveis || [],
       acessoriosDesbloqueados: dados.acessoriosDesbloqueados || base.acessoriosDesbloqueados,
       moveisDesbloqueados: dados.moveisDesbloqueados || base.moveisDesbloqueados,
-      nivelEducar: Object.assign({}, base.nivelEducar, dados.nivelEducar || {})
+      nivelEducar: Object.assign({}, base.nivelEducar, dados.nivelEducar || {}),
+      sequenciasProgresso: Object.assign({}, base.sequenciasProgresso, dados.sequenciasProgresso || {})
     });
     if (merged.moedas == null) merged.moedas = 20;
     if (merged.personagemId && IDS_ANTIGOS.includes(merged.personagemId)) {

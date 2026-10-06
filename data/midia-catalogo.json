@@ -1,0 +1,240 @@
+{
+  "sol": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/The_Sun_in_white_light.jpg/330px-The_Sun_in_white_light.jpg",
+    "titulo": "Sun",
+    "pagina": "https://en.wikipedia.org/wiki/Sun",
+    "credito": "Wikimedia / Wikipedia — Sun",
+    "emoji": "☀️"
+  },
+  "lua": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/330px-FullMoon2010.jpg",
+    "titulo": "Moon",
+    "pagina": "https://en.wikipedia.org/wiki/Moon",
+    "credito": "Wikimedia / Wikipedia — Moon",
+    "emoji": "🌙"
+  },
+  "estrela": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/The_Sun_in_white_light.jpg/330px-The_Sun_in_white_light.jpg",
+    "titulo": "Star",
+    "pagina": "https://en.wikipedia.org/wiki/Star",
+    "credito": "Wikimedia / Wikipedia — Star",
+    "emoji": "⭐"
+  },
+  "arcoiris": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Double-alaskan-rainbow.jpg/330px-Double-alaskan-rainbow.jpg",
+    "titulo": "Rainbow",
+    "pagina": "https://en.wikipedia.org/wiki/Rainbow",
+    "credito": "Wikimedia / Wikipedia — Rainbow",
+    "emoji": "🌈"
+  },
+  "maca": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Pink_lady_and_cross_section.jpg/330px-Pink_lady_and_cross_section.jpg",
+    "titulo": "Apple",
+    "pagina": "https://en.wikipedia.org/wiki/Apple",
+    "credito": "Wikimedia / Wikipedia — Apple",
+    "emoji": "🍎"
+  },
+  "banana": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Bananavarieties.jpg/330px-Bananavarieties.jpg",
+    "titulo": "Banana",
+    "pagina": "https://en.wikipedia.org/wiki/Banana",
+    "credito": "Wikimedia / Wikipedia — Banana",
+    "emoji": "🍌"
+  },
+  "gato": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Siam_lilacpoint.jpg/330px-Siam_lilacpoint.jpg",
+    "titulo": "Cat",
+    "pagina": "https://en.wikipedia.org/wiki/Cat",
+    "credito": "Wikimedia / Wikipedia — Cat",
+    "emoji": "🐱"
+  },
+  "cachorro": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Huskiesatrest.jpg/330px-Huskiesatrest.jpg",
+    "titulo": "Dog",
+    "pagina": "https://en.wikipedia.org/wiki/Dog",
+    "credito": "Wikimedia / Wikipedia — Dog",
+    "emoji": "🐶"
+  },
+  "leao": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg/330px-020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg",
+    "titulo": "Lion",
+    "pagina": "https://en.wikipedia.org/wiki/Lion",
+    "credito": "Wikimedia / Wikipedia — Lion",
+    "emoji": "🦁"
+  },
+  "elefante": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/African_Bush_Elephant.jpg/330px-African_Bush_Elephant.jpg",
+    "titulo": "Elephant",
+    "pagina": "https://en.wikipedia.org/wiki/Elephant",
+    "credito": "Wikimedia / Wikipedia — Elephant",
+    "emoji": "🐘"
+  },
+  "peixe": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Balantiocheilos_melanopterus_-_Karlsruhe_Zoo_02_%28cropped%29.jpg/330px-Balantiocheilos_melanopterus_-_Karlsruhe_Zoo_02_%28cropped%29.jpg",
+    "titulo": "Fish",
+    "pagina": "https://en.wikipedia.org/wiki/Fish",
+    "credito": "Wikimedia / Wikipedia — Fish",
+    "emoji": "🐟"
+  },
+  "passaro": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Kleiber_Flug.jpg/330px-Kleiber_Flug.jpg",
+    "titulo": "Bird",
+    "pagina": "https://en.wikipedia.org/wiki/Bird",
+    "credito": "Wikimedia / Wikipedia — Bird",
+    "emoji": "🐦"
+  },
+  "arvore": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Usamljeni_jasen_-_panoramio_%28cropped%29.jpg/330px-Usamljeni_jasen_-_panoramio_%28cropped%29.jpg",
+    "titulo": "Tree",
+    "pagina": "https://en.wikipedia.org/wiki/Tree",
+    "credito": "Wikimedia / Wikipedia — Tree",
+    "emoji": "🌳"
+  },
+  "flor": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Magnolia_grandiflora_-_flower_1.jpg/330px-Magnolia_grandiflora_-_flower_1.jpg",
+    "titulo": "Flower",
+    "pagina": "https://en.wikipedia.org/wiki/Flower",
+    "credito": "Wikimedia / Wikipedia — Flower",
+    "emoji": "🌸"
+  },
+  "agua": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/H2O_2D_labelled.svg/330px-H2O_2D_labelled.svg.png",
+    "titulo": "Water",
+    "pagina": "https://en.wikipedia.org/wiki/Water",
+    "credito": "Wikimedia / Wikipedia — Water",
+    "emoji": "💧"
+  },
+  "brasil": {
+    "src": "https://thumb.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/330px-Flag_of_Brazil.svg.png",
+    "titulo": "Brazil",
+    "pagina": "https://en.wikipedia.org/wiki/Brazil",
+    "credito": "Wikimedia / Wikipedia — Brazil",
+    "emoji": "🇧🇷"
+  },
+  "amazonia": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Amazon17_%285641020319%29.jpg/330px-Amazon17_%285641020319%29.jpg",
+    "titulo": "Amazon rainforest",
+    "pagina": "https://en.wikipedia.org/wiki/Amazon_rainforest",
+    "credito": "Wikimedia / Wikipedia — Amazon rainforest",
+    "emoji": "🦜"
+  },
+  "rio": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/330px-Cidade_Maravilhosa.jpg",
+    "titulo": "Rio de Janeiro",
+    "pagina": "https://en.wikipedia.org/wiki/Rio_de_Janeiro",
+    "credito": "Wikimedia / Wikipedia — Rio de Janeiro",
+    "emoji": "🏞️"
+  },
+  "africa": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Africa_%28orthographic_projection%29.svg/330px-Africa_%28orthographic_projection%29.svg.png",
+    "titulo": "Africa",
+    "pagina": "https://en.wikipedia.org/wiki/Africa",
+    "credito": "Wikimedia / Wikipedia — Africa",
+    "emoji": "🦁"
+  },
+  "asia": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Asia_%28orthographic_projection%29_without_New_Guinea.svg/330px-Asia_%28orthographic_projection%29_without_New_Guinea.svg.png",
+    "titulo": "Asia",
+    "pagina": "https://en.wikipedia.org/wiki/Asia",
+    "credito": "Wikimedia / Wikipedia — Asia",
+    "emoji": "🐼"
+  },
+  "europa": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg/330px-Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg.png",
+    "titulo": "Europe",
+    "pagina": "https://en.wikipedia.org/wiki/Europe",
+    "credito": "Wikimedia / Wikipedia — Europe",
+    "emoji": "🏰"
+  },
+  "oceano": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Pacific_Ocean_as_viewed_from_GOES-18_on_September_23%2C_2023.jpg/330px-Pacific_Ocean_as_viewed_from_GOES-18_on_September_23%2C_2023.jpg",
+    "titulo": "Ocean",
+    "pagina": "https://en.wikipedia.org/wiki/Ocean",
+    "credito": "Wikimedia / Wikipedia — Ocean",
+    "emoji": "🌊"
+  },
+  "foguete": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Soyuz_TMA-9_launch.jpg/330px-Soyuz_TMA-9_launch.jpg",
+    "titulo": "Rocket",
+    "pagina": "https://en.wikipedia.org/wiki/Rocket",
+    "credito": "Wikimedia / Wikipedia — Rocket",
+    "emoji": "🚀"
+  },
+  "astronauta": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Bruce_McCandless_II_during_EVA_in_1984.jpg/330px-Bruce_McCandless_II_during_EVA_in_1984.jpg",
+    "titulo": "Astronaut",
+    "pagina": "https://en.wikipedia.org/wiki/Astronaut",
+    "credito": "Wikimedia / Wikipedia — Astronaut",
+    "emoji": "👩‍🚀"
+  },
+  "circulo": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Circle-withsegments.svg/330px-Circle-withsegments.svg.png",
+    "titulo": "Circle",
+    "pagina": "https://en.wikipedia.org/wiki/Circle",
+    "credito": "Wikimedia / Wikipedia — Circle",
+    "emoji": "🔵"
+  },
+  "triangulo": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Triangle_illustration.svg/330px-Triangle_illustration.svg.png",
+    "titulo": "Triangle",
+    "pagina": "https://en.wikipedia.org/wiki/Triangle",
+    "credito": "Wikimedia / Wikipedia — Triangle",
+    "emoji": "🔺"
+  },
+  "quadrado": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Square_with_offset_tick_marks.svg/330px-Square_with_offset_tick_marks.svg.png",
+    "titulo": "Square",
+    "pagina": "https://en.wikipedia.org/wiki/Square",
+    "credito": "Wikimedia / Wikipedia — Square",
+    "emoji": "🟥"
+  },
+  "vermelho": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Delicious_fresh_strawberries_%284735910403%29.jpg/330px-Delicious_fresh_strawberries_%284735910403%29.jpg",
+    "titulo": "Red",
+    "pagina": "https://en.wikipedia.org/wiki/Red",
+    "credito": "Wikimedia / Wikipedia — Red",
+    "emoji": "🔴"
+  },
+  "azul": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Earth-in-true-color-himawari-09.jpg/330px-Earth-in-true-color-himawari-09.jpg",
+    "titulo": "Blue",
+    "pagina": "https://en.wikipedia.org/wiki/Blue",
+    "credito": "Wikimedia / Wikipedia — Blue",
+    "emoji": "🔵"
+  },
+  "verde": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Champ_de_bl%C3%A9_C%C3%B4te-d%27Or_Bourgogne_avril_2014.jpg/330px-Champ_de_bl%C3%A9_C%C3%B4te-d%27Or_Bourgogne_avril_2014.jpg",
+    "titulo": "Green",
+    "pagina": "https://en.wikipedia.org/wiki/Green",
+    "credito": "Wikimedia / Wikipedia — Green",
+    "emoji": "🟢"
+  },
+  "amarelo": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Cornwall_Daffodils.jpg/330px-Cornwall_Daffodils.jpg",
+    "titulo": "Yellow",
+    "pagina": "https://en.wikipedia.org/wiki/Yellow",
+    "credito": "Wikimedia / Wikipedia — Yellow",
+    "emoji": "🟡"
+  },
+  "letra_a": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Latin_letter_A.svg/330px-Latin_letter_A.svg.png",
+    "titulo": "A",
+    "pagina": "https://en.wikipedia.org/wiki/A",
+    "credito": "Wikimedia / Wikipedia — A",
+    "emoji": "🅰️"
+  },
+  "alfabeto": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Phoenician_alphabet.svg/330px-Phoenician_alphabet.svg.png",
+    "titulo": "Alphabet",
+    "pagina": "https://en.wikipedia.org/wiki/Alphabet",
+    "credito": "Wikimedia / Wikipedia — Alphabet",
+    "emoji": "🔤"
+  },
+  "numeros": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/NumberSetinR2.svg/330px-NumberSetinR2.svg.png",
+    "titulo": "Number",
+    "pagina": "https://en.wikipedia.org/wiki/Number",
+    "credito": "Wikimedia / Wikipedia — Number",
+    "emoji": "🔢"
+  }
+}

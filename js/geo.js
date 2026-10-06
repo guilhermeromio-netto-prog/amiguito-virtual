@@ -287,8 +287,8 @@
         res = res || {};
         res.porque = res.porque || porqueGeo[id];
         res.tema = res.tema || "geo";
-        AmiguitoEducar.acertoFesta(wrap, res.porque, res.msg || "Mapa explorado!");
-        setTimeout(() => onDone(res), 900);
+        if (res.porque) AmiguitoEducar.mostrarPorque(wrap, res.porque);
+        onDone(res);
       };
       (map[id] || montarBrasilRegioes)(inner, done2);
     } else {
